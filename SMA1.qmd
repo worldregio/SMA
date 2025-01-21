@@ -1,0 +1,1617 @@
+---
+title: "La Puissance des Etats"
+subtitle: "Cours L3 Géographie 2025"
+date: "2025-01-21"
+date-format: iso
+author: "Claude Grasland"
+title-slide-attributes:
+  data-background-color: "#75AADB85"
+  data-background-size: 200px
+  data-background-opacity: "0.9"
+  data-background-position: top center
+format: 
+  revealjs:
+    bibliography: [references.bib]
+    logo: img1/logo.jpg
+    margin: 0
+    code-line-numbers: true
+    embed-resources: true
+    smaller: true
+    scrollable: true
+    theme: [simple, style.scss]
+execute:
+  echo: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE, warning= FALSE, message = FALSE, error=FALSE)
+library(knitr)
+library(dplyr)
+library(RColorBrewer)
+library(data.table)
+library(FactoMineR)
+library(explor)
+library(plotly)
+library(flextable)
+library(gt)
+library(ggplot2)
+library(ggrepel)
+library(kableExtra)
+#library(quanteda)
+
+### add functions
+#source("Hypercube_Visualization_Functions_V5.R")
+
+### add data
+#hc<-readRDS("explorer_mig_2014_2018.RDS")
+
+### add metadata
+#tab_medias<-readRDS("liste_medias.RDS")
+
+### add worldmap
+#world<-readRDS("world.rda")
+
+```
+
+
+
+# INTRODUCTION
+
+## Une grille de lecture internationale ...
+
+<div class="centered">
+<img src="img1/SMA1.png" width=700px />
+</div>
+
+## ... où les firmes ne sont pas des acteurs autonomes
+
+<div class="centered">
+<img src="img1/SMA3.png" width=700px />
+</div>
+
+## Origines de l’approche « réaliste » 
+
+- **Sun-Tzu(-550 ?)**: _L’Art de la Guerre_
+    + Théorisation de la guerre et de ses lois.
+
+- **Thucydide(- 400 ?)**: _La Guerre du Péloponèse_
+    + Théorisation de la guerre à travers l’exemple de Sparte et Athènes.
+
+- **Nicolas Machiavel (1532)**: _Le Prince_
+    + Diviser pour régner.
+    + Pas de confusion entre morale et politique.
+
+- **Thomas Hobbes (1651)**: _Leviathan_
+    + Etat de nature mauvais.
+    + Absence d’autorité supranationale
+    + Besoin de sécurité.
+
+
+##  Réalistes et néo-réalistes
+
+- **Hans Morgenthau**: _Politics Among Nations: The Struggle for Power and Peace (1948)_ ,
+    + Vision pessimiste et rationaliste de la nature humaine.
+    + Paix comme résultat d’un équilibre provisoire entre les volontés de puissance des états.
+
+- **Kenneth Waltz**: _Theory of International Politics(1979)_
+    + Vision systémique des relations internationales. 
+    + Equilibres différents selon le nombre de superpuissance : Monde unipolaire, bipolaire ou multipolaire.
+
+
+
+## Le « piège de Thucydide »
+
+
+
+
+::: columns
+::: {.column width="50%"}
+<div class="centered">
+<img src="img1/power22.jpg" width=350px />
+</div>
+:::
+::: {.column width="50%"}
+« La question des prochaines décennies est de savoir comment la Chine et les États-Unis pourront échapper __au “piège de Thucydide”,__ autrement dit au __conflit résultant de la rivalité entre une puissance émergente et une puissance régnante__ , comme entre Athènes et Sparte au Ve siècle av. J.-C., ou entre l’Allemagne et ses voisins, à la fin du XIXe siècle. L’émergence rapide de toute nouvelle puissance perturbe le statu quo. __Historiquement, dans 11 cas sur 15, depuis 1500, cela s’est terminé par une guerre.__ »
+:::
+:::
+
+
+## Le « piège de Thucydide »
+
+Que pensez-vous de la démonstration ?
+
+
+
+::: columns
+::: {.column width="50%"}
+<div class="centered">
+<img src="img1/Allison.jpg" width=500px />
+</div>
+:::
+::: {.column width="50%"}
+<div class="centered">
+<img src="img1/Taiwan.jpg" width=300px />
+</div>
+
+:::
+:::
+
+
+
+
+
+## USA ou Chine ?
+
+<div class="centered">
+<img src="img1/SMA2.png" width=700px />
+</div>
+
+## L'avis des étudiants en janvier 2022 ...
+
+```{r}
+pays<-c("Chine","USA","France","Roy.Uni","Allemagne","Japon","Brésil","Arabie S.", "Inde","Corée du S.")
+rep<-c(16,16,8,6,6,6,3,3,2,1)
+pct<-paste(round(100*rep/16,0),"%")
+rang<-c("1-2","1-2","3","4-6","4-6","4-6","7-8","7-8","9","10")
+df<-data.frame(rang,pays,rep,pct)
+
+df%>% gt() %>% 
+  tab_header(title = md("**Tableau de données**"))
+
+
+```
+
+## ... en janvier 2024 ...
+
+<div class="centered">
+<img src="img1/SMA_survey_2024.jpg" width=800px>
+</div>
+
+## ... et en janvier 2025
+
+<div class="centered">
+<img src="img1/SMA_survey_2025.jpg" width=800px>
+</div>
+
+
+# 1. LIRE LE MONDE A TRAVERS LA GRILLE DES ETATS
+
+
+## 1.1 Etat et monopole de l'information statistique légitime
+
+"Nous dirons d'un groupement de domination qu'il est un __groupement politique__ lorsque et en tant que son existence et la validité de ses règlements sont garantis de façon continue à l'intérieur d'un __territoire géographique déterminable__ par l'application et la menace d'une __contrainte physique__ de la part de la direction administrative."
+
+"Nous entendons par __Etat__ une entreprise politique de caractère institutionnel, lorsque et en tant que sa direction administrative revendique avec succès, dans l'application de ses règlements, __le monopole de la contrainte physique légitime__ ."
+
+M. Weber, Economie et Société, I.1.17
+
+## 1.2 Enjeux politiques des statistiques internationales
+
+- L'inscription dans les annuaires statistiques des Nations Unies correspond à une reconnaissance internationale.
+
+- L'annuaire des Nations-Unies 2019 fournit des **données internationales officielles** sur tous les pays représentées aux Nations-Unies. Une variable aussi simple que la population n'est toutefois pas si évidente que cela à mesurer et les notes en bas de page sont souvent très instructives ..
+
+- Les Etats-Unis en tant que puissance mondiale dominante s'autorise la publication de leur propre annuaire mondial, le CIA World Factbook qui donne un **point de vue américain sur le monde**.
+
+
+## L'annuaire statistique des Nations Unies 2019
+
+<div class="centered">
+<img src="img1/UNstat2019.png" width=200px />
+</div>
+
+::: columns
+::: {.column width="50%"}
+<img src="img1/UNstat2019pop.png" width=500px />
+<img src="img1/china.png" width=500px />
+<img src="img1/china_note.png" width=500px />
+:::
+::: {.column width="50%"}
+<img src="img1/UNstat2019pop.png" width=500px />
+<img src="img1/ukraine.png" width=500px />
+<img src="img1/ukraine_note.png" width=350px />
+:::
+:::
+
+
+https://unstats.un.org/unsd/publications/statistical-yearbook
+
+
+## Le CIA World Factbook
+
+
+::: columns
+::: {.column width="50%"}
+- **Taiwan existe ...**
+
+<img src="img1/CIA_taiwan_map.jpg" width=200px />
+
+>Population : 23,603,049 (July 2020 est.)
+
+Source : https://www.cia.gov/the-world-factbook/countries/taiwan/
+:::
+::: {.column width="50%"}
+-  **... en dehors de la Chine ?**
+
+<img src="img1/CIA_china_map.jpg" width=400px />
+
+>Population : 1,394,015,977 (July 2020 est.)
+
+Source : https://www.cia.gov/the-world-factbook/countries/china/
+:::
+:::
+
+
+
+
+
+## Le CIA World Factbook
+
+
+<img src="img1/CIA_ukraine_map.jpg" width=500px />
+
+> Area : total: 603,550 sq km 
+
+> **note:** approximately 43,133 sq km, or about 7.1% of Ukraine's area, is Russian occupied; the seized area includes all of Crimea and about one-third of both Luhans'k and Donets'k oblasts
+
+Source : https://www.cia.gov/the-world-factbook/countries/ukraine/#geography
+
+
+## Le CIA World Factbook
+
+```{r}
+mytext<-"The World Factbook is prepared by the Central Intelligence Agency for the use of US Government officials, and the style, format, coverage, and content are designed to meet their specific requirements. Information is provided by Antarctic Information Program (National Science Foundation), Armed Forces Medical Intelligence Center (Department of Defense), Bureau of the Census (Department of Commerce), Bureau of Labor Statistics (Department of Labor), Central Intelligence Agency, Council of Managers of National Antarctic Programs, Defense Intelligence Agency (Department of Defense), Department of Energy, Department of State, Fish and Wildlife Service (Department of the Interior), Maritime Administration (Department of Transportation), National Geospatial-Intelligence Agency (Department of Defense), Naval Facilities Engineering Command (Department of Defense), Office of Insular Affairs (Department of the Interior), Office of Naval Intelligence (Department of Defense), US Board on Geographic Names (Department of the Interior), US Transportation Command (Department of Defense), United Nations Population Division (World Urbanization Prospects: The 2018 Revision and World Population Prospects: The 2019 Revision urbanization and population data used with permission), International Telecommunication Union, International Institute for Strategic Studies, Oil Gas Journal, and other public and private sources. \n The Factbook is in the public domain. Accordingly, it may be copied freely without permission of the Central Intelligence Agency (CIA). The official seal of the CIA, however, may NOT be copied without permission as required by the CIA Act of 1949 (50 U.S.C. section 403m). Misuse of the official seal of the CIA could result in civil and criminal penalties."
+x<-data.frame(Source = mytext)
+flextable(x,cwidth = 8)
+
+```
+
+source :  https://www.cia.gov/the-world-factbook/about/copyright-and-contributors/
+
+## 1.3 Qualité des bases de données statistiques internationales
+
+Les producteurs primaires étant les Etats, il faut se méfier des compilations indirectes
+
+- Les __primo-compilateurs__ (Nations Unies, Union Européenne) reçoivent directement les données nationales.
+
+- Les __compilateurs secondaires__ (AtlasEco, Etat du Monde, IEE...) repartent en général des primo-compilateurs mais souvent sans le dire ( _Cf. CIA World Factbook_ ).
+
+## Qualité des statistiques mondiales en 2001
+
+En 2001, l'INED proposait de noter la qualité des données des pays selon 4 niveaux
+
+```{r}
+set_flextable_defaults(
+  font.family = "Helvetica", font.size = 15, font.color = "black",
+  text.align = "left", 
+  table.layout = "fixed",
+  theme_fun = "theme_booktabs")
+tx1 <- c("A" ,"indique un pays avec, d'une part, des statistiques d'état civil (naissances et décès) complètes et, d'autre part, soit un recensement national datant de moins de 10 ans, soit un registre de population continu.")
+tx2 <- c("B","signale un pays qui a des statistiques d'état civil complètes ou bien un registre de population sans discontinuité et un recensement national datant de moins de 15 ans.B vise également les pays qui ont une des trois sources nécessaires pour A et, en outre, soit une enquête nationale utilisable, soit un système d'enregistrement par sondage datant de moins de 10 ans.")
+tx3 <-c("C","indique qu'au moins un recensement (datant de moins de 15 ans), une enquête (datant de moins de 10 ans) ou un système d'enregistrement par sondage est disponible.")
+tx4 <-c("D", "indique qu'il existe peu ou pas d'information démographique fiable et que les estimations sont fondées sur des données fragmentaires ou sur des modèles démographiques.")
+tab<-data.frame(rbind(tx1,tx2,tx3,tx4))
+names(tab)<-c("Note","Critère")
+tab<-flextable(tab)
+tab<-autofit(tab)
+tab
+```
+Source : Populations & Sociétés, *Tous les pays du Monde*,  2001
+
+
+
+## Qualité des statistiques mondiales 
+
+On dispose de peu d'informations fiables sur la qualité des statistiques produites par les pays. EN 2001, l'INED avait essayé de donner un score de qualité aux données démographiques des différents pays du Monde : 
+
+::: columns
+::: {.column width="50%"}
+- **Variations spatiales**
+<img src="img1/power210.png" width=500px />
+:::
+::: {.column width="50%"}
+-  **Variations économiques**
+<img src="img1/power211.png" width=500px />
+:::
+:::
+
+
+Des résultats intéressants ... mais l'INED a reçu beaucoup de plainte des pays mal notés et n'a pas poursuivi l'expérience de notation des pays. 
+
+
+
+## 1.4 Carte géopolitique du Monde
+
+
+::: columns
+::: {.column width="50%"}
+<img src="img1/state_change_1.png" width=500px />
+:::
+::: {.column width="50%"}
+**Instabilité géopolitique :  1989-1995**
+- réunification allemande (1990)
+- réunification du Yemen (1990)
+- éclatement de l'URSS (1991)
+- séparation pacifique de la Tchécoslovaquie (1993)
+- éclatement de la Yougoslavie (1991-1995)
+- indépendance de l'Erithrée (1993)
+
+
+ **Stabilité relative :  1995-2015**
+- indépendance du Timor-Leste (1999-2002)
+- indépendance du Montenegro (2006)
+- indépendance du Kosovo(2008)
+- indépendance du Sud-Soudan (2011)
+:::
+:::
+
+
+## 214 états ou "territoires" 
+
+
+```{r, fig.width=10}
+library(sf)
+library(leaflet)
+don<-readRDS("data1/wb_don_1990_2019.Rdata")
+don<-don[don$date==2015,]
+wld<-readRDS("data1/wb_map_high.Rdata")
+#wld<-st_transform(wld, crs = "+proj=wintri")
+map<-merge(wld,don, all.x=T,all.y=F)
+map$region[is.na(map$region)]<-"NR"
+map$col<-as.factor(map$region)
+
+levels(map$col)<-c("orange","blue","pink","green","red","gray","yellow","lightgreen")
+
+
+    # Define labels
+    labs <- lapply(seq(nrow(map)), function(i) {
+      paste0( paste("Code :",map$iso3c[i]), '<p></p>',
+              paste("Pays :",map$name[i]), '<p></p>',
+              paste("Capitale:",map$capital_city[i]),'<p></p>',
+              paste("Region:",map$region[i]),'<p></p>',
+              paste("Developt:", map$income_level[i]),'<p></p>')    
+                  
+    })
+    labs<-lapply(labs, htmltools::HTML)
+    
+    
+    mymap<-  leaflet() %>%
+      addTiles() %>%
+    #  addProviderTiles(providers$cyclosm.openstreetmap.fr) %>%
+      setView(lng=2.426523, lat=48.765743 , zoom=1)%>%
+     # addPolygons(data=wld,color="gray90",fillColor="white") %>%
+      addPolygons(data = map, fillColor = ~col,
+                  color = "black", weight = 0.4, fillOpacity = 0.2, 
+                  highlightOptions = highlightOptions(weight = 2, color = 'black'),
+                  label = labs) %>%
+      
+            addLegend(data = map,  
+                      title = "Régions de la Banque Mondiale",
+                      colors = c("orange","yellow","blue","green","lightgreen","red","pink","gray"),
+                      labels =c("Asie Est & Pacifique.", 
+                                "Asie du Sud",
+                                "Europe & Asie Centrale",
+                                "Moyen-Orient -Afr. du Nord",
+                                 "Afrique Subsaharienne",
+                                "Amérique du Nord" ,
+                                "Amérique Latine & Caraïbes",
+                                "Pays non reconnus"
+                             ),
+                      opacity = 0.2,
+                      position = 'bottomleft')
+
+
+mymap
+
+
+```
+
+
+# 2. MESURER LA TAILLE OU LA PUISSANCE DES ETATS
+
+## Situation en 1995
+
+Dorel G, 1998, _La puissance des Etats_ \, Doc. Photo. n° 8006\
+
+::: columns
+::: {.column width="50%"}
+<img src="img1/power291.png" width=300px />
+:::
+::: {.column width="50%"}
+<img src="img1/power290.png" width=300px />
+:::
+:::
+
+
+## Situation en 1995
+
+Dorel G, 1998, _La puissance des Etats_ \, Doc. Photo. n° 8006\
+
+::: columns
+::: {.column width="40%"}
+```{r}
+pays<-c("USA","Allemagne","Japon","France","Royaume-Uni","Russie","Chine","Canada","Inde","Brésil","Italie","Espagne")
+code<-c("USA","ALL","JAP","FRA","GBR","RUS","CHN","CAN","IND","BRA","ITA","ESP")
+G7<-c("x","x","x","x","x","-","-","x","-","-","x","-")
+score<-c(95,36,34,36,37,33,24,14,6,2,5,4)
+rang<-rank(-score)
+tab<-data.frame(rang,code,pays,G7,score) %>% arrange(rang)
+top<-flextable(tab)
+top<-theme_vanilla(top)
+top <- fontsize(top, size = 14) 
+top<-line_spacing(top, space = 0.5)
+autofit(top)
+```
+:::
+
+::: {.column width="60%"}
+```{r, fig.width=5}
+g<-ggplot(tab, aes(x=rang, y=score)) +
+  geom_point(col="red") +
+  geom_line() +
+  geom_text_repel(label=pays)+
+  scale_x_continuous("RANG EN 1995",breaks=1:12) +
+  scale_y_continuous("INDICATEUR SYNTHETIQUE DE PUISSANCE")+
+  theme_light()+
+  ggtitle("PUISSANCE DES ETATS DU MONDE VERS 1995",subtitle = "Source : Dorel G., 1998") 
+ggsave(filename = "img1/top12_1995.png",plot = g)
+```
+<img src="img1/top12_1995.png" width=500px />
+:::
+
+:::
+
+
+
+## 2.1 Puissance territoriale
+
+<img src="img1/polenov-early-snow-1891.jpg" width=700px />
+
+>"Plaine, ma plaine / Sous l'épais manteau de neige /  La terre enferme dans sa main la graine / Qui fait la récolte de demain" ([chanson russe](https://www.youtube.com/watch?v=YtqYo831Brk)).
+
+## Top20 : superficie 2023 (milliers de km2)
+
+```{r}
+
+don<-readRDS("data1/wb_don_1960_2023.Rdata")
+tab<-don %>% filter(date==2023) %>% 
+             select(code=iso3c, pays=country,  rang=SRF_rnk, taille = SRF, pct =SRF_wgt) %>% 
+              arrange(rang) %>%
+              mutate(cumpct=cumsum(pct), taille = taille/1000)
+         
+set_flextable_defaults(
+  digits = 1,
+  decimal.mark = ",",
+  big.mark = " ",
+  na_str = "<na>"
+)
+
+top<-flextable(tab[1:20,-1]) %>% 
+     colformat_double() %>%
+     theme_vanilla() %>%
+     fontsize(size = 12) 
+autofit(top)
+
+```
+
+## Carte superficie 2023
+
+```{r}
+     map<-readRDS("data1/wb_map_high.Rdata")
+      mapdon<-merge(map,tab,by.x="iso3c",by.y="code",all.x=T,all.y=F)
+      mapdon$sizegroup<-cut(mapdon$pct,c(0,0.1, 0.2,0.5,1,2,5,10,20,100))
+      levels(mapdon$sizegroup)<-c("< 0.1%","0.1-0.2","0.2-0.5","0.5-1","1-2","2-5","5-10","10-20",">20")
+
+    
+   
+      g <- list(showframe = TRUE,
+                framecolor= toRGB("gray50"),
+                coastlinecolor = toRGB("black"),
+                showland = TRUE,
+                landcolor = toRGB("gray90"),
+                showcountries = TRUE,
+                countrycolor = toRGB("black"),
+                countrywidth = 0.2,
+           #     projection = list(type = 'azimuthal equidistant'))
+                projection = list(type = 'robinson'))
+      
+      p<- plot_geo(mapdon, width=1200, height = 600) %>%
+        add_markers(x = ~Lon,
+                    y = ~Lat,
+                    sizes = c(0, 1000),
+                    size = ~pct,
+                    color= ~sizegroup,
+                 #   colors= c("red","orange","yellow","green","blue"),
+                    colors = rev(brewer.pal(9,"Spectral")),
+                    hoverinfo = "text",
+                  text = ~paste('ISO3 Code   : ', iso3c,
+                                  '<br /> Country name: ', pays,
+                                  '<br /> World share (%) : ',round(pct,3),
+                                  '<br /> World rank      : ',round(rang,0))) %>%
+        layout(geo = g)
+      p
+    
+```
+
+
+## Superficie + latitude = énergie solaire
+
+<img src="img1/power215.png" width=700px />
+
+Source : HUFTY, 1998
+
+
+## Superficie + géologie  = Ressources minières
+
+<img src="img1/power216.png" width=600px />
+
+
+
+
+
+## L’exemple des terres rares
+
+l’appellation de terres rares désignent en fait 17 métaux\, dont quinze forment la série des lanthanes\, plus le scandium et l’ytrium
+
+Depuis la massification des postes de TV couleurs\, les terres rares sont devenus indispensables aux filières d’objets high\-tech\.
+
+Le quasi monopole de la Chine sur l’exploitation des terres rares a transformé une question géologique\, minière et industrielle en quasi\-crise géopolitique\.
+
+http://www.franceculture.fr/blog-globe-2012-02-01-les-terres-rares-en-cartes-et-dans-la-presse-un-marche-strategique
+
+## L’exemple des terres rares
+
+<img src="img1/power217.png" width=500px />
+
+## L’exemple des terres rares
+
+<img src="img1/power218.png" width=500px />
+
+## L’exemple des terres rares
+
+<img src="img1/power219.png" width=500px />
+
+## L’exemple des terres rares
+
+<img src="img1/terres_rares_2021.jpg" width=500px />
+
+"*L’analyse du marché des terres rares (TR) en 2022 fait apparaître deux tendances majeures : d’une part le renforcement de la stratégie chinoise d’omniprésence sur les chaînes de production, et l’émergence de certaines alternatives, notamment occidentales, pour se réapproprier une part de l’approvisionnement mondial de ces métaux, indispensables aux transitions énergétique et numérique.*"
+Source : [Mineral Info, BRGM, 2022](https://www.mineralinfo.fr/fr/ecomine/marche-des-terres-rares-2022-filieres-dapprovisionnement-aimants-permanents)
+
+
+## Superficie + climat + géologie = puissance agricole
+
+<img1 src="img1/agriculture.jpg" width=700px />
+
+## Top 20 / Terres arables (millions ha)
+
+```{r}
+library(dplyr)
+library(data.table)
+don<-readRDS("data1/wb_don_1960_2023.Rdata")
+tab<-don %>% filter(date==2023) %>% 
+             select(code=iso3c, pays=country,  rang=ARB_rnk, taille = ARB, pct =ARB_wgt) %>% 
+              arrange(rang) %>%
+              mutate(cumpct=cumsum(pct), taille=taille/1000000 )
+         
+
+top<-flextable(tab[1:20,-1]) %>% 
+     colformat_double() %>%
+     theme_vanilla() %>%
+     fontsize(size = 12)
+autofit(top)
+
+```
+
+
+## Carte : terres arables 2023
+
+```{r}
+     map<-readRDS("data1/wb_map_high.Rdata")
+      mapdon<-merge(map,tab,by.x="iso3c",by.y="code",all.x=T,all.y=F)
+      mapdon$sizegroup<-cut(mapdon$pct,c(0,0.1, 0.2,0.5,1,2,5,10,20,100))
+      levels(mapdon$sizegroup)<-c("< 0.1%","0.1-0.2","0.2-0.5","0.5-1","1-2","2-5","5-10","10-20",">20")
+
+    
+   
+      g <- list(showframe = TRUE,
+                framecolor= toRGB("gray50"),
+                coastlinecolor = toRGB("black"),
+                showland = TRUE,
+                landcolor = toRGB("gray90"),
+                showcountries = TRUE,
+                countrycolor = toRGB("black"),
+                countrywidth = 0.2,
+           #     projection = list(type = 'azimuthal equidistant'))
+                projection = list(type = 'robinson'))
+      
+      p<- plot_geo(mapdon, width=1000, height = 500) %>%
+        add_markers(x = ~Lon,
+                    y = ~Lat,
+                    sizes = c(0, 1000),
+                    size = ~pct,
+                    color= ~sizegroup,
+                 #   colors= c("red","orange","yellow","green","blue"),
+                    colors = rev(brewer.pal(9,"Spectral")),
+                    hoverinfo = "text",
+                  text = ~paste('ISO3 Code   : ', iso3c,
+                                  '<br /> Country name: ', pays,
+                                  '<br /> World share (%) : ',round(pct,3),
+                                  '<br /> World rank      : ',round(rang,0))) %>%
+        layout(geo = g)
+      p
+    
+```
+
+
+## 2.2 Puissance démographique
+
+<img src="img1/power223.png" width=500px />
+
+> " Qui a beaucoup d'argent et pas d'enfants, il n'est pas riche ; qui a beaucoup d'enfants et pas d'argent, il n'est pas pauvre" (proverbe chinois).
+
+## Top 20 / Population 2023 (millions)
+
+```{r}
+library(dplyr)
+library(data.table)
+don<-readRDS("data1/wb_don_1960_2023.Rdata")
+tab<-don %>% filter(date==2023) %>% 
+             select(code=iso3c, pays=country,  rang=POP_rnk, taille = POP, pct =POP_wgt) %>% 
+              arrange(rang) %>%
+              mutate(cumpct=cumsum(pct), taille =taille/1000000)
+         
+
+top<-flextable(tab[1:20,-1]) %>% 
+     colformat_double() %>%
+     theme_vanilla() %>%
+     fontsize(size = 12)
+autofit(top)
+
+
+```
+
+
+## Carte : Population 2023
+
+```{r}
+     map<-readRDS("data1/wb_map_high.Rdata")
+      mapdon<-merge(map,tab,by.x="iso3c",by.y="code",all.x=T,all.y=F)
+      mapdon$sizegroup<-cut(mapdon$pct,c(0,0.1, 0.2,0.5,1,2,5,10,20,100))
+      levels(mapdon$sizegroup)<-c("< 0.1%","0.1-0.2","0.2-0.5","0.5-1","1-2","2-5","5-10","10-20",">20")
+
+    
+   
+      g <- list(showframe = TRUE,
+                framecolor= toRGB("gray50"),
+                coastlinecolor = toRGB("black"),
+                showland = TRUE,
+                landcolor = toRGB("gray90"),
+                showcountries = TRUE,
+                countrycolor = toRGB("black"),
+                countrywidth = 0.2,
+           #     projection = list(type = 'azimuthal equidistant'))
+                projection = list(type = 'robinson'))
+      
+      p<- plot_geo(mapdon, width=1000, height = 500) %>%
+        add_markers(x = ~Lon,
+                    y = ~Lat,
+                    sizes = c(0, 1000),
+                    size = ~pct,
+                    color= ~sizegroup,
+                 #   colors= c("red","orange","yellow","green","blue"),
+                    colors = rev(brewer.pal(9,"Spectral")),
+                    hoverinfo = "text",
+                  text = ~paste('ISO3 Code   : ', iso3c,
+                                  '<br /> Country name: ', pays,
+                                  '<br /> World share (%) : ',round(pct,3),
+                                  '<br /> World rank      : ',round(rang,0))) %>%
+        layout(geo = g)
+      p
+    
+```
+
+
+## La population de l'Inde dépasse celle de la Chine 
+<div class="centered">
+<img src="img1/news2023-001.jpg" width=400px />
+</div>
+
+Source :[Hindustan Times (IND), Vidéo du 21 Août 2021 - republié en janvier 2023](https://www.hindustantimes.com/videos/world-news/explained-china-scared-of-india-winning-economic-race-brings-in-3-child-policy-to-boost-population-101629560990292.html)
+
+
+
+
+
+## Population + démocratie = représentation ?
+
+Dans un **système démocratique**, le poids d'une entité politique devrait être proportionel à sa population. Mais est-ce le cas dans le domaine des relations internationales ?   
+
+>  Article premier : Tous les êtres humains naissent libres et égaux en dignité et en droits. Ils sont doués de raison et de conscience et doivent agir les uns envers les autres dans un
+esprit de fraternité.(**Déclaration Universelle des Droits de l'Homme**)
+
+> Article 18 : Chaque membre de l'Assemblée générale dispose d'une voix. Les décisions de l'Assemblée générale sur les questions importantes sont prises à la majorité des deux tiers des membres présents et votants. (**Charte des Nations-Unies**)
+
+## Population + mobilité = diaspora 
+
+Les diasporas sont souvent un élément important de l'inflence internationale d'un pays. Elles peuvent constituer des relais d'influence et contribuent à la mise en place de flux de natures diverses. 
+
+<img src="img1/diaspora_inde_2015.jpg" width=450px />
+
+Source : Trouillet P.Y., 2015, [Géoconfluences](http://geoconfluences.ens-lyon.fr/informations-scientifiques/dossiers-regionaux/le-monde-indien-populations-et-espaces/articles-scientifiques/diaspora-indienne) 
+
+
+## Population + education = recherche
+
+Même pauvre, un état disposant d'une population importante peut développer des universités ou centres de recherche de rang mondial.
+
+<img src="img1/carte_evo_citations_2010.jpg" width=650px />
+
+Source : Maisonobe M., 2017, [scientometrics](http://www.cnrs.fr/fr/la-production-de-la-science-moins-concentree-dans-les-grandes-metropoles-mondiales?theme1=8)
+
+## Top 20 / Pop. urbaine 2023 (millions)
+
+```{r}
+library(dplyr)
+library(data.table)
+don<-readRDS("data1/wb_don_1960_2023.Rdata")
+tab<-don %>% filter(date==2023) %>% 
+             select(code=iso3c, pays=country,  rang=URB_rnk, taille = URB, pct =URB_wgt) %>% 
+              arrange(rang) %>%
+              mutate(cumpct=cumsum(pct),taille=taille/1000000)
+         
+
+top<-flextable(tab[1:20,-1]) %>% 
+     colformat_double() %>%
+     theme_vanilla() %>%
+     fontsize(size = 12) 
+autofit(top)
+
+```
+
+## Carte : Population urbaine 2023 
+
+```{r}
+     map<-readRDS("data1/wb_map_high.Rdata")
+      mapdon<-merge(map,tab,by.x="iso3c",by.y="code",all.x=T,all.y=F)
+      mapdon$sizegroup<-cut(mapdon$pct,c(0,0.1, 0.2,0.5,1,2,5,10,20,100))
+      levels(mapdon$sizegroup)<-c("< 0.1%","0.1-0.2","0.2-0.5","0.5-1","1-2","2-5","5-10","10-20",">20")
+
+    
+   
+      g <- list(showframe = TRUE,
+                framecolor= toRGB("gray50"),
+                coastlinecolor = toRGB("black"),
+                showland = TRUE,
+                landcolor = toRGB("gray90"),
+                showcountries = TRUE,
+                countrycolor = toRGB("black"),
+                countrywidth = 0.2,
+           #     projection = list(type = 'azimuthal equidistant'))
+                projection = list(type = 'robinson'))
+      
+      p<- plot_geo(mapdon, width=1000, height = 500) %>%
+        add_markers(x = ~Lon,
+                    y = ~Lat,
+                    sizes = c(0, 1000),
+                    size = ~pct,
+                    color= ~sizegroup,
+                 #   colors= c("red","orange","yellow","green","blue"),
+                    colors = rev(brewer.pal(9,"Spectral")),
+                    hoverinfo = "text",
+                  text = ~paste('ISO3 Code   : ', iso3c,
+                                  '<br /> Country name: ', pays,
+                                  '<br /> World share (%) : ',round(pct,3),
+                                  '<br /> World rank      : ',round(rang,0))) %>%
+        layout(geo = g)
+      p
+    
+```
+
+
+
+## 2.3 Puissance économique
+
+<img src="img1/power228.png" width=500px />
+
+>« Lorsque l’homme aura coupé le dernier arbre, pollué la dernière goutte d’eau, tué le dernier animal et pêché le dernier poisson, alors il se rendra compte que l’argent n’est pas comestible. » (proverbe indien)
+
+## Comment mesurer la richesse ?
+
+- **Le PIB** mesure la valeur de la production réalisée sur le territoire d'un pays, quelle que soit la nationalité des firmes réalisant cette production. 
+
+- **le PNB** mesure la valeur de la production ou des profits réalisés par les entreprises d'un pays, que cette production soit réalisé dans leur pays d'origine ou non.
+
+- **les mesures au taux de change** convertissent la valeur d'une production en dollar américain au taux de change de la date de la production.
+
+- **les mesures en parités de pouvoir d'achat (ppa)** convertissent la valeur d'une production en tenant compte du coût de la vie du pays. 
+
+
+
+
+## Top 20 / PIB au taux de change en 2023 (milliards de $)
+
+```{r}
+library(dplyr)
+library(data.table)
+don<-readRDS("data1/wb_don_1960_2023.Rdata")
+tab<-don %>% filter(date==2023) %>% 
+             select(code=iso3c, pays=country,  rang=GDP_rnk, taille = GDP, pct = GDP_wgt) %>% 
+              arrange(rang) %>%
+              mutate(cumpct=cumsum(pct), taille = taille/1000000000)
+         
+top<-flextable(tab[1:20,-1]) %>% 
+     colformat_double() %>%
+     theme_vanilla() %>%
+     fontsize(size = 12)
+autofit(top)
+
+```
+
+## Carte : PIB au taux de change en 2023
+
+```{r}
+     map<-readRDS("data1/wb_map_high.Rdata")
+      mapdon<-merge(map,tab,by.x="iso3c",by.y="code",all.x=T,all.y=F)
+      mapdon$sizegroup<-cut(mapdon$pct,c(0,0.1, 0.2,0.5,1,2,5,10,20,100))
+      levels(mapdon$sizegroup)<-c("< 0.1%","0.1-0.2","0.2-0.5","0.5-1","1-2","2-5","5-10","10-20",">20")
+
+    
+   
+      g <- list(showframe = TRUE,
+                framecolor= toRGB("gray50"),
+                coastlinecolor = toRGB("black"),
+                showland = TRUE,
+                landcolor = toRGB("gray90"),
+                showcountries = TRUE,
+                countrycolor = toRGB("black"),
+                countrywidth = 0.2,
+           #     projection = list(type = 'azimuthal equidistant'))
+                projection = list(type = 'robinson'))
+      
+      p<- plot_geo(mapdon, width=1000, height = 500) %>%
+        add_markers(x = ~Lon,
+                    y = ~Lat,
+                    sizes = c(0, 1000),
+                    size = ~pct,
+                    color= ~sizegroup,
+                 #   colors= c("red","orange","yellow","green","blue"),
+                    colors = rev(brewer.pal(9,"Spectral")),
+                    hoverinfo = "text",
+                  text = ~paste('ISO3 Code   : ', iso3c,
+                                  '<br /> Country name: ', pays,
+                                  '<br /> World share (%) : ',round(pct,3),
+                                  '<br /> World rank      : ',round(rang,0))) %>%
+        layout(geo = g)
+      p
+    
+```
+
+
+
+
+## Top 20 / PIB en parité de pouvoir d'achat en 2023 (milliards de $)
+
+```{r}
+library(dplyr)
+library(data.table)
+don<-readRDS("data1/wb_don_1960_2023.Rdata")
+tab<-don %>% filter(date==2023) %>% 
+             select(code=iso3c, pays=country,  rang=GPP_rnk, taille = GPP, pct = GPP_wgt) %>% 
+              arrange(rang) %>%
+              mutate(cumpct=cumsum(pct), taille = taille/1000000000)
+         
+
+top<-flextable(tab[1:20,-1]) %>% 
+     colformat_double() %>%
+     theme_vanilla() %>%
+     fontsize(size = 12)
+autofit(top)
+
+```
+
+## Carte : PIB en parité de pouvoir d'achat en 2023
+
+```{r}
+     map<-readRDS("data1/wb_map_high.Rdata")
+      mapdon<-merge(map,tab,by.x="iso3c",by.y="code",all.x=T,all.y=F)
+      mapdon$sizegroup<-cut(mapdon$pct,c(0,0.1, 0.2,0.5,1,2,5,10,20,100))
+      levels(mapdon$sizegroup)<-c("< 0.1%","0.1-0.2","0.2-0.5","0.5-1","1-2","2-5","5-10","10-20",">20")
+
+    
+   
+      g <- list(showframe = TRUE,
+                framecolor= toRGB("gray50"),
+                coastlinecolor = toRGB("black"),
+                showland = TRUE,
+                landcolor = toRGB("gray90"),
+                showcountries = TRUE,
+                countrycolor = toRGB("black"),
+                countrywidth = 0.2,
+           #     projection = list(type = 'azimuthal equidistant'))
+                projection = list(type = 'robinson'))
+      
+      p<- plot_geo(mapdon, width=1000, height = 500) %>%
+        add_markers(x = ~Lon,
+                    y = ~Lat,
+                    sizes = c(0, 1000),
+                    size = ~pct,
+                    color= ~sizegroup,
+                 #   colors= c("red","orange","yellow","green","blue"),
+                    colors = rev(brewer.pal(9,"Spectral")),
+                    hoverinfo = "text",
+                  text = ~paste('ISO3 Code   : ', iso3c,
+                                  '<br /> Country name: ', pays,
+                                  '<br /> World share (%) : ',round(pct,3),
+                                  '<br /> World rank      : ',round(rang,0))) %>%
+        layout(geo = g)
+      p
+    
+```
+
+
+
+
+## PIB et droit de vote au FMI
+
+Chaque pays membre se voit attribuer une quote-part en fonction de sa position relative dans l’économie mondiale. Les quotes-parts au FMI remplissent notamment les fonctions-clé suivantes :
+
+- **souscriptions** : la quote-part d’un pays membre détermine le montant maximum de ressources financières que le pays est tenu de fournir à l’institution. 
+- **droits de vote** : chaque membre dispose de voix de base auxquelles s’ajoute une voix supplémentaire pour chaque fraction de la quote-part équivalant à 100 000 DTS
+- **accès au financement** : la quote-part définit aussi le montant de l’aide financière qu’un pays membre peut obtenir du FMI 
+
+Source : [Banque de France](https://www.banque-france.fr/economie/relations-internationales/fonds-monetaire-international/membres-quotes-parts-droits-de-vote)
+
+## PIB et droit de vote au FMI
+
+Le pouvoir de vote au FMI évolue progressivement  ...
+
+<img src="img1/FMI-share.png" width=700px />
+
+Source : [Banque de France](https://www.banque-france.fr/economie/relations-internationales/fonds-monetaire-international/membres-quotes-parts-droits-de-vote)
+
+
+
+
+
+# 3. Typologie de la puissance des pays du Monde en 2019
+
+
+
+```{r}
+
+# Sélection de l'année et nu nombre de pays
+don<-readRDS("data1/wb_don_1960_2023.Rdata")
+don<-don[don$date==2023,c(1,3,28:34)]
+don<-don[order(-don$TOT_wgt),]
+don<-don[complete.cases(don),]
+don<-as.data.frame(don[1:50,])
+names(don)<-c("code","nom","ARB","SRF","GDP","GPP","POP","URB","TOT")
+don<-don[,c("code","nom","SRF","ARB","POP","URB","GDP","GPP","TOT")]
+
+# AFC
+tab<-don[,3:9]
+row.names(tab)<-don$code
+afc<-CA(tab,ncp=5,graph = F,col.sup = 7)
+don$F1_coo<-afc$row$coord[,1]
+don$F2_coo<-afc$row$coord[,2]
+#explor(afc)
+
+# CAH
+cah<-HCPC(afc,nb.clust = 4,graph = FALSE)
+don$type<-cah$data.clust$clust
+
+synt<-don
+
+
+```
+
+
+
+
+## Comment combiner les critères ?
+
+<img src="img1/power269.png" width=700px />
+
+
+
+
+## 3.1 Puissance globale
+
+- La **puissance globale** d'un pays se fonde sur un ensemble de critères dont on essaye de faire la synthèse à l'aide d'un *indicateur composite*. 
+
+- Prenons un exemple :
+
+```{r}
+mat<-don[don$nom %in% c("France","Pakistan"),c("nom","SRF","POP","GDP")]
+flextable(mat)
+
+
+```
+
+## Comment combiner les critères de puissance ?
+
+- Critère du **maximum** : la puissance globale d'un pays correspond à la valeur du critère pour lequel il est le plus fort. En effet c'est le critère qui correspond à sa faculté maximale d'influencer les autres pays du Monde
+
+- Critère du **Minimum** : la puissance globale d'un pays correspond à la valeur du critère pour lequel il est le plus faible. En effet, c'est le critère où il va le plus subir l'influence des autres pays du Monde 
+
+
+```{r}
+mat$max<-apply(mat[,2:4],1,FUN="max")
+mat$min<-apply(mat[,2:4],1,FUN="min")
+
+flextable(mat)
+
+```
+
+## Comment combiner les critères de puissance ?
+
+- Critère de la **moyenne simple** : si on considère que tous les facteurs de puissance se valent, on peut effectuer une moyenne des critères de puissance, chacun comptant pour un poids équivalent
+
+- Critère de la  **moyenne pondérée** : mais on peut aussi considérer que certains critères sont plus importnat que d'autres. On peut par exemple mettre un coefficient x2 pour la population si onpense que c'est plus important ....
+
+
+```{r}
+mat$moysimp<-(mat$SRF+mat$POP+mat$GDP)/3
+mat$moyspond<-(mat$SRF+2*mat$POP+mat$GDP)/4
+
+flextable(mat)
+
+
+```
+
+
+## Solution retenue dans ce cours
+
+- On décide dans le cadre de ce cours d'utiliser le critère de la moyenne simple appliquée aux six critères vus dans la seconde partie du chapitre :
+
+- **Puissance territoriale**
+    - SRF : % des terres émergées
+    - ARB : % des terres arables 
+    
+- **Puissance démographique**
+    - POP : % population totale
+    - URB : % population urbaine
+    
+- **Puissance économique et productive**
+    - GDP : % richesse (PIB au taux de change)
+    - GPP : % richesse (PIB en parités de pouvoir d'achat)
+    
+## Top20 : Puissance globale en 2023
+
+```{r}
+library(dplyr)
+library(data.table)
+don<-readRDS("data1/wb_don_1960_2023.Rdata")
+tab<-don %>% filter(date==2023) %>% 
+             select(code=iso3c, pays=country,  pct =TOT_wgt) %>% 
+              arrange(-pct) %>%
+              mutate( cumpct=cumsum(pct), rang=rank(-pct))
+         
+
+top<-flextable(tab[1:20,-1]) %>% 
+     colformat_double() %>%
+     theme_vanilla() %>%
+     fontsize(size = 12)
+autofit(top)
+
+```
+
+## Carte Puissance globale 2023
+
+```{r}
+     map<-readRDS("data1/wb_map_high.Rdata")
+      mapdon<-merge(map,tab,by.x="iso3c",by.y="code",all.x=T,all.y=F)
+      mapdon$sizegroup<-cut(mapdon$pct,c(0,0.1, 0.2,0.5,1,2,5,10,20,100))
+      levels(mapdon$sizegroup)<-c("< 0.1%","0.1-0.2","0.2-0.5","0.5-1","1-2","2-5","5-10","10-20",">20")
+
+    
+   
+      g <- list(showframe = TRUE,
+                framecolor= toRGB("gray50"),
+                coastlinecolor = toRGB("black"),
+                showland = TRUE,
+                landcolor = toRGB("gray90"),
+                showcountries = TRUE,
+                countrycolor = toRGB("black"),
+                countrywidth = 0.2,
+           #     projection = list(type = 'azimuthal equidistant'))
+                projection = list(type = 'robinson'))
+      
+      p<- plot_geo(mapdon, width=1000, height = 500) %>%
+        add_markers(x = ~Lon,
+                    y = ~Lat,
+                    sizes = c(0, 1000),
+                    size = ~pct,
+                    color= ~sizegroup,
+                 #   colors= c("red","orange","yellow","green","blue"),
+                    colors = rev(brewer.pal(9,"Spectral")),
+                    hoverinfo = "text",
+                  text = ~paste('ISO3 Code   : ', iso3c,
+                                  '<br /> Country name: ', pays,
+                                  '<br /> World share (%) : ',round(pct,3),
+                                  '<br /> World rank      : ',round(rang,0))) %>%
+        layout(geo = g)
+      p
+    
+```
+
+
+## 3.2 Type de puissance
+
+- Le **type de puissance** d'un pays analyse les points forts et les points faibles du pays en regardant **le niveau relatif des différents critères de puissance**.  Par exemple la puissance de la France est d'abord économique : 
+
+
+```{r fig.height =3}
+mat<-as.matrix(synt[synt$nom %in% c("France"),c(3:9)])
+row.names(mat)<- "Puissance"
+mat2<-round(100*mat/mat[,7],0)
+row.names(mat2)<- "Indice 100"
+mat3<-mat2-100
+row.names(mat3)<- "Specificités"
+tab<-rbind(mat,mat2)
+
+#kable(tab, digits=1)
+mycol<-as.factor(mat3>0)
+levels(mycol)<-c("blue","red")
+mycol<-as.character(mycol)
+barplot(as.vector(mat3[-7]),names.arg = c("SUP","ARB","POP","URB","GDP","GPP"),col=mycol, ylim=c(-100,150))
+```
+
+
+## Classification des types de puissance
+
+<div class="columns-2">
+
+
+<div class="centered">
+<img src="img1/AFC_power_2019.png" width=700px />
+</div>`
+
+
+<div class="centered">
+
+```{r, fig.width=4}
+plot.HCPC(cah,choice="tree",title = "Types de puissance en 2023",cex=0.7)
+```
+
+</div>
+
+</div>`
+
+## Classification des types de puissance
+
+```{r}
+     map<-readRDS("data1/wb_map_high.Rdata")
+      tab<-cah$data.clust
+      tab$iso3c<-row.names(tab)
+      mapdon<-merge(map,tab,by.x="iso3c",by.y="iso3c",all.x=T,all.y=F)
+      mapdon$typo<-mapdon$clust
+      mapdon$pct<-mapdon$TOT
+      levels(mapdon$typo)<-c("Economic power","Equilibrate power","Demographic power","Territorial power")
+
+    
+   
+      g <- list(showframe = TRUE,
+                framecolor= toRGB("gray50"),
+                coastlinecolor = toRGB("black"),
+                showland = TRUE,
+                landcolor = toRGB("gray90"),
+                showcountries = TRUE,
+                countrycolor = toRGB("black"),
+                countrywidth = 0.2,
+           #     projection = list(type = 'azimuthal equidistant'))
+                projection = list(type = 'robinson'))
+      
+      p<- plot_geo(mapdon, width=1000, height = 500) %>%
+        add_markers(x = ~Lon,
+                    y = ~Lat,
+                    sizes = c(0, 1000),
+                    size = ~pct,
+                    color= ~typo,
+                    colors= c("yellow","lightblue","red","greenyellow"),
+                #    colors = rev(brewer.pal(9,"Spectral")),
+                    hoverinfo = "text",
+                  text = ~paste('ISO3 Code   : ', iso3c,
+                                  '<br /> Country name: ', name,
+                                  '<br /> World share (%) : ',round(pct,3),
+                                  '<br /> Power type     : ',typo)) %>%
+        layout(geo = g)
+      p
+  x<-st_drop_geometry(mapdon) 
+ write.table(x, "data1/synth2023.csv",sep=";")   
+```
+
+
+
+
+## type 1 : puissance de type territorial
+
+```{r}
+typ1<-cah$data.clust[cah$data.clust$clust==4,1:7]
+typ1<-typ1[order(-typ1$TOT),]
+code<-row.names(typ1)
+typ1<-cbind(code,typ1)
+flextable(typ1) %>% colformat_double()
+
+```
+
+## Exemple de la Russie
+
+::: columns
+::: {.column width="50%"}
+```{r fig.width = 5, fig.height=3}
+
+mat<-as.matrix(synt[synt$code %in% c("RUS"),c(3:9)])
+row.names(mat)<- "Puissance"
+mat2<-round(100*mat/mat[,7],0)
+row.names(mat2)<- "Indice 100"
+mat3<-mat2-100
+row.names(mat3)<- "Specificités"
+tab<-rbind(mat,mat2)
+#kable(tab, digits=1)
+flextable(as.data.frame(tab)) %>% colformat_double() 
+mycol<-as.factor(mat3>0)
+levels(mycol)<-c("blue","red")
+mycol<-as.character(mycol)
+barplot(as.vector(mat3[-7]),names.arg = c("SUP","ARB","POP","URB","GDP","CO2"),col=mycol, ylim=c(-100,150))
+
+```
+
+:::
+::: {.column width="50%"}
+<img src="img1/power273.png" width=400px />
+```{r,out.width=4}
+c1<-"Who rules East Europe commands the Heartland;" 
+c2<-"who rules the Heartland commands the World-Island;"  
+c3<-"who rules the World-Island controls the world. " 
+
+tab<-as.data.frame(rbind(c1,c2,c3))
+names(tab)<-"Mackinder HJ, 1919, The Pivot of History"
+flextable(tab) %>% autofit()
+
+```
+
+:::
+:::
+
+
+
+
+
+
+
+
+
+
+## Exemple de l'Australie
+
+
+::: columns
+::: {.column width="50%"}
+```{r fig.width = 5, fig.height=3}
+
+mat<-as.matrix(synt[synt$code %in% c("AUS"),c(3:9)])
+row.names(mat)<- "Puissance"
+mat2<-round(100*mat/mat[,7],0)
+row.names(mat2)<- "Indice 100"
+mat3<-mat2-100
+row.names(mat3)<- "Specificités"
+tab<-rbind(mat,mat2)
+flextable(as.data.frame(tab)) %>% colformat_double()
+#flextable(as.data.frame(tab))
+mycol<-as.factor(mat3>0)
+levels(mycol)<-c("blue","red")
+mycol<-as.character(mycol)
+barplot(as.vector(mat3[-7]),names.arg = c("SUP","ARB","POP","URB","GDP","GPP"),col=mycol, ylim=c(-100,150))
+
+```
+
+:::
+::: {.column width="50%"}
+<img src="img1/power272.png" width=400px />
+<img src="img1/power274.png" width=400px />
+
+:::
+:::
+
+
+## type 2 : puissance de type démographique
+
+```{r}
+typ1<-cah$data.clust[cah$data.clust$clust==3,1:7]
+typ1<-typ1[order(-typ1$TOT),]
+code<-row.names(typ1)
+typ1<-cbind(code,typ1)
+flextable(typ1)
+
+```
+
+## Exemple de l'Inde
+
+
+
+::: columns
+::: {.column width="50%"}
+```{r fig.width = 5, fig.height=3}
+
+mat<-as.matrix(synt[synt$code %in% c("IND"),c(3:9)])
+row.names(mat)<- "Puissance"
+mat2<-round(100*mat/mat[,7],0)
+row.names(mat2)<- "Indice 100"
+mat3<-mat2-100
+row.names(mat3)<- "Specificités"
+tab<-rbind(mat,mat2)
+flextable(as.data.frame(tab)) %>% colformat_double()
+#flextable(as.data.frame(tab))
+mycol<-as.factor(mat3>0)
+levels(mycol)<-c("blue","red")
+mycol<-as.character(mycol)
+barplot(as.vector(mat3[-7]),names.arg = c("SUP","ARB","POP","URB","GDP","GPP"),col=mycol, ylim=c(-100,150))
+
+```
+
+:::
+::: {.column width="50%"}
+<img src="img1/Modi.jpg" width=300px />
+<img src="img1/power278.png" width=400px />
+:::
+:::
+
+
+
+
+## Exemple du Vietnam
+
+
+::: columns
+::: {.column width="50%"}
+
+```{r fig.width = 5, fig.height=3}
+
+mat<-as.matrix(synt[synt$code %in% c("VNM"),c(3:9)])
+row.names(mat)<- "Puissance"
+mat2<-round(100*mat/mat[,7],0)
+row.names(mat2)<- "Indice 100"
+mat3<-mat2-100
+row.names(mat3)<- "Specificités"
+tab<-rbind(mat,mat2)
+flextable(as.data.frame(tab)) %>% colformat_double()
+#flextable(as.data.frame(tab))
+mycol<-as.factor(mat3>0)
+levels(mycol)<-c("blue","red")
+mycol<-as.character(mycol)
+barplot(as.vector(mat3[-7]),names.arg = c("SUP","ARB","POP","URB","GDP","GPP"),col=mycol, ylim=c(-100,150))
+
+```
+
+:::
+::: {.column width="50%"}
+<img src="img/power277.png" width=400px />
+
+:::
+:::
+
+
+## type 3 : puissance de type économique
+
+```{r}
+typ1<-cah$data.clust[cah$data.clust$clust==1,1:7]
+typ1<-typ1[order(-typ1$TOT),]
+code<-row.names(typ1)
+typ1<-cbind(code,typ1)
+flextable(typ1)
+```
+
+## Exemple des USA
+
+
+::: columns
+::: {.column width="50%"}
+```{r fig.width = 5, fig.height=3}
+
+mat<-as.matrix(synt[synt$code %in% c("USA"),c(3:9)])
+row.names(mat)<- "Puissance"
+mat2<-round(100*mat/mat[,7],0)
+row.names(mat2)<- "Indice 100"
+mat3<-mat2-100
+row.names(mat3)<- "Specificités"
+tab<-rbind(mat,mat2)
+flextable(as.data.frame(tab)) %>% colformat_double()
+#flextable(as.data.frame(tab))
+mycol<-as.factor(mat3>0)
+levels(mycol)<-c("blue","red")
+mycol<-as.character(mycol)
+barplot(as.vector(mat3[-7]),names.arg = c("SUP","ARB","POP","URB","GDP","GPP"),col=mycol, ylim=c(-100,150))
+
+```
+:::
+::: {.column width="50%"}
+<img src="img1/Kagan.jpg" width=150px />
+<img src="img1/US_power_2015.png" width=370px />
+:::
+:::
+
+
+## Exemple des Pays-Bas
+
+
+::: columns
+::: {.column width="50%"}
+
+```{r fig.width = 5, fig.height=3}
+
+mat<-as.matrix(synt[synt$code %in% c("NLD"),c(3:9)])
+row.names(mat)<- "Puissance"
+mat2<-round(100*mat/mat[,7],0)
+row.names(mat2)<- "Indice 100"
+mat3<-mat2-100
+row.names(mat3)<- "Specificités"
+tab<-rbind(mat,mat2)
+flextable(as.data.frame(tab)) %>% colformat_double()
+#flextable(as.data.frame(tab))
+mycol<-as.factor(mat3>0)
+levels(mycol)<-c("blue","red")
+mycol<-as.character(mycol)
+barplot(as.vector(mat3[-7]),names.arg = c("SUP","ARB","POP","URB","GDP","GPP"),col=mycol, ylim=c(-100,150))
+
+```
+:::
+::: {.column width="50%"}
+<img src="img1/Amin.jpg" width=200px />
+<img src="img1/rotterdam-port.jpg" width=400px />
+
+:::
+:::
+
+
+## type 4 : puissance équilibrée ou atypique
+
+```{r}
+typ1<-cah$data.clust[cah$data.clust$clust==2,1:7]
+typ1<-typ1[order(-typ1$TOT),]
+code<-row.names(typ1)
+typ1<-cbind(code,typ1)
+flextable(typ1)
+```
+
+## Exemple de la Chine
+
+
+::: columns
+::: {.column width="50%"}
+
+```{r fig.width = 5, fig.height=3}
+
+mat<-as.matrix(synt[synt$code %in% c("CHN"),c(3:9)])
+row.names(mat)<- "Puissance"
+mat2<-round(100*mat/mat[,7],0)
+row.names(mat2)<- "Indice 100"
+mat3<-mat2-100
+row.names(mat3)<- "Specificités"
+tab<-rbind(mat,mat2)
+flextable(as.data.frame(tab)) %>% colformat_double()
+#flextable(as.data.frame(tab))
+mycol<-as.factor(mat3>0)
+levels(mycol)<-c("blue","red")
+mycol<-as.character(mycol)
+barplot(as.vector(mat3[-7]),names.arg = c("SUP","ARB","POP","URB","GDP","GPP"),col=mycol, ylim=c(-100,150))
+
+```
+
+:::
+::: {.column width="50%"}
+<img src="img1/mer-de-chine.webp" width=200px />
+<img src="img1/Carte-Silk.jpg" width=400px />
+
+:::
+:::
+
+
+## Exemple de la Turquie
+
+
+::: columns
+::: {.column width="50%"}
+```{r fig.width = 5, fig.height=3}
+
+mat<-as.matrix(synt[synt$code %in% c("TUR"),c(3:9)])
+row.names(mat)<- "Puissance"
+mat2<-round(100*mat/mat[,7],0)
+row.names(mat2)<- "Indice 100"
+mat3<-mat2-100
+row.names(mat3)<- "Specificités"
+tab<-rbind(mat,mat2)
+flextable(as.data.frame(tab)) %>% colformat_double()
+#flextable(as.data.frame(tab))
+mycol<-as.factor(mat3>0)
+levels(mycol)<-c("blue","red")
+mycol<-as.character(mycol)
+barplot(as.vector(mat3[-7]),names.arg = c("SUP","ARB","POP","URB","GDP","GPP"),col=mycol, ylim=c(-100,150))
+
+```
+
+:::
+::: {.column width="50%"}
+<img src="img1/TurkeyG20.jpg" width=300px />
+
+:::
+:::
+
+
+# CONCLUSION
+
+## 2025 : Un Monde unipolaire ou multipolaire ?
+
+<div class="centered">
+<img src="img1/power_system.png" width=700px />
+</div>
+
+
+## 2025 : Un Monde unipolaire ou multipolaire ?
+
+- "*Les chercheurs en politique internationale distinguent les différents systèmes politiques selon leur nombre de grandes puissances*"
+
+- "*Avec seulement deux grandes puissances, on peut s'attendre à ce qu'elles agissent toutes les deux en vue de maintenir le système*"
+
+- "*La bonne question n'est pas de savoir si un troisième ou quatrième état rejoindra le cercle des grandes puissances dans un proche à venir, mais plutôt si l'URSS pourra s'y maintenir*"
+
+- "*Si théorie des relations internationals il doit y avoir, c'est bien une théorie de l'équilibre des puissances*"
+
+**Kenneth Waltz, 1979**, *Theory of International Politics*
+
+
+## 2025 : Un Monde unipolaire ou multipolaire ?
+
+- La **Chine et les USA** sont clairement les deux pays les plus puissants du Monde en 2019 et leur rivalité pour le leadership mondial s'observe dans tous les domaines. Faut-il dès lors craindre un retour dela Guerre Froide ou le piège de Thucydide ?
+
+- En réalité, le poids total de ces deux pays ne dépasse pas **un quart à un tiers de l'économie mondiale** ce qui signifie qu'il faut compter avec d'autres puissances (Inde, Brésil, Russie, Allemagne, Japon ...) dans le cadre d'un subtil jeu d'équilibre géopolitique.
+
+- De plus, les **alliances régionales** dont l'Union Européenne est l'exemple le plus abouti peuvent également compliquer l'équation en exerçant un pouvoir important dans des domaines précis (e.g. commerce).
+
+- On peut donc conclure (provisoirement) à l'existence d'un **système international multipolaire** donc **instable**. 
+
+## 1990-2025 : Des recompositions majeures
+
+- Si l'on s'en tient aux 6 critères utilisés en cours, on peut constater des recompositions importante de la puissance des états au cours des trente dernières années. Ces évolutions seront analysées en TD avec le **World Power Index** :
+
+
+https://analytics.huma-num.fr/Claude.Grasland/worldpower/
+
+
+## 1820-2020 : Le retour de l'Histoire ?
+
+- En s'appuyant sur des chiffres encore plus incertains, on peut formuler des hypothèses de plus longue durée sur l'évolution des rapports de puissance dans le Monde. 
+
+<div class="centered">
+<img src="img1/power293.png" width=700px />
+</div>
+
+## Débat sur la réforme du CSNU
+
+<div class="centered">
+<img src="img1/power294.png" width=700px />
+</div>
+
+## Débat sur la réforme du CSNU
+
+<div class="centered">
+<img src="img1/power2101.png" width=700px />
+</div>
+
+## Débat sur la réforme du CSNU
+
+<div class="centered">
+<img src="img1/power2102.png" width=700px />
+</div>
+
+
+## A vous de jouer ...
+
+<div class="centered">
+<img src="img1/CSNU.jpg" width=700px />
+</div>
+

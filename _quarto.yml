@@ -1,0 +1,27 @@
+project:
+  type: website
+  output-dir: docs
+website:
+  title: "Structures du Monde Actuel"
+  navbar:
+    left:
+      - href: index.qmd
+        text: "Index"
+      - href: SMA1.qmd
+        text: "Puissance"
+    right: 
+      - icon: github # add icons as navbar buttons
+        href: https://github.com/worldregio/theoregio
+        target: _blank
+  page-footer:
+    background: dark
+    left: Copyright 2025, Claude Grasland
+format:
+  html:
+    theme: 
+      light: minty    
+      dark: solar
+    css: styles.css
+    toc: true
+
+
