@@ -1602,12 +1602,51 @@ barplot(as.vector(mat3[-7]),names.arg = c("SUP","ARB","POP","URB","GDP","GPP"),c
 
 - On peut donc conclure (provisoirement) à l'existence d'un **système international multipolaire** donc **instable**. 
 
-## 1990-2025 : Des recompositions majeures
+## 1960-2023 : Des recompositions majeures
 
-- Si l'on s'en tient aux 6 critères utilisés en cours, on peut constater des recompositions importante de la puissance des états au cours des trente dernières années. Ces évolutions seront analysées en TD avec le **World Power Index** :
+```{r}
+
+tab<-don %>% filter(date > 1959, date < 2024) %>%
+  select (iso3c, country, date,TOT_rnk, TOT_wgt) %>% 
+  filter(iso3c %in% c("USA","CHN","JPN","RUS","IND","DEU","BRA","FRA","GBR", "CAN","ITA")) 
+
+tab<-as.data.frame(tab)
 
 
-https://analytics.huma-num.fr/Claude.Grasland/worldpower/
+p <- plot_ly(tab,
+             x = ~date,
+             y = ~TOT_wgt,
+             color= ~country) %>%
+             add_lines()%>%
+         layout(title = "World Power Index (1960-2023)",
+         yaxis = list(title = "% de la richesse mondiale", type="log"), 
+         xaxis = list(title = "Année"))
+p
+```
+
+
+## G7, BRICS et "Reste du Monde"
+
+```{r}
+don2<-don
+don2$typo<-"Reste du Monde"
+don2$typo[don2$iso3c %in% c("USA","FRA","ITA","DEU","GBR","ITA","CAN")]<-"G7"
+don2$typo[don2$iso3c %in% c("CHN","BRA","IND","RUS","ZAF")]<-"BRICS"
+don2<-don2 %>% group_by(date, typo) %>% summarise(TOT_wgt=sum(TOT_wgt, na.rm=T))
+tab<-as.data.frame(don2)
+
+
+p <- plot_ly(tab,
+             x = ~date,
+             y = ~TOT_wgt,
+             color= ~typo) %>%
+             add_lines()%>%
+         layout(title = "World Power Index (1960-2023)",
+         yaxis = list(title = "% de la richesse mondiale", type="log"), 
+         xaxis = list(title = "Année"))
+p
+```
+
 
 
 
