@@ -568,23 +568,21 @@ http://www.franceculture.fr/blog-globe-2012-02-01-les-terres-rares-en-cartes-et-
 
 ## L’exemple des terres rares
 
-<img src="img1/power218.png" width=500px />
+<img src="img1/power218.png" width=400px />
 
 ## L’exemple des terres rares
 
-<img src="img1/power219.png" width=500px />
+<img src="img1/power219.png" width=400px />
 
 ## L’exemple des terres rares
 
-<img src="img1/terres_rares_2021.jpg" width=500px />
+<img src="img1/terres_rares_2021.jpg" width=400px />
 
 "*L’analyse du marché des terres rares (TR) en 2022 fait apparaître deux tendances majeures : d’une part le renforcement de la stratégie chinoise d’omniprésence sur les chaînes de production, et l’émergence de certaines alternatives, notamment occidentales, pour se réapproprier une part de l’approvisionnement mondial de ces métaux, indispensables aux transitions énergétique et numérique.*"
 Source : [Mineral Info, BRGM, 2022](https://www.mineralinfo.fr/fr/ecomine/marche-des-terres-rares-2022-filieres-dapprovisionnement-aimants-permanents)
 
 
-## Superficie + climat + géologie = puissance agricole
 
-<img1 src="img1/agriculture.jpg" width=700px />
 
 ## Top 20 / Terres arables (millions ha)
 
@@ -605,6 +603,7 @@ top<-flextable(tab[1:20,-1]) %>%
 autofit(top)
 
 ```
+
 
 
 ## Carte : terres arables 2023
@@ -645,6 +644,19 @@ autofit(top)
       p
     
 ```
+
+
+## Puissance agricole : capacité à nourrir d'autre pays
+
+<img src="img1/agriculture.jpg" width=700px />
+
+
+## Puissance agricole : impact de la crise de 2022
+
+
+<img src="img1/grainprice.jpg" width=700px />
+
+
 
 
 ## 2.2 Puissance démographique
@@ -724,8 +736,6 @@ Source :[Hindustan Times (IND), Vidéo du 21 Août 2021 - republié en janvier 2
 
 
 
-
-
 ## Population + démocratie = représentation ?
 
 Dans un **système démocratique**, le poids d'une entité politique devrait être proportionel à sa population. Mais est-ce le cas dans le domaine des relations internationales ?   
@@ -744,13 +754,6 @@ Les diasporas sont souvent un élément important de l'inflence internationale d
 Source : Trouillet P.Y., 2015, [Géoconfluences](http://geoconfluences.ens-lyon.fr/informations-scientifiques/dossiers-regionaux/le-monde-indien-populations-et-espaces/articles-scientifiques/diaspora-indienne) 
 
 
-## Population + education = recherche
-
-Même pauvre, un état disposant d'une population importante peut développer des universités ou centres de recherche de rang mondial.
-
-<img src="img1/carte_evo_citations_2010.jpg" width=650px />
-
-Source : Maisonobe M., 2017, [scientometrics](http://www.cnrs.fr/fr/la-production-de-la-science-moins-concentree-dans-les-grandes-metropoles-mondiales?theme1=8)
 
 ## Top 20 / Pop. urbaine 2023 (millions)
 
@@ -811,6 +814,14 @@ autofit(top)
     
 ```
 
+
+## Population urbaine + education = recherche
+
+Même pauvre, un état disposant d'une population importante peut développer des universités ou centres de recherche de rang mondial.
+
+<img src="img1/carte_evo_citations_2010.jpg" width=650px />
+
+Source : Maisonobe M., 2017, [scientometrics](http://www.cnrs.fr/fr/la-production-de-la-science-moins-concentree-dans-les-grandes-metropoles-mondiales?theme1=8)
 
 
 ## 2.3 Puissance économique
@@ -975,6 +986,22 @@ Source : [Banque de France](https://www.banque-france.fr/economie/relations-inte
 
 
 
+## BRICS et New Development Bank
+
+::: columns
+::: {.column width="50%"}
+
+<img src="img1/new_devpt_bank.jpg" width=500px />
+:::
+::: {.column width="50%"}
+<img src="img1/new_devpt_bank_2.png" width=600px />
+
+
+:::
+:::
+
+
+
 
 
 # 3. Typologie de la puissance des pays du Monde en 2019
@@ -1027,7 +1054,8 @@ synt<-don
 
 ```{r}
 mat<-don[don$nom %in% c("France","Pakistan"),c("nom","SRF","POP","GDP")]
-flextable(mat)
+set_flextable_defaults(digits=1)
+flextable(mat) %>% colformat_double()
 
 
 ```
@@ -1043,7 +1071,7 @@ flextable(mat)
 mat$max<-apply(mat[,2:4],1,FUN="max")
 mat$min<-apply(mat[,2:4],1,FUN="min")
 
-flextable(mat)
+flextable(mat) %>% colformat_double()
 
 ```
 
@@ -1058,13 +1086,13 @@ flextable(mat)
 mat$moysimp<-(mat$SRF+mat$POP+mat$GDP)/3
 mat$moyspond<-(mat$SRF+2*mat$POP+mat$GDP)/4
 
-flextable(mat)
+flextable(mat) %>% colformat_double()
 
 
 ```
 
 
-## Solution retenue dans ce cours
+## Wolrd Power Index
 
 - On décide dans le cadre de ce cours d'utiliser le critère de la moyenne simple appliquée aux six critères vus dans la seconde partie du chapitre :
 
@@ -1164,23 +1192,22 @@ barplot(as.vector(mat3[-7]),names.arg = c("SUP","ARB","POP","URB","GDP","GPP"),c
 
 ## Classification des types de puissance
 
-<div class="columns-2">
+On détermine pour chaque pays lesquels des 6 critères contribuent le plus à la formation de sa puissance globale. On en déduit une classification en quatre types de pays.
 
-
-<div class="centered">
-<img src="img1/AFC_power_2019.png" width=700px />
-</div>`
-
-
-<div class="centered">
-
+::: columns
+::: {.column width="50%"}
+<img src="img1/AFC_power_2023.jpg" width=500px />
+:::
+::: {.column width="50%"}
 ```{r, fig.width=4}
 plot.HCPC(cah,choice="tree",title = "Types de puissance en 2023",cex=0.7)
 ```
 
-</div>
 
-</div>`
+:::
+:::
+
+
 
 ## Classification des types de puissance
 
@@ -1224,6 +1251,7 @@ plot.HCPC(cah,choice="tree",title = "Types de puissance en 2023",cex=0.7)
   x<-st_drop_geometry(mapdon) 
  write.table(x, "data1/synth2023.csv",sep=";")   
 ```
+
 
 
 
@@ -1326,7 +1354,7 @@ typ1<-cah$data.clust[cah$data.clust$clust==3,1:7]
 typ1<-typ1[order(-typ1$TOT),]
 code<-row.names(typ1)
 typ1<-cbind(code,typ1)
-flextable(typ1)
+flextable(typ1) %>% colformat_double()
 
 ```
 
@@ -1390,7 +1418,7 @@ barplot(as.vector(mat3[-7]),names.arg = c("SUP","ARB","POP","URB","GDP","GPP"),c
 
 :::
 ::: {.column width="50%"}
-<img src="img/power277.png" width=400px />
+<img src="img1/power277.png" width=400px />
 
 :::
 :::
@@ -1403,7 +1431,7 @@ typ1<-cah$data.clust[cah$data.clust$clust==1,1:7]
 typ1<-typ1[order(-typ1$TOT),]
 code<-row.names(typ1)
 typ1<-cbind(code,typ1)
-flextable(typ1)
+flextable(typ1) %>% colformat_double()
 ```
 
 ## Exemple des USA
@@ -1475,7 +1503,7 @@ typ1<-cah$data.clust[cah$data.clust$clust==2,1:7]
 typ1<-typ1[order(-typ1$TOT),]
 code<-row.names(typ1)
 typ1<-cbind(code,typ1)
-flextable(typ1)
+flextable(typ1) %>% colformat_double()
 ```
 
 ## Exemple de la Chine
@@ -1582,13 +1610,7 @@ barplot(as.vector(mat3[-7]),names.arg = c("SUP","ARB","POP","URB","GDP","GPP"),c
 https://analytics.huma-num.fr/Claude.Grasland/worldpower/
 
 
-## 1820-2020 : Le retour de l'Histoire ?
 
-- En s'appuyant sur des chiffres encore plus incertains, on peut formuler des hypothèses de plus longue durée sur l'évolution des rapports de puissance dans le Monde. 
-
-<div class="centered">
-<img src="img1/power293.png" width=700px />
-</div>
 
 ## Débat sur la réforme du CSNU
 

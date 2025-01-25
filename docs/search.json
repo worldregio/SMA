@@ -172,7 +172,7 @@
     "href": "SMA1.html#top20-superficie-2023-milliers-de-km2",
     "title": "La Puissance des Etats",
     "section": "Top20 : superficie 2023 (milliers de km2)",
-    "text": "Top20 : superficie 2023 (milliers de km2)\n\n\n\ncodepaysrangtaillepctcumpctRUSRussian Federation1,017 098,212,212,2CANCanada2,015 634,411,123,3USAUnited States3,09 831,57,030,3CHNChina4,09 562,96,837,1BRABrazil5,08 515,86,143,2AUSAustralia6,07 741,25,548,7INDIndia7,03 287,32,351,0ARGArgentina8,02 780,42,053,0KAZKazakhstan9,02 724,91,954,9DZAAlgeria10,02 381,71,756,6CODCongo, Dem. Rep.11,02 344,91,758,3SAUSaudi Arabia12,02 149,71,559,8MEXMexico13,01 964,41,461,2IDNIndonesia14,01 916,91,462,6SDNSudan15,01 878,01,363,9LBYLibya16,01 759,51,365,2IRNIran, Islamic Rep.17,01 745,21,266,4MNGMongolia18,01 564,11,167,6PERPeru19,01 285,20,968,5TCDChad20,01 284,00,969,4"
+    "text": "Top20 : superficie 2023 (milliers de km2)\n\n\n\ncodepaysrangtaillepctcumpctRUSRussian Federation1,017 098,212,712,7CANCanada2,09 984,77,420,1USAUnited States3,09 831,57,327,4CHNChina4,09 562,97,134,5BRABrazil5,08 515,86,340,8AUSAustralia6,07 741,25,746,5INDIndia7,03 287,32,449,0ARGArgentina8,02 780,42,151,0KAZKazakhstan9,02 724,92,053,1DZAAlgeria10,02 381,71,854,8CODCongo, Dem. Rep.11,02 344,91,756,6SAUSaudi Arabia12,02 149,71,658,2MEXMexico13,01 964,41,559,6IDNIndonesia14,01 916,91,461,0SDNSudan15,01 878,01,462,4LBYLibya16,01 759,51,363,7IRNIran, Islamic Rep.17,01 745,21,365,0MNGMongolia18,01 564,11,266,2PERPeru19,01 285,21,067,1TCDChad20,01 284,01,068,1"
   },
   {
     "objectID": "SMA1.html#carte-superficie-2023",
@@ -382,21 +382,21 @@
     "href": "SMA1.html#puissance-globale",
     "title": "La Puissance des Etats",
     "section": "3.1 Puissance globale",
-    "text": "3.1 Puissance globale\n\nLa puissance globale d’un pays se fonde sur un ensemble de critères dont on essaye de faire la synthèse à l’aide d’un indicateur composite.\nPrenons un exemple :\n\n\n\n\nnomSRFPOPGDPPakistan0,56680393,07898750,3197253France0,39093690,84950512,8875774"
+    "text": "3.1 Puissance globale\n\nLa puissance globale d’un pays se fonde sur un ensemble de critères dont on essaye de faire la synthèse à l’aide d’un indicateur composite.\nPrenons un exemple :\n\n\n\n\nnomSRFPOPGDPPakistan0,63,10,3France0,40,82,9"
   },
   {
     "objectID": "SMA1.html#comment-combiner-les-critères-de-puissance",
     "href": "SMA1.html#comment-combiner-les-critères-de-puissance",
     "title": "La Puissance des Etats",
     "section": "Comment combiner les critères de puissance ?",
-    "text": "Comment combiner les critères de puissance ?\n\nCritère du maximum : la puissance globale d’un pays correspond à la valeur du critère pour lequel il est le plus fort. En effet c’est le critère qui correspond à sa faculté maximale d’influencer les autres pays du Monde\nCritère du Minimum : la puissance globale d’un pays correspond à la valeur du critère pour lequel il est le plus faible. En effet, c’est le critère où il va le plus subir l’influence des autres pays du Monde\n\n\n\n\nnomSRFPOPGDPmaxminPakistan0,56680393,07898750,31972533,0789880,3197253France0,39093690,84950512,88757742,8875770,3909369"
+    "text": "Comment combiner les critères de puissance ?\n\nCritère du maximum : la puissance globale d’un pays correspond à la valeur du critère pour lequel il est le plus fort. En effet c’est le critère qui correspond à sa faculté maximale d’influencer les autres pays du Monde\nCritère du Minimum : la puissance globale d’un pays correspond à la valeur du critère pour lequel il est le plus faible. En effet, c’est le critère où il va le plus subir l’influence des autres pays du Monde\n\n\n\n\nnomSRFPOPGDPmaxminPakistan0,63,10,33,10,3France0,40,82,92,90,4"
   },
   {
     "objectID": "SMA1.html#comment-combiner-les-critères-de-puissance-1",
     "href": "SMA1.html#comment-combiner-les-critères-de-puissance-1",
     "title": "La Puissance des Etats",
     "section": "Comment combiner les critères de puissance ?",
-    "text": "Comment combiner les critères de puissance ?\n\nCritère de la moyenne simple : si on considère que tous les facteurs de puissance se valent, on peut effectuer une moyenne des critères de puissance, chacun comptant pour un poids équivalent\nCritère de la moyenne pondérée : mais on peut aussi considérer que certains critères sont plus importnat que d’autres. On peut par exemple mettre un coefficient x2 pour la population si onpense que c’est plus important ….\n\n\n\n\nnomSRFPOPGDPmaxminmoysimpmoyspondPakistan0,56680393,07898750,31972533,0789880,31972531,3218391,761126France0,39093690,84950512,88757742,8875770,39093691,3760061,244381"
+    "text": "Comment combiner les critères de puissance ?\n\nCritère de la moyenne simple : si on considère que tous les facteurs de puissance se valent, on peut effectuer une moyenne des critères de puissance, chacun comptant pour un poids équivalent\nCritère de la moyenne pondérée : mais on peut aussi considérer que certains critères sont plus importnat que d’autres. On peut par exemple mettre un coefficient x2 pour la population si onpense que c’est plus important ….\n\n\n\n\nnomSRFPOPGDPmaxminmoysimpmoyspondPakistan0,63,10,33,10,31,31,8France0,40,82,92,90,41,41,2"
   },
   {
     "objectID": "SMA1.html#solution-retenue-dans-ce-cours",
@@ -410,7 +410,7 @@
     "href": "SMA1.html#top20-puissance-globale-en-2023",
     "title": "La Puissance des Etats",
     "section": "Top20 : Puissance globale en 2023",
-    "text": "Top20 : Puissance globale en 2023\n\n\n\ncodepayspctcumpctrangCHNChina14,614,61,0USAUnited States11,626,22,0INDIndia9,035,23,0RUSRussian Federation5,140,34,0BRABrazil3,643,95,0CANCanada3,146,96,0IDNIndonesia2,349,37,0JPNJapan2,051,38,0AUSAustralia1,953,19,0DEUGermany1,855,010,0MEXMexico1,756,711,0NGANigeria1,758,312,0PAKPakistan1,559,813,0FRAFrance1,561,314,0GBRUnited Kingdom1,462,715,0ARGArgentina1,364,016,0TURTurkey1,365,317,0ITAItaly1,166,318,0IRNIran, Islamic Rep.1,067,419,0ESPSpain0,968,320,0"
+    "text": "Top20 : Puissance globale en 2023\n\n\n\ncodepayspctcumpctrangCHNChina14,614,61,0USAUnited States11,726,32,0INDIndia9,035,33,0RUSRussian Federation5,240,54,0BRABrazil3,644,15,0CANCanada2,546,66,0IDNIndonesia2,348,97,0JPNJapan2,050,98,0AUSAustralia1,952,89,0DEUGermany1,854,610,0MEXMexico1,756,411,0NGANigeria1,758,012,0PAKPakistan1,559,513,0FRAFrance1,561,014,0GBRUnited Kingdom1,462,415,0ARGArgentina1,363,716,0TURTurkey1,365,017,0ITAItaly1,166,018,0IRNIran, Islamic Rep.1,167,119,0ESPSpain0,968,020,0"
   },
   {
     "objectID": "SMA1.html#carte-puissance-globale-2023",
@@ -431,7 +431,7 @@
     "href": "SMA1.html#classification-des-types-de-puissance",
     "title": "La Puissance des Etats",
     "section": "Classification des types de puissance",
-    "text": "Classification des types de puissance\n\n\n\n\n`\n\n\n\n\n\n\n\n\n`"
+    "text": "Classification des types de puissance\nOn détermine pour chaque pays lesquels des 6 critères contribuent le plus à la formation de sa puissance globale. On en déduit une classification en quatre types de pays."
   },
   {
     "objectID": "SMA1.html#classification-des-types-de-puissance-1",
@@ -445,56 +445,56 @@
     "href": "SMA1.html#type-1-puissance-de-type-territorial",
     "title": "La Puissance des Etats",
     "section": "type 1 : puissance de type territorial",
-    "text": "type 1 : puissance de type territorial\n\n\n\ncodeSRFARBPOPURBGDPGPPTOTRUS12,28,71,82,41,93,55,1BRA6,14,22,64,02,12,43,6CAN11,12,70,50,72,01,33,1AUS5,52,20,30,51,61,01,9ARG2,03,00,60,90,60,71,3KAZ1,92,10,30,30,20,40,9COD1,71,01,31,10,10,10,9DZA1,70,50,60,80,20,40,7SDN1,31,50,60,40,10,10,7PER0,90,30,40,60,30,30,5NER0,91,30,30,10,00,00,4AGO0,90,40,50,50,10,20,4MLI0,90,60,30,20,00,00,3"
+    "text": "type 1 : puissance de type territorial\n\n\n\ncodeSRFARBPOPURBGDPGPPTOTRUS12,78,71,82,41,93,55,2BRA6,34,22,64,02,12,43,6CAN7,42,70,50,72,01,32,5AUS5,72,20,30,51,61,01,9ARG2,13,00,60,90,60,71,3KAZ2,02,10,30,30,20,40,9COD1,71,01,31,10,10,10,9DZA1,80,50,60,80,20,40,7SDN1,41,50,60,40,10,10,7PER1,00,30,40,60,30,30,5NER0,91,30,30,10,00,00,4AGO0,90,40,50,50,10,20,4MLI0,90,60,30,20,00,00,4"
   },
   {
     "objectID": "SMA1.html#exemple-de-la-russie",
     "href": "SMA1.html#exemple-de-la-russie",
     "title": "La Puissance des Etats",
     "section": "Exemple de la Russie",
-    "text": "Exemple de la Russie\n\n\n\n\n\nSRFARBPOPURBGDPGPPTOT12,28,71,82,41,93,55,1240,0172,035,046,038,069,0100,0\n\n\n\n\n\n\n\n\n\n\nMackinder HJ, 1919, The Pivot of HistoryWho rules East Europe commands the Heartland;who rules the Heartland commands the World-Island;who rules the World-Island controls the world."
+    "text": "Exemple de la Russie\n\n\n\n\n\nSRFARBPOPURBGDPGPPTOT12,78,71,82,41,93,55,2246,0169,035,046,037,068,0100,0\n\n\n\n\n\n\n\n\n\n\nMackinder HJ, 1919, The Pivot of HistoryWho rules East Europe commands the Heartland;who rules the Heartland commands the World-Island;who rules the World-Island controls the world."
   },
   {
     "objectID": "SMA1.html#exemple-de-laustralie",
     "href": "SMA1.html#exemple-de-laustralie",
     "title": "La Puissance des Etats",
     "section": "Exemple de l’Australie",
-    "text": "Exemple de l’Australie\n\n\n\n\n\nSRFARBPOPURBGDPGPPTOT5,52,20,30,51,61,01,9295,0120,018,027,087,054,0100,0"
+    "text": "Exemple de l’Australie\n\n\n\n\n\nSRFARBPOPURBGDPGPPTOT5,72,20,30,51,61,01,9301,0117,017,026,086,052,0100,0"
   },
   {
     "objectID": "SMA1.html#type-2-puissance-de-type-démographique",
     "href": "SMA1.html#type-2-puissance-de-type-démographique",
     "title": "La Puissance des Etats",
     "section": "type 2 : puissance de type démographique",
-    "text": "type 2 : puissance de type démographique\n\n\n\ncodeSRFARBPOPURBGDPGPPTOTIND2,340449511,063887117,889769411,37885973,375540607,92849358,9961666NGA0,65770192,64132772,83489292,69167640,344263570,76713771,6561667PAK0,56680392,18558553,07898752,04866430,319725350,81026931,5016726THA0,36532901,22854120,89198740,83639360,487252300,91244330,7869911ETH0,80897511,16865431,60094110,64845520,154887460,21343050,7658906ZAF0,86796250,85962070,78637010,94658090,360209460,52087110,7236025UKR0,42971302,35851250,46940130,57551110,169136050,33712130,7232325TZA0,67445460,96725230,82873150,54226590,074807140,14071190,5380372MMR0,48171570,78726920,67343140,37825360,063164620,17477560,4264350MAR0,31793280,53812250,46914840,53438420,136644350,20440130,3667723KEN0,41320940,41548330,68842430,35546340,102223790,18928680,3606818ROU0,16973500,61520180,23710240,22673740,331896560,49473180,3459008"
+    "text": "type 2 : puissance de type démographique\n\n\n\ncodeSRFARBPOPURBGDPGPPTOTIND2,411,117,911,43,47,99,0NGA0,72,62,82,70,30,81,7PAK0,62,23,12,00,30,81,5THA0,41,20,90,80,50,90,8ETH0,81,21,60,60,20,20,8ZAF0,90,90,80,90,40,50,7UKR0,42,40,50,60,20,30,7TZA0,71,00,80,50,10,10,5MMR0,50,80,70,40,10,20,4MAR0,30,50,50,50,10,20,4KEN0,40,40,70,40,10,20,4ROU0,20,60,20,20,30,50,3"
   },
   {
     "objectID": "SMA1.html#exemple-de-linde",
     "href": "SMA1.html#exemple-de-linde",
     "title": "La Puissance des Etats",
     "section": "Exemple de l’Inde",
-    "text": "Exemple de l’Inde\n\n\n\n\n\nSRFARBPOPURBGDPGPPTOT2,311,117,911,43,47,99,026,0123,0199,0126,038,088,0100,0"
+    "text": "Exemple de l’Inde\n\n\n\n\n\nSRFARBPOPURBGDPGPPTOT2,411,117,911,43,47,99,027,0123,0198,0126,037,088,0100,0"
   },
   {
     "objectID": "SMA1.html#exemple-du-vietnam",
     "href": "SMA1.html#exemple-du-vietnam",
     "title": "La Puissance des Etats",
     "section": "Exemple du Vietnam",
-    "text": "Exemple du Vietnam\n\n\n\n\n\nSRFARBPOPURBGDPGPPTOT0,20,51,20,90,40,80,735,072,0185,0128,060,0121,0100,0"
+    "text": "Exemple du Vietnam\n\n\n\n\n\nSRFARBPOPURBGDPGPPTOT0,20,51,20,90,40,80,736,072,0184,0127,060,0120,0100,0"
   },
   {
     "objectID": "SMA1.html#type-3-puissance-de-type-économique",
     "href": "SMA1.html#type-3-puissance-de-type-économique",
     "title": "La Puissance des Etats",
     "section": "type 3 : puissance de type économique",
-    "text": "type 3 : puissance de type économique\n\n\n\ncodeSRFARBPOPURBGDPGPPTOTUSA6,9997969211,299484224,16638406,070384926,228738115,033309611,6330163JPN0,269108330,292700831,54900302,49382163,97820253,38350331,9943899DEU0,254595420,835121461,03601381,40919824,28212363,22642841,8405802FRA0,390936901,286319150,84950511,21512092,88757742,27655401,4843356GBR0,173444420,430512650,85028271,25884323,19889182,21017101,3536910ITA0,215065100,515257480,73388640,92389112,17710101,91061111,0793020ESP0,360234530,827388700,60145420,85794511,53289501,41909260,9331683KOR0,071503730,096205880,64331160,91657251,62060771,51532980,8105885POL0,222641940,793627570,45639540,48071750,76564830,98163650,6167778NLD0,029575470,071849960,22239360,36246221,09223180,78297390,4269145"
+    "text": "type 3 : puissance de type économique\n\n\n\ncodeSRFARBPOPURBGDPGPPTOTUSA7,311,34,26,126,215,011,7JPN0,30,31,52,54,03,42,0DEU0,30,81,01,44,33,21,8FRA0,41,30,81,22,92,31,5GBR0,20,40,91,33,22,21,4ITA0,20,50,70,92,21,91,1ESP0,40,80,60,91,51,40,9KOR0,10,10,60,91,61,50,8POL0,20,80,50,50,81,00,6NLD0,00,10,20,41,10,80,4"
   },
   {
     "objectID": "SMA1.html#exemple-des-usa",
     "href": "SMA1.html#exemple-des-usa",
     "title": "La Puissance des Etats",
     "section": "Exemple des USA",
-    "text": "Exemple des USA\n\n\n\n\n\nSRFARBPOPURBGDPGPPTOT7,011,34,26,126,215,011,660,097,036,052,0225,0129,0100,0"
+    "text": "Exemple des USA\n\n\n\n\n\nSRFARBPOPURBGDPGPPTOT7,311,34,26,126,215,011,762,097,036,052,0225,0129,0100,0"
   },
   {
     "objectID": "SMA1.html#exemple-des-pays-bas",
@@ -508,21 +508,21 @@
     "href": "SMA1.html#type-4-puissance-équilibrée-ou-atypique",
     "title": "La Puissance des Etats",
     "section": "type 4 : puissance équilibrée ou atypique",
-    "text": "type 4 : puissance équilibrée ou atypique\n\n\n\ncodeSRFARBPOPURBGDPGPPTOTCHN6,80856027,7983352717,549412519,820550916,837040718,796654414,6017590IDN1,36479121,884001933,49804033,58374601,29737262,35077382,3297876MEX1,39858741,438718431,61397922,30310971,69282161,78371721,7051556TUR0,55915021,424176511,06146591,43821131,05806692,06396651,2675062IRN1,24250451,124598721,12718391,52319310,38284810,86777631,0446841BGD0,10506630,580960292,13307121,51005620,41387300,85064110,9322780EGY0,71300810,220421061,42483961,07415170,37468901,15063940,8262915SAU1,53052720,245708240,41381200,61487791,01012401,10227630,8195543PHL0,21359270,400439951,42926121,20715820,41361850,68466890,7247899VNM0,23590950,486187111,24839410,86208720,40658890,81491370,6756801COL0,81209310,142768660,65088180,93758180,34393000,60857800,5826389VEN0,64935750,186251140,35206620,54461000,60699660,53185150,4785222IRQ0,30974510,355954580,56072690,70223220,23734200,34484240,4184739MYS0,23524460,059170550,43697560,60164820,37819240,69371540,4008245CHL0,53875210,094121300,24455840,37648430,31747440,35432640,3209528"
+    "text": "type 4 : puissance équilibrée ou atypique\n\n\n\ncodeSRFARBPOPURBGDPGPPTOTCHN7,17,817,519,816,818,814,6IDN1,41,93,53,61,32,42,3MEX1,51,41,62,31,71,81,7TUR0,61,41,11,41,12,11,3IRN1,31,11,11,50,40,91,1BGD0,10,62,11,50,40,90,9EGY0,70,21,41,10,41,20,8SAU1,60,20,40,61,01,10,8PHL0,20,41,41,20,40,70,7VNM0,20,51,20,90,40,80,7COL0,80,10,70,90,30,60,6VEN0,70,20,40,50,60,50,5IRQ0,30,40,60,70,20,30,4MYS0,20,10,40,60,40,70,4CHL0,60,10,20,40,30,40,3"
   },
   {
     "objectID": "SMA1.html#exemple-de-la-chine",
     "href": "SMA1.html#exemple-de-la-chine",
     "title": "La Puissance des Etats",
     "section": "Exemple de la Chine",
-    "text": "Exemple de la Chine\n\n\n\n\n\nSRFARBPOPURBGDPGPPTOT6,87,817,519,816,818,814,647,053,0120,0136,0115,0129,0100,0"
+    "text": "Exemple de la Chine\n\n\n\n\n\nSRFARBPOPURBGDPGPPTOT7,17,817,519,816,818,814,648,053,0120,0135,0115,0128,0100,0"
   },
   {
     "objectID": "SMA1.html#exemple-de-la-turquie",
     "href": "SMA1.html#exemple-de-la-turquie",
     "title": "La Puissance des Etats",
     "section": "Exemple de la Turquie",
-    "text": "Exemple de la Turquie\n\n\n\n\n\nSRFARBPOPURBGDPGPPTOT0,61,41,11,41,12,11,344,0112,084,0113,083,0163,0100,0"
+    "text": "Exemple de la Turquie\n\n\n\n\n\nSRFARBPOPURBGDPGPPTOT0,61,41,11,41,12,11,346,0112,083,0113,083,0162,0100,0"
   },
   {
     "objectID": "SMA1.html#un-monde-unipolaire-ou-multipolaire",
@@ -593,5 +593,54 @@
     "title": "Structures du Monde Actuel",
     "section": "",
     "text": "L’objet de ce petit site web est de mettre en ligne les cours dispensés aux étudiants du L3 de Géographie de l’Université Paris Cité."
+  },
+  {
+    "objectID": "SMA1.html#puissance-agricole",
+    "href": "SMA1.html#puissance-agricole",
+    "title": "La Puissance des Etats",
+    "section": "Puissance agricole",
+    "text": "Puissance agricole"
+  },
+  {
+    "objectID": "SMA1.html#puissance-agricole-1",
+    "href": "SMA1.html#puissance-agricole-1",
+    "title": "La Puissance des Etats",
+    "section": "Puissance agricole",
+    "text": "Puissance agricole"
+  },
+  {
+    "objectID": "SMA1.html#wolrd-power-index",
+    "href": "SMA1.html#wolrd-power-index",
+    "title": "La Puissance des Etats",
+    "section": "Wolrd Power Index",
+    "text": "Wolrd Power Index\n\nOn décide dans le cadre de ce cours d’utiliser le critère de la moyenne simple appliquée aux six critères vus dans la seconde partie du chapitre :\nPuissance territoriale\n\nSRF : % des terres émergées\nARB : % des terres arables\n\nPuissance démographique\n\nPOP : % population totale\nURB : % population urbaine\n\nPuissance économique et productive\n\nGDP : % richesse (PIB au taux de change)\nGPP : % richesse (PIB en parités de pouvoir d’achat)"
+  },
+  {
+    "objectID": "SMA1.html#puissance-agricole-capacité-à-nourrir-dautre-pays",
+    "href": "SMA1.html#puissance-agricole-capacité-à-nourrir-dautre-pays",
+    "title": "La Puissance des Etats",
+    "section": "Puissance agricole : capacité à nourrir d’autre pays",
+    "text": "Puissance agricole : capacité à nourrir d’autre pays"
+  },
+  {
+    "objectID": "SMA1.html#puissance-agricole-impact-de-la-crise-de-2022",
+    "href": "SMA1.html#puissance-agricole-impact-de-la-crise-de-2022",
+    "title": "La Puissance des Etats",
+    "section": "Puissance agricole : impact de la crise de 2022",
+    "text": "Puissance agricole : impact de la crise de 2022"
+  },
+  {
+    "objectID": "SMA1.html#population-urbaine-education-recherche",
+    "href": "SMA1.html#population-urbaine-education-recherche",
+    "title": "La Puissance des Etats",
+    "section": "Population urbaine + education = recherche",
+    "text": "Population urbaine + education = recherche\nMême pauvre, un état disposant d’une population importante peut développer des universités ou centres de recherche de rang mondial.\n\nSource : Maisonobe M., 2017, scientometrics"
+  },
+  {
+    "objectID": "SMA1.html#brics-et-new-development-bank",
+    "href": "SMA1.html#brics-et-new-development-bank",
+    "title": "La Puissance des Etats",
+    "section": "BRICS et New Development Bank",
+    "text": "BRICS et New Development Bank"
   }
 ]
