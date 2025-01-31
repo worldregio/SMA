@@ -1,0 +1,143 @@
+---
+title: "REVUE DE PRESSE SUR LE CSNU"
+subtitle: "Cours L3 Géographie 2025"
+date: "2025-01-27"
+date-format: iso
+author: "Claude Grasland"
+title-slide-attributes:
+  data-background-color: "#75AADB85"
+  data-background-size: 200px
+  data-background-opacity: "0.9"
+  data-background-position: top center
+format: 
+  revealjs:
+    bibliography: [references.bib]
+    logo: img1/logo.jpg
+    margin: 0
+    code-line-numbers: true
+    embed-resources: true
+    smaller: true
+    scrollable: true
+    theme: [simple, style.scss]
+execute:
+  echo: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE, warning= FALSE, message = FALSE, error=FALSE)
+library(knitr)
+
+
+
+```
+
+
+
+# Cours du 27 Janvier 2025
+
+## La Russie pour une réforme du CSNU ...
+>En ce qui concerne la réforme du Conseil de sécurité des Nations unies, oui, elle est nécessaire car tous les pays qui jouent un rôle particulier dans l'économie mondiale, la finance mondiale, la politique mondiale ou la situation militaire sont loin d'être représentés au Conseil de sécurité des Nations unies,
+
+<div class="centered">
+<img src="img0/lavrov.jpg" width=500px />
+</div>
+
+
+[Agence Tass, 14/01/2024](https://tass.com/politics/1899053)
+
+
+## La Chine pour une réforme du CSNU ...
+>Le Conseil de sécurité des Nations unies ne doit pas être le club des grands pays riches, a déclaré mardi le conseiller d'État et ministre des affaires étrangères Wang Yi, qui a appelé les pays en développement et les petites et moyennes nations à y jouer le rôle qui leur revient.
+
+<div class="centered">
+<img src="img0/chiday.jpeg" width=500px />
+</div>
+
+[China Daily, 22 Janvier 2020](https://www.chinadaily.com.cn/a/202001/22/WS5e27bc43a310128217272c40.html)
+
+
+## L'Inde et le G4 demandent une réforme du CSNU
+>Les pays du G4, à savoir l'Inde, le Brésil, l'Allemagne et le Japon, ont appelé à la réforme du Conseil de sécurité des Nations unies et soutiennent leurs candidatures respectives aux sièges permanents de l'organe suprême des Nations unies.
+
+<div class="centered">
+<img src="img0/hintim.jpg" width=500px />
+</div>
+
+[Hindustan Times, 16 Mars 2018](https://www.hindustantimes.com/india-news/india-g4-nations-raise-concerns-over-lack-of-progress-in-un-security-council-reforms/story-xeoU0WHIGOtuNgbgGDunhO.html)
+
+## Brésil : Réforme du CSNU et droit de veto
+
+> Le présidente a également déclaré que le gouvernement brésilien travaillait à une réforme du Conseil de sécurité des Nations unies. Cette réforme inclurait une représentation permanente des pays d'Amérique latine, de l'Afrique, de l'Inde et d'autres nations. Il a également critiqué le veto opposé par le gouvernement américain aux résolutions de l'ONU en faveur d'un cessez-le-feu à Gaza.
+
+
+<div class="centered">
+<img src="img0/Lula_CSNU.jpg" width=400px />
+</div>
+
+[Agencia Brasil, 26 Février 2024](https://agenciabrasil.ebc.com.br/en/politica/noticia/2024-02/lula-calls-war-gaza-genocide-and-criticizes-hypocrisy)
+
+
+## L'Afrique du Sud veut un siège au CSNU 
+> La vision de M. Ramaphosa était que l'Union africaine obtienne un siège, ajoutant que si cela se matérialisait, il s'agirait d'un siège non permanent. « Il n'est pas important qu'il s'agisse d'un siège normal, car le Conseil de sécurité des Nations unies ne peut pas prendre de décisions si les cinq puissances de veto ne sont pas d'accord.... donc il s'agira d'une présence symbolique ».
+
+<div class="centered">
+<img src="img0/iol_CSNU.jpg" width=400px />
+</div>
+
+[IOL (South Africa), 28 Oct. 2024](https://www.iol.co.za/mercury/news/calls-for-the-reform-of-un-security-council-mount-at-brics-summit-486b6815-3dbd-4864-92be-cb382fd12307)
+
+
+## Ukraine: veto de la Russie sur la Corée du Nord
+>La Russie a fait face à une levée de boucliers vendredi après avoir utilisé son droit de veto pour mettre fin à la surveillance officielle par les Nations unies des sanctions contre la Corée du Nord, dans le cadre d'une enquête sur des transferts d'armes présumés entre Moscou et Pyongyang.
+
+<div class="centered">
+<img src="img0/csnu.jpg" width=500px />
+</div>
+
+[Kyiv Post, 29 mars 2024](https://www.kyivpost.com/post/30282)
+
+
+
+
+## Iran : Veto des USA sur l'adhésion de la Palestine aux NU
+>L'Organisation de la coopération islamique (OCI) a annoncé qu'elle regrettait que le Conseil de sécurité des Nations unies n'ait pas assumé ses responsabilités en approuvant l'adhésion à part entière de la Palestine aux Nations unies, alors que la nation palestinienne subit l'oppression, l'agression et le génocide les plus graves. 
+
+<div class="centered">
+<img src="img0/iranpress.jpg" width=400px />
+</div>
+
+[Iran Press Agency, 19 Avril 2024](https://iranpress.com/oic--us-veto-of-palestine-s-full-membership-against-un-charter)
+
+
+
+## Nigeria : le droit de veto aux "poubelles de l'histoire"
+>Un jour le droit de veto sera jeté aux oubliettes de l'histoire et de nouvelles bases pour une paix durable seront jetées. L'Afrique doit donc commencer à penser à une Afrique sans les Nations unies. Les Nations unies, telles qu'elles sont aujourd'hui, ne sont pas unies et ne pourront jamais l'être. 
+
+<div class="centered">
+<img src="img0/thisday.jpg" width=400px />
+</div>
+
+[This Day (Nigeria), 26 Février 2024](https://www.thisdaylive.com/index.php/2024/05/12/unsc-and-promotion-of-international-insecurity-the-case-of-us-veto-in-israelo-palestinian-conflict/)
+
+
+## Argentine : "L'ONU est dans le coma"
+>Selon Fawaw Gerges, l'invasion de l'Ukraine par la Russie il y a deux ans et maintenant la guerre de Gaza ont démontré que le Conseil de sécurité des Nations unies « est paralysé et dysfonctionnel » et que l'Assemblée générale des Nations unies est « plus une institution symbolique qu'une agence exécutive. "L'ONU, y compris ses différentes agences, est dans le coma.  C'est une période pire que celle de la guerre froide.
+
+<div class="centered">
+<img src="img0/lanacion.jpg" width=400px />
+</div>
+
+
+[La Nacion  (Argentina), 20 Janvier 2024](https://www.lanacion.com.ar/el-mundo/la-onu-esta-en-coma-las-duras-criticas-a-naciones-unidas-por-no-poder-detener-las-guerras-en-gaza-y-nid25012024/)
+
+## France : Discours de D. de Villepin à l'ONU
+>A ceux qui se demandent avec angoisse quand et comment nous allons céder à la guerre, je voudrais dire que rien, à aucun moment, au sein de ce Conseil de sécurité, ne sera le fait de la précipitation, de l’incompréhension, de la suspicion ou de la peur. Dans ce temple des Nations unies, nous sommes les gardiens d’un idéal, nous sommes les gardiens d’une conscience.
+
+<div class="centered">
+<img src="img0/villepin.jpg" width=400px />
+</div>
+
+[TV5 Monde, 14 Février 2003 ](https://www.youtube.com/watch?v=Y6jZ6t9QtUo)
