@@ -7,8 +7,12 @@ website:
     left:
       - href: index.qmd
         text: "Index"
+      - href: press.qmd
+        text: "Presse-CSNU"
       - href: SMA1.qmd
         text: "Puissance"
+      - href: SMA2.qmd
+        text: "Commerce"
     right: 
       - icon: github # add icons as navbar buttons
         href: https://github.com/worldregio/theoregio
