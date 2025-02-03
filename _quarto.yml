@@ -11,6 +11,8 @@ website:
         text: "Presse-CSNU"
       - href: SMA1.qmd
         text: "Puissance"
+      - href: press2.qmd
+        text: "Presse-Commerce"
       - href: SMA2.qmd
         text: "Commerce"
     right: 

@@ -1,0 +1,97 @@
+---
+title: "REVUE DE PRESSE SUR LE COMMERCE"
+subtitle: "Cours L3 Géographie 2025"
+date: "2025-02-03"
+date-format: iso
+author: "Claude Grasland"
+title-slide-attributes:
+  data-background-color: "#75AADB85"
+  data-background-size: 200px
+  data-background-opacity: "0.9"
+  data-background-position: top center
+format: 
+  revealjs:
+    bibliography: [references.bib]
+    logo: img1/logo.jpg
+    margin: 0
+    code-line-numbers: true
+    embed-resources: true
+    smaller: true
+    scrollable: true
+    theme: [simple, style.scss]
+execute:
+  echo: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE, warning= FALSE, message = FALSE, error=FALSE)
+library(knitr)
+
+
+
+```
+
+
+
+# Cours du 3 Février 2025
+
+## Pourquoi Trump convoite le Groenland ?
+« L’intention de Donald Trump de s’emparer de cette île stratégique donne du poids aux revendications indépendantistes de ses habitants inuits qui rêvent de s’émanciper du Danemark. L’avidité autour des ressources minières groenlandaises suscite espoirs de richesse et inquiétudes d’ingérence.»
+
+<div class="centered">
+<img src="img2/groenland.jpg" width=500px />
+</div>
+
+
+[Le Monde, 1er Février 2025](https://www.lemonde.fr/international/article/2025/02/02/le-groenland-un-territoire-arctique-convoite_6527643_3210.html)
+
+
+
+## Taxes : l'arme fatale de Trump
+« Aujourd'hui, j'ai mis en place un tarif douanier de 25 % sur les importations en provenance du Mexique et du Canada (10 % sur l'énergie canadienne), et un tarif douanier supplémentaire de 10 % sur la Chine. […]  en raison de la menace majeure que représentent les étrangers en situation irrégulière et les drogues mortelles qui tuent nos concitoyens, notamment le fentanyl. Nous devons protéger les Américains et il est de mon devoir, en tant que président, d'assurer la sécurité de tous.»
+
+<div class="centered">
+<img src="img2/TrumpTax.jpg" width=500px />
+</div>
+
+
+[TF1 Info (France), 1er Février 2025](https://www.tf1info.fr/international/videos/video-taxes-l-arme-fatale-de-trump-2339-2348338.html)
+
+
+
+## Chine : "Pas de gagnants dans une guerre commerciale ..."
+« Le ministère chinois du commerce a déclaré qu'il « contestera les droits de douane américains devant l'OMC ».Dans sa déclaration, Pékin a affirmé qu'il n'y avait « aucun gagnant dans une guerre commerciale ou tarifaire  Tout en s'opposant fermement aux droits de douane américains, la Chine s'est engagée à lancer des « contre-mesures correspondantes » contre la décision de M. Trump.»
+
+<div class="centered">
+<img src="img2/china_us_trade.jpg" width=500px />
+</div>
+
+
+[Hindustan Times, 2 Février 2025](https://www.hindustantimes.com/world-news/china-firmly-opposes-trump-tariffs-says-it-seriously-violates-wto-rules-101738465237830.html)
+
+## Canada : Justin Trudeau annonce une réplique 
+«   Nous n’avons pas demandé ça. C’est un choix qui, oui, portera préjudice aux Canadiens, mais qui aura également de réelles conséquences pour vous, le peuple américain. Les tarifs douaniers imposés au Canada mettront vos emplois en péril, ce qui pourrait entraîner la fermeture d’usines d’assemblage d’automobiles et d’autres installations de fabrication aux États-Unis »
+
+<div class="centered">
+<img src="img2/trudeau.jpg" width=400px />
+</div>
+
+
+[Radio Canada (repris par TikTok), 2 Février 2025](https://www.tiktok.com/@radio.canada.info/video/7466837763367701765)
+
+
+## Le Mexique a tout à perdre dans une «guerre» commerciale...
+« Trump a raison de dire que le pays le plus touché par une éventuelle « guerre » commerciale est le Mexique. Récemment, l'agence de notation Moody's a indiqué que les exportations de notre pays vers les États-Unis représentaient environ 30 % du PIB national, tandis que les exportations américaines vers le Mexique représentaient environ 1,2 % du PIB du pays gouverné par Trump. Une différence diamétrale. »
+
+<div class="centered">
+<img src="img2/us_mexico_trade.jpg" width=400px />
+</div>
+
+
+[El Universal, 1er Février 2025](https://www.eluniversal.com.mx/opinion/mario-maldonado/mexico-se-juega-todo-en-la-guerra-comercial-contra-eu/)
+
+
+
