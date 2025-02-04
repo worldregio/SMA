@@ -1,0 +1,1395 @@
+---
+title: "DES VILLES MONDIALES AUX MEGA-REGIONS"
+subtitle: "Structures du Monde Actuel, 2024"
+author: "Claude Grasland"
+format: 
+  revealjs:
+    theme: dark
+
+embed-resources: true
+title-slide-attributes:
+  data-background-image: img/world2020_low25.jpg
+  data-background-size: cover
+  data-background-opacity: "1"
+---
+
+
+```{r}
+library(dplyr)
+library(knitr)
+library(flextable)
+library(reshape2)
+library(ggplot2)
+library(plotly)
+```
+
+# INTRODUCTION
+
+
+## Enjeu du chapitre
+
+### Une transformation radicale ...
+
+Il semble difficile de contester que la **distribution du peuplement** à la surface du Monde a radicalement changé entre 1950 et 2020. La population a **augmenté** (de 2.5 à 8 milliards) mais surtout elle s'est **concentrée**. 
+
+### ... décrite par des notions floues ...
+
+Les mots employés pour décrire cette transformation sont nombreux (*urbanisation, ville, métropole, mégapole, région urbaine*, ...) et les outils de mesure associées donnent des résultats contadictoires.
+
+
+## Enjeu du chapitre
+
+### Des théories rassurantes ... 
+
+![Source : Bocquier & Costa, 2015, "Which transition comes first", *Demographic Research*,vol 33](img3/urb_transit.jpg){width=500}
+
+
+## Enjeu du chapitre
+
+### ... dont l'universalité est remise en cause ...
+
+:::: {.columns}
+::: {.column width="40%"}
+![Source : Robinson, J. (2013)](img3/ordinary_cities.jpg){width=350}
+:::
+::: {.column width="60%" .r-fit-text .smaller}
+### La "ville ordinaire"
+
+*"Avec l'urbanisation rapide de la population mondiale et l'urbanisation tout aussi rapide de la pauvreté, la théorie urbaine doit relever un défi urgent si elle veut rester pertinente pour la majorité des villes et leurs populations, dont beaucoup se trouvent en dehors de l'Occident."*
+
+*"Traçant des chemins à travers des littératures et des débats autrefois distincts, ce livre novateur - une critique postcoloniale des études urbaines - trace les contours d'une approche cosmopolite des villes[...]"*
+
+**Jenny Robinson (2013)**. *Ordinary cities: between modernity and development*. Routledge.
+:::
+::::
+
+## Enjeux du chapitre
+
+
+### ... pour revenir à l'exceptionalisme ?
+:::: {.columns}
+
+::: {.column width="40%" .r-fit-text}
+![Source : Laure Murat, 2016, Ceci n'est pas une ville](img3/Murat.jpg){width=200}
+:::
+
+
+::: {.column width="60%" .r-fit-text .smaller}
+
+NK : If Los Angeles isn’t a “ville,” then what it is
+
+LM : "What I mean by that is that all the cities that I know—I travel all over the world, but I don’t know Asia, for instance, so there is a huge part of the world that I don’t know—but **all the cities that I’ve visited in South America, the United States, in Europe, in the Maghreb follow more or less the same pattern**. There is a center, a pattern, monuments, a geopolitical grid. African cities are different. But basically, you have one pattern. **Los Angeles, I don’t know anything like it**. I said anything, right? "
+
+Source : Khamo, N. (2018). The City that is not a City. Paroles gelées, 31(1).
+:::
+
+::::
+
+## Enjeux du chapitre
+
+:::: {.columns}
+
+::: {.column width="32%" .r-fit-text}
+### Une perspective critique
+![Source : New Scientist](img3/ET.jpg){width=350}
+:::
+
+
+::: {.column width="67%" .r-fit-text}
+### ... mais scientifique !
+![Source : New York Times](img3/ET2.jpg){width=900}
+:::
+::::
+
+- **Exercice :** Expliquer à un extra-terrestre ce qu'est une ville . 
+
+
+
+## Définition provisoire
+
+### *"La ville est le lieu qui maximise l'interaction sociale"*
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![Paul Claval, 1976](img3/claval_logiq.jpg){width=200}
+:::
+
+::: {.column width="60%" .smaller}
+Cette définition de la ville de Paul Claval, mais inspirée de E. Durkheim (*Cf. conclusion*), demeure l'une des plus utiles dans la mesure où elle ne présuppose **pas de délimitation préalable de l'espace urbain.** 
+:::
+
+::::
+
+## Définition provisoire
+
+Considérons 100 individus dispersés **au hasard** dans un espace de 100 km sur 100 km. Sachant qu'ils se déplacent à pieds (4km/h), quelles interactions peuvent-ils nouer en 1, 2 ou 4h ?
+
+```{r, fig.width=9, fig.height=3}
+
+
+t<-readRDS("data3/ex001.RDS")
+x<-t$xi[t$Cj==1]
+y<-t$yi[t$Cj==1]
+
+par( mfrow=c(1,3))
+
+t2<-t[t$Dij<4  & t$Ci!=t$Cj,]
+plot(x,y,asp=1, cex=0.1, col="red",  xlim=c(0,100), ylim=c(0,100),frame.plot = T, main="Distance max. = 4 km ",xlab = NA,
+     sub= "52 interactions")
+grid()
+segments(x0=t2$xi,y0=t2$yi,x1=t2$xj,y1=t2$yj, col="blue")
+points(x,y,asp=1, pch=20, cex=1, col="red")
+
+t2<-t[t$Dij<8 & t$Ci!=t$Cj,]
+plot(x,y,asp=1, cex=0.1, col="red",  xlim=c(0,100), ylim=c(0,100),frame.plot = T, main="Distance max= 8 km ", sub="180 interactions" , xlab=NA)
+grid()
+segments(x0=t2$xi,y0=t2$yi,x1=t2$xj,y1=t2$yj, col="blue")
+points(x,y,asp=1, pch=20, cex=1, col="red")
+
+t2<-t[t$Dij<16 & t$Ci!=t$Cj,]
+plot(x,y,asp=1, cex=0.1, col="red",  xlim=c(0,100), ylim=c(0,100),frame.plot = T, main="Distance Max= 16 km", sub= "662 interactions", xlab=NA)
+grid()
+segments(x0=t2$xi,y0=t2$yi,x1=t2$xj,y1=t2$yj, col="blue")
+points(x,y,asp=1, pch=20, cex=1, col="red")
+
+```
+
+## Définition provisoire
+
+Considérons maintenant 100 individus dispersés sur le même espace mais avec une tendance à se regrouper au centre de la zone. Quel effet cela a-t-il sur les interactions possibles ?
+
+```{r, fig.width=9, fig.height=3}
+
+
+t<-readRDS("data3/ex002.RDS")
+x<-t$xi[t$Cj==1]
+y<-t$yi[t$Cj==1]
+par( mfrow=c(1,3))
+
+t2<-t[t$Dij<4  & t$Ci!=t$Cj,]
+plot(x,y,asp=1, cex=0.1, col="red",  xlim=c(0,100), ylim=c(0,100),frame.plot = T, main="Distance max. = 4 km ",xlab = NA,
+     sub= "110 interactions")
+grid()
+segments(x0=t2$xi,y0=t2$yi,x1=t2$xj,y1=t2$yj, col="blue")
+points(x,y,asp=1, pch=20, cex=1, col="red")
+
+t2<-t[t$Dij<8 & t$Ci!=t$Cj,]
+plot(x,y,asp=1, cex=0.1, col="red",  xlim=c(0,100), ylim=c(0,100),frame.plot = T, main="Distance max= 8 km ", sub="416 interactions" , xlab=NA)
+grid()
+segments(x0=t2$xi,y0=t2$yi,x1=t2$xj,y1=t2$yj, col="blue")
+points(x,y,asp=1, pch=20, cex=1, col="red")
+
+t2<-t[t$Dij<16 & t$Ci!=t$Cj,]
+plot(x,y,asp=1, cex=0.1, col="red",  xlim=c(0,100), ylim=c(0,100),frame.plot = T, main="Distance Max= 16 km", sub= "1424 interactions", xlab=NA)
+grid()
+segments(x0=t2$xi,y0=t2$yi,x1=t2$xj,y1=t2$yj, col="blue")
+points(x,y,asp=1, pch=20, cex=1, col="red")
+
+```
+
+
+## Définition provisoire {.smaller}
+
+Qu'est-ce qui maximise l'interaction ?
+
+### La densité de  population ?
+- **Oui et non.** La densité augmente la probabilité d'interatcion. Mais si on place deux individus dans un ascenceur (en panne) la densité est forte mais le nombre d'interactions est limité.
+
+### L'effectif de population ?
+- **Oui et non.** Une population importante dispersée sur une grande surface nouera moins d'interaction qu'une population plus faible mais concentrée sur une petite surface.
+
+### L'accessiblité ?
+- **Oui, mais** mais à condition qu'elle se combine avec un effectif de population et une densité importantes. Une autoroute dans le désert n'offre pas d'interactions.
+
+## La ville comme pic de potentiel ?
+
+La formule originale du potentiel de population de Stewart met en relation la population $P_i$ et la distance à vol d'oiseau $D_{ij}$ selon une fonction puissance inverse :
+
+$POT_j = \sum_{i=1}^n{\frac{P_i}{D_{ij}^2}}$
+
+On peut la transformer en potentiel de relation qui dépendent des opportunités $O_i$ et du coût d'accès à ces opportunités $C_{ij}$  selon une fonction de décroissance de type probabiliste : 
+
+$POT_j = \sum_{i=1}^n{O_i\times p({C_{ij})}}$
+
+
+# L'URBANISATION DU MONDE : VISION STATE-ISTIQUE
+
+```{r}
+dt<-read.csv2(file = "data3/WUP2018-F12-Cities_Over_300K.csv")
+dt$name[dt$num==685]<-"Cairo"
+dt$name[dt$num==1147]<-"Mexico"
+dt$name[dt$num==882]<-"Mumbai"
+dt$name[dt$num==1067]<-"Osaka"
+dt$name[dt$num==1758]<-"New York"
+dt$name[dt$num==863]<-"Kolkata"
+dt$name[dt$num==283]<-"Guangdong"
+dt$name[dt$num==801]<-"Chennai"
+dt$name[dt$num==1742]<-"Los Angeles"
+dt$name[dt$num==1427]<-"Moscow"
+dt$name[dt$num==1562]<-"Bangkok"
+dt$name[dt$num==1061]<-"Nagoya"
+dt$name[dt$num==1362]<-"Warsaw"
+dt$name[dt$num==1845]<-"Ho Chi Minh City"
+```
+
+## Population rurale et urbaine
+
+
+:::: {.columns}
+
+::: {.column width="60%" .r-fit-text}
+### La population urbaine devient majoritaire ...
+![](img3/urban-and-rural-population.jpg){width=500}
+
+Source : [Our World in Data, 2022](https://ourworldindata.org/urbanization)
+
+:::
+
+
+::: {.column width="40%" .r-fit-text}
+### ... en 2007 selon les Nations Unies. 
+Combien de personnes vivent aujourd'hui dans des zones urbaines ?
+Dans la visualisation, nous voyons les estimations des perspectives d'urbanisation mondiale des Nations unies sur le nombre de personnes qui vivent dans les zones urbaines et rurales dans le monde. Plus de 4,3 milliards de personnes vivent aujourd'hui dans des zones urbaines.
+Cela signifie que plus de la moitié de la population mondiale (55 % en 2017) vit en milieu urbain. Les Nations unies estiment que cet événement marquant s'est produit en 2007.
+
+:::
+
+::::
+
+
+## Quelles est la plus grande ville du Monde ?
+
+![](img3/Trantor.jpg){width=1000}
+
+
+
+## Demandons à Chat GPT ...
+
+:::: {.columns}
+
+::: {.column width="50%" .r-fit-text}
+### En langue française ...
+![](img3/chatGPT_top5_fr.jpg){width=500}
+:::
+
+
+::: {.column width="50%" .r-fit-text}
+### En langue anglaise ...
+![](img3/chatGPT_top5_en.jpg){width=500}
+:::
+
+::::
+
+## Demandons à Chat GPT ...
+
+:::: {.columns}
+
+::: {.column width="50%" .r-fit-text}
+### En langue hindi ...
+![](img3/chatGPT_top5_hi.jpg){width=450}
+:::
+
+
+::: {.column width="50%" .r-fit-text}
+### En langue arabe ...
+![](img3/chatGPT_top5_ar.jpg){width=450}
+:::
+
+::::
+
+
+
+
+## Demandons à des chercheurs ...
+
+:::: {.columns}
+
+::: {.column width="50%" .r-fit-text}
+![](img3/topcity_paper.jpg){width=450}
+![](img3/Tokyo_pop_1.jpg){width=500}
+
+:::
+
+
+::: {.column width="50%" .r-fit-text}
+### L'exemple de Tokyo
+
+![](img3/Tokyo_pop_2.jpg){width=450}
+Lists of the world's most populous urban areas are surprisingly inconsistent in standard reference sources. We  demonstrate that variations in the populations and rankings stem mostly from differences in concepts and geographic definitions, and identify six different types of definition in the UN's list. 
+[lien vers l'article](https://onlinelibrary-wiley-com.ezproxy.u-paris.fr/doi/full/10.1111/j.1467-9663.2009.00537.x?casa_token=3ahkqI2DsoQAAAAA%3AR_wMnQtIPIQzmzmID5XLGmaCgIz8Vr3d8vJ3aFHdziEDht0qJB1Mw1hf3HNETooJt5hnQew6sZTEIEk)
+:::
+
+::::
+
+
+## Qu'est que "l'urbain" ?
+
+:::: {.columns}
+
+::: {.column width="60%" .r-fit-text}
+### Statistiques nationales ...
+![](img3/share-of-population-urban.jpg){width=500}
+Source : [Our World in Data, 2022](https://ourworldindata.org/grapher/share-of-population-urban)
+
+:::
+
+
+::: {.column width="40%" .r-fit-text}
+### ... et comparaisons internationales
+" **Nous n'utilisons pas notre propre définition de la population "urbaine" mais suivons la définition utilisée dans chaque pays**. Les définitions sont généralement celles utilisées par les offices statistiques nationaux lors du **dernier recensement disponible**.[ ....] Les estimations et projections des Nations Unies sont basées, dans la mesure du possible, sur des recensements réels. **Dans certains cas, cependant, il a été nécessaire d'incorporer d'autres estimations de la taille de la population urbaine**. Dans ce cas, les sources de données l'indiquent."
+Source : [World Urbanization Prospect, 2018](https://population.un.org/wup/)
+:::
+
+::::
+
+
+
+## Qu'est qu'une "agglomération urbaine"
+
+:::: {.columns}
+
+::: {.column width="50%" .r-fit-text}
+### Délimitations d'expert ...
+![](img3/shangai.jpg){width=450}
+Source : Li, K., & Niu, X. (2021). Delineation of the Shanghai megacity region of China from a commuting perspective: Study based on cell phone network data in the Yangtze River Delta. *Journal of Urban Planning and Development*, 147(3), 04021022.
+
+:::
+
+
+::: {.column width="50%" .r-fit-text}
+### ... et comparaisons internationales
+" Le terme "agglomération urbaine" désigne la population contenue dans les limites d'un territoire contigu habité à des niveaux de densité urbaine sans tenir compte des frontières administratives. Elle comprend généralement la population d'une ville plus celle des zones suburbaines situées à l'extérieur des limites de la ville, mais adjacentes à celles-ci.  Cependant, certains pays ne produisent pas de données selon le concept d'agglomération urbaine, mais utilisent plutôt celui d'aire métropolitaine ou de ville proprement dite. Dans la mesure du possible, ces données sont ajustées pour se conformer au concept d'agglomération urbaine."
+Source : [World Urbanization Prospect, 2018](https://population.un.org/wup/)
+:::
+
+::::
+
+
+
+## Situation en 1950
+
+:::: {.columns}
+::: {.column width="80%"}
+```{r, warning=F}
+
+x<-readRDS("img3/cities1950.RDS")
+x
+```
+:::
+::: {.column width="20%"}
+```{r}
+don<-dt %>% select(country,name,pop=P1950) %>%
+       mutate(rnk = rank(-pop)) %>% filter(rnk<11) %>%
+       arrange(rnk) %>% select(rnk,name,pop)
+ft<-flextable(don)  %>% theme_vader()
+ft
+
+```
+:::
+::::
+Source : [World Urbanization Prospect, 2018](https://population.un.org/wup/)
+
+
+## Situation en 1975
+
+
+:::: {.columns}
+::: {.column width="80%"}
+```{r, warning=F}
+
+x<-readRDS("img3/cities1975.RDS")
+x
+```
+:::
+::: {.column width="20%"}
+```{r}
+don<-dt %>% select(country,name,pop=P1975) %>%
+       mutate(rnk = rank(-pop)) %>% filter(rnk<11) %>%
+       arrange(rnk) %>% select(rnk,name, pop)
+ft<-flextable(don)  %>% theme_vader()
+ft
+```
+:::
+::::
+Source : [World Urbanization Prospect, 2018](https://population.un.org/wup/)
+
+## Situation en 2000
+
+
+:::: {.columns}
+::: {.column width="80%"}
+```{r, warning=F}
+
+x<-readRDS("img3/cities2000.RDS")
+x
+```
+:::
+::: {.column width="20%"}
+```{r}
+don<-dt %>% select(country,name,pop=P2000) %>%
+       mutate(rnk = rank(-pop)) %>% filter(rnk<11) %>%
+       arrange(rnk) %>% select(rnk,name, pop)
+ft<-flextable(don)  %>% theme_vader()
+ft
+```
+:::
+::::
+Source : [World Urbanization Prospect, 2018](https://population.un.org/wup/)
+
+## Situation en 2025
+
+
+:::: {.columns}
+
+::: {.column width="80%"}
+
+```{r, warning=F}
+
+x<-readRDS("img3/cities2025.RDS")
+x
+```
+:::
+
+::: {.column width="20%"}
+```{r}
+don<-dt %>% select(country,name,pop=P2025) %>%
+       mutate(rnk = rank(-pop)) %>% filter(rnk<11) %>%
+       arrange(rnk) %>% select(rnk,name, pop)
+ft<-flextable(don)  %>% theme_vader()
+ft
+```
+:::
+::::
+Source : [World Urbanization Prospect, 2018](https://population.un.org/wup/)
+
+## Diffusion de l'urbanisation
+ 
+```{r}
+
+sel<-dt %>%filter(name %in% c("Tokyo","New York","Shanghai","Hong Kong","Delhi","Dhaka",
+                              "Mexico", "São Paulo",
+                              "Cairo","Paris","London","Istanbul","Lagos","Buenos Aires","Moscow", "Jakarta","Seoul","Karachi", "Kinshasa","Roma","Berlin","Madrid", "Toronto", "Johannesburg","Sydney","Manila", "Warsaw"),
+                  code !=20382)%>%
+              select(5,8:25)
+sel$name<-c( "N:Buenos Aires"     ,              "N:Sydney"              ,          
+"S:Dhaka"                       ,   "S:São Paulo"                     ,
+ "N:Toronto"                    ,    "S:Shanghai"                      ,
+"N:Hong Kong",
+"S:Kinshasa"                    ,   "S:Le Caire"            ,
+"N:Paris"                       ,   "N:Berlin"                        ,
+"S:Delhi"                       ,   "S:Jakarta"                       ,
+"N:Tokyo"                       ,   "S:Mexico",
+"S:Lagos"                       ,   "S:Karachi"                       ,
+"S:Manille"                      ,  "N:Varsovie",
+"N:Seoul"                         ,
+"N:Moscou"             ,   "S:Johannesburg"                  ,
+"N:Madrid"                      ,   "S:Istanbul"                      ,
+"N:London"                       ,  "N:New York" )
+sel$name<-as.character(sel$name)
+sel$agglo<-substr(sel$name,3,20)
+sel$type<-as.factor(substr(sel$name,1,1))
+levels(sel$type)<-c("Nord","Sud")
+sel<-melt(sel)
+names(sel)<-c("Agglo","Nom","Type","Année","Population")
+
+
+sel$Année<-as.numeric(substr(sel$Année,2,5))
+sel$Population<-sel$Population/1000
+g<-ggplot(sel) +aes(x=Année,y=Population,color=Agglo)+ geom_line()+
+  scale_y_log10("Population en millions (échelle log.)")+scale_x_continuous("Année")
+
+ggplotly(g,width = 1000,height = 600)
+```
+
+## Rattrapage du Sud / Nord ?
+
+```{r}
+mypal<-c(rainbow(n = 13,start = 0.6,end=0.7),rainbow(n = 13,start = 0.0,end=0.1))
+g<-ggplot(sel) +aes(x=Année,y=Population,color=Agglo)+ geom_line()+
+  scale_y_log10("Population en millions (échelle log.)")+scale_x_continuous("Année") +scale_colour_manual(values=mypal) +facet_wrap(facets=~Type)
+ggplotly(g,width = 1000,height = 600)
+```
+
+## Discussion  (1)
+
+### Un processus irréversible ...
+::: {.r-fit-text}
+L'urbanisation du Monde s'est produite au moment où la population mondiale connaissait une croissance sans précédent, passant de 3 milliards d'hommes en 1960 à 6 milliards en 2000 et probablement 8 milliards en 2040.Le basculement vers une majorité de population urbaine s'est opéré vers 2007 et on peut estimer l'urbanisation actuelle à environ 60% de l'humanité.
+:::
+### ... mais avec des décalages temporels 
+::: {.r-fit-text}
+Partie des pays du Nord (Europe, Amérique du Nord, Australie), le processus s'est diffusé ensuite rapidement au Japon et en Amérique latine puis en Afrique du Nord, au Proche-Orient et en Asie pour toucher plus tardivement l'Afrique.
+:::
+
+
+## Discussion  (2)
+### Unrbanisation et changement global
+:::: {.columns}
+::: {.column width=50%}
+![](img3/giec1.jpg){width=400}
+:::
+
+::: {.column width=50% .r-fit-text}
+![](img3/giec2.jpg){width=350}
+
+Source : [6e Rapport du GIEC, 2022](https://www.ipcc.ch/report/sixth-assessment-report-working-group-ii/)
+:::
+::::
+
+
+
+
+## Discussion (3)
+
+### Enjeux environnementaux
+:::: {.columns}
+::: {.column width=65%}
+![](img3/newman001.png){width=600}
+:::
+
+::: {.column width=35% .r-fit-text}
+![](img3/newman002.png){width=2
+00}
+Source : [Newman & Kenworthy, 2015](https://www.tandfonline.com/doi/abs/10.1080/01944368908975398)
+:::
+::::
+
+
+
+## Discussion (3)
+
+### Enjeux environnementaux
+:::: {.columns}
+::: {.column width=65%}
+![](img3/cities-energy.jpeg){width=600}
+:::
+
+::: {.column width=35% .r-fit-text}
+La consommation d'énergie augmente avec l'activité économique, en particulier pour les PIB par habitant inférieurs à 10 000 USD, mais cette augmentation ralentit pour les PIB par habitant supérieurs à 30 000 USD (dollars américains de 2005 en parité de pouvoir d'achat). La baisse du prix de l'essence dans les villes très riches, principalement nord-américaines, est associée à une autre petite augmentation de la consommation globale d'énergie directe.
+Source : [Creutzig, F.& al. (2015)](https://www.pnas.org/doi/full/10.1073/pnas.1315545112)
+:::
+::::
+
+
+## Discussion (4)
+
+### Enjeux sécuritaires
+:::: {.columns}
+::: {.column width=55%}
+![](img3/smartcities_china.jpg){width=600}
+:::
+
+::: {.column width=45% .r-fit-text}
+Ainsi la smart city chinoise se signale-t-elle par trois caractéristiques principales : le triptyque technologique (intelligence artificielle, données massives, internet des objets, ou AI, Big data, IoT), une configuration d’acteurs publics et privés mobilisés pour l’innovation et la compétition territoriale, et un usage social prépondérant d’applications de téléphonie mobile.[...]En Chine, où tout est sous contrôle de l’État, à commencer par les populations urbaines, quel usage les pouvoirs publics feront-il des données captées et exploitées en « nuage » ? 
+Source : [Henriot C., (2018)](https://www.cairn.info/revue-flux-2018-4-page-71.htm)
+:::
+::::
+
+
+## Discussion (5)
+
+### Enjeux sociaux
+:::: {.columns}
+::: {.column width=50% .r-fit-text}
+![](img3/mumbai_discont.jpg){width=600}
+- La zone entourant le complexe Bandra Kurla est un mélange d'extrême richesse et d'extrême pauvreté, comprenant les consulats généraux de plusieurs pays, des sièges sociaux et la Bourse nationale. 
+Source : [unequalscenes.com](https://unequalscenes.com/mumbai)
+:::
+
+::: {.column width=50% .r-fit-text}
+En un mot, Mumbai est... fascinante. 
+Elle est construite sur une péninsule étroite et incroyablement peuplée, entourée d'eau sur trois côtés. Elle abrite le cœur des industries les plus puissantes de l'Inde et certains de ses bidonvilles les plus pauvres. C'est une jungle urbaine, une aération verticale pour les super riches et un écosystème marin fragile. Des maisons de plusieurs milliards de dollars sous forme de gratte-ciel côtoient de vastes bidonvilles recouverts de bâches bleues contre les pluies de la mousson.
+
+
+
+
+Source : [unequalscenes.com](https://unequalscenes.com/mumbai)
+:::
+::::
+
+# DES VILLES AU MEGA-REGIONS
+
+
+## La ville : un concept universel ?
+
+:::: {.columns}
+::: {.column width=60% .r-fit-text}
+Malgré l'évidence des chiffres fournies par les Nations-Unies, on peut se demander si les niveaux d'urbanisation et la hiérarchie des agglomérations produite précédemment correspond bien à une réalité. En dehors des problèmes de délimitation, y-a-t-il réellement un sens à comparer Los Angeles à Dakha ou Moscou ?
+![](img3/Losangeles.jpg){width=400}
+:::
+
+
+::: {.column width=40%}
+![](img3/Dacca.jpg){width=400}
+![](img3/Moscow.jpg){width=400}
+:::
+::::
+
+
+## La ville : obstacle épistémologique ?
+
+:::: {.columns}
+
+::: {.column width="30%" .r-fit-text}
+![](img3/Bachelard_esprit.jpg){width=200}
+
+![](img3/Bachelard_erreur.jpg){width=200}
+
+
+:::
+
+
+::: {.column width="70%" .r-fit-text}
+
+### Ne pas se fier à l'opinion 
+La science, dans son besoin d'achèvement comme dans son principe, s'oppose absolument à l'opinion.L'opinion pense mal; elle ne pense pas: elle traduit des besoins en connaissances. En désignant les objets par leur utilité, elle s'interdit de les connaître. On ne peut rien fonder sur l'opinion: il faut d'abord la détruire. Elle est le premier obstacle à surmonter.
+
+### Questionner les certitudes
+Un obstacle épistémologique s'incruste sur la connaissance non questionnée. Des habitudes intellectuelles qui furent utiles et saines peuvent, à la longue, entraver la recherche.
+
+### Poser des problèmes différemment
+Avant tout, il faut savoir poser des problèmes. Et quoi qu'on dise, dans la vie scientifique, les problèmes ne se posent pas d'eux-mêmes. S'il n'y a pas eu de question, il ne peut y avoir connaissance scientifique. Rien ne va de soi. Rien n'est donné. Tout est construit
+:::
+
+::::
+
+
+## Un peu de lumière dans le noir
+
+
+
+:::: {.columns}
+
+::: {.column width="60%" .r-fit-text}
+![](img3/imhoff.jpg){width=200}
+
+Imhoff dit qu'alors qu’il travaillait à Université Stanford comme un post-doctorat, il a d’abord été intrigué par les implications biologiques de l’urbanisation après qu'il a vu comment l'expansion urbaine est apparue sur la surface de la Terre vue depuis l’espace.  : "*J'ai passé plusieurs années à regarder la Terre de l’espace, et j’ai trouvé remarquable comment le développement humain de terre ressemblait beaucoup à la croissance biologique--comme la moisissure sur une orange*" 
+
+:::
+
+
+::: {.column width="40%" .r-fit-text}
+### La terre est bleue comme une orange (P. Eluard)
+![](img3/earth1.jpg){width=600}
+
+
+:::
+
+::::
+
+
+## Un peu de lumière dans le noir
+
+:::: {.columns}
+
+::: {.column width="60%" .r-fit-text}
+![](img3/imhoff.jpg){width=200}
+
+Imhoff voulait savoir comment l'expansion urbaine changeait le paysage sur une échelle globale, et si cela affectait les ressources alimentaires, les écosystèmes locaux, et même le climat. 
+
+Mais délimiter l'expansion urbaine avec les instruments sur ces satellites exigerait des chercheurs qu’ils récupèrent des images en gros plan de villes et qu’ils séparent chaque région urbanisée des fermes parcs et de la nature environnant. Faire ceci pour un continent entier aurait représenté un travail intensif et fatigant. Imhoff a trouvé une solution dans un endroit improbable.
+:::
+
+
+::: {.column width="40%" .r-fit-text}
+
+![](img3/lightearth.jpg){width=300}
+
+Il raconte une réunion hebdomadaire d’un club d’astronomie hebdomadaire à laquelle il a assisté en 1996 :" *Les gens à la réunion parlaient du problème que représente la pollution lumineuse. Ils ont sorti une carte satellite des lumières des villes. Ils la regardaient et disaient, 'Regardez toute cette horrible pollution lumineuse. ' Et Je suis là pensant, 'C'est exactement ce dont j’ai besoin. Voici ma carte d'où sont les êtres humains*'"
+:::
+
+::::
+
+
+## Un peu de lumière dans le noir
+
+:::: {.columns}
+
+::: {.column width="50%" .r-fit-text}
+![](img3/imhoff1997.jpg){width=450}
+![](img3/imhoff1997a.jpg){width=450}
+:::
+
+
+::: {.column width="50%" .r-fit-text}
+
+![](img3/imhoff1997b.jpg){width=450}
+:::
+
+::::
+
+
+## Un peu de lumière dans le noir
+
+Exemple de la ville de Phoenix (Source : Wikipedia)
+![](img3/phoenix_lights.jpg){width=800}
+
+
+## La ville comme pic de potentiel
+
+Pics de pollution lumineuse en Californie et Arizona en 2020
+![](img3/light_US.jpg){width=800}
+
+## Où sont les villes ?
+
+
+![Pollution lumineuse mondiale en 2020](img3/world2020_low25.jpg)
+
+## Où sont les villes ?
+
+
+![Pollution lumineuse mondiale en 2020](img3/light_europ.jpg)
+
+## Où sont les villes ? {.smaller}
+
+Pouvez-vous retrouver les villes françaises ?
+
+![](img3/light_france.png){width=600}
+
+Source : [https://lightzoomlumiere.fr](https://lightzoomlumiere.fr)
+
+
+## Où sont les villes ? {.smaller}
+
+Pouvez-vous retrouver les villes du Golfe Persique ?
+![](img3/light_golf.jpg){width=500}
+![](img3/torch.png){width=500}
+
+Source : [BBC](https://www.bbc.com/afrique/monde-67569758)
+
+
+
+## Où sont les villes ? {.smaller}
+
+Exemple d'analyse de la croissance urbaine et de la fusion de deux agglomérations.
+![](img3/light_beijing.jpg){width=1000}
+
+Source : [Li X., Zhou Y. & Zhao X., 2020, Nature](https://www.nature.com/articles/s41597-020-0510-y)
+
+
+
+
+
+## Renouveau conceptuel (1) : les mégalopoles
+
+![](img3/megaregion_def1.jpg){width=800}
+
+## La mégalopolis américaine ...
+
+:::: {.columns}
+
+::: {.column width="50%" .r-fit-text}
+![](img3/megalopolis1.jpg){width=600}
+:::
+
+
+::: {.column width="50%" .r-fit-text}
+
+![](img3/megalopolis2.jpg){width=600}
+
+
+:::
+
+::::
+
+
+## La dorsale européenne
+
+:::: {.columns}
+
+::: {.column width="30%" .r-fit-text}
+![](img3/Brunet1989.jpg){width=300}
+:::
+
+
+::: {.column width="70%" .r-fit-text}
+![](img3/Brunet1989b.jpg){width=500}
+
+Source : **Brunet, R. (1989)**. *Les Villes Européennes*, La Documentation Francaise. Paris: Datar–Reclus.
+:::
+
+::::
+
+
+## La dorsale européenne
+
+:::: {.columns}
+
+::: {.column width="50%" .r-fit-text}
+« *Le nom « banane bleue » est une addition médiatique fortuite : la forme de banane a été évoquée par Jacques Chérèque, ministre de l’Aménagement du territoire, qui présentait nos travaux lors d’une conférence de presse à succès ; puis la couleur est celle que lui a donnée trois jours après le dessinateur du Nouvel Observateur, dans un article de Josette Alia qui servit de baptême définitif à la « banane bleue ». Depuis, l’expression a été consacrée, y compris à l’étranger [...] et surtout dans les milieux politiques, d’aménagement et de développement local et régional, qui en ont fait toutes sortes d’usages que je ne suis nullement tenu d’approuver.* » 
+(R. Brunet)
+:::
+
+
+::: {.column width="50%" .r-fit-text}
+
+![](img3/bluebanana.jpg){width=600}
+
+
+
+:::
+
+::::
+
+
+
+## La dorsale européenne
+
+L'étude de Roger Brunet (1989) fait dès le début l'objet de nombreux débats scientifiques et politiques en Europe.
+
+
+![](img3/kunzmann.jpg){width=1000}
+
+
+Source :  **Kunzmann, K. R., & Wegener, M. (1991).** The pattern of urbanization in Western Europe. *Ekistics*, 282-291.
+
+
+## Polycentrisme et pics de potentiel
+
+Une étude est engagée par le programme ESPON vers 2000 pour tenter d'objectiver le débat sur le polycentrisme en Europe.
+![](img3/pot002.jpg){width=900}
+Source : Grasland C., 2004
+
+## Polycentrisme et pics de potentiel
+
+:::: {.columns}
+
+::: {.column width="30%"}
+![Méthode](img3/pot001.jpg){width=300}
+:::
+
+
+::: {.column width="70%" }
+![Densité de population](img3/pot0.png){width=600}
+
+:::
+
+::::
+
+
+
+
+## Polycentrisme et pics de potentiel
+
+:::: {.columns}
+
+::: {.column width="30%"}
+![Coupe](img3/pot50b.png){width=300}
+:::
+
+
+::: {.column width="70%" }
+![Densité à 50 km](img3/pot50a.png){width=600}
+
+:::
+
+::::
+
+
+## Polycentrisme et pics de potentiel
+
+:::: {.columns}
+
+::: {.column width="30%"}
+![Coupe](img3/pot100b.png){width=300}
+:::
+
+
+::: {.column width="70%" }
+![Densité à 100 km](img3/pot100a.png){width=600}
+
+:::
+
+::::
+
+## Polycentrisme et pics de potentiel
+
+:::: {.columns}
+
+::: {.column width="30%"}
+![Coupe](img3/pot250b.png){width=300}
+:::
+
+
+::: {.column width="70%" }
+![Densité à 250 km](img3/pot250a.png){width=600}
+
+:::
+
+::::
+
+
+## Polycentrisme et pics de potentiel
+
+:::: {.columns}
+
+::: {.column width="30%"}
+![Densité 50/100 km](img3/peaks50_100){width=300}
+:::
+
+
+::: {.column width="70%" }
+
+![Densité 50/100 km](img3/peaks50_100_zoom.png){width=700}
+:::
+
+::::
+
+
+
+## Polycentrisme et pics de potentiel
+
+:::: {.columns}
+
+::: {.column width="30%"}
+![Densité 100/250 km](img3/peaks100_250.png){width=300}
+:::
+
+
+::: {.column width="70%" }
+
+![Densité 100/250 km](img3/peaks100_250_zoom.png){width=700}
+:::
+
+::::
+
+
+## Polycentrisme et pics de potentiel
+
+
+![Source : ESPON 3.1, 2006, Integrated tools for European Spatial Development](img3/pot_final.png){width=1000}
+
+## Un renouveau conceptuel (2) : Les mega-régions
+
+
+![](img3/megaregion_def2.jpg){width=800}
+
+
+## Les Mega-regions de R. Florida (2006)
+
+
+:::: {.columns}
+
+::: {.column width="50%" .r-fit-text}
+![](img3/florida2006_a.jpg){width=800}
+"*This paper develops new data on mega-regions. It takes issue with theories of globalization which argue that global economic activity is being more widely decentralized—‘the world is flat’. We use a global dataset of night-time light emissions to produce an objectively consistent set of mega-regions for the globe. We draw on high-resolution population data to estimate the population of each of these regions. We then process the light data in combination with national gross domestic product (GDP) to produce rough but useful regional estimates of economic activity. We also present estimates of technological and scientific innovation.*"
+:::
+
+
+::: {.column width="50%" .r-fit-text}
+
+![](img3/megaregion1.jpg){width=800}
+:::
+
+::::
+
+
+
+## Les Mega-regions de R. Florida (2006)
+
+
+:::: {.columns}
+
+::: {.column width="50%" .r-fit-text}
+![](img3/megaregion2.jpg){width=600}
+:::
+
+
+::: {.column width="50%" .r-fit-text}
+
+![](img3/megaregion3.jpg){width=600}
+:::
+
+::::
+
+
+## Les Mega-regions de R. Florida (2006)
+
+
+![](img3/megaregion4.jpg){width=900}
+
+## De quoi les Mega-régions sont elles le nom ? {.smaller}
+
+### Un mépris pour les villes du Sud 
+
+*Selon Ohmae, les "États-régions" ont remplacé les États-nations en tant qu'unités économiques organisatrices de l'économie mondiale (Ohmae, 1993).*
+
+*Mais toutes les zones métropolitaines ne fonctionnent pas avec succès comme des méga-régions.* **Les "mégapoles" grandes mais pauvres comme Calcutta ou Delhi sont "d'immenses agrégations humaines",** *écrit Ohmae, qui "ne se tournent pas ou ne peuvent pas se tourner vers l'économie mondiale pour trouver des solutions à leurs problèmes ou les ressources nécessaires à la mise en œuvre de ces solutions. Ils se tournent plutôt vers les gouvernements centraux des États-nations dans lesquels ils résident". La remarque d'Ohmae est importante.* **La population n'est pas synonyme de production économique.**
+
+Source : Florida & al., 2006
+
+## De quoi les Mega-régions sont elles le nom ? {.smaller}
+
+### Un mépris pour les villes du Sud 
+
+**L'examen des méga-régions en termes de population peut être très trompeur.** *Les mégapoles sont généralement conçues en termes de population (souvent comme des zones métropolitaines de 10 millions d'habitants ou plus). Dans de nombreux cas,* **ces mégapoles semblent avoir été créées à prix d'or**, *en particulier dans les régions sous-développées du monde.* 
+
+*Retsinas (2007) décrit les problèmes découlant des mégapoles du monde en développement en termes de* **pauvreté, de maladies et de désespoir** *dans de nombreuses régions du monde à la croissance la plus rapide, en les comparant aux problèmes liés au processus d'urbanisation pendant la révolution industrielle, tels qu'ils ont été vécus par **Dickens** et Marx.*
+
+Source : Florida & al., 2006
+
+## De quoi les Mega-régions sont elles le nom ? {.smaller}
+
+### Une aristocratie urbaine (élargie à la Chine)
+
+*"Alors que les villes situées à l'intérieur des frontières nationales divergent,* **les méga-régions dont les emplacements géographiques ne pourraient être plus éloignés se rapprochent**. *Plus deux méga-régions - indépendamment de leur distance physique ou de leur relation historique - ont de points communs en termes de production économique, plus elles sont susceptibles de développer des mœurs sociales, des goûts culturels et même des tendances politiques similaires. Ce n'est pas seulement vrai pour New York et Londres ;* **même New York et Shanghai ont sans doute plus en commun que, par exemple, New York et Louisville.**"
+
+Source : Florida & al., 2006
+
+## De quoi les Mega-régions sont elles le nom ? {.smaller}
+
+### Une consolation pour les villes moyennes
+
+![](img3/megaregion_PAM.jpg){width=700}
+[Piedmont Atlantic Region, 2010](https://www.youtube.com/watch?v=Ie9ZUPZ7AbE)
+
+## De quoi les Mega-régions sont elles le nom ? {.smaller}
+
+### Un business profitable pour leur inventeur
+
+![](img3/Florida001.jpg){width=800}
+
+[Creative Class Group](https://creativeclass.com/richard_florida/books/)
+
+
+## De quoi les Mega-régions sont elles le nom ? {.smaller}
+
+### Un business profitable pour leur inventeur
+
+![](img3/Florida002.jpg){width=800}
+
+[Creative Class Group](https://creativeclass.com/who-we-are/)
+
+
+# CONCLUSION
+
+
+## La ville est un enjeu politique et symbolique {.smaller}
+
+### Rattrapage du Sud sur le Nord ...
+
+Les indicateurs state-istique traditionnels des Nations Unies mettent en évidence une convergence des niveaux d'urbanisation des pays du Monde associée à une domination de plus en plus nette des pays du Sud dans le classement des villes les plus importantes en termes de population.
+
+### ... ou maintien de la domination du Nord ?
+
+Les nouveaux indicateurs fondés sur les mégapoles ou les mégarégions mettent en évidence de nouvelles délimitation spatiales dans lesquelles les villes du Nord gardent leur avantage, surtout si l'on remplace le critère de population par le poids économique ou scientifique. 
+
+
+
+
+
+
+## Ville et division du travail social
+
+
+:::: {.columns}
+
+::: {.column width="40%" .r-fit-text}
+![](img3/durkeim_div.jpg){width=400}
+:::
+
+
+::: {.column width="60%" .r-fit-text}
+
+*"De même que Marx, Émile Durkheim (1858-1917) n’a pas consacré d’ouvrage à la ville, même si celle-ci retient l’attention du fondateur de la sociologie française à plusieurs moments dans l’ensemble de son œuvre. D’une certaine façon, tout comme chez Marx mais pour d’autres raisons,*  **la ville revêt chez Durkheim un statut paradoxal, dans la mesure où elle est, d’un côté, un révélateur et un analyseur de faits sociaux, et de l’autre, un facteur pouvant en être à l’origine.**"
+
+*"Pour Durkheim,* **la ville moderne apparaît avant tout comme la manifestation concrète d’un type de solidarité** *– d’une certaine façon de vivre ensemble – et permet à ce titre de saisir les conséquences des transformations structurelles de la société sur la vie collective."*
+
+Source : Introduction à la sociologie urbaine. sous la direction de STEBE Jean-Marc, MARCHAL Hervé. Paris, Armand Colin, « Cursus », 2019, p. 33-46
+:::
+
+::::
+
+## Ville et division du travail social
+
+
+:::: {.columns}
+
+::: {.column width="50%" .r-fit-text}
+```{mermaid}
+flowchart LR
+A[solidarité mécanique]
+A --> A1["Homogénéité
+Sociale"] & A2["Faible 
+densité"] & A3["Tradition"] & A4["Religion"] & A5["Famille"]
+
+```
+:::
+
+
+::: {.column width="50%"}
+```{mermaid}
+flowchart LR
+B[Solidarité organique]
+B --> B1["Hétérogénéité
+ sociale"] & B2["Division
+ du travail"] & B3["Urbanisation"] & B4["Innovation"] & B5["Sécularisation"]
+  
+```
+:::
+::::
+
+
+
+## Urbanisation et division du travail
+
+:::: {.columns}
+
+::: {.column width="50%" .r-fit-text}
+### Densité matérielle (géographique)
+*"L'accroissement de la densité moyenne peut être uniquement dû à l'augmentation matérielle de la natalité et, par conséquent peut se concilier avec une concentration très faible [des interactions sociales], un maintien très marqué du type segmentaire."* (ibid, p. 239)
+
+### Densité morale (sociale)
+*"La division du travail progresse donc d'autant plus qu'il y a de plus d'individus qui sont suffisamment en contact pour pouvoir agir et réagir les uns sur les autres [ce que nous appelons] densité dynamique ou morale."* (ibid., p. 238)
+
+### Rétroaction
+*"La densité morale ne peut donc s'accroîte sans que la densité morale s'accroisse en même temps.  Il est d'ailleurs inutile de rechercher laquelle des deux a déterminé l'autre."* (ibid., p. 238)
+
+:::
+
+
+::: {.column width="50%" .r-fit-text}
+
+
+```{mermaid}
+
+flowchart TD
+A["Solidarité mécanique"]
+B["Solidarité organique"]
+C["Division du travail social"]
+D["Urbanisation"] 
+E["Densité matérielle"]
+F["Densité morale"]
+
+A --> B
+B --> C
+C --> E
+C --> F
+E --> F
+F --> E
+E --> D
+F --> D
+
+
+```
+    
+
+    
+
+:::
+
+::::
+
+
+
+
+
+
+
+## Urbanisation et division du travail
+
+:::: {.columns}
+
+::: {.column width="50%" .r-fit-text}
+### Compétition
+*"Si le travail se divise davantage à mesure que les sociétés deviennent plus volumineuses et plus denses [...] c'est que la lutte pour la vie y est plus ardente.* **Darwin** *a très justement observé que la concurrence entre deux organismes est d'autant plus vive qu'ils sont analogues."* (ibid, p. 248)
+
+### Spécialisation
+*"Les hommes subissent la même loi. Dans une même villes les professions différentes peuvent coexister sans être obligées de se nuire récproquement, car elles poursuivent des objets différents."* (ibid., p. 249)
+
+:::
+
+
+::: {.column width="50%" .r-fit-text}
+
+
+```{mermaid}
+
+flowchart TD
+A["Solidarité mécanique"]
+B["Solidarité organique"]
+C["Division du travail social"]
+D["Urbanisation"] 
+E["Densité matérielle"]
+F["Densité morale"]
+G["Accumulation monétaire"]
+H["Force de travail"]
+K["Compétition"]
+L["Spécialisation"]
+
+
+
+
+A --> B
+B --> C
+C --> E
+C --> F
+E --> D
+F --> D
+D --> G
+D --> H
+D --> K
+D --> L
+
+
+
+
+    
+```
+    
+
+    
+
+:::
+
+::::
+
+
+
+
+## Urbanisation et division du travail
+
+:::: {.columns}
+
+::: {.column width="50%" .r-fit-text}
+### Individualisme
+*"On peut donc prévoir que la progrès de la division du travail sera d'autant plus difficile que la conscience commune aura plus de vitalité"* (ibid. p. 268) 
+
+### Propriété privée
+*"Tant que la loi et les moeurs font de l'inaliénabilité et de l'indivision de la propriété immobilière une stricte obligation, les conditions nécessaires à l'apparition de la division du travail ne sont pas réunies"* (ibid. p. 269)
+
+### Manufacture
+*"A mesure que le marché s'étend, la grande industrie apparaît. Elle a pour effet de transformer les relations entre patrons et ouvriers[...] le travail à la machine remplace l'homme."* (ibid. p. 362)
+
+:::
+
+
+::: {.column width="50%" .r-fit-text}
+
+
+```{mermaid}
+
+flowchart TD
+A["Solidarité mécanique"]
+B["Solidarité organique"]
+C["Division du travail social"]
+D["Urbanisation"] 
+E["Densité matérielle"]
+F["Densité morale"]
+G["Accumulation monétaire"]
+H["Force de travail"]
+K["Compétition"]
+L["Spécialisation"]
+I["Capitalisme industriel"]
+J["Division nationale du travail"]
+
+
+
+A --> B
+B --> C
+C --> E
+C --> F
+E --> D
+F --> D
+D --> G
+D --> H
+D --> K
+D --> L
+H --> I
+G --> I
+K --> I
+L --> I
+I --> J
+
+
+
+    
+```
+    
+
+    
+
+:::
+
+::::
+
+
+## Urbanisation et division du travail
+
+:::: {.columns}
+
+::: {.column width="50%" .r-fit-text}
+### Division internationale du travail
+*"On objectera [à ma théorie] la* **division internationale du travail** *; il semble évident que, dans ce cas au moins, les individus entre lesquels le travail se partage n'appartiennent pas à la même société. Mais il faut se rappeler qu'un groupe peut, tout en gardant son individualité, être enveloppé par un autre plus vaste et qui en contient plusieurs du même genre."* (ibid. p. 265) 
+
+### Europe
+*"On peut dire en effet [que la division du travail] ne s'est jamais vraiment produite qu'en Europe et de notre temps. Or c'est à la fin du siècle dernier [le 18e] qu'a commencé à se former une conscience commune des sociétés européennes."* (ibid., p. 265)
+
+:::
+
+
+::: {.column width="50%" .r-fit-text}
+
+
+```{mermaid}
+
+flowchart TD
+A["Solidarité mécanique"]
+B["Solidarité organique"]
+C["Division du travail social"]
+D["Urbanisation"] 
+E["Densité matérielle"]
+F["Densité morale"]
+G["Accumulation monétaire"]
+H["Force de travail"]
+K["Compétition"]
+L["Spécialisation"]
+I["Capitalisme industriel"]
+J["Division nationale du travail"]
+V["Colonisation"]
+W["Division internationale du travail"]
+
+
+A --> B
+B --> C
+C --> E
+C --> F
+E --> D
+F --> D
+D --> G
+D --> H
+D --> K
+D --> L
+H --> I
+G --> I
+K --> I
+L --> I
+I --> J
+I --> V
+J --> W
+V --> W
+
+
+
+    
+```
+    
+
+    
+
+:::
+
+::::
+
+
+
+
+
+## A suivre
+
+Dans le prochain épisode ...
+
+![](img3/Scott2012.jpg){width=600}
+
+Source : **Allen J. Scott, 2012**, *A World in Emergence : Cities and Regions in the 21st Century*
