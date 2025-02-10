@@ -8,15 +8,17 @@ website:
       - href: index.qmd
         text: "Index"
       - href: press.qmd
-        text: "Presse-CSNU"
+        text: "Presse-Puissance"
       - href: SMA1.qmd
         text: "Puissance"
       - href: press2.qmd
         text: "Presse-Commerce"
       - href: SMA2.qmd
         text: "Commerce"
+      - href: press3.qmd
+        text: "Presse-Villes"        
       - href: SMA3.qmd
-        text: "Urbanisation"
+        text: "Villes"
     right: 
       - icon: github # add icons as navbar buttons
         href: https://github.com/worldregio/theoregio

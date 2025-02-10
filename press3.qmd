@@ -1,0 +1,81 @@
+---
+title: "REVUE DE PRESSE SUR LES VILLES"
+subtitle: "Cours L3 Géographie 2025"
+date: "2025-02-10"
+date-format: iso
+author: "Claude Grasland"
+title-slide-attributes:
+  data-background-color: "#75AADB85"
+  data-background-size: 200px
+  data-background-opacity: "0.9"
+  data-background-position: top center
+format: 
+  revealjs:
+    bibliography: [references.bib]
+    logo: img1/logo.jpg
+    margin: 0
+    code-line-numbers: true
+    embed-resources: true
+    smaller: true
+    scrollable: true
+    theme: [simple, style.scss]
+execute:
+  echo: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE, warning= FALSE, message = FALSE, error=FALSE)
+library(knitr)
+
+
+
+```
+
+
+
+# Cours du 10 Février 2025
+
+## Quand un journal de Londres se moque de Tokyo
+« Tokyo reste, dans l'imaginaire mondial, un lieu de sophistication et de richesse. Mais la reprise économique étant à jamais éloignée, la « pollution touristique » semble être le seul plan viable»
+
+<div class="centered">
+<img src="img3/guardian.jpg" width=450px />
+</div>
+
+[The Guardian (UK), 14 Janvier 2025](https://www.theguardian.com/world/2025/jan/14/tokyo-drift-what-happens-when-a-city-stops-being-the-future)
+
+## Quand un journal de Tokyo se moque de New-York
+« Un article affirmait que les institutions commerciales, culturelles et alimentaires qui rendent la ville si attrayante avaient subi des dommages tellement irréparables à la suite des arrêts dus au coronavirus qu'il n'y avait aucune chance qu'elle s'en remette.»
+
+<div class="centered">
+<img src="img3/nhk.jpg" width=450px />
+</div>
+
+[NHK (Japan), 29 mars 2021](https://www3.nhk.or.jp/nhkworld/en/news/backstories/1562/index.html)
+
+
+
+## Quand un journal de New York se moque de Londres
+«La métropole que la mondialisation a créée pourrait bien être la capitale du monde. Mais après le référendum sur le Brexit, son avenir en tant que carrefour international est loin d'être assurée»
+
+<div class="centered">
+<img src="img3/nyt.jpg" width=700px />
+</div>
+
+
+[New York Times (USA), 11 Avril 2017](https://www.nytimes.com/interactive/2017/04/11/world/europe/uk-london-brexit.html)
+
+
+
+## Neom et la coupe du Monde de Football 2034 
+«L'un des aspects les plus remarquables de la candidature de l'Arabie saoudite à la Coupe du monde est l'inclusion de Neom comme ville hôte, un ambitieux projet de mégapole de 500 milliards de dollars construit sur la mer Rouge, qui devrait abriter 300 000 habitants d'ici 2030. L'organisation de matchs dans une ville qui doit encore être créée symbolise la vision audacieuse du programme de Ben Salman, mais soulève également des questions sur la faisabilité et les coûts d'une telle entreprise»
+
+<div class="centered">
+<img src="img3/manara.jpg" width=400px />
+</div>
+
+[MENAF (Middle East and North Africa Forum, Cambridge, UK), 9 Février 2025](https://manaramagazine.org/2025/01/saudi-arabia-finds-itself-between-ambitions-and-obstacles-as-it-gears-up-for-2034-world-cup/)
+
