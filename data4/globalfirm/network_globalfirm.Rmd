@@ -1,0 +1,219 @@
+---
+title: "RESEAUX SOCIAUX ET RESEAUX SPATIAUX"
+author: "Claude GRASLAND"
+date: "5 novembre 2016"
+output: pdf_document
+subtitle: Analyse des interactions élémentaires, directes et indirecte
+abstract: null
+---
+ 
+##2.2. Analyse des villes globales à travers la localisation des entreprises de service internationaux
+
+```{r,cache.comments=TRUE,warning=FALSE}
+rm(list=ls())
+library(reshape2)
+library(igraph)
+setwd("/Users/claudegrasland1/Documents/cg/cours/ASPS2016/NETWORK/globalfirm")
+```
+
+On se propose de reprendre avec quelques modifications mineures la démarche du programme qui a été utlisé pour étudier les choix des villes et des pays où les étudiants de géoprisme souhaiteraient vivre dans un futur proche. Mais en l'appliquant à un exemple célèbre, celui des "liens" entre villes globales déduits de la présence de firmes elles-mêmes gobales. Cet exemple a fait l'objet d'une vive polémique entre P.J. Taylor et C. Nordlund dont on lira avec intérêt les rebondissements dans trois articles de *Geographical Analysis* parus en 2001, 2004 et 2005. 
+
++ Taylor, P. J. (2001). Specification of the world city network. Geographical analysis, 33(2), 181-194.
++ Nordlund, C. (2004). A critical comment on the Taylor approach for measuring world city interlock linkages. Geographical Analysis, 36(3), 290-296.
+
+
+
+
+
+### Présentation des données
+
+Librement accessibles sur le site du GaWC, les données sont présentées par leurs auteurs ainsi : 
+
+*These data consist of the distribution of offices for 46 'global' advanced producer service firms over 55 world cities. Global firms are defined by having offices in at least 15 different cities. World cities are from the GaWC inventory of world cities (see GaWC Research Bulletin 6). Service values for a firm in a city are given as 3, 2, 1 or 0 as defined in Data Set 4.These data are an experimental set of data derived from Data Set 4 (43 of the firms qualify as global) but with three additional law firms added which do not have London offices. For publications that make use of these data, see GaWC Research Bulletin 13 and GaWC Research Bulletin 17.*
+*AKNOWLEDGEMENT: The data were collected by J.V. Beaverstock, R.G. Smith and P.J. Taylor as part of their ESRC project "The Geographical Scope of London as a World City" (R000222050). They constitute Data Set 4 of the Globalization and World Cities (GaWC) Research Network (http://www.lboro.ac.uk/gawc/) publication of inter-city data.*
+
+la liste des firmes "globales" comporte en réalité une forte dose d'arbitraire. En particulier, on ne doit pas perdre de vue que la première étude faite avec ces données était une commande effectuée auprès de chercheurs par la ville de Londres pour évaluer sa position mondiale. Il n'est donc pas tout à fait surprenant que les résultats obtenus soient ... disons plutôt favorables à cette métropole ! Ainsi, dans le choix des fimes bancaires, on ne trouve aucune firme française ce qui est tout de même quelque peu étonnant...
+
+
+### Importation des données de P.J. Taylor
+
+Les données de P.J. Taylor se présentent sous la forme d'une matrice comportant un nombre variable de firmes dans quatre grands secteurs : la comptabilité (*acc*), la publicité (*adv*), la banque (*bnk*) et enfin les cabinets juridiques (*law*) que l'on peut analyser séparément ou bien rassembler dans un même tableau (*tot*) mais en prenant garde au fait que le nombre de firmes est très différent d'un secteur à l'autre. Avant d'attaquer ces tableaux de grande dimension il est toutefois préférable de prendre un échantillon plus petit (*ech*) afin de mieux comprendre les opérations qui sont effectuées par P.J. Taylor et les critiques éventuelles qu'elles ont suscités de la part de C. Nordlund. 
+
+```{r,warning=F,comment=F,message=F}
+tab<-read.csv("globalfirm.csv",
+                 header=TRUE,
+                 sep=";",
+                 na.strings="NA",
+                 encoding="UTF-8")
+head(tab)
+dim(tab)
+# Accountancy
+acc<-as.matrix(tab[,2:6]) 
+rownames(acc)<-tab$City
+# Advertisment
+adv<-as.matrix(tab[,7:17]) 
+rownames(adv)<-tab$City
+# Banking
+bnk<-as.matrix(tab[,18:31]) 
+rownames(bnk)<-tab$City
+#Lawyer
+law<-as.matrix(tab[,32:47]) 
+rownames(law)<-tab$City
+# Total
+tot<-as.matrix(tab[,2:47]) 
+rownames(tot)<-tab$City
+# Ech
+x1<-c(2,0,0,3,3,1,3,1,0,1)
+x2<-c(0,3,1,1,0,1,2,0,1,1)
+x3<-c(3,0,0,3,3,0,3,0,1,1)
+ech<-cbind(x1,x2,x3)
+row.names(ech)<-c("Chica","Frank","HongK","Londo","LosAn","Milan","NewYo","Paris","Singa","Tokyo")
+is.matrix(ech)
+```
+
+
+
+### Analyse d'une matrice Lieu-Individu simplifiée
+
+On choisit dans un premier temps la matrice échantillon (*ech*) mais on pourra par la suite la remplacer par la matrice totale ou bien par celle de l'un ou l'autre des quatre secteurs.
+
+```{r}
+mat_lieu_indiv<-ech
+mat_lieu_indiv
+```
+
+On peut alors voir pour chaque firme quel est son "poids global" en effectuant la somme des colonnes : 
+
+```{r}
+totcol<-apply(mat_lieu_indiv,FUN="sum",2)
+totcol
+```
+
+
+On calcule de la même manière pour chaque ville le "poids global" des firmes qui y sont présentes : 
+
+```{r}
+totligne<-apply(mat_lieu_indiv,FUN="sum",1)
+totligne
+```
+
+
+  
+### Construction de plusieurs matrice de "relation" ville-ville
+
+Taylor donne une explication plutôt longue et embrouillée de la manière de calculer les "liaisons" entre villes. Mais ce n'est pas faire insulte à son intelligence que de suggérer qu'il savait parfaitement que le calcul en question n'est pas autre chose qu'un produit matriciel qui donne directement ce qu'il appelle dans son article *elemental relational matrix*.
+
+```{r}
+# elemental relational matrix
+matrel<-(mat_lieu_indiv)%*%t(mat_lieu_indiv)
+matrel
+#matrel
+```
+
+Taylor propose ensuite de "normaliser" cette matrice selon un indice de relation variant entre 0 et 1. Il prend comme référence la valeur maximale de relation de deux villes et divise la matrice par cette valeur afin d'obtenir ce qu'il nomme *proportional relations matrix* :
+
+```{r}
+#proportional relation matrix
+maxcol<-apply(mat_lieu_indiv,FUN="max",2)
+max<-sum(maxcol*maxcol)
+matrelnorm<-round(matrel/max,2)
+matrelnorm
+```
+
+Il en déduit une "distance" entre villes globales qui est également normée entre 0 et 1 et qu'il décide de fixer arbitrairement à 0 pour une ville avec elle-même, ce qui lui donne ce qu'il nomme une *social distance matrix* : 
+
+```{r}
+#social distance matrix
+matsocdist<-1-matrelnorm
+dim(matsocdist)[1]
+for (i in 1:dim(matsocdist)[1]) { matsocdist[i,i]<-0}
+matsocdist
+```
+
+Enfin, il propose de construire une matrice asymétrique permettant de construire une hiérarchie des villes globales. Pour cela, il calcul pour chaque  ville le maximum de "relations" que ses firmes peuvent tisser et divise les relations avec chaque autre ville par ce total. Il obtient ainsi une *asymmetrical relational matrix* : 
+
+```{r}
+#asymmetrical relational matrix
+maxlinkcity<-apply(mat_lieu_indiv*apply(mat_lieu_indiv,FUN="max",2),FUN="sum",1)
+maxlinkcity
+matrelasym<-round(matrel/maxlinkcity,2)
+matrelasym
+```
+
+
+### Analyse du graphe des relations symétriques
+
+Les différentes matrices de relation de Taylor peuvent ensuite être transformés en graphes relationnels, par exemple en choisissant un seuil de relation. Examinons tout d'abord la *proportional relational matrix* en nous fixant un seuil de relation de 0.10 (soit 10% du maximum de relation)
+
+```{r}
+mat<-matrelnorm
+# create boolean matrix
+seuil<-0.10
+mat[mat<seuil]<-0
+mat[mat>=seuil]<-1
+# eliminate empty rows or columns
+totlig<-apply(mat,FUN="sum",1)
+totcol<-apply(mat,FUN="sum",2)
+mat<-mat[totlig>0,totcol>0]
+#plot graph
+net<-graph_from_adjacency_matrix(mat,diag=FALSE,mode="undirected")
+size<-sqrt(degree(net,normalized=T))
+plot.igraph(net,
+            vertex.color="red",
+            vertex.label.dist=0.6,
+            vertex.label.cex=0.5+0.5*size,
+            vertex.size=size*10
+           )
+# compute centrality indexes
+tabres<-as_data_frame(net, what="vertices")
+tabres$C_DEG_std<-round(degree(net,normalized=T),2)
+tabres$C_BET_std<-round(betweenness(net,normalized=T),2)
+tabres$C_CLO_std<-round(closeness(net,normalized=T),2)
+tabres[order(tabres$C_DEG_std, decreasing=T),]
+```
+ 
+### Application sur l'ensemble des firmes
+ 
+Reproduisons la même analyse sur l'échantillon complet
+
+```{r}
+# Compute matrix of relation (simplified)
+mat_lieu_indiv<-tot
+matrel<-(mat_lieu_indiv)%*%t(mat_lieu_indiv)
+maxcol<-apply(mat_lieu_indiv,FUN="max",2)
+max<-sum(maxcol*maxcol)
+mat<-round(matrel/max,2)
+# create boolean matrix
+seuil<-0.25
+mat[mat<seuil]<-0
+mat[mat>=seuil]<-1
+# eliminate empty rows or columns
+totlig<-apply(mat,FUN="sum",1)
+totcol<-apply(mat,FUN="sum",2)
+mat<-mat[totlig>0,totcol>0]
+#plot graph
+net<-graph_from_adjacency_matrix(mat,diag=FALSE,mode="undirected")
+size<-sqrt(degree(net,normalized=T))
+plot.igraph(net,
+            vertex.color="red",
+            vertex.label.dist=0.6,
+            vertex.label.cex=0.5+0.5*size,
+            vertex.size=size*10
+           )
+# compute centrality indexes
+tabres<-as_data_frame(net, what="vertices")
+tabres$C_DEG_std<-round(degree(net,normalized=T),2)
+tabres$C_BET_std<-round(betweenness(net,normalized=T),2)
+tabres$C_CLO_std<-round(closeness(net,normalized=T),2)
+head(tabres[order(tabres$C_DEG_std, decreasing=T),],10)
+```
+ 
+ Très joli ... mais est-ce vraiment un travail scientifique ? Lisez le texte de Nordlund avant de vous extasier devant ce résultat ...
+
+
+```{r,cache.comments=TRUE,message=FALSE,warning=FALSE}
+# SAUVEGARDER LE PROGRAMME ? 
+#library(knitr)
+#purl("network_globalfirm_v2.Rmd")
+```
+

@@ -19,9 +19,11 @@ website:
         text: "Presse-Villes"        
       - href: SMA3.qmd
         text: "Villes"
+      - href: SMA4.qmd
+        text: "Métropoles"
     right: 
       - icon: github # add icons as navbar buttons
-        href: https://github.com/worldregio/theoregio
+        href: https://github.com/worldregio/SMA
         target: _blank
   page-footer:
     background: dark

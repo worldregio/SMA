@@ -8,7 +8,7 @@ format:
 
 embed-resources: true
 title-slide-attributes:
-  data-background-image: img/world2020_low25.jpg
+  data-background-image: img3/world2020_low25.jpg
   data-background-size: cover
   data-background-opacity: "1"
 ---
