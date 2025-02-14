@@ -21,6 +21,8 @@ website:
         text: "Villes"
       - href: SMA4.qmd
         text: "Métropoles"
+      - href: press4.qmd
+        text: "Presse-Métropoles"
     right: 
       - icon: github # add icons as navbar buttons
         href: https://github.com/worldregio/SMA

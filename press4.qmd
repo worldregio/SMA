@@ -1,0 +1,107 @@
+---
+title: "REVUE DE PRESSE SUR LES METROPOLES"
+subtitle: "Cours L3 Géographie 2025"
+date: "2025-02-17"
+date-format: iso
+author: "Claude Grasland"
+title-slide-attributes:
+  data-background-color: "#75AADB85"
+  data-background-size: 200px
+  data-background-opacity: "0.9"
+  data-background-position: top center
+format: 
+  revealjs:
+    bibliography: [references.bib]
+    logo: img1/logo.jpg
+    margin: 0
+    code-line-numbers: true
+    embed-resources: true
+    smaller: true
+    scrollable: true
+    theme: [simple, style.scss]
+execute:
+  echo: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE, warning= FALSE, message = FALSE, error=FALSE)
+library(knitr)
+
+
+
+```
+
+
+
+# Cours du 17 Février 2025
+
+## JO Paris 2024 : quel coût économique et écologique ?
+« Paris a obtenu sa candidature aux Jeux olympiques de 2024 en promettant d'organiser les Jeux les plus économiques et les plus durables de l'histoire récente. Malgré l'approche innovante de Paris, la question des coûts exorbitants dans un monde marqué par l'inégalité des richesses, la polarisation et la crise climatique reste d'actualité. "
+
+
+<div class="centered">
+<img src="img4/Paris2024.jpg" width=400px />
+</div>
+
+[Fortune ,"L'héritage de Paris met en péril les futurs Jeux olympiques. Est-il temps de choisir un hôte unique et permanent pour les Jeux", 3 Août 2024 ](https://fortune.com/europe/2024/08/03/the-legacy-of-paris-puts-future-olympics-at-risk-time-to-pick-a-single-permanent-host-for-the-games-seine-taylor-swift-french-elections-macron/)
+
+
+## Ethiopie : La Chine au service de l'Union Africaine
+« Sur les hauts plateaux éthiopiens, connus sous le nom de « Toit de l'Afrique », et à travers l'horizon de la capitale Addis-Abeba, vous pouvez voir plus que des chaînes de montagnes. Une tour majestueuse et un centre de conférence en forme d'anneau se dressent à l'horizon, envoyant le message d'une Afrique pleine de perspectives. Il s'agit du nouveau siège de l'Union africaine (UA), construit avec l'aide de la Chine 
+
+
+<div class="centered">
+<img src="img4/AUCC.jpg" width=400px />
+</div>
+
+[MOFCOM (China) Récits autour de l'initiative "Belt and roads", 2024 (?)](http://m.mofcom.gov.cn/article/beltandroad/africanunion//enindex.shtml)
+
+
+
+## Egypte : la nouvelle capitale est-elle un 'éléphant blanc' ?
+« À aucun moment de l'histoire africaine postcoloniale, une initiative, un projet ou un plan de construction audacieux n'a été accueilli autrement que par un pessimisme froid, des doutes constants et des moqueries ouvertes"
+
+:::: {.columns}
+::: {.column width=50% .r-fit-text}
+
+![Source : Pan African Review](img4/Egypt_new_capital.jpg){width=550}
+:::
+
+::: {.column width=50% .r-fit-text}
+![Source : Courrier International](img4/Egypt_new_capital_2.jpg){width=450}
+:::
+::::
+
+
+[The Pan African Review , 18 Août 2024 ](https://panafricanreview.com/is-egypts-new-administrative-capital-a-white-elephant-an-alternative-view/)
+
+
+## Arabie Saoudite : Pétrole et méga-projets urbains
+
+![Source : Courrier International](img4/neom.jpg){width=800}
+
+
+[Look 4, Youtube,  Mai 2024 ](https://www.youtube.com/watch?v=dGzu-jM5I9k)
+
+
+
+## Corée : Samsung doit-il inverstir dans Stargate aux USA ?
+
+"Samsung Electronics envisage de répondre à l'appel lancé par le PDG de SoftBank, Masayoshi Son, pour rejoindre le projet Stargate, une coentreprise de 500 milliards de dollars entre OpenAI, Oracle et SoftBank pour l'infrastructure de l'intelligence artificielle (IA) aux États-Unis."
+
+
+![Site Samsung au Texas](img4/samsung.jpg){width=400}
+
+[Korea Times,  13 Février 2025 ](https://www.koreatimes.co.kr/www/tech/2025/02/129_392076.html)
+
+## Milan : parmi les « 40 villes les plus puissantes du monde ». 
+
+"Dans le Global Power City Index 2023 (GPCI), Milan occupe la 33e place. Une position qui invite à réfléchir à son véritable potentiel et, partant, à son magnétisme mondial."
+
+
+![](img4/cityrank.jpg){width=400}
+
+[Milano citta stato,  3 Octobre 2024 ](https://www.milanocittastato.it/citta-del-mondo/milano-tra-le-40-citta-piu-potenti-del-mondo-5-azioni-per-raggiungere-le-prime/)

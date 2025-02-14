@@ -1,0 +1,188 @@
+---
+title: "RESEAUX SOCIAUX ET RESEAUX SPATIAUX"
+author: "Claude GRASLAND"
+date: "5 novembre 2016"
+output: pdf_document
+subtitle: Analyse des interactions élémentaires, directes et indirecte
+abstract: null
+---
+ 
+##2.2. Analyse des villes globales à travers la localisation des entreprises de service internationaux
+
+```{r,cache.comments=TRUE,warning=FALSE}
+rm(list=ls())
+library(reshape2)
+library(dplyr)
+library(igraph)
+
+library(sf)
+x<-read.table("firms_cities_gawc_2016.csv",sep=";", header=T)
+
+cod<-readRDS("gawc/cities.RDS") %>% st_drop_geometry() %>% filter(year==2016) %>% select(city_code=ID_ref, name=City)
+tab<-inner_join(x,cod)
+tab<-tab[,c(177,2:176)]
+mat<-as.matrix(tab[,-1])
+rownames(mat)<-tab$name
+mat[1:12,1:12]
+firm<-readRDS("firms_gawc_2016.RDS")
+
+```
+
+### Exemple
+
+```{r}
+selfirm <- c("BNK12","BNK21","BNK24","BNK31","BNK06","BNK43", "BNK09", "BNK15", "BNK35","BNK61")
+selcity <- c("Paris","Frankfurt","New York","Zurich","Mumbai", "Beijing", "London","Tokyo","Moscow", "Sao Paulo", "Lagos","Algiers")
+
+sel<-mat[rownames(mat) %in% selcity, colnames(mat) %in% selfirm]
+sel
+```
+
+
+
+### Analyse d'une matrice Lieu-Individu simplifiée
+
+On choisit dans un premier temps la matrice échantillon (*ech*) mais on pourra par la suite la remplacer par la matrice totale ou bien par celle de l'un ou l'autre des quatre secteurs.
+
+```{r}
+mat_lieu_indiv<-sel
+mat_lieu_indiv
+```
+
+On peut alors voir pour chaque firme quel est son "poids global" en effectuant la somme des colonnes : 
+
+```{r}
+totcol<-apply(mat_lieu_indiv,FUN="sum",2)
+totcol
+```
+
+
+On calcule de la même manière pour chaque ville le "poids global" des firmes qui y sont présentes : 
+
+```{r}
+totligne<-apply(mat_lieu_indiv,FUN="sum",1)
+totligne
+```
+
+
+  
+### Construction de plusieurs matrice de "relation" ville-ville
+
+Taylor donne une explication plutôt longue et embrouillée de la manière de calculer les "liaisons" entre villes. Mais ce n'est pas faire insulte à son intelligence que de suggérer qu'il savait parfaitement que le calcul en question n'est pas autre chose qu'un produit matriciel qui donne directement ce qu'il appelle dans son article *elemental relational matrix*.
+
+```{r}
+# elemental relational matrix
+matrel<-(mat_lieu_indiv)%*%t(mat_lieu_indiv)
+addmargins(matrel)
+#matrel
+```
+
+Taylor propose ensuite de "normaliser" cette matrice selon un indice de relation variant entre 0 et 1. Il prend comme référence la valeur maximale de relation de deux villes et divise la matrice par cette valeur afin d'obtenir ce qu'il nomme *proportional relations matrix* :
+
+```{r}
+#proportional relation matrix
+maxcol<-apply(mat_lieu_indiv,FUN="max",2)
+max<-sum(maxcol*maxcol)
+matrelnorm<-round(matrel/max,2)
+matrelnorm
+```
+
+Il en déduit une "distance" entre villes globales qui est également normée entre 0 et 1 et qu'il décide de fixer arbitrairement à 0 pour une ville avec elle-même, ce qui lui donne ce qu'il nomme une *social distance matrix* : 
+
+```{r}
+#social distance matrix
+matsocdist<-1-matrelnorm
+dim(matsocdist)[1]
+for (i in 1:dim(matsocdist)[1]) { matsocdist[i,i]<-0}
+matsocdist
+```
+
+Enfin, il propose de construire une matrice asymétrique permettant de construire une hiérarchie des villes globales. Pour cela, il calcul pour chaque  ville le maximum de "relations" que ses firmes peuvent tisser et divise les relations avec chaque autre ville par ce total. Il obtient ainsi une *asymmetrical relational matrix* : 
+
+```{r}
+#asymmetrical relational matrix
+maxlinkcity<-apply(mat_lieu_indiv*apply(mat_lieu_indiv,FUN="max",2),FUN="sum",1)
+maxlinkcity
+matrelasym<-round(matrel/maxlinkcity,2)
+matrelasym
+```
+
+
+### Analyse du graphe des relations symétriques
+
+Les différentes matrices de relation de Taylor peuvent ensuite être transformés en graphes relationnels, par exemple en choisissant un seuil de relation. Examinons tout d'abord la *proportional relational matrix* en nous fixant un seuil de relation de 0.10 (soit 10% du maximum de relation)
+
+```{r}
+mat<-matrelasym
+# create boolean matrix
+seuil<-0.5
+mat[mat<seuil]<-0
+mat[mat>=seuil]<-1
+# eliminate empty rows or columns
+totlig<-apply(mat,FUN="sum",1)
+totcol<-apply(mat,FUN="sum",2)
+mat<-mat[totlig>0,totcol>0]
+#plot graph
+net<-graph_from_adjacency_matrix(mat,diag=FALSE,mode="undirected")
+size<-sqrt(degree(net,normalized=T))
+plot.igraph(net,
+            vertex.color="red",
+            vertex.label.dist=0.6,
+            vertex.label.cex=0.5+0.5*size,
+            vertex.size=size*10
+           )
+# compute centrality indexes
+
+tabres<-igraph::as_data_frame(net, what="vertices")
+tabres$C_DEG_std<-round(degree(net,normalized=T),2)
+tabres$C_BET_std<-round(betweenness(net,normalized=T),2)
+tabres$C_CLO_std<-round(closeness(net,normalized=T),2)
+tabres
+
+```
+ 
+### Application sur l'ensemble des firmes
+ 
+Reproduisons la même analyse sur l'échantillon complet
+
+```{r}
+# Compute matrix of relation (simplified)
+mat_lieu_indiv<-tot
+matrel<-(mat_lieu_indiv)%*%t(mat_lieu_indiv)
+maxcol<-apply(mat_lieu_indiv,FUN="max",2)
+max<-sum(maxcol*maxcol)
+mat<-round(matrel/max,2)
+# create boolean matrix
+seuil<-0.25
+mat[mat<seuil]<-0
+mat[mat>=seuil]<-1
+# eliminate empty rows or columns
+totlig<-apply(mat,FUN="sum",1)
+totcol<-apply(mat,FUN="sum",2)
+mat<-mat[totlig>0,totcol>0]
+#plot graph
+net<-graph_from_adjacency_matrix(mat,diag=FALSE,mode="undirected")
+size<-sqrt(degree(net,normalized=T))
+plot.igraph(net,
+            vertex.color="red",
+            vertex.label.dist=0.6,
+            vertex.label.cex=0.5+0.5*size,
+            vertex.size=size*10
+           )
+# compute centrality indexes
+tabres<-as_data_frame(net, what="vertices")
+tabres$C_DEG_std<-round(degree(net,normalized=T),2)
+tabres$C_BET_std<-round(betweenness(net,normalized=T),2)
+tabres$C_CLO_std<-round(closeness(net,normalized=T),2)
+head(tabres[order(tabres$C_DEG_std, decreasing=T),],10)
+```
+ 
+ Très joli ... mais est-ce vraiment un travail scientifique ? Lisez le texte de Nordlund avant de vous extasier devant ce résultat ...
+
+
+```{r,cache.comments=TRUE,message=FALSE,warning=FALSE}
+# SAUVEGARDER LE PROGRAMME ? 
+#library(knitr)
+#purl("network_globalfirm_v2.Rmd")
+```
+
