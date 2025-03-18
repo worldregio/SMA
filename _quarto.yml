@@ -19,10 +19,12 @@ website:
         text: "Presse-Villes"        
       - href: SMA3.qmd
         text: "Villes"
+      - href: press4.qmd
+        text: "Presse-Métropoles"        
       - href: SMA4.qmd
         text: "Métropoles"
-      - href: press4.qmd
-        text: "Presse-Métropoles"
+      - href: SMA5.qmd
+        text: "Régionalisation"
     right: 
       - icon: github # add icons as navbar buttons
         href: https://github.com/worldregio/SMA
