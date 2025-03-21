@@ -47,169 +47,211 @@ library(kableExtra)
 
 
 
+# INTRODUCTION 
 
 
-#  Introduction : Intégration régionale et régionalisme
+## Régions infranationales et supranationales
 
+### Région infranationale
 
-## Deux ouvrages de référence
-<div class="centered">
-<img src="img5/source_richard_gana.jpg" width=700px />
-</div>
+Le terme *région* est souvent employé pour décrire  le premier niveau d'organisation du territorie en dessous de celui de **l'état**.  Quels que soient les critères employés (*Cf. ci-après*), le découpage régional d'un pays est une affaire de **pouvoir** (politique, économique, intellectuel, symbolique, ...) qui se règle dans un cadre national. 
 
-- Une synthèse des réflexions des géographes français en 2014 sur les rapports entre **régionalisation** et **mondialisation** autour des concets d'**intégration régionale** et de **régionalisme**.  Contenu du livre accessible [en ligne](https://www.cairn.info/la-regionalisation-du-monde--9782811111403.htm)
+### Région supranationale / infra mondiale 
 
-## Deux ouvrages de référence
-<div class="centered">
-<img src="img5/source_richard_marei.jpg" width=300px />
-</div>
+Mais le terme *region* est aussi employé pour décrire des regroupements de pays (*ex. Union Européenne*) ou des entités géographiques situés immédiatement en dessous du niveau mondial (*ex. Europe*). Contrairement a cas précédent, **il n'existe pas ici de pouvoir unique** à même d'arbitrer entre les différents découpages possibles du Monde. 
 
-- Une mise à jour de l'ouvrage précédent effectuée en 2018 sous la forme d'un **dictionnaire des concepts** comprenant plusieurs **études de cas**. 
 
-## Régionalisation : définition 
+## Géographie ou Sciences Régionale ?
 
-- La régionalisation désigne une **augmentation des échanges entre des unités territoriales situées dans la même partie du monde**. Il peut s’agir de pays, de régions ou d’autres entités infra étatiques. 
+### L'expertise des géographes
 
-- La régionalisation aboutit à ce que **les échanges internes à ce paquet d’unités territoriales soient plus élevés ou plus intenses qu’avec le reste du monde**. 
+Les géographes se présentent souvent comme des experts de la régionalisation et sont effectivement souvent consultés sur les questions de régionalisation aux échelles infra-nationales et supra-nationales.
 
-- Dans certains cas, les échanges internes sont effectivement plus élevés que les échanges externes. Dans d’autres cas, leur part est minoritaire mais leur augmentation est plus rapide. Dans le premier cas, la régionalisation est un **fait établi**. Dans l’autre, elle est un **processus en cours**.
+### La science régionale
 
-Source : Y. Richard, 2014, "Régionalisation, régionalisme et intégration régionale : concepts flous et nécessaire clarification", in [Richard Y. & Gana A., 2014](https://www.cairn.info/la-regionalisation-du-monde--9782811111403-page-21.htm)
+Mais d'autres disciplines peuvent revendiquer à juste titre une expertise au moins équivalente sur ces questions de découpage. Notamment les juristes, les économistes, les sociologues, les psychologues. 
 
 
-## Régionalisation : exemple théorique
 
-<div class="centered">
-<img src="img5/regionalisation.png" width=700px />
-</div>
 
-- **à gauche**, un monde **globalisé** où les relations entre pays sont indifférentes aux coûts de transports et aux frontières. ..
-- **à droite**, un monde **régionalisé** où les échanges se concentrent entre les pays voisins (**régions 1 et 2**) ou des pays proches reliés par des routes marines (**région 3**)
+#  CONCEPTS ET THEORIES : LE DECOUPAGE REGIONAL DE LA FRANCE 
 
+## Les "régions morphologiques" de Philippe Buache
 
-## Régionalisation : un fait établi ?
 
-<div class="centered">
-<img src="img5/vanhamme001.jpg" width=700px />
-</div>
+:::: {.columns}
 
-Source : G. van Hamme, 2014, "Régionalisme, intégration régionale et mondialisation : quelques éclairages sur un triangle complexe", in [Richard Y. & Gana A., 2014](https://www.cairn.info/la-regionalisation-du-monde--9782811111403-page-45.htm)
+::: {.column width="20%" .r-fit-text}
+![](img5/Buache.jpg){width=200}
 
+![](img5/Danton.jpg){width=200}
+Georges Danton, 1759-1794
 
-## Régionalisation et mondialisation
+:::
 
-- Dans le contexte idéologique libéral des années 1990, l’**intégration économique régionale a été perçue par de nombreux auteurs comme une menace potentielle au développement économique** (Krugman, 1991 ; Frankel et al., 1995). Cette crainte s’appuie, d’une part, sur l’idée que la **libre circulation généralisée des biens et services** est le meilleur chemin vers la prospérité économique et, d’autre part, que le régionalisme pourrait être un frein à l’ouverture économique.
 
-- Mais, dès la fin des années 1990, ces craintes s’estompent car  **les aires de libre-échange régional n’ont pas mené de politique protectionniste, bien au contraire** (*cf. cas de l'UE*)
+::: {.column width="80%" .r-fit-text}
 
-- D'une part, en favorisant les processus d’agglomération économique sur des marchés plus larges, **la régionalisation permettrait en particulier aux économies les plus faibles de mieux faire face à une ouverture économique plus large**. D’autre part, d’un point de vue plus politique, **le libre-échange régional se heurte à de moindres résistances que l’ouverture commerciale tous azimuts**.
+«Les limites de la France sont marquées par la nature, nous les atteindrons des quatre coins de l'horizon, du côté du Rhin, du côté de l'Océan, du côté des Pyrénées, du côté des Alpes. Là doivent finir les bornes de notre République » (*Danton, 31 Janvier 1793*)
 
+![](img5/Buache_map_France.jpg){width=450}
+![](img5/France_1800.png){width=300}
+:::
 
-Source : G. van Hamme, 2014, "Régionalisme, intégration régionale et mondialisation : quelques éclairages sur un triangle complexe", in [Richard Y. & Gana A., 2014](https://www.cairn.info/la-regionalisation-du-monde--9782811111403-page-45.htm)
+::::
 
-## Régionalisation et mondialisation
 
-<div class="centered">
-<img src="img5/vanhamme002.jpg" width=600px />
-</div>
 
-Source : G. van Hamme, 2014, "Régionalisme, intégration régionale et mondialisation : quelques éclairages sur un triangle complexe", in [Richard Y. & Gana A., 2014](https://www.cairn.info/la-regionalisation-du-monde--9782811111403-page-45.htm)
 
 
-## Régionalisation : un processus multisectoriel
 
-- La régionalisation est un processus multisectoriel qui **ne se limite pas au commerce** (échanges de marchandises, de services et d’investissements). Tous les flux ou autres modes de relations peuvent se régionaliser : **flux touristiques, migrations ou mobilités internationales, aide au développement, communications téléphoniques et électroniques…**
 
-- C’est **une dynamique qui dessine et redessine en permanence des ensembles géographiques aux limites mouvantes**. Ces limites peuvent se confondre avec le tracé des frontières de certains États ou bien passer au milieu de leur territoire.
+## Les "régions naturelles" de Vidal de la Blache
 
-- Parler de régionalisation revient à mettre l’accent sur le **processus en cours** ou sur le résultat indépendamment de ses causes.
 
-Source : Y. Richard, 2014, "Régionalisation, régionalisme et intégration régionale : concepts flous et nécessaire clarification", in [Richard Y. & Gana A., 2014](https://www.cairn.info/la-regionalisation-du-monde--9782811111403-page-21.htm)
+:::: {.columns}
 
+::: {.column width="20%" .r-fit-text}
+![](img5/VIdal_photo.jpg){width=150}
+![](img5/vidal_tableau.gif){width=150}
+:::
 
-## Régionalisme : définition
 
-- Le régionalisme implique l’idée d’une **action consciente et planifiée**, d’une **stratégie**.  Il a pour origine un ensemble de décisions prises par des acteurs situés dans la même partie du monde à un moment donné. 
-- On peut parler par exemple de régionalisme lorsque plusieurs États voisins tentent d’**abaisser les barrières douanières** qui les séparent.
-- Les acteurs du régionalisme sont en général des **États** qui souhaitent donner un caractère organisé ou mieux régulé à leurs relations de voisinage. Chez la plupart des auteurs, le régionalisme implique donc l’idée d’une **coopération politique** voire d’une **coordination à l’échelon gouvernemental**.
+::: {.column width="80%" .r-fit-text}
 
-Source : Y. Richard, 2014, "Régionalisation, régionalisme et intégration régionale : concepts flous et nécessaire clarification", in [Richard Y. & Gana A., 2014](https://www.cairn.info/la-regionalisation-du-monde--9782811111403-page-21.htm)
+On présente souvent le fondateur de la géographie française, Paul Vidal de la Blache, comme l'inventeur du découpage de la France en **régions naturelles** fondées sur la géologie ou les bassins hydrographiques...
 
+![](img5/vidat_tableau_carte.jpg){width=450}
+![](img5/France_geol.jpg){width=450}
 
-## Régionalisme : point de vue économique
+:::
 
-- L’**économie** accorde beaucoup d’attention au régionalisme depuis les années 1950. Elle le définit comme la **signature d’un accord régional ou de plusieurs accords commerciaux préférentiels bilatéraux signés par des États voisins**, afin de faciliter leurs échanges. Ces accords concernent principalement le commerce et/ou les investissements.
-- Un premier type est caractérisé par l’**association de pays ayant des niveaux de développement égaux ou presque égaux** qui signent des accords commerciaux de plus en plus nombreux et de plus en plus exigeants. 
-- Un deuxième type implique des **pays aux niveaux de développement inégaux** qui mettent en place une division internationale hiérarchisée du travail. On parle alors de **régionalisme Nord-Sud**.
+::::
 
-Source : Y. Richard, 2014, "Régionalisation, régionalisme et intégration régionale : concepts flous et nécessaire clarification", in [Richard Y. & Gana A., 2014](https://www.cairn.info/la-regionalisation-du-monde--9782811111403-page-21.htm)
 
-## Régionalisme : situation vers 2010
+## Proposition de réforme régionale de Vidal de la Blache
 
-<div class="centered">
-<img src="img5/OER2008.jpg" width=800px />
-</div>
 
-- Une vision simple et rassurante de blocs économiques bien séparés où les pays occidents pèsent le plus sur le plan économique.
-Source : Diplomatie, n°47
+:::: {.columns}
 
-## Régionalisme : situation vers 2020
+::: {.column width="20%" .r-fit-text}
+![](img5/VIdal_photo.jpg){width=150}
+![](img5/Vidal_est.jpeg){width=150}
+:::
 
-<div class="centered">
-<img src="img5/fta_wikipedia.jpg" width=800px />
-</div>
 
-- Une vision complexe de zones de libre échanges multiples qui se chevauchent et s'intersectent sans logique claire. 
-Source : Wikipedia, english, consulté le 8 mars 2022
+::: {.column width="80%" .r-fit-text}
 
+Mais Vidal de la Blache a proposé de nombreux autres critères de régionalisation fondées sur l'économie, les transports ou la polarisation des villes. Il proposa même une **réforme régionale** qui anticipe avec un siécle d'avance les lois de décentralisation.
 
-## Le conflit russo-ukrainien de 2013-2014 
+![](img5/vidal_region_admin.jpg){width=450}
+![](img5/decentralisation.jpg){width=250}
 
-- Le conflit russo-ukrainien de 2013-2014 qui aboutit à l'annexion de la Crimée et la première guerre du Donbass  trouve son point de départ dans un **arbitage géopolitique entre deux visions de l'intégration régionale du pays dans le Monde**. 
+:::
 
-- **La Communauté des États indépendants (CEI) ** signe un accord de libre-échange signé le 18 octobre 2011 entre la **Russie, l'Ukraine, la Biélorussie, la Moldavie, l'Arménie, le Kirghizstan et le Kazakhstan** afin de renforcer les échanges entre les pays. Mais sa ratification prend du temps et n'est pas achevée en 2013 et sera abandonnée.
+::::
 
-- **L'Union Européenne** de son côté propose à l'Ukraine un **accord d'association** qui est négocié de 2007 à 2012 pour entrer en vigueur en novembre 2013. Mais le président ukrainien **Vladimir Ianoukovitch** refuse de le ratifier ce qui provoque les événements de Maïdan, suivi de sa destitution et sa fuite en Russie. L'Ukraine rejoint l'accord avec l'UE en 2017.
 
-## Le conflit russo-ukrainien de 2013-2014
 
-<div class="centered">
-<img src="img5/ukrtrade2000-2012.jpg" width=500px />
-</div>
+## La synthèse d'Etienne Juillard : (1) régions homogènes
 
-- Quelques semaines avant le conflit, un document d'analyse économique s'interroge sur le choix de l'Ukraine qui commerce à part approximativement égale avec les deux blocs. 
 
-Source : Anders Aslund, Sept. 2013, "Ukraine’s Choice: European Association Agreement or Eurasian Union?", Policy Brief  n°22 of the Peterson Institute for International Economics. [Lien](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjy9MCmz7b2AhVGQhoKHSAYDRIQFnoECAcQAQ&url=https%3A%2F%2Fciaotest.cc.columbia.edu%2Fpbei%2Fiie%2F0029281%2Ff_0029281_23772.pdf&usg=AOvVaw2OXIaF69c9eqbWlXGpdqmn)
+:::: {.columns}
 
+::: {.column width="20%" .r-fit-text}
+![](img5/juillard.jpg){width=150}
 
-## Du régionalisme à l'intégration régionale
+- **Juillard Étienne**, "La région: essai de définition", *Annales de géographie*, Vol. 71, No. 387. Armand Colin, 1962.
+:::
 
 
-- **Le politiste Joseph Nye (1968)** discute le concept d’**intégrations régionales** et propose d’étudier en parallèle dans une partie du monde donnée l’intégration **économique**, l’intégration **sociale** et l’intégration **politique**, chacun de ces types d’intégration pouvant à son tour être divisé en sous-types (Nye, 1968) et entrer en interaction avec les autres.
+::: {.column width="80%" .r-fit-text}
 
-- **L'économiste H. Regnault (1986)** pense que le régionalisme peut correspondre "à un besoin de relations étroites en vue de former bloc au sein de l’économie mondiale. Cela implique l’engagement dans un processus d’**intégration en profondeur**. Outre la proximité géographique, l’exclusivité de la relation suppose « **un vouloir vivre ensemble** » ou, au minimum, la **conscience d’un « devoir vivre ensemble **», ce qui en fait un projet géopolitique global, non réductible à la seule logique économique .
+La **région homogène** semble encore assimilée au concept de **paysage**. Mais celui-ci incorpore l’élément humain (activité agricole, activité industrielle, villes, …). La région homogène se définit par sa **forme aréale** et ses **limites précises**.
 
 
-## L'intégration régionale : définition
 
-- L’**intégration régionale désigne un processus de création, d’accroissement et d’approfondissement des interactions entre des unités territoriales initialement distinctes et contiguës**. 
+![](img5/juillard1.png){width=450}
 
-- Le processus aboutit à la formation d’un **ensemble régional autonome** à l’intérieur duquel les interactions entre les territoires constitutifs sont plus fortes qu’avec les territoires externes. Les ensembles régionaux ainsi construits peuvent être de toutes tailles. 
 
-- Ils peuvent être constitués par les territoires additionnés de plusieurs **pays contigus**, ou former des **ensembles transnationaux** déployés sur le territoire de plusieurs États sans nécessairement inclure ceux-ci en entier, pourvu qu’il n’y ait pas de rupture de la **continuité spatiale**
+:::
 
-Source : Y. Richard, 2014, "Régionalisation, régionalisme et intégration régionale : concepts flous et nécessaire clarification", in [Richard Y. & Gana A., 2014](https://www.cairn.info/la-regionalisation-du-monde--9782811111403-page-21.htm)
+::::
 
-## En résumé :
+## La synthèse d'Etienne Juillard : (2) régions polarisées
 
-1. la **régionalisation** est la mise en évidence d'espace voisins ou proches ayant plus de liens entre eux qu'avec le reste du Monde et/ou qui renforcent ces liens. Elle relève donc d'une **analyse économique et géographique** de l'organisation du Monde par les **flux**.  
 
-2. Le **régionalisme** est un processus **politique et juridique** de création de territoires de circulation préférentielle qui favorisent les échanges entre des lieux proches en réduisant les distances et abolissant les frontières. 
+:::: {.columns}
 
-3. L'**intégration régionale* ** est le résultat de la combinaison dialectique des deux processus précédents. L'existence de flux ou de liens entre pays proches (*régionalisation*) peut conduire ceux-ci à mettre en place une structure politique (*régionalisme*) qui va contribuer en retour à renforcer les flux. 
+::: {.column width="20%" .r-fit-text}
+![](img5/juillard.jpg){width=150}
 
-4. Si la **dimension économique** est la plus souvent mise en avant, les processus d'intégration régionale sont **multifactoriels** et combinent aussi bien des dimensions objectives (e.g. complémentarités) que des dimensions subjectives (e.g. sentiments d'identités)
+- **Juillard Étienne**, "La région: essai de définition", *Annales de géographie*, Vol. 71, No. 387. Armand Colin, 1962.
+:::
 
+
+::: {.column width="80%" .r-fit-text}
+
+La **région polarisée (ou fonctionnelle)** est basée sur les **flux et les réseaux**. Elle s'organise autour d'une **hiérarchie de pôles**. Les aires d'influence des centres sont **floues** et **variables** au cours du temps. 
+
+
+![](img5/juillard2.png){width=450}
+
+
+:::
+
+::::
+
+
+## La synthèse d'Etienne Juillard : (3) régions politiques
+
+
+:::: {.columns}
+
+::: {.column width="20%" .r-fit-text}
+![](img5/juillard.jpg){width=150}
+
+- **Juillard Étienne**, "La région: essai de définition", *Annales de géographie*, Vol. 71, No. 387. Armand Colin, 1962.
+:::
+
+
+::: {.column width="80%" .r-fit-text}
+
+Les **régions politiques ou administratives** sont des découpages mis en place par un **pouvoir** afin de contrôler, gérer, coordonner ou légitimer ses actions. La région est **le premier niveau d'organisation en dessous de l'état**. 
+
+
+![](img5/grand_est.jpg){width=650}
+
+
+:::
+
+::::
+
+
+## Le codicille d'A. Frémont: (4) la région "espace vécu"
+
+
+:::: {.columns}
+
+::: {.column width="20%" .r-fit-text}
+![](img5/fremont.jpg){width=150}
+
+![](img5/Fremont_espace_vecu.jpg){width=150}
+- **Frémont A. (1974)**, "Recherches sur l'espace vécu", *L'espace géographique*, 231-238.
+:::
+
+
+::: {.column width="80%" .r-fit-text}
+
+*L’homme n’est pas un objet neutre à l’intérieur de la région […] Il perçoit inégalement l’espace qui l’entoure, il porte des jugements sur les lieux, il est retenu ou attiré, consciemment ou inconsciemment, il se trompe et le trompe… ». L’espace est donc considéré comme « vécu » dans le sens où il est « vu, perçu, ressenti, aimé ou rejeté, modelé par les hommes et qu’il projette sur eux des images qui les modèlent.* (Frémont A., 1976) 
+
+
+![](img5/alsace.jpg){width=650}
+
+
+:::
+
+::::
 
 
 # LE DECOUPAGE DU MONDE EN CONTINENTS
@@ -835,3 +877,168 @@ Source ; Carte des "races humaines" produite en Union soviétique dans les anné
 
 :::
 ::::
+
+
+
+#  Introduction : Intégration régionale et régionalisme
+
+
+## Deux ouvrages de référence
+<div class="centered">
+<img src="img5/source_richard_gana.jpg" width=700px />
+</div>
+
+- Une synthèse des réflexions des géographes français en 2014 sur les rapports entre **régionalisation** et **mondialisation** autour des concets d'**intégration régionale** et de **régionalisme**.  Contenu du livre accessible [en ligne](https://www.cairn.info/la-regionalisation-du-monde--9782811111403.htm)
+
+## Deux ouvrages de référence
+<div class="centered">
+<img src="img5/source_richard_marei.jpg" width=300px />
+</div>
+
+- Une mise à jour de l'ouvrage précédent effectuée en 2018 sous la forme d'un **dictionnaire des concepts** comprenant plusieurs **études de cas**. 
+
+## Régionalisation : définition 
+
+- La régionalisation désigne une **augmentation des échanges entre des unités territoriales situées dans la même partie du monde**. Il peut s’agir de pays, de régions ou d’autres entités infra étatiques. 
+
+- La régionalisation aboutit à ce que **les échanges internes à ce paquet d’unités territoriales soient plus élevés ou plus intenses qu’avec le reste du monde**. 
+
+- Dans certains cas, les échanges internes sont effectivement plus élevés que les échanges externes. Dans d’autres cas, leur part est minoritaire mais leur augmentation est plus rapide. Dans le premier cas, la régionalisation est un **fait établi**. Dans l’autre, elle est un **processus en cours**.
+
+Source : Y. Richard, 2014, "Régionalisation, régionalisme et intégration régionale : concepts flous et nécessaire clarification", in [Richard Y. & Gana A., 2014](https://www.cairn.info/la-regionalisation-du-monde--9782811111403-page-21.htm)
+
+
+## Régionalisation : exemple théorique
+
+<div class="centered">
+<img src="img5/regionalisation.png" width=700px />
+</div>
+
+- **à gauche**, un monde **globalisé** où les relations entre pays sont indifférentes aux coûts de transports et aux frontières. ..
+- **à droite**, un monde **régionalisé** où les échanges se concentrent entre les pays voisins (**régions 1 et 2**) ou des pays proches reliés par des routes marines (**région 3**)
+
+
+## Régionalisation : un fait établi ?
+
+<div class="centered">
+<img src="img5/vanhamme001.jpg" width=700px />
+</div>
+
+Source : G. van Hamme, 2014, "Régionalisme, intégration régionale et mondialisation : quelques éclairages sur un triangle complexe", in [Richard Y. & Gana A., 2014](https://www.cairn.info/la-regionalisation-du-monde--9782811111403-page-45.htm)
+
+
+## Régionalisation et mondialisation
+
+- Dans le contexte idéologique libéral des années 1990, l’**intégration économique régionale a été perçue par de nombreux auteurs comme une menace potentielle au développement économique** (Krugman, 1991 ; Frankel et al., 1995). Cette crainte s’appuie, d’une part, sur l’idée que la **libre circulation généralisée des biens et services** est le meilleur chemin vers la prospérité économique et, d’autre part, que le régionalisme pourrait être un frein à l’ouverture économique.
+
+- Mais, dès la fin des années 1990, ces craintes s’estompent car  **les aires de libre-échange régional n’ont pas mené de politique protectionniste, bien au contraire** (*cf. cas de l'UE*)
+
+- D'une part, en favorisant les processus d’agglomération économique sur des marchés plus larges, **la régionalisation permettrait en particulier aux économies les plus faibles de mieux faire face à une ouverture économique plus large**. D’autre part, d’un point de vue plus politique, **le libre-échange régional se heurte à de moindres résistances que l’ouverture commerciale tous azimuts**.
+
+
+Source : G. van Hamme, 2014, "Régionalisme, intégration régionale et mondialisation : quelques éclairages sur un triangle complexe", in [Richard Y. & Gana A., 2014](https://www.cairn.info/la-regionalisation-du-monde--9782811111403-page-45.htm)
+
+## Régionalisation et mondialisation
+
+<div class="centered">
+<img src="img5/vanhamme002.jpg" width=600px />
+</div>
+
+Source : G. van Hamme, 2014, "Régionalisme, intégration régionale et mondialisation : quelques éclairages sur un triangle complexe", in [Richard Y. & Gana A., 2014](https://www.cairn.info/la-regionalisation-du-monde--9782811111403-page-45.htm)
+
+
+## Régionalisation : un processus multisectoriel
+
+- La régionalisation est un processus multisectoriel qui **ne se limite pas au commerce** (échanges de marchandises, de services et d’investissements). Tous les flux ou autres modes de relations peuvent se régionaliser : **flux touristiques, migrations ou mobilités internationales, aide au développement, communications téléphoniques et électroniques…**
+
+- C’est **une dynamique qui dessine et redessine en permanence des ensembles géographiques aux limites mouvantes**. Ces limites peuvent se confondre avec le tracé des frontières de certains États ou bien passer au milieu de leur territoire.
+
+- Parler de régionalisation revient à mettre l’accent sur le **processus en cours** ou sur le résultat indépendamment de ses causes.
+
+Source : Y. Richard, 2014, "Régionalisation, régionalisme et intégration régionale : concepts flous et nécessaire clarification", in [Richard Y. & Gana A., 2014](https://www.cairn.info/la-regionalisation-du-monde--9782811111403-page-21.htm)
+
+
+## Régionalisme : définition
+
+- Le régionalisme implique l’idée d’une **action consciente et planifiée**, d’une **stratégie**.  Il a pour origine un ensemble de décisions prises par des acteurs situés dans la même partie du monde à un moment donné. 
+- On peut parler par exemple de régionalisme lorsque plusieurs États voisins tentent d’**abaisser les barrières douanières** qui les séparent.
+- Les acteurs du régionalisme sont en général des **États** qui souhaitent donner un caractère organisé ou mieux régulé à leurs relations de voisinage. Chez la plupart des auteurs, le régionalisme implique donc l’idée d’une **coopération politique** voire d’une **coordination à l’échelon gouvernemental**.
+
+Source : Y. Richard, 2014, "Régionalisation, régionalisme et intégration régionale : concepts flous et nécessaire clarification", in [Richard Y. & Gana A., 2014](https://www.cairn.info/la-regionalisation-du-monde--9782811111403-page-21.htm)
+
+
+## Régionalisme : point de vue économique
+
+- L’**économie** accorde beaucoup d’attention au régionalisme depuis les années 1950. Elle le définit comme la **signature d’un accord régional ou de plusieurs accords commerciaux préférentiels bilatéraux signés par des États voisins**, afin de faciliter leurs échanges. Ces accords concernent principalement le commerce et/ou les investissements.
+- Un premier type est caractérisé par l’**association de pays ayant des niveaux de développement égaux ou presque égaux** qui signent des accords commerciaux de plus en plus nombreux et de plus en plus exigeants. 
+- Un deuxième type implique des **pays aux niveaux de développement inégaux** qui mettent en place une division internationale hiérarchisée du travail. On parle alors de **régionalisme Nord-Sud**.
+
+Source : Y. Richard, 2014, "Régionalisation, régionalisme et intégration régionale : concepts flous et nécessaire clarification", in [Richard Y. & Gana A., 2014](https://www.cairn.info/la-regionalisation-du-monde--9782811111403-page-21.htm)
+
+## Régionalisme : situation vers 2010
+
+<div class="centered">
+<img src="img5/OER2008.jpg" width=800px />
+</div>
+
+- Une vision simple et rassurante de blocs économiques bien séparés où les pays occidents pèsent le plus sur le plan économique.
+Source : Diplomatie, n°47
+
+## Régionalisme : situation vers 2020
+
+<div class="centered">
+<img src="img5/fta_wikipedia.jpg" width=800px />
+</div>
+
+- Une vision complexe de zones de libre échanges multiples qui se chevauchent et s'intersectent sans logique claire. 
+Source : Wikipedia, english, consulté le 8 mars 2022
+
+
+## Le conflit russo-ukrainien de 2013-2014 
+
+- Le conflit russo-ukrainien de 2013-2014 qui aboutit à l'annexion de la Crimée et la première guerre du Donbass  trouve son point de départ dans un **arbitage géopolitique entre deux visions de l'intégration régionale du pays dans le Monde**. 
+
+- **La Communauté des États indépendants (CEI) ** signe un accord de libre-échange signé le 18 octobre 2011 entre la **Russie, l'Ukraine, la Biélorussie, la Moldavie, l'Arménie, le Kirghizstan et le Kazakhstan** afin de renforcer les échanges entre les pays. Mais sa ratification prend du temps et n'est pas achevée en 2013 et sera abandonnée.
+
+- **L'Union Européenne** de son côté propose à l'Ukraine un **accord d'association** qui est négocié de 2007 à 2012 pour entrer en vigueur en novembre 2013. Mais le président ukrainien **Vladimir Ianoukovitch** refuse de le ratifier ce qui provoque les événements de Maïdan, suivi de sa destitution et sa fuite en Russie. L'Ukraine rejoint l'accord avec l'UE en 2017.
+
+## Le conflit russo-ukrainien de 2013-2014
+
+<div class="centered">
+<img src="img5/ukrtrade2000-2012.jpg" width=500px />
+</div>
+
+- Quelques semaines avant le conflit, un document d'analyse économique s'interroge sur le choix de l'Ukraine qui commerce à part approximativement égale avec les deux blocs. 
+
+Source : Anders Aslund, Sept. 2013, "Ukraine’s Choice: European Association Agreement or Eurasian Union?", Policy Brief  n°22 of the Peterson Institute for International Economics. [Lien](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjy9MCmz7b2AhVGQhoKHSAYDRIQFnoECAcQAQ&url=https%3A%2F%2Fciaotest.cc.columbia.edu%2Fpbei%2Fiie%2F0029281%2Ff_0029281_23772.pdf&usg=AOvVaw2OXIaF69c9eqbWlXGpdqmn)
+
+
+## Du régionalisme à l'intégration régionale
+
+
+- **Le politiste Joseph Nye (1968)** discute le concept d’**intégrations régionales** et propose d’étudier en parallèle dans une partie du monde donnée l’intégration **économique**, l’intégration **sociale** et l’intégration **politique**, chacun de ces types d’intégration pouvant à son tour être divisé en sous-types (Nye, 1968) et entrer en interaction avec les autres.
+
+- **L'économiste H. Regnault (1986)** pense que le régionalisme peut correspondre "à un besoin de relations étroites en vue de former bloc au sein de l’économie mondiale. Cela implique l’engagement dans un processus d’**intégration en profondeur**. Outre la proximité géographique, l’exclusivité de la relation suppose « **un vouloir vivre ensemble** » ou, au minimum, la **conscience d’un « devoir vivre ensemble **», ce qui en fait un projet géopolitique global, non réductible à la seule logique économique .
+
+
+## L'intégration régionale : définition
+
+- L’**intégration régionale désigne un processus de création, d’accroissement et d’approfondissement des interactions entre des unités territoriales initialement distinctes et contiguës**. 
+
+- Le processus aboutit à la formation d’un **ensemble régional autonome** à l’intérieur duquel les interactions entre les territoires constitutifs sont plus fortes qu’avec les territoires externes. Les ensembles régionaux ainsi construits peuvent être de toutes tailles. 
+
+- Ils peuvent être constitués par les territoires additionnés de plusieurs **pays contigus**, ou former des **ensembles transnationaux** déployés sur le territoire de plusieurs États sans nécessairement inclure ceux-ci en entier, pourvu qu’il n’y ait pas de rupture de la **continuité spatiale**
+
+Source : Y. Richard, 2014, "Régionalisation, régionalisme et intégration régionale : concepts flous et nécessaire clarification", in [Richard Y. & Gana A., 2014](https://www.cairn.info/la-regionalisation-du-monde--9782811111403-page-21.htm)
+
+## En résumé :
+
+1. la **régionalisation** est la mise en évidence d'espace voisins ou proches ayant plus de liens entre eux qu'avec le reste du Monde et/ou qui renforcent ces liens. Elle relève donc d'une **analyse économique et géographique** de l'organisation du Monde par les **flux**.  
+
+2. Le **régionalisme** est un processus **politique et juridique** de création de territoires de circulation préférentielle qui favorisent les échanges entre des lieux proches en réduisant les distances et abolissant les frontières. 
+
+3. L'**intégration régionale* ** est le résultat de la combinaison dialectique des deux processus précédents. L'existence de flux ou de liens entre pays proches (*régionalisation*) peut conduire ceux-ci à mettre en place une structure politique (*régionalisme*) qui va contribuer en retour à renforcer les flux. 
+
+4. Si la **dimension économique** est la plus souvent mise en avant, les processus d'intégration régionale sont **multifactoriels** et combinent aussi bien des dimensions objectives (e.g. complémentarités) que des dimensions subjectives (e.g. sentiments d'identités)
+
+
