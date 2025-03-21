@@ -254,7 +254,7 @@ Les **régions politiques ou administratives** sont des découpages mis en place
 ::::
 
 
-# LE DECOUPAGE DU MONDE EN CONTINENTS
+# 1. REGIONS MORPHOLOGIQUES : LA FAUSSE NEUTRALITE DES CONTINENTS
 
 
 
@@ -672,7 +672,7 @@ Source : **P. Clerc**, 2002, Turquie :  la géographie-prétexte [Le Monde](http
 Source : **Grataloup, Christian, 2009,**  *L'invention des continents: comment l'Europe a découpé le monde*. Larousse, Paris
 
 
-# DECOUPAGE DU MONDE EN REGIONS HOMOGENES
+# 2.  REGIONS HOMOGENES : ENTRE NATURE ET CULTURE
 
 
 ## Qu'est-ce qu'une région homogène ? 
@@ -694,7 +694,7 @@ Source : **Grataloup, Christian, 2009,**  *L'invention des continents: comment l
 
 
 
-## Régions naturelles (1) : les "Royaumes" biogéographiques ...
+## Régions "naturelles" :  les "Royaumes" biogéographiques ...
 
 
 :::: {.columns}
@@ -715,7 +715,7 @@ Source : **Loidi, J., & Vynokurov, D. (2024).** The biogeographical kingdoms and
 ![](img5/biogeo_reg1.jpg){width=800}
 :::
 ::::
-##  ... et leurs subdivisions en régions.
+## Régions "naturelles" :  les régions biogéographiques ...
 
 
 :::: {.columns}
@@ -742,7 +742,7 @@ Source : **Loidi, J., & Vynokurov, D. (2024).** The biogeographical kingdoms and
 
 
 
-## Régions naturelles (2) : Les zones climatiques traditionnelles ...
+## Régions "naturelles" : Les zones climatiques traditionnelles ...
 
 
 :::: {.columns}
@@ -764,7 +764,7 @@ Source : **Pinna M., 1989,** "Un aperçu historique de «la théorie des climats
 
 
 
-## ... et le découpage régional du GIEC
+## Régions "naturelles" : le découpage climatique du GIEC
 
 
 :::: {.columns}
@@ -783,19 +783,65 @@ Source : [Iturbide & al., 2020](https://essd.copernicus.org/articles/12/2959/202
 
 
 
-## Régions 'culturelles' (1) : Les races (France, 1937)
+## Régions "culturelles"  : les races (France, 1937)
 
 
 ![](img5/race2.jpg){width=800}
 
 Source ; Carte publiée en France vers 1937 dans un manuel de géographie. **Remarquer le choix des  couleurs utilisées"**
 
-## Régions 'culturelles' (1) : Les races (URSS, 1970's)
+## Régions "culturelles" : les races (URSS, 1970's)
 
 
 ![](img5/race_soviet.jpg){width=800}
 
 Source ; Carte des "races humaines" produite en Union soviétique dans les années 1960-70  et traduite en anglais. **Remarquer la catégorie "transinational"**
+
+
+
+## Régions "culturelles" : les langues officielles
+
+
+![](img5/World_Official_languages.png){width=800}
+
+Source : Wikipedia english, consulté le 21 mars 2024, [World Official Languages](https://en.wikipedia.org/wiki/File:World_Official_languages.png)
+
+
+
+
+## Régions "culturelles" : les langues "originelles"
+
+"*La carte des tribus et des familles de langues présente une classification des langues principalement d'un* **point de vue génétique**. *Elle représente des* **familles de langues dont les langues individuelles descendent d'une langue de base commune, souvent hypothétique**, *comme l'indo-européen ou l'hamitosémitique.Les limites des familles linguistiques présentées ne doivent être considérées que comme des valeurs approximatives.*" (Diercke Welt Atlas, 2023)
+
+![](img5/diercke_sprache.jpg){width=800}
+
+Source : Diercke Welt Atlas, 2023, p.278, [Erde Religionen und Sprachen](https://diercke.de/content/erde-sprachen-978-3-14-100800-5-278-2-1)
+
+
+
+## Régions "historico-religieuses" : les "civilisations" 
+
+
+«*Une civilisation donnée, ce n’est donc ni une économie donnée, ni une société donnée, mais ce qui, à travers des séries d’économies, des séries de sociétés, persiste à vivre en ne se laissant qu’à peine et peu à peu infléchir*» (Braudel F., 1963)
+
+![](img5/civilisation_braudel.jpg){width=800}
+
+Source : **Braudel F., 1963**, *Grammaire des civilisations*, Paris, Flammarion
+
+
+
+## Régions "historico-religieuses" : les "civilisations" 
+
+
+«*Si nous voulons réfléchir sérieusement au monde et y agir efficacement, une sorte de carte simplifiée de la réalité, une théorie, un concept, un modèle, un paradigme, est nécessaire.*» (Huntington S., 1993)
+
+![](img5/civil_huntington.jpg){width=600}
+
+Source : **Huntington S. P., 1996**,  *The Clash of Civilizations and the Remaking of World Order* New York:Simon & Schuster.
+
+
+
+
 
 
 
