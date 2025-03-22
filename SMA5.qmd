@@ -40,6 +40,7 @@ library(gt)
 library(ggplot2)
 library(ggrepel)
 library(kableExtra)
+library(visNetwork)
 
 
 
@@ -47,34 +48,50 @@ library(kableExtra)
 
 
 
-# INTRODUCTION 
-
-
-## Régions infranationales et supranationales
-
-### Région infranationale
-
-Le terme *région* est souvent employé pour décrire  le premier niveau d'organisation du territorie en dessous de celui de **l'état**.  Quels que soient les critères employés (*Cf. ci-après*), le découpage régional d'un pays est une affaire de **pouvoir** (politique, économique, intellectuel, symbolique, ...) qui se règle dans un cadre national. 
-
-### Région supranationale / infra mondiale 
-
-Mais le terme *region* est aussi employé pour décrire des regroupements de pays (*ex. Union Européenne*) ou des entités géographiques situés immédiatement en dessous du niveau mondial (*ex. Europe*). Contrairement a cas précédent, **il n'existe pas ici de pouvoir unique** à même d'arbitrer entre les différents découpages possibles du Monde. 
-
+# INTRODUCTION : LE CONCEPT DE REGION
 
 ## Géographie ou Sciences Régionale ?
 
-### L'expertise des géographes
+- **L'expertise des géographes**
 
 Les géographes se présentent souvent comme des experts de la régionalisation et sont effectivement souvent consultés sur les questions de régionalisation aux échelles infra-nationales et supra-nationales.
 
-### La science régionale
+- **La science régionale**
 
 Mais d'autres disciplines peuvent revendiquer à juste titre une expertise au moins équivalente sur ces questions de découpage. Notamment les juristes, les économistes, les sociologues, les psychologues. 
 
 
 
 
-#  CONCEPTS ET THEORIES : LE DECOUPAGE REGIONAL DE LA FRANCE 
+## Régions infranationales et supranationales
+
+- **Région infranationale**
+
+Le terme *région* est souvent employé pour décrire  le premier niveau d'organisation du territorie en dessous de celui de **l'état**.  Quels que soient les critères employés (*Cf. ci-après*), le découpage régional d'un pays est une affaire de **pouvoir** (politique, économique, intellectuel, symbolique, ...) qui se règle dans un cadre national. 
+
+- **Région supranationale** 
+
+Mais le terme *region* est aussi employé pour décrire des regroupements de pays (*ex. Union Européenne*) ou des entités géographiques situés immédiatement en dessous du niveau mondial (*ex. Europe*). Contrairement a cas précédent, **il n'existe pas ici de pouvoir unique** à même d'arbitrer entre les différents découpages possibles du Monde. 
+
+
+## Plan du chapitre
+
+1. **Histoire du concept de région** : comment les géographes français ont développé ce concept en l'appliquant à leur pays
+
+2. **Régions morphologiques** : pourquoi les continents ne sont pas de découpages "naturels" du Monde
+
+3. **Régions homogènes** : comment les découpages du Monde fondés sur la nature ou la culture aboutissent à des découpages conflictuels.
+
+4. **Régions fonctionnelles** : comment les flux ou les réseaux organisent le Monde en régions floues ou en alliances supranationales.
+
+5. **Régions mentales** : comment les perceptions individuelles et collectives conditionnent les visions du monde et définissent identité et altérité.
+
+6. **Quelles régions pour le monde XXIe siècle ?** : ...
+
+
+
+# HISTOIRE DU CONCEPT DE REGION
+
 
 ## Les "régions morphologiques" de Philippe Buache
 
@@ -841,157 +858,97 @@ Source : **Huntington S. P., 1996**,  *The Clash of Civilizations and the Remaki
 
 
 
+# 3.  REGIONS FONCTIONNELLES : POLES, RESEAUX, FLUX, HIERARCHIE
 
 
+## Régionalisation par les flux: exemple théorique
 
-
-
-## xx
-
-
-:::: {.columns}
-
-::: {.column width="70%"}
-
-:::
-
-
-::: {.column width="30%"}
-
-:::
-::::
-
-
-
-## xx
-
-
-:::: {.columns}
-
-::: {.column width="70%"}
-
-:::
-
-
-::: {.column width="30%"}
-
-:::
-::::
-
-## xx
-
-
-:::: {.columns}
-
-::: {.column width="70%"}
-
-:::
-
-
-::: {.column width="30%"}
-
-:::
-::::
-
-
-## xx
-
-
-:::: {.columns}
-
-::: {.column width="70%"}
-
-:::
-
-
-::: {.column width="30%"}
-
-:::
-::::
-
-## xx
-
-
-:::: {.columns}
-
-::: {.column width="70%"}
-
-:::
-
-
-::: {.column width="30%"}
-
-:::
-::::
-
-
-
-#  Introduction : Intégration régionale et régionalisme
-
-
-## Deux ouvrages de référence
-<div class="centered">
-<img src="img5/source_richard_gana.jpg" width=700px />
-</div>
-
-- Une synthèse des réflexions des géographes français en 2014 sur les rapports entre **régionalisation** et **mondialisation** autour des concets d'**intégration régionale** et de **régionalisme**.  Contenu du livre accessible [en ligne](https://www.cairn.info/la-regionalisation-du-monde--9782811111403.htm)
-
-## Deux ouvrages de référence
-<div class="centered">
-<img src="img5/source_richard_marei.jpg" width=300px />
-</div>
-
-- Une mise à jour de l'ouvrage précédent effectuée en 2018 sous la forme d'un **dictionnaire des concepts** comprenant plusieurs **études de cas**. 
-
-## Régionalisation : définition 
-
-- La régionalisation désigne une **augmentation des échanges entre des unités territoriales situées dans la même partie du monde**. Il peut s’agir de pays, de régions ou d’autres entités infra étatiques. 
-
-- La régionalisation aboutit à ce que **les échanges internes à ce paquet d’unités territoriales soient plus élevés ou plus intenses qu’avec le reste du monde**. 
-
-- Dans certains cas, les échanges internes sont effectivement plus élevés que les échanges externes. Dans d’autres cas, leur part est minoritaire mais leur augmentation est plus rapide. Dans le premier cas, la régionalisation est un **fait établi**. Dans l’autre, elle est un **processus en cours**.
-
-Source : Y. Richard, 2014, "Régionalisation, régionalisme et intégration régionale : concepts flous et nécessaire clarification", in [Richard Y. & Gana A., 2014](https://www.cairn.info/la-regionalisation-du-monde--9782811111403-page-21.htm)
-
-
-## Régionalisation : exemple théorique
-
-<div class="centered">
-<img src="img5/regionalisation.png" width=700px />
-</div>
+![](img5/regionalisation.png){width=600}
 
 - **à gauche**, un monde **globalisé** où les relations entre pays sont indifférentes aux coûts de transports et aux frontières. ..
 - **à droite**, un monde **régionalisé** où les échanges se concentrent entre les pays voisins (**régions 1 et 2**) ou des pays proches reliés par des routes marines (**région 3**)
 
 
-## Régionalisation : un fait établi ?
+
+
+## Réseaux métropolitains : Métropoles globales en 2000 (*Cf. chap.4*)
+
+![](img4/taylor004.jpg){width=600}
+
+Source :  **Taylor, P. J., 2000,**  « World cities and territorial states under conditions of contemporary globalization »,  *Political geography, 19(1)*, 5-32.
+
+
+
+## Réseaux métropolitains: les flux aériens en 2019 (*Cf. chap.4*)
+
+
+![](img5/airflows.jpg){width=800}
+
+Source :  **World Traffic 2019** [ICAO](https://store.icao.int/en/traffic-flow-global-data-shape-file#mz-expanded-view-1620099313196)
+
+
+## Domination économique : Commerce en 2006
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Flux dominants d'importation**
+![](img2/map_imp_dom-2006.png){width=450}
+:::
+
+
+::: {.column width="50%"}
+**Flux dominants d'exportation**
+![](img2/map_exp_dom-2006.png){width=450}
+:::
+
+::::
+
+
+## Domination économique : Commerce en 2016-2020 (sans UE)
+
+**Flux dominants bilatéraux (import+export)**
+```{r}
+net<-readRDS("img5/domflows2015-21.RDS")
+net
+```
+
+
+## Domination économique : Commerce en 2016-2020 
+
+**Flux dominants bilatéraux (import+export)**
+```{r}
+
+net<-readRDS("img5/domflows2015-21-UE.RDS")
+net
+```
+
+
+## Accords économiques régionaux: situation vers 2010
 
 <div class="centered">
-<img src="img5/vanhamme001.jpg" width=700px />
+<img src="img5/OER2008.jpg" width=800px />
 </div>
 
-Source : G. van Hamme, 2014, "Régionalisme, intégration régionale et mondialisation : quelques éclairages sur un triangle complexe", in [Richard Y. & Gana A., 2014](https://www.cairn.info/la-regionalisation-du-monde--9782811111403-page-45.htm)
+- Une vision simple et rassurante de blocs économiques bien séparés où les pays occidents pèsent le plus sur le plan économique.
+Source : Diplomatie, n°47
 
-
-## Régionalisation et mondialisation
-
-- Dans le contexte idéologique libéral des années 1990, l’**intégration économique régionale a été perçue par de nombreux auteurs comme une menace potentielle au développement économique** (Krugman, 1991 ; Frankel et al., 1995). Cette crainte s’appuie, d’une part, sur l’idée que la **libre circulation généralisée des biens et services** est le meilleur chemin vers la prospérité économique et, d’autre part, que le régionalisme pourrait être un frein à l’ouverture économique.
-
-- Mais, dès la fin des années 1990, ces craintes s’estompent car  **les aires de libre-échange régional n’ont pas mené de politique protectionniste, bien au contraire** (*cf. cas de l'UE*)
-
-- D'une part, en favorisant les processus d’agglomération économique sur des marchés plus larges, **la régionalisation permettrait en particulier aux économies les plus faibles de mieux faire face à une ouverture économique plus large**. D’autre part, d’un point de vue plus politique, **le libre-échange régional se heurte à de moindres résistances que l’ouverture commerciale tous azimuts**.
-
-
-Source : G. van Hamme, 2014, "Régionalisme, intégration régionale et mondialisation : quelques éclairages sur un triangle complexe", in [Richard Y. & Gana A., 2014](https://www.cairn.info/la-regionalisation-du-monde--9782811111403-page-45.htm)
-
-## Régionalisation et mondialisation
+## Accords économiques : situation vers 2020
 
 <div class="centered">
-<img src="img5/vanhamme002.jpg" width=600px />
+<img src="img5/fta_wikipedia.jpg" width=800px />
 </div>
 
-Source : G. van Hamme, 2014, "Régionalisme, intégration régionale et mondialisation : quelques éclairages sur un triangle complexe", in [Richard Y. & Gana A., 2014](https://www.cairn.info/la-regionalisation-du-monde--9782811111403-page-45.htm)
+- Une vision complexe de zones de libre échanges multiples qui se chevauchent et s'intersectent sans logique claire. 
+Source : Wikipedia, english, consulté le 8 mars 2022
 
+
+
+## Economie ou politique ? L'exemple de l'OCS
+
+**Pays membres de l'Organisation de Coopération de Shangaï en 2024*
+![](img5/ocs002.png){width=450}
+![](img5/ocs001.jpg){width=200}
 
 ## Régionalisation : un processus multisectoriel
 
@@ -1004,7 +961,10 @@ Source : G. van Hamme, 2014, "Régionalisme, intégration régionale et mondiali
 Source : Y. Richard, 2014, "Régionalisation, régionalisme et intégration régionale : concepts flous et nécessaire clarification", in [Richard Y. & Gana A., 2014](https://www.cairn.info/la-regionalisation-du-monde--9782811111403-page-21.htm)
 
 
-## Régionalisme : définition
+
+
+
+## De la régionalisation au régionalisme
 
 - Le régionalisme implique l’idée d’une **action consciente et planifiée**, d’une **stratégie**.  Il a pour origine un ensemble de décisions prises par des acteurs situés dans la même partie du monde à un moment donné. 
 - On peut parler par exemple de régionalisme lorsque plusieurs États voisins tentent d’**abaisser les barrières douanières** qui les séparent.
@@ -1012,51 +972,6 @@ Source : Y. Richard, 2014, "Régionalisation, régionalisme et intégration rég
 
 Source : Y. Richard, 2014, "Régionalisation, régionalisme et intégration régionale : concepts flous et nécessaire clarification", in [Richard Y. & Gana A., 2014](https://www.cairn.info/la-regionalisation-du-monde--9782811111403-page-21.htm)
 
-
-## Régionalisme : point de vue économique
-
-- L’**économie** accorde beaucoup d’attention au régionalisme depuis les années 1950. Elle le définit comme la **signature d’un accord régional ou de plusieurs accords commerciaux préférentiels bilatéraux signés par des États voisins**, afin de faciliter leurs échanges. Ces accords concernent principalement le commerce et/ou les investissements.
-- Un premier type est caractérisé par l’**association de pays ayant des niveaux de développement égaux ou presque égaux** qui signent des accords commerciaux de plus en plus nombreux et de plus en plus exigeants. 
-- Un deuxième type implique des **pays aux niveaux de développement inégaux** qui mettent en place une division internationale hiérarchisée du travail. On parle alors de **régionalisme Nord-Sud**.
-
-Source : Y. Richard, 2014, "Régionalisation, régionalisme et intégration régionale : concepts flous et nécessaire clarification", in [Richard Y. & Gana A., 2014](https://www.cairn.info/la-regionalisation-du-monde--9782811111403-page-21.htm)
-
-## Régionalisme : situation vers 2010
-
-<div class="centered">
-<img src="img5/OER2008.jpg" width=800px />
-</div>
-
-- Une vision simple et rassurante de blocs économiques bien séparés où les pays occidents pèsent le plus sur le plan économique.
-Source : Diplomatie, n°47
-
-## Régionalisme : situation vers 2020
-
-<div class="centered">
-<img src="img5/fta_wikipedia.jpg" width=800px />
-</div>
-
-- Une vision complexe de zones de libre échanges multiples qui se chevauchent et s'intersectent sans logique claire. 
-Source : Wikipedia, english, consulté le 8 mars 2022
-
-
-## Le conflit russo-ukrainien de 2013-2014 
-
-- Le conflit russo-ukrainien de 2013-2014 qui aboutit à l'annexion de la Crimée et la première guerre du Donbass  trouve son point de départ dans un **arbitage géopolitique entre deux visions de l'intégration régionale du pays dans le Monde**. 
-
-- **La Communauté des États indépendants (CEI) ** signe un accord de libre-échange signé le 18 octobre 2011 entre la **Russie, l'Ukraine, la Biélorussie, la Moldavie, l'Arménie, le Kirghizstan et le Kazakhstan** afin de renforcer les échanges entre les pays. Mais sa ratification prend du temps et n'est pas achevée en 2013 et sera abandonnée.
-
-- **L'Union Européenne** de son côté propose à l'Ukraine un **accord d'association** qui est négocié de 2007 à 2012 pour entrer en vigueur en novembre 2013. Mais le président ukrainien **Vladimir Ianoukovitch** refuse de le ratifier ce qui provoque les événements de Maïdan, suivi de sa destitution et sa fuite en Russie. L'Ukraine rejoint l'accord avec l'UE en 2017.
-
-## Le conflit russo-ukrainien de 2013-2014
-
-<div class="centered">
-<img src="img5/ukrtrade2000-2012.jpg" width=500px />
-</div>
-
-- Quelques semaines avant le conflit, un document d'analyse économique s'interroge sur le choix de l'Ukraine qui commerce à part approximativement égale avec les deux blocs. 
-
-Source : Anders Aslund, Sept. 2013, "Ukraine’s Choice: European Association Agreement or Eurasian Union?", Policy Brief  n°22 of the Peterson Institute for International Economics. [Lien](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjy9MCmz7b2AhVGQhoKHSAYDRIQFnoECAcQAQ&url=https%3A%2F%2Fciaotest.cc.columbia.edu%2Fpbei%2Fiie%2F0029281%2Ff_0029281_23772.pdf&usg=AOvVaw2OXIaF69c9eqbWlXGpdqmn)
 
 
 ## Du régionalisme à l'intégration régionale
@@ -1077,6 +992,8 @@ Source : Anders Aslund, Sept. 2013, "Ukraine’s Choice: European Association Ag
 
 Source : Y. Richard, 2014, "Régionalisation, régionalisme et intégration régionale : concepts flous et nécessaire clarification", in [Richard Y. & Gana A., 2014](https://www.cairn.info/la-regionalisation-du-monde--9782811111403-page-21.htm)
 
+
+
 ## En résumé :
 
 1. la **régionalisation** est la mise en évidence d'espace voisins ou proches ayant plus de liens entre eux qu'avec le reste du Monde et/ou qui renforcent ces liens. Elle relève donc d'une **analyse économique et géographique** de l'organisation du Monde par les **flux**.  
@@ -1088,3 +1005,77 @@ Source : Y. Richard, 2014, "Régionalisation, régionalisme et intégration rég
 4. Si la **dimension économique** est la plus souvent mise en avant, les processus d'intégration régionale sont **multifactoriels** et combinent aussi bien des dimensions objectives (e.g. complémentarités) que des dimensions subjectives (e.g. sentiments d'identités)
 
 
+# IMAGINER DE NOUVELLES REGIONALISATIONS DU MONDE ?
+
+
+## En finir avec les continents ...
+
+:::: {.columns}
+
+::: {.column width="50%" .r-fit-text .smaller}
+"Le nom « **Afrique** » peut être considéré comme une insulte[...].La dénomination européenne d'un continent et de ses peuples est une anomalie. Aucun continent ou peuple ne devrait avoir le droit d'en nommer un autre. [...] Ici, nous voulons proposer le nom « **Anaesia** » comme un véritable remplacement dérivé de « ana et esi », deux mots de la langue Igbo-Africaine qui signifient « terre ou lieu d'origine »
+:::
+
+
+::: {.column width="50%" .r-fit-text .smaller}
+![](img5/Anaesia.jpg){width=450}
+:::
+
+::::
+
+Source : **Chimakonam, Jonathan O., and Uti O. Egbai. 2021.** “Is ‘Africa’ a Racial Slur and Should the Continent Be Renamed?” *African Identities 22 (2)*: 293–306.[Lien vers le texte](https://doi.org/10.1080/14725843.2021.2017262)
+
+
+## En finir avec les civilisations ...
+
+:::: {.columns}
+
+::: {.column width="50%" .r-fit-text .smaller}
+
+:::
+
+
+::: {.column width="50%" .r-fit-text .smaller}
+
+:::
+
+::::
+
+
+
+
+
+
+
+## xx
+
+:::: {.columns}
+
+::: {.column width="50%" .r-fit-text .smaller}
+
+:::
+
+
+::: {.column width="50%" .r-fit-text .smaller}
+
+:::
+
+::::
+
+
+
+
+## xx
+
+:::: {.columns}
+
+::: {.column width="50%" .r-fit-text .smaller}
+
+:::
+
+
+::: {.column width="50%" .r-fit-text .smaller}
+
+:::
+
+::::
