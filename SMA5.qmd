@@ -852,7 +852,7 @@ Source : **Braudel F., 1963**, *Grammaire des civilisations*, Paris, Flammarion
 
 «*Si nous voulons réfléchir sérieusement au monde et y agir efficacement, une sorte de carte simplifiée de la réalité, une théorie, un concept, un modèle, un paradigme, est nécessaire.*» (Huntington S., 1993)
 
-![](img5/civil_huntington.jpg){width=600}
+![](img5/huntington_blank.jpg){width=700}
 
 Source : **Huntington S. P., 1996**,  *The Clash of Civilizations and the Remaking of World Order* New York:Simon & Schuster.
 
@@ -946,9 +946,15 @@ Source : Wikipedia, english, consulté le 8 mars 2022
 
 ## Economie ou politique ? L'exemple de l'OCS
 
-**Pays membres de l'Organisation de Coopération de Shangaï en 2024*
-![](img5/ocs002.png){width=450}
-![](img5/ocs001.jpg){width=200}
+**L'Organisation de Coopération de Shangaï en 2024*
+![](img5/ocs002.png){width=800}
+
+
+## Economie ou politique ? L'exemple de l'OCS
+
+**Calendrier des adhésions à l'OCS*
+
+![](img5/ocs001.jpg){width=800}
 
 ## Régionalisation : un processus multisectoriel
 
@@ -1028,54 +1034,41 @@ Source : **Chimakonam, Jonathan O., and Uti O. Egbai. 2021.** “Is ‘Africa’
 
 ## En finir avec les civilisations ...
 
-:::: {.columns}
+- **Pays où les étudiants SMA de 2025 ne souhaitent pas vivre**
 
-::: {.column width="50%" .r-fit-text .smaller}
-
-:::
-
-
-::: {.column width="50%" .r-fit-text .smaller}
-
-:::
-
-::::
+![](img5/huntington_dislike.jpg){width=600}
 
 
 
+## En finir avec les civilisations ...
+
+- **Pays où les étudiants SMA de 2025 souhaitent vivre**
+
+![](img5/huntington_like.jpg){width=600}
 
 
 
-
-## xx
-
-:::: {.columns}
-
-::: {.column width="50%" .r-fit-text .smaller}
-
-:::
+## Eviter un choc entre "Nord Global" et "Sud Global" 
 
 
-::: {.column width="50%" .r-fit-text .smaller}
+![](img5/Nord-sud.jpg){width=600}
 
-:::
-
-::::
+Source : **Capdepuy, V. (2024).** La ligne Nord-Sud, permanence d’un clivage ancien et durable. [Géoconfluences](https://geoconfluences.ens-lyon.fr/informations-scientifiques/dossiers-thematiques/inegalites/articles/limite-nord-sud)
 
 
-
-
-## xx
+## Promouvoir l'utopie des quartiers d'orange
 
 :::: {.columns}
 
-::: {.column width="50%" .r-fit-text .smaller}
-
+::: {.column width="60%" .r-fit-text .smaller}
+![](img5/guigou.jpg){width=250}
+"*A une vision politique et conflictuelle, celle qui opposerait le « Nord global » au « Sud global »  –  les pays développés occidentaux aux pays en développement qui, pour la plupart ont été colonisés –  nous proposons une vision économique et verticale. Celle-ci associerait des pays du Nord et des pays du Sud voisins, intégrés dans des macros-régions économiques mondiales verticales Nord-Sud. Trois régions économiques mondiales Verticales sont en construction depuis de nombreuses années*" (J.L. Guigou, 2025)
 :::
 
 
-::: {.column width="50%" .r-fit-text .smaller}
-
+::: {.column width="40%" .r-fit-text .smaller}
+![](img5/guigou_oranges.jpg){width=450}
 :::
 
 ::::
+Source : **Guigou J.L. 2025** (à paraître), *Les trois Quartiers d’Orange - Vers la régionalisation du monde"*
