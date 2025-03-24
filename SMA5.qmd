@@ -47,10 +47,15 @@ library(visNetwork)
 ```
 
 
+## Chapitre 8
+
+![](img5/SMA_introd.jpg){width=800}
+
+
 
 # INTRODUCTION : LE CONCEPT DE REGION
 
-## Géographie ou Sciences Régionale ?
+## Géographie ou Science Régionale ?
 
 - **L'expertise des géographes**
 
@@ -67,11 +72,11 @@ Mais d'autres disciplines peuvent revendiquer à juste titre une expertise au mo
 
 - **Région infranationale**
 
-Le terme *région* est souvent employé pour décrire  le premier niveau d'organisation du territorie en dessous de celui de **l'état**.  Quels que soient les critères employés (*Cf. ci-après*), le découpage régional d'un pays est une affaire de **pouvoir** (politique, économique, intellectuel, symbolique, ...) qui se règle dans un cadre national. 
+Le terme *région* est souvent employé pour décrire  le premier niveau d'organisation du territorie en dessous de celui de **l'état**.  Quels que soient les critères employés (*Cf. ci-après*), le découpage régional d'un pays est une affaire de **pouvoir** (politique, économique, intellectuel, symbolique, ...) qui se règle dans un cadre national où l'état, en dernier recours, dispose du monopole de la violence légitime.
 
 - **Région supranationale** 
 
-Mais le terme *region* est aussi employé pour décrire des regroupements de pays (*ex. Union Européenne*) ou des entités géographiques situés immédiatement en dessous du niveau mondial (*ex. Europe*). Contrairement a cas précédent, **il n'existe pas ici de pouvoir unique** à même d'arbitrer entre les différents découpages possibles du Monde. 
+Mais le terme *region* est aussi employé pour décrire des regroupements de pays (*ex. Union Européenne*) ou des entités géographiques situés immédiatement en dessous du niveau mondial (*ex. Europe*). Contrairement a cas précédent, **il n'existe pas ici de pouvoir unique** à même d'arbitrer entre les différents découpages possibles du Monde. Chaque pays peut proposer des propres découpages du Monde, ce qui ne manque pas de créer des conflits (Cf. Russie-Ukraine en 2014 et 2022)
 
 
 ## Plan du chapitre
@@ -86,7 +91,7 @@ Mais le terme *region* est aussi employé pour décrire des regroupements de pay
 
 5. **Régions mentales** : comment les perceptions individuelles et collectives conditionnent les visions du monde et définissent identité et altérité.
 
-6. **Quelles régions pour le monde XXIe siècle ?** : ...
+6. **Quelles régions pour le monde XXIe siècle ?**
 
 
 
@@ -138,8 +143,8 @@ Georges Danton, 1759-1794
 
 On présente souvent le fondateur de la géographie française, Paul Vidal de la Blache, comme l'inventeur du découpage de la France en **régions naturelles** fondées sur la géologie ou les bassins hydrographiques...
 
-![](img5/vidat_tableau_carte.jpg){width=450}
-![](img5/France_geol.jpg){width=450}
+![](img5/vidat_tableau_carte.jpg){width=400}
+![](img5/France_geol.jpg){width=400}
 
 :::
 
@@ -159,7 +164,7 @@ On présente souvent le fondateur de la géographie française, Paul Vidal de la
 
 ::: {.column width="80%" .r-fit-text}
 
-Mais Vidal de la Blache a proposé de nombreux autres critères de régionalisation fondées sur l'économie, les transports ou la polarisation des villes. Il proposa même une **réforme régionale** qui anticipe avec un siécle d'avance les lois de décentralisation.
+Mais Vidal de la Blache a proposé de nombreux autres critères de régionalisation fondées sur l'économie, les transports ou la polarisation des villes, notamment dans son dernier ouvrage **La France de l'Est (1917)**. Il proposa même une **réforme régionale** qui anticipe avec un siécle d'avance sur les lois de décentralisation de 1982.
 
 ![](img5/vidal_region_admin.jpg){width=450}
 ![](img5/decentralisation.jpg){width=250}
@@ -184,7 +189,7 @@ Mais Vidal de la Blache a proposé de nombreux autres critères de régionalisat
 
 ::: {.column width="80%" .r-fit-text}
 
-La **région homogène** semble encore assimilée au concept de **paysage**. Mais celui-ci incorpore l’élément humain (activité agricole, activité industrielle, villes, …). La région homogène se définit par sa **forme aréale** et ses **limites précises**.
+La **région homogène** semble encore assimilée chez Juillard au concept de **paysage** (ce qui est visible). Mais elle incorpore désormais l’élément humain (activité agricole, activité industrielle, villes, …). La région homogène se définit par sa **forme aréale** et ses **limites précises**.
 
 
 
@@ -1072,3 +1077,94 @@ Source : **Capdepuy, V. (2024).** La ligne Nord-Sud, permanence d’un clivage a
 
 ::::
 Source : **Guigou J.L. 2025** (à paraître), *Les trois Quartiers d’Orange - Vers la régionalisation du monde"*
+
+## Développer un régionalisme Nord-Sud
+
+:::: {.columns}
+
+::: {.column width="30%" .r-fit-text .smaller}
+![](img5/Nord-sud-beckouche.jpg){width=250}
+
+![](img5/nord-sud-grasland.jpg){width=250}
+
+:::
+
+
+::: {.column width="70%" .r-fit-text .smaller}
+
+L’économie accorde beaucoup d’attention au régionalisme depuis les années 1950. Elle le définit comme la signature d’un accord régional ou de plusieurs accords commerciaux préférentiels bilatéraux signés par des États voisins, afin de faciliter leurs échanges. Ces accords concernent principalement le commerce et/ou les investissements.
+    
+- Un premier type est caractérisé par l’**association de pays ayant des niveaux de développement égaux ou presque égaux** qui signent des accords commerciaux de plus en plus nombreux et de plus en plus exigeants.
+
+- Un deuxième type implique des l'**association de pays aux niveaux de développement inégaux qui mettent en place une division internationale hiérarchisée du travail**. On parle alors de **régionalisme Nord-Sud**.
+
+
+
+:::
+
+::::
+Source : **Guigou J.L. 2025** (à paraître), *Les trois Quartiers d’Orange - Vers la régionalisation du monde"*
+
+
+
+
+
+## Le rôle clé des Méditerranées (Cf. Chap. 7)
+
+:::: {.columns}
+
+::: {.column width="70%" .r-fit-text .smaller}
+
+#### Des limites floues (Cf. continents)
+- pas d’identité commune mais un référentiel commun (=symboles, récits, images)
+
+#### Des barrières et des discontinuités (Cf. régions homogènes)
+- des ressemblances en matière climatique mais ...
+- ...des dissymétries économiques, commerciales et démographiques(Dollfus, 1995)
+- Logiques d’interface ou d’affrontements (Clément, 2007)
+
+#### Des réseaux et des flux  (Cf. région fonctionnelle)
+- facilitant les contacts (Clément, 2007)
+- Points de passage contrôlés : accès maritimes (Dollfus, 1995)
+- Liaisons entre ports et arrière-pays 
+- Importance du commerce (formel et informel)
+- espace de transit et de passage entre flux est-ouest et nord-sud
+
+#### Une identité à construire (Cf. région mentales)
+
+:::
+
+
+::: {.column width="30%" .r-fit-text .smaller}
+![](img5/medit001.jpg){width=450}
+:::
+
+::::
+
+## Les Géographes et le Monde au XXIe siècle
+
+::: {.columns}
+
+::: {.column width="30%" .r-fit-text .smaller}
+- Je suis géographe, dit le vieux Monsieur.
+
+- Qu'est-ce qu'un géographe ?
+
+- C'est un savant qui connaît où se trouvent les mers, les fleuves, les villes, les montagnes et les déserts.
+
+- Ça c'est bien intéressant, dit le petit prince. Ça c'est enfin un véritable métier !  Elle est bien belle, votre planète. Est-ce qu'il y a des océans ? [...]
+
+- Les géographies, dit le géographe, sont les livres les plus précieux de tous les livres. Elles ne se démodent jamais. Il est très rare qu'une montagne change de place. Il est très rare qu'un océan se vide de son eau. Nous écrivons des choses éternelles. 
+
+...
+
+:::
+
+
+::: {.column width="70%" .r-fit-text .smaller}
+![](img5/petit_prince.jpg){width=600}
+
+Source : **Saint-Exupery A., 1943**,  *Le Petit Prince*, Chapitre 15 :  "Le Géographe".
+:::
+
+::::
