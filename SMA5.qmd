@@ -1060,7 +1060,6 @@ Source : **Chimakonam, Jonathan O., and Uti O. Egbai. 2021.** “Is ‘Africa’
 
 Source : **Capdepuy, V. (2024).** La ligne Nord-Sud, permanence d’un clivage ancien et durable. [Géoconfluences](https://geoconfluences.ens-lyon.fr/informations-scientifiques/dossiers-thematiques/inegalites/articles/limite-nord-sud)
 
-
 ## Promouvoir l'utopie des quartiers d'orange
 
 :::: {.columns}
@@ -1072,7 +1071,26 @@ Source : **Capdepuy, V. (2024).** La ligne Nord-Sud, permanence d’un clivage a
 
 
 ::: {.column width="40%" .r-fit-text .smaller}
-![](img5/guigou_oranges.jpg){width=450}
+![](img5/oranges.png){width=450}
+:::
+
+::::
+Source : **Guigou J.L. 2025** (à paraître), *Les trois Quartiers d’Orange - Vers la régionalisation du monde"*
+
+
+
+## Promouvoir l'utopie des quartiers d'orange
+
+:::: {.columns}
+
+::: {.column width="60%" .r-fit-text .smaller}
+![](img5/guigou.jpg){width=250}
+"*Dans ce contexte, la méga-région Afrique-Méditerranée-Europe a pris du retard. La confiance n'est pas encore là, tant que le passé colonial ne sera pas neutralisé dans les consciences.Ce moment de l'inventaire colonial va bientôt arriver, il faut l'espérer. Mais, il faudra aussi accélérer la régionalisation des économies des pays européens, des pays du Sud et de l'Est de la Méditerranée, et de l'Afrique. Il faut s'y préparer au plus vite. Comme le disent les jeunes algériens du mouvement Hirak : « On ne rattrape pas le temps perdu, mais il faut arrêter de perdre du temps ».*" J.L. Guigou, 2020,[Les Echos](https://www.ipemed.coop/fr/medias-r46/revue-de-presse-c199/une-tribune-de-jean-louis-guigou-sur-lesechosfr-le-traite-asiatique-de-libre-echange-un-exemple-pour-%C2%AB-leurafrique-%C2%BB-a3666.html)
+:::
+
+
+::: {.column width="40%" .r-fit-text .smaller}
+![](img5/2-Les-3-quartiers-d-orange-mondiauxW.jpg){width=450}
 :::
 
 ::::
@@ -1141,30 +1159,47 @@ Source : **Guigou J.L. 2025** (à paraître), *Les trois Quartiers d’Orange - 
 
 ::::
 
-## Les Géographes et le Monde au XXIe siècle
+## La géographie ça sert d'abord à faire la guerre ?
 
 ::: {.columns}
 
-::: {.column width="30%" .r-fit-text .smaller}
+::: {.column width="40%" .r-fit-text .smaller}
 - Je suis géographe, dit le vieux Monsieur.
 
 - Qu'est-ce qu'un géographe ?
 
 - C'est un savant qui connaît où se trouvent les mers, les fleuves, les villes, les montagnes et les déserts.
 
-- Ça c'est bien intéressant, dit le petit prince. Ça c'est enfin un véritable métier !  Elle est bien belle, votre planète. Est-ce qu'il y a des océans ? [...]
-
-- Les géographies, dit le géographe, sont les livres les plus précieux de tous les livres. Elles ne se démodent jamais. Il est très rare qu'une montagne change de place. Il est très rare qu'un océan se vide de son eau. Nous écrivons des choses éternelles. 
-
-...
+- Les géographies, dit le géographe, sont les livres les plus précieux de tous les livres. Elles ne se démodent jamais. Il est très rare qu'une montagne change de place. Il est très rare qu'un océan se vide de son eau. **Nous écrivons des choses éternelles**. 
 
 :::
 
 
-::: {.column width="70%" .r-fit-text .smaller}
-![](img5/petit_prince.jpg){width=600}
+::: {.column width="60%" .r-fit-text .smaller}
+![](img5/petit_prince.jpg){width=500}
 
 Source : **Saint-Exupery A., 1943**,  *Le Petit Prince*, Chapitre 15 :  "Le Géographe".
+:::
+
+::::
+
+
+## La science régionale ça sert d'abord à faire la paix !
+
+::: {.columns}
+
+::: {.column width="30%" .r-fit-text .smaller}
+- **Walter Isard (1919-2010)
+
+![](img5/isard_photo.jpg){width=200}
+
+![](img5/isard_peace.jpg){width=200}
+:::
+
+
+::: {.column width="70%" .r-fit-text .smaller}
+
+En 1963, Walter Isard, le principal fondateur de la science régionale, a réuni un groupe d'universitaires à Malmö, en Suède, dans le but de créer la Société de recherche sur la paix. Le groupe de membres initiaux comprenait Kenneth Boulding et Anatol Rapoport. En 1973, ce groupe est devenu la **Peace Science Society**. La science de la paix était considérée comme un effort interdisciplinaire et international visant à développer un ensemble particulier de concepts, de techniques et de données pour mieux comprendre et atténuer les conflits. 
 :::
 
 ::::
