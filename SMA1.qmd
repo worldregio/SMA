@@ -1,7 +1,7 @@
 ---
 title: "La Puissance des Etats"
-subtitle: "Cours L3 Géographie 2025"
-date: "2025-01-21"
+subtitle: "Cours L3 Géographie 2026"
+date: "2026-01-28"
 date-format: iso
 author: "Claude Grasland"
 title-slide-attributes:
@@ -60,17 +60,95 @@ library(kableExtra)
 
 # INTRODUCTION
 
-## Une grille de lecture internationale ...
+
+## Définition de la puissance
+
+::: {.r-fit-text}
+La puissance est une notion centrale et structurante des relations internationales. Elle peut être définie comme la capacité d'action dont disposent les acteurs sur la scène internationale, mais son approche diffère selon les théories. Pour Raymond Aron, elle est "**la capacité d’une unité politique d’imposer sa volonté aux autres unités**". Elle permet ainsi de peser sur le comportement de l'autre. 
+
+Le juriste Serge Sur la décline alors en deux types de capacité : 
+
+- **une capacité positive** : celle de faire ou de faire faire à d’autres ;
+- **une capacité négative** : celle de refuser de faire ou d'empêcher de faire.
+
+La notion de puissance est traditionnellement utilisée pour décrire la **capacité d'action des États, acteurs prééminents sur la scène internationale**.
+
+
+Source : [Vie Publique, 2024](https://www.vie-publique.fr/fiches/269789-que-recouvre-la-notion-de-puissance-en-relations-internationales)
+:::
+
+## Caractéristiques de la puissance
+
+::: {.r-fit-text}
+La notion de puissance est :
+
+- **relative** : elle ne vaut pas dans l'absolu mais dans une contexte donné, et pour une relation particulière. Les éléments caractéristiques de la puissance (par exemple : une population dense, un territoire vaste...) peuvent être un atout ou une faiblesse selon la situation et la relation avec l'autre acteur ; 
+- **évolutive** : les États les plus puissants sur la scène internationale ont évolué au fil de l'Histoire ; 
+- **multidimensionnelle** : d'abord de connotation militaire, les théoriciens des relations internationales y ont ajouté d'autres éléments constitutifs : démographique, géographique, économique, politique, culturelle, ou encore technologique. **Joseph Nye** distingue par ailleurs le **hard power**, qui désigne la capacité coercitive, du **soft power**, qui renvoie à la capacité d'influence, exercée sans coercition : diplomatie, alliances, coopération, diffusion de la culture et de l'éducation...  (*Cf. TD1*)
+
+Source : [Vie Publique, 2024](https://www.vie-publique.fr/fiches/269789-que-recouvre-la-notion-de-puissance-en-relations-internationales)
+::: 
+
+
+## Théoriser les relations internationales
+
+::: columns
+::: {.column width="50%" .r-fit-text}
 
 <div class="centered">
-<img src="img1/SMA1.png" width=700px />
+<img src="img1/battistella.jpg" width=300px />
 </div>
-
-## ... où les firmes ne sont pas des acteurs autonomes
-
+- Battistella, D. (2015). Théories des relations internationales. Presses de sciences po.
+:::
+::: {.column width="50%" .r-fit-text}
 <div class="centered">
-<img src="img1/SMA3.png" width=700px />
+<img src="img1/badie.jpg" width=350px />
 </div>
+- Badie, B. (2023). Pour une approche subjective des relations internationales. Odile Jacob.
+:::
+:::
+
+
+
+## Théories 1 :  Le réalisme
+
+::: {.r-fit-text}
+**L’approche réaliste** consiste à étudier la réalité telle qu’elle est. Aussi est-elle souvent décrite comme une théorie explicative, ne cherchant pas à influencer les cours des événements, mais à en analyser les causes. Elle est un **paradigme dominant dans l'étude des relations internationales**. 
+
+La théorie réaliste calque la vision d’une nature égoïste de l’homme sur les États, qui sont en situation d’anarchie. Elle estime ainsi que **la guerre est inévitable, qu'elle soit avérée ou latente, car la distribution et l’utilisation de la puissance sont le facteur principal des relations interétatiques**. 
+
+ La souveraineté des États, et plus précisément l'absence d'autorité supérieure à ces derniers, y occupe une place fondamentale en ce qu'elle explique **l'état d'anarchie** tel qu'appréhendé par la théorie réaliste. Les États-nations sont considérés comme des **acteurs rationnels dont l'objectif est la maximisation de leur intérêt national** (puissance sur la scène internationale). La stabilité internationale ne peut alors être assuré que par l'**équilibre des puissances** - qui n'équivaut pas à la paix. 
+
+Source : [Vie Publique, 2024](https://www.vie-publique.fr/fiches/269789-que-recouvre-la-notion-de-puissance-en-relations-internationales)
+::: 
+
+## Théories 2 : Le libéralisme  
+::: {.r-fit-text}
+
+**Le libéralisme est un courant qui croit en la possibilité de réformer l'ordre existant**.La naissance de l'approche libérale est concomitante de l'émergence de la discipline des relations internationales, à l'issue de la Première Guerre mondiale. La théorie libérale s'axe autour d'objectifs à atteindre, ce qui fait qu'on la qualifie de **théorie normative**.
+
+Les libéraux considèrent que **le recours à la force n’est pas une fatalité et estiment qu'il est possible d'accéder à la paix par la démocratie, l’État de droit et le respect des droits humains**. Postulant une interdépendance entre les États, ils insistent sur le rôle formateur des normes, de la coopération et des institutions internationales.
+
+Inspirée de la philosophie libérale, le courant libéral prend en compte, outre **les États et les organisations internationales, les individus**. Une place importante est attribuée à ces derniers, considérés comme agissant rationnellement et influençant les identités et intérêts des États. 
+
+
+Source : [Vie Publique, 2024](https://www.vie-publique.fr/fiches/269789-que-recouvre-la-notion-de-puissance-en-relations-internationales)
+::: 
+
+## Théories 2 : Autres approches 
+
+::: {.r-fit-text}
+- **le transnationalisme** part, comme le courant libéral, de l'individu, mais considère que les individus n'agissent sur la scène internationale qu'à travers l’État et que l'ensemble des acteurs de la scène internationale (étatiques et non étatiques) sont interdépendants ;
+- **le marxisme et le structuralisme** réfutent le stato-centrisme de la théorie réaliste au regard de l'asymétrie qui existe entre les différents États, qui débouche sur des relations d'interdépendance déséquilibrées. Dans le marxisme, les acteurs premiers de la scène internationale sont les classes sociales (bourgeois et prolétaires), et le moteur du courant est la lutte des classes ;
+- **les approches post-positivistes** prennent du recul pour questionner l'objectivité et la neutralité de l'étude des relations internationales par les théories existantes, en mettant en lumière l'importance du contexte social dans lequel ces approches sont nées. On peut citer pour exemple le **post-colonialisme**, qui attire l'attention sur l'absence de prise en compte du contexte colonial ; 
+- **le constructivisme** s'intéresse à l'étude de la construction de la réalité sociale. Selon ce courant, plus que les rapports de puissance, ce sont les **perceptions** qui guident le comportement des États : l’intérêt national d’un État se construit en fonction de son identité, de la représentation qu’il se fait de lui-même et des autres, et de sa perception de son environnement. 
+
+
+Source : [Vie Publique, 2024](https://www.vie-publique.fr/fiches/269789-que-recouvre-la-notion-de-puissance-en-relations-internationales)
+::: 
+
+
+
 
 ## Origines de l’approche « réaliste » 
 
@@ -151,6 +229,8 @@ Que pensez-vous de la démonstration ?
 
 ## L'avis des étudiants en janvier 2022 ...
 
+Un mois avant la deuxième invasion de l'Ukraine par la Russie on avait demandé aux étudiants du cours de SMA d'indiquer la liste des 5 pays les plus puissants du Monde.
+
 ```{r}
 pays<-c("Chine","USA","France","Roy.Uni","Allemagne","Japon","Brésil","Arabie S.", "Inde","Corée du S.")
 rep<-c(16,16,8,6,6,6,3,3,2,1)
@@ -158,22 +238,35 @@ pct<-paste(round(100*rep/16,0),"%")
 rang<-c("1-2","1-2","3","4-6","4-6","4-6","7-8","7-8","9","10")
 df<-data.frame(rang,pays,rep,pct)
 
-df%>% gt() %>% 
-  tab_header(title = md("**Tableau de données**"))
-
+top<-flextable(df)
+top<-theme_vanilla(top)
+top <- fontsize(top, size = 14) 
+top<-line_spacing(top, space = 0.5)
+autofit(top)
 
 ```
 
+Seuls 16 étudiants avaient répondu ce qui est peu représentatif. Mais vous remarquerez l'**absence totale de la Russie dans les réponses !**
+
+
 ## ... en janvier 2024 ...
+
+On a demandé cette fois-ci d'indiquer juste les 3 pays les plus puissants en précisant l'ordre. 
 
 <div class="centered">
 <img src="img1/SMA_survey_2024.jpg" width=800px>
 </div>
 
-## ... et en janvier 2025
+## ... en janvier 2025
 
 <div class="centered">
 <img src="img1/SMA_survey_2025.jpg" width=800px>
+</div>
+
+## ... et en janvier 2026
+
+<div class="centered">
+<img src="img1/SMA_survey_2026.jpg" width=800px>
 </div>
 
 

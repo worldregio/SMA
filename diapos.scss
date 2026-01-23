@@ -1,0 +1,90 @@
+/*-- scss:defaults --*/
+$presentation-h1-font-size: 2em;
+$modal-footer-bg: red;
+$presentation-font-size-root: 50px;
+$presentation-h3-font-size: 1.05em;
+$link-color: #BA4A00 !default;
+$footer-bg: #BA4A00;
+$modal-footer-bg: #BA4A00;
+
+.title {
+  font-size: 80px !important;
+  color: white !important;
+}
+
+.subtitle {
+    font-size: 40px;
+    color: #ffffff;;
+  }
+
+.quarto-title-author {
+  font-size: 40px;
+  color: #ffffff;
+}
+
+.date {
+  font-size: 20px;
+  color: white !important;
+}
+
+
+.reveal section h2 {
+  color: #BA4A00;
+}
+
+.medium {
+  font-size: 1.6em;
+}
+
+.small {
+  font-size: 1.4em;
+}
+
+.panel-tabset-tabby a {
+  color: #BA4A00;
+  font-size: 1.5em;
+}
+
+/*-- scss:rules --*/
+
+.observablehq {
+  font-size:20px;
+}
+
+.reveal .footer {
+  background-color: white;
+  padding:0px;
+  opacity: 1;
+}
+
+.reveal .header {
+  text-align: center;
+  background-color: white;
+  color: #BA4A00;
+  padding:0px;
+  opacity: 1;
+}
+
+section.slide h1 {
+  font-size: 3em !important;
+  color: #BA4A00 !important;
+}
+
+section.slide h2 {
+  font-size: 1.3em !important;
+  color: white !important;
+  background-color: #BA4A00 !important;
+  width: 200vw;
+  position: relative;
+  left: -20vw;
+  padding-left: 20vw;
+  padding-top: 0px;
+  padding-bottom: 10px;
+}
+
+
+
+
+code.sourceCode {
+  font-size: 1.2em;
+}

@@ -5,7 +5,7 @@ date: "2025-02-03"
 date-format: iso
 author: "Claude Grasland"
 title-slide-attributes:
-  data-background-color: "#75AADB85"
+  data-background-color: "#BA4A00"
   data-background-size: 200px
   data-background-opacity: "0.9"
   data-background-position: top center
@@ -18,7 +18,7 @@ format:
     embed-resources: true
     smaller: true
     scrollable: true
-    theme: [simple, style.scss]
+    theme: [simple, diapos.scss]
 execute:
   echo: false
 editor_options: 
@@ -38,6 +38,7 @@ library(data.table)
 library(sf)
 library(reshape2)
 library(visNetwork)
+library(mapsf)
 source("pgmdom.R")
 
 ```
@@ -138,19 +139,24 @@ Le pays B dispose d’un avantage comparatif plus important pour le fromage que 
 ::::
 
 
-## Pour le libre échange ...
-
-:::: {.columns}
-::: {.column width="50%" .r-fit-text}
-![](img2/freetrade1.jpg){width=400}
-:::
-::: {.column width="50%" .r-fit-text}
-![](img2/freetrade2.jpg){width=400}
-:::
-::::
+## Un débat ancien ...
 
 
-## Contre le libre échange ...
+![](img2/Free_Trade_and_Protection.jpg){width=800}
+
+- Source : [Affiche anglaise (1910)](https://commons.wikimedia.org/wiki/File:Free_Trade_and_Protection.jpg)
+
+## Un débat ancien ...
+
+
+![](img2/Anti_Free_Trade_Postcardpng.png){width=800}
+
+- Source : [Carte postale anglaise (1910)](https://commons.wikimedia.org/wiki/File:Free_Trade_and_Protection.jpg)
+
+
+
+
+## Le rejet du traité transatlantique (2013)
 
 :::: {.columns}
 ::: {.column width="50%" .r-fit-text}
@@ -161,55 +167,37 @@ Le pays B dispose d’un avantage comparatif plus important pour le fromage que 
 :::
 ::::
 
+## La signature de l'accord UE-Mercosur (2026 ?)
+
+:::: {.columns}
+::: {.column width="50%" .r-fit-text}
+![](img2/mercosur.jpg){width=200}
+
+- source : [Commission Européenne, 2026](https://www.instagram.com/reel/DTliPgQDOdU/)
+:::
+::: {.column width="50%" .r-fit-text}
+![](img2/mercosur2.png){width=400}
+
+- source : [Left Party, Parlement Européen 2025](https://left.eu/issues/eu-mercosur-free-trade-deal-explainer-a-bad-trade-for-farmers-people-and-climate/)
+:::
+::::
+
 
 
 
 # PUISSANCE COMMERCIALE DES PAYS DU MONDE EN 2019
 
+
 ```{r}
-trade <- read.csv("data2/WITSTrade2019.csv")
-trade<-data.table(trade)
-
-
-
-# Estimate missing values
-Fij<-trade[TradeFlowName=="Export",.(i = ReporterISO3,
-                                     j = PartnerISO3,
-                                     Fij = TradeValue.in.1000.USD)]
-Fij<-Fij[!i %in% c("WLD","EUN","UNS","OAS"),]
-Fij<-Fij[!j %in% c("WLD","EUN","UNS","OAS"),]
-
-Fij$i[Fij$i=="ROM"]<-"ROU"
-Fij$i[Fij$i=="SER"]<-"SRB"
-Fij$i[Fij$i=="SUD"]<-"SDN"
-Fij$i[Fij$i=="ZAR"]<-"COD"
-Fij$i[Fij$i=="ESH"]<-"SAH"
-Fij$i[Fij$i=="MNT"]<-"MNE"
-
-
-
-Fij$j[Fij$j=="ROM"]<-"ROU"
-Fij$j[Fij$j=="SER"]<-"SRB"
-Fij$j[Fij$j=="SUD"]<-"SDN"
-Fij$j[Fij$j=="ZAR"]<-"COD"
-Fij$j[Fij$j=="ESH"]<-"SAH"
-Fij$j[Fij$j=="MNT"]<-"MNE"
-
-
-Fji<-Fij[,c("i","j","Fij")]
-names(Fji)<-c("j","i","Fji")
+### NEW VERSION ###
+trade <- readRDS("data2/trade5years.RDS") %>% filter(t5=="2016-20")
+trade<-data.table(trade) %>% filter(is.na(Fijt)==F) %>% mutate(i=substr(i,1,3))
 
 
 
 
-flows <- merge(Fij, Fji, by =c("i","j"),all.x=T,all.y=T)
 
-flows$Fij[is.na(flows$Fij)]<-flows$Fji[is.na(flows$Fij)]
-flows$Fji[is.na(flows$Fji)]<-flows$Fij[is.na(flows$Fji)]
-flows$FSij<-flows$Fij+flows$Fji
-
-
-tab<-flows[,list(nb=.N, exp = sum(Fij)/1000000 ,imp = sum(Fji)/1000000),.(i)]
+tab<-trade[,list(nb=.N, exp = sum(Fijt,na.rm=T)/1000000 ,imp = sum(Fjit,na.rm=T)/1000000),.(i)] 
 tab$exp_pct<-100*tab$exp/sum(tab$exp)
 tab$imp_pct<-100*tab$imp/sum(tab$imp)
 tab$vol_pct<-(tab$exp_pct+tab$imp_pct)/2
@@ -234,22 +222,24 @@ tot2<-tot2 %>% filter(date %in% c(2015,2016, 2017,2018,2019)) %>%
 
 tot2<-merge(tot,tot2, by="i", all.x=F,all.y=T)
 
-write.table(tot2,"data2/trade2019.csv", row.names = FALSE, sep=";")
+write.table(tot2,"data2/trade2016-20.csv", row.names = FALSE, sep=";")
 ```
+
+
+
 
 ## Origine des données
 
 ::: {.column width="100%" .r-fit-text}
-Nous avons utilisé les données de la Banque Mondiale pour l'année 2019 afin de dresser un portait du Monde avant la crise de la COVID-19 qui a perturbé l'ensemble des échanges mondiaux. 
+Nous avons utilisé la base de données gravity du CEPII qui fournit une base historique du commerce des pays du Monde de 1967 à aujourd'hui. On utilisera comme date la plus récente la période **2016-2020**.
 
-- Ces données sont accessibles librement via la base de données [WITS](https://wits.worldbank.org/) 
-- Elles ne comportent pas les pays contestés, notamment Taiwan ou le Kosovo.
-- Elles décomposent certains états (e.g. Chine/TaiWan/Macao)
-- Elles ne tiennent pas compte des unions douanières (UE, ALENA, ASEAN, ...)
-- Pour les croisements avec le PIB on utilise la moyenne 2015-2019
+- Ces données sont accessibles librement sur le site du CEPII [par ce lien](https://www.cepii.fr/CEPII/fr/bdd_modele/bdd_modele_item.asp?id=8) 
+- Elles comporte les pays contestés, notamment Taiwan ou le Kosovo.
+- Elles décompose certains états (e.g. Chine/TaiWan/Macao)
+- Pour les croisements avec le PIB nous avons utilisé ldes données de la banque Mondiale
 :::
 
-## Exportations 2019 (top 20)
+## Exportations 2016-20 (top 20)
 
 ```{r}
 
@@ -258,17 +248,27 @@ don<-tot %>% mutate(rang = rank(-exp)) %>%
 
               arrange(rang) %>%
               mutate(cumpct=cumsum(pct))
-         
 
-top<-flextable(don[1:20])
-top<-theme_vanilla(top)
-top <- fontsize(top, size = 12) 
-top<-line_spacing(top, space = 0.5)
+        
+
+set_flextable_defaults(
+  digits = 1,
+  decimal.mark = ",",
+  big.mark = " ",
+  na_str = "<na>"
+)
+
+top<-flextable(don[1:20,]) %>% 
+     colformat_double() %>%
+      colformat_double(j=c("rang","valeur"),digits=0) %>%
+     theme_vanilla() %>%
+     fontsize(size = 16) 
 autofit(top)
+
 
 ```
 
-## Exportations 2019 (carte)
+## Exportations 2016-20 (carte)
 
 ```{r}
    
@@ -289,7 +289,7 @@ autofit(top)
            #     projection = list(type = 'azimuthal equidistant'))
                 projection = list(type = 'robinson'))
       
-      p<- plot_geo(mapdon, width=1000, height = 500) %>%
+      p<- plot_geo(mapdon, width=1000, height = 700) %>%
         add_markers(x = ~Lon,
                     y = ~Lat,
                     sizes = c(0, 1000),
@@ -307,7 +307,7 @@ autofit(top)
     
 ```
 
-## Importations 2019 (top 20)
+## Importations 2016-20 (top 20)
 
 ```{r}
 
@@ -316,17 +316,24 @@ don<-tot %>% mutate(rang = rank(-imp)) %>%
 
               arrange(rang) %>%
               mutate(cumpct=cumsum(pct))
-         
+       
+set_flextable_defaults(
+  digits = 1,
+  decimal.mark = ",",
+  big.mark = " ",
+  na_str = "<na>"
+)
 
-top<-flextable(don[1:20])
-top<-theme_vanilla(top)
-top <- fontsize(top, size = 12) 
-top<-line_spacing(top, space = 0.5)
+top<-flextable(don[1:20,]) %>% 
+     colformat_double() %>%
+      colformat_double(j=c("rang","valeur"),digits=0) %>%
+     theme_vanilla() %>%
+     fontsize(size = 16) 
 autofit(top)
 
 ```
 
-## Importations 2019 (carte)
+## Importations 2016-20 (carte)
 
 ```{r}
    
@@ -347,7 +354,7 @@ autofit(top)
            #     projection = list(type = 'azimuthal equidistant'))
                 projection = list(type = 'robinson'))
       
-      p<- plot_geo(mapdon, width=1000, height = 500) %>%
+      p<- plot_geo(mapdon, width=1000, height = 700) %>%
         add_markers(x = ~Lon,
                     y = ~Lat,
                     sizes = c(0, 1000),
@@ -365,7 +372,7 @@ autofit(top)
     
 ```
 
-## Volume 2019 (top 20)
+## Volume 2016-20 (top 20)
 
 ```{r}
 
@@ -376,15 +383,23 @@ don<-tot %>% mutate(vol=imp+exp, rang = rank(-vol)) %>%
               mutate(cumpct=cumsum(pct))
          
 
-top<-flextable(don[1:20])
-top<-theme_vanilla(top)
-top <- fontsize(top, size = 12) 
-top<-line_spacing(top, space = 0.5)
+set_flextable_defaults(
+  digits = 1,
+  decimal.mark = ",",
+  big.mark = " ",
+  na_str = "<na>"
+)
+
+top<-flextable(don[1:20,]) %>% 
+     colformat_double() %>%
+      colformat_double(j=c("rang","valeur"),digits=0) %>%
+     theme_vanilla() %>%
+     fontsize(size = 16) 
 autofit(top)
 
 ```
 
-## Volume 2019 (carte)
+## Volume 2016-20 (carte)
 
 ```{r}
    
@@ -405,7 +420,7 @@ autofit(top)
            #     projection = list(type = 'azimuthal equidistant'))
                 projection = list(type = 'robinson'))
       
-      p<- plot_geo(mapdon, width=1000, height = 500) %>%
+      p<- plot_geo(mapdon, width=1000, height = 700) %>%
         add_markers(x = ~Lon,
                     y = ~Lat,
                     sizes = c(0, 1000),
@@ -423,12 +438,12 @@ autofit(top)
     
 ```
 
-## Solde 2019 (top 10 des gagnants et des perdants)
+## Solde 2016-20 (top 10 des gagnants et des perdants)
 
 ```{r}
 
 don<-tot %>% mutate(solde=exp-imp, rang = rank(solde), volume = exp+imp, tx_couverture=100*exp/imp) %>%
-             select(code=i, pays=country, export= exp, import=imp,volume, solde, tx_couverture, solde_pct = sol_pct,rang)%>%
+             select(code=i, pays=country, export= exp, import=imp,volume, solde, solde_pct = sol_pct,rang)%>%
              arrange(rang) 
          
 sela<-don[1:10,]
@@ -436,17 +451,28 @@ don<-don %>% arrange(-rang)
 selb<-don[1:10]
 sel<-rbind(sela,selb) %>% arrange(-rang) %>% select(-rang,-solde_pct)
 
-top<-flextable(sel)
-top<-theme_vanilla(top)
-top <- fontsize(top, size = 12) 
-top<-line_spacing(top, space = 0.5)
-top <- color(top, color = "red",
-  i = ~ solde < 0  )
+
+
+set_flextable_defaults(
+  digits = 1,
+  decimal.mark = ",",
+  big.mark = " ",
+  na_str = "<na>"
+)
+
+top<-flextable(sel) %>% 
+     colformat_double(digits=0) %>%
+  #    colformat_double(j=c("rang","valeur"),digits=0) %>%
+     color(color = "red",i = ~ solde < 0  ) %>%
+     theme_vanilla() %>%
+     fontsize(size = 16) 
 autofit(top)
+
+
 
 ```
 
-## Solde 2019 (carte)
+## Solde 2016-20 (carte)
 
 ```{r}
    
@@ -468,7 +494,7 @@ autofit(top)
            #     projection = list(type = 'azimuthal equidistant'))
                 projection = list(type = 'robinson'))
       
-      p<- plot_geo(mapdon, width=1000, height = 500) %>%
+      p<- plot_geo(mapdon, width=1000, height = 800) %>%
         add_markers(x = ~Lon,
                     y = ~Lat,
                     sizes = c(0, 1000),
@@ -482,8 +508,7 @@ autofit(top)
                                   '<br /> Export (Billions $) : ',round(export,0),
                                   '<br /> Import (Billions $) : ',round(import,0),
                                   '<br /> Volume (Billions $) : ',round(volume,0),
-                                  '<br /> Solde (Billions $) : ',round(solde,0),
-                                  '<br /> Tx de couverture (%) : ',round(tx_couverture,1))) %>%
+                                  '<br /> Solde (Billions $) : ',round(solde,0))) %>%
         layout(geo = g)
       p
     
@@ -497,86 +522,50 @@ autofit(top)
 La vulnérabilité d'un pays face aux chocs internationaux se mesure à travers la mise en rapport des exportations ou des importations par rapport au PIB. On retiendra ici deux indicateurs :
 
 
-- **Volume des échanges / PIB** : cet indicateur est une mesure de l'**insertion du pays dans l'économie mondiale**. Plus le rapport est élevé, plus il met en évidence un pays tourné vers des marchés extérieurs, que ce soit en termes d'importation ou d'exportation.
+- **VULNERABILITE = Volume des échanges / PIB** : cet indicateur est une mesure de l'**insertion du pays dans l'économie mondiale**. Plus le rapport est élevé, plus il met en évidence un pays tourné vers des marchés extérieurs, que ce soit en termes d'importation ou d'exportation.
 
-- **Solde des échanges / PIB** : cet indicateur mesure de la **contribution des échanges commerciaux à la croissance économique du pays**. Une valeur positive signifie que le commerce contribue à l'augmentation de la richesse nationale, Une valeur négative indique au contraire que le commerce appauvrit le pays en raison d'une balance déséqulibrée. 
+- **IMPACT = Solde des échanges / PIB** : cet indicateur mesure de la **contribution des échanges commerciaux à la croissance économique du pays**. Une valeur positive signifie que le commerce contribue à l'augmentation de la richesse nationale, Une valeur négative indique au contraire que le commerce appauvrit le pays en raison d'une balance déséqulibrée. 
 :::
 
 
 
-## Vulnérabilité face aux chocs internationaux
+## Vulnérabilité 2016-20
 
 ```{r}
 
 
-don<-tot2 %>% mutate(code=i, pays=country, rang_PIB = rank(-GDP),export=exp,import=imp,volume=import+export, solde=export-import, PIB = GDP, vol_pib=100*volume/PIB, sol_pib = 100*solde/PIB) %>%
-              select(code,pays,rang_PIB, PIB, export,import, volume,solde,vol_pib,sol_pib)%>%
+don<-tot2 %>% mutate(code=i, pays=country, rang_PIB = rank(-GDP),export=exp,import=imp,volume=import+export, solde=export-import, PIB = GDP, VULNERABILITE=100*volume/PIB, IMPACT = 100*solde/PIB) %>%
+              select(code,pays,rang_PIB, PIB, volume,solde,VULNERABILITE,IMPACT)%>%
              arrange(-PIB) 
          
-sel<-don[1:20,]
-top<-flextable(sel)
-top<-theme_vanilla(top)
-top <- fontsize(top, size = 12) 
-top<-line_spacing(top, space = 0.5)
-top <- color(top, color = "darkgreen",
-  i = ~ vol_pib < 50 )
-top <- color(top, color = "orange",
-  i = ~ vol_pib > 50 )
-top <- color(top, color = "red",
-  i = ~ vol_pib > 100 )
-autofit(top)
 
-```
-
-## Vulnérabilité face aux chocs internationaux
-
-```{r}
+mypal<-rev(brewer.pal(5,"RdYlGn"))
 
 
-sel<-don[21:40,]
-top<-flextable(sel)
-top<-theme_vanilla(top)
-top <- fontsize(top, size = 12) 
-top<-line_spacing(top, space = 0.5)
-top <- color(top, color = "darkgreen",
-  i = ~ vol_pib < 50 )
-top <- color(top, color = "orange",
-  i = ~ vol_pib > 50 )
-top <- color(top, color = "red",
-  i = ~ vol_pib > 100 )
-autofit(top)
-
-```
-
-## Vulnérabilité face aux chocs internationaux
-
-```{r}
-
-
-sel<-don[41:60,]
-top<-flextable(sel)
-top<-theme_vanilla(top)
-top <- fontsize(top, size = 12) 
-top<-line_spacing(top, space = 0.5)
-top <- color(top, color = "darkgreen",
-  i = ~ vol_pib < 50 )
-top <- color(top, color = "orange",
-  i = ~ vol_pib > 50 )
-top <- color(top, color = "red",
-  i = ~ vol_pib > 100 )
+top<-flextable(don[1:60,]) %>% 
+     colformat_double(digits=0) %>%
+      colformat_double(digits=1, j=c("VULNERABILITE","IMPACT")) %>%
+    bg(bg = mypal[1], i = ~ VULNERABILITE < 20 ) %>%
+      bg(bg = mypal[2], i = ~ VULNERABILITE > 20 ) %>%
+      bg(bg = mypal[3], i = ~ VULNERABILITE > 40 ) %>%
+        bg(bg = mypal[4], i = ~ VULNERABILITE > 60 ) %>%
+        bg(bg = mypal[5], i = ~ VULNERABILITE > 80 ) %>%
+     theme_vanilla() %>%
+     fontsize(size = 16) 
 autofit(top)
 
 ```
 
 
-## Synthèse : Volume commercial et vulnérabilité en 2019
+
+## Vulnérabilité 2016-20
 
 ```{r}
    
       mapdon<-merge(map,don,by.x="iso3c",by.y="code",all.x=T,all.y=F)
       mapdon$pct<-100*mapdon$volume/sum(mapdon$volume,na.rm=T)
-      mapdon$sizegroup<-cut(mapdon$vol_pib,c(0, 25,50,75,100,125,150,10000))
-      levels(mapdon$sizegroup)<-c("0-25","20-50","50-75","75-100","100-125","125-150",">150")
+      mapdon$sizegroup<-cut(mapdon$VULNERABILITE,c(0, 20,40,60,80,10000))
+      levels(mapdon$sizegroup)<-c("0-20","20-40","40-60","60-80",">80")
 
     
    
@@ -598,12 +587,12 @@ autofit(top)
                     size = ~pct,
                     color= ~sizegroup,
                  #   colors= c("red","orange","yellow","green","blue"),
-                    colors = rev(brewer.pal(7,"RdYlGn")),
+                    colors = rev(brewer.pal(5,"RdYlGn")),
                     hoverinfo = "text",
                   text = ~paste('ISO3 Code   : ', iso3c,
                                   '<br /> Country name: ', pays,
                                   '<br /> Trade share (%) : ',round(pct,3),
-                                  '<br /> Trade vulnerability : ',round(vol_pib,0))) %>%
+                                  '<br /> Trade vulnerability : ',round(VULNERABILITE,0))) %>%
         layout(geo = g)
       p
    
@@ -613,15 +602,15 @@ autofit(top)
 ::: {.column width="100%" .r-fit-text}
 1. Les échanges commerciaux sont distribués de façon très **inégalitaire** dans le monde. Les pays les plus riches sont en général ceux qui participent le plus aux échanges.
 
-2. La balance des échanges est souvent déséquilibrée, ce qui conduit à l'apparition de **gagnants** et de **perdants**. Onnote en particulier le déséquilibre majeur qui existe entre les **Etats-Unis** et la **Chine** et qui explique une partie des tensions entre les deux pays. 
+2. La balance des échanges est souvent déséquilibrée, ce qui conduit à l'apparition de **gagnants** et de **perdants**. On note en particulier le déséquilibre majeur qui existe entre les **Etats-Unis** et la **Chine** et qui explique une partie des tensions entre les deux pays. 
 
-3. Certains pays sont plus insérés que d'autres dans les échanges mondiaux, ce qui entraîne une **vulnérabilité face aux chocs internationaux**. C'est par exemple le cas de l'**Allemagne** dont la croissance est beaucoup plus liés aux échanges mondiaux que la **France**. Les **Etats-Unis**, la **Chine**, l'**Inde**, le **Brésil** ou la **Russie** sont à cet égard moins vulnérables 
+3. Certains pays sont plus insérés que d'autres dans les échanges mondiaux, ce qui entraîne une **vulnérabilité face aux chocs internationaux**. Les grands pays (**Etats-Unis**, la **Chine**, l'**Inde**, le **Brésil** ou la **Russie**)  sont en général moins vulnérables que les petits pays car ils ont un vaste marché intérieur
 
-4. L'importance commerciale des pays membres de l'**Union Européenne est surestimée** car une bonne partie de leurs échanges se font les uns avec les autres.
+4. L'importance commerciale des pays membres de l'**Union Européenne** ainsi que leur vulnérabilité est surestimée** car une bonne partie de leurs échanges se font les uns avec les autres.
 :::
 
 
-# GEOPOLIIQUE DES ECHANGES COMMERCIAUX
+# GEOPOLIIQUE DES ECHANGES COMMERCIAUX D
 
 ## Hard ou Soft power ?
 
@@ -640,7 +629,7 @@ Un pays i est dominé par un pays j si :
 2. le volume des échanges de i est inférieur à celui de j
 
 
-## Exemple théorique
+## Le modèle des flux dominants
 :::: {.columns}
 
 ::: {.column width="50%" }
@@ -687,7 +676,7 @@ flowchart TD
 ::::
 
 
-## Exemple théorique
+## Le modèle des flux dominants
 :::: {.columns}
 
 ::: {.column width="50%" }
@@ -731,28 +720,943 @@ flowchart TD
 
 ::::
 
+## Après la colonisation (1966-75)
 
-## Volume bilateral d'échange 1996-2000
+### 200 premiers flux
+
+```{r}
+
+### Mise à jour ###
+grav<-readRDS("data2/trade5years.RDS")
+grav<-as.data.frame(grav)
+
+### Matrice de flux
+tab<-grav %>% filter(t5 %in% c("1966-70","1971-75"), is.na(Fijt)==F, is.na(Fjit)==F) %>%
+          group_by(i,j) %>%
+         summarise(Fij=sum(Fijt)+sum(Fjit))
+tab<-as.data.frame(tab)
+
+mat<-Col_Mat(tab)
+mat<-Mat_Clean(mat)
+mat<-Mat_Norm(mat,norm=1000000,dig=0)
+
+
+## Fonds de carte associé
+world_map<-readRDS("data2/gravitymap_V5.rds") %>%
+      filter(country_id %in% colnames(mat)) %>% st_make_valid() %>% unique() %>% mutate(ISO3 = country_id) %>% select(ISO3)
+world_ctr<-st_centroid(world_map,of_largest_polygon = T)
+world_ctr<-unique(world_ctr)
+world_ctr$geometry[world_ctr$ISO3=="SUN"]<-st_point(c(38,56))
+
+
+
+
+# Project : Lambert Azimuthal - center = Paris
+world_ctr = st_transform(world_ctr, 
+                           crs = "+proj=laea +x_0=0 +y_0=0 +lon_0=2 +lat_0=49")
+
+world_ctr$geometry[world_ctr$ISO3=="RUS"]
+world_map= st_transform(world_map, 
+                           crs = "+proj=laea +x_0=0 +y_0=0 +lon_0=2 +lat_0=49")
+
+
+
+```
+
+
+
+
 
 
 ```{r}
-x<-readRDS("data2/MYCHELEM.RDS")
-x<-as.data.frame(x)
+net<- Mat_Col(mat)
+ 
+# Prepare links
+links <- net %>% mutate(pct=Fij/10000) %>% arrange(-pct) %>% slice(1:400)
+world_links2 <- mf_get_links(x = world_ctr, df = links)
+
+
+# prepare nodes 
+nodes <- net %>% mutate(pct=Fij/10000) %>%
+                group_by(i) %>% 
+                summarise(pct=sum(pct)) %>% 
+                select(ISO3=i, pct = pct)
+world_nodes2 <- left_join(world_ctr,nodes)
+
+
+
+# Initiate a base map
+mf_map(x = world_map, theme ="dark")
+
+# Plot a shadow
+mf_shadow(world_map, add = TRUE,cex = 0.3, col = "gray80")
+
+# Plot empty map
+mf_map(world_map, type = "base", add = TRUE, border= "white", lwd=0.3)
+
+mycol1<-alpha("red",0.5)
+
+
+# Plot links
+mf_map(world_links2, 
+       type = "prop",
+       var = "pct",
+       leg_pos = "topleft",
+       leg_title = "Flux (%)",
+       leg_val_rnd = 1,
+       col=mycol1,
+       alpha=0.5,
+       add=T)
+
+# Plot nodes
+mf_map(world_nodes2, 
+       type = "prop",
+       var = "pct",
+       inches = 0.1,
+       col = "yellow",
+       border= "red",
+       leg_pos = "topright",
+       leg_title = "Volume (%)",
+       leg_val_rnd = 1,
+       add=T)
+
+
+
+# layout
+mf_layout(title = "300 premiers flux",
+          scale = FALSE,
+          arrow=FALSE,
+          frame=T,
+         credits = "Source : Gravity database - CEPII")
+
+
+
+
+
+```
+
+
+## Après la colonisation (1966-75)
+
+
+```{r}
+
+
+#mat<-t(mat)+mat
+col<-Mat_Col(mat)
+col2<-Col_Sel(col,0.01,0.01) %>% filter(i !="_rest_", j != "_rest_")
+dom2<-Col_Dom(col2)
+net<-Viz_Dom(dom2, mytitle = "Graphe des flux dominants", mysub="Source : Gravity database - CEPII")
+net
+```
+
+## Après la colonisation (1966-75)
+
+
+
+```{r}
+
+
+net<- Mat_Col(mat)
+ 
+# Prepare links
+links <- net %>% mutate(Fij=Fij/10000) %>% arrange(-Fij) 
+world_links2 <- mf_get_links(x = world_ctr, df = links)
+
+
+# prepare nodes 
+nodes <- net %>% mutate(Fij=Fij/10000) %>%
+                group_by(i) %>% 
+                summarise(pct=sum(Fij)) %>% 
+                select(ISO3=i, pct = pct)
+world_nodes2 <- left_join(world_ctr,nodes)
+
+
+###### FLUX DOMINANTS ###
+
+
+
+flows_to_dom<-function (flows=flows) 
+  {
+flowi<-flows%>%group_by(i)%>%summarise(Fi=sum(Fij))%>%ungroup()
+flowj<-flows%>%group_by(j)%>%summarise(Fj=sum(Fij))%>%ungroup()
+flows<- flows%>%left_join(flowi)%>%left_join(flowj)   
+dom <- flows%>%arrange(desc(Fi))%>%
+            arrange(desc(Fij))%>%
+            arrange(desc(Fj))%>%
+            group_by(j)%>%
+            mutate(dom=row_number())%>%
+            ungroup()%>%
+           filter(dom==1)%>%
+            filter(Fi>Fj )
+ return(dom) 
+}
+dom<-flows_to_dom(net)
+
+
+dom1<-dom %>% select(i,Fi) %>% unique()
+dom2<-dom %>% select(j,Fj) %>% unique()
+domA <- dom1 %>% filter(!i %in% dom2$j) %>% rename (ISO3=i, link=Fi) %>% mutate(type = "1.Dominant") 
+domB <- dom1 %>% filter(i %in% dom2$j)  %>% rename (ISO3=i, link=Fi) %>% mutate(type = "2.Relais")
+domC <- dom2 %>% filter(!j %in% dom1$i) %>% rename (ISO3=j, link=Fj) %>% mutate(type = "3.Dominé")
+dom_type<-rbind(domA,domB,domC)
+
+
+
+
+
+world_nodes2<-merge(world_ctr,dom_type,by="ISO3")
+
+
+world_links <- mf_get_links(x = world_ctr, df = dom[,1:3])
+
+world_links2 <- world_links %>% filter(Fij >10) 
+
+## Define worldregions
+
+regio<-dom_type
+  listdom<-domA$ISO3
+  netlink1<-dom[,c("i","j")]
+  netlink2<-data.frame(i=listdom, j=listdom)
+  netlink<-rbind(netlink1,netlink2)
+  # step1
+  names(netlink)<-c("reg1","ISO3")
+regio<-left_join(regio, netlink)  
+
+  # step2
+  names(netlink)<-c("reg2","reg1")
+  regio<-left_join(regio, netlink)  
+
+  # step3
+  names(netlink)<-c("reg3","reg2")
+  regio<-left_join(regio, netlink)  
+
+   # step4
+  names(netlink)<-c("reg4","reg3")
+  regio<-left_join(regio, netlink)  
+
+  # step5
+  names(netlink)<-c("reg5","reg4")
+  regio<-left_join(regio, netlink)  
+ 
+  # Final region
+  
+  regio$reg<-as.factor(regio$reg5)
+
+  
+#table(regio$reg)
+
+  levels(regio$reg)<-c("Allemagne","Singapour","Union Soviétique","Etats-Unis")
+
+# Link with worldmap
+  world_map2<-merge(world_map, regio, by="ISO3", all.x=T, all.y=F)
+
+
+# import the sample data set
+# Initiate a base map
+
+mf_map(x = world_map)
+
+# Plot a shadow
+mf_shadow(world_map, add = TRUE,cex = 0.3, col = "white")
+
+# Plot regions
+mf_map(world_map2,
+       var = "reg",
+       type = "typo",
+       add = TRUE,
+       border= "white",
+       pal=c("blue","orange","red","green"),
+       alpha=0.5,
+       lwd=0.6,
+       col_na = "gray80",leg_no_data = "Autres regions (< 4)",
+       leg_title = "Régions nodales",
+       leg_pos = "bottomleft")
+
+
+# Plot links
+mf_map(world_links, 
+       col = "black", 
+       type = "grad", 
+       var = "Fij",
+       leg_pos = "topleft",
+       leg_val_rnd = 0,
+       border=NA,
+       leg_title = "Force du lien",
+       breaks = c(1,10,100,1000, 10000,max(world_links$Fij)),
+#       lwd=c(0.25,0.5,1,1.5,2,2.5,3,3.5),
+      lwd=c(0.1,0.2,0.4,0.8,1),
+       add = TRUE)
+
+
+
+# plot nodes by type and size
+mf_prop_typo(
+  x = world_nodes2, 
+  var = c("link", "type"), 
+#  inches = .07, 
+  inches = .05, 
+  border = "gray20",
+  symbol = "square", 
+  col_na = "grey", 
+  pal = c("black","gray","white"),
+#  lwd = 0.3,
+  lwd = 0.6,
+  leg_pos = c("topright","bottomright"),
+  leg_title = c("Somme des liens", "Types de noeuds"),
+  leg_title_cex = c(0.7, 0.7),
+  leg_val_rnd = 0,
+  leg_val_cex = c(.5, .7),
+  val_order = c("1.Dominant","2.Relais","3.Dominé"),
+  leg_no_data = "No data",
+  leg_frame = c(FALSE, FALSE),
+  add = TRUE
+)
+
+
+# layout
+mf_layout(title = "Régions nodales polarisées par les flux dominants",
+          scale = FALSE,
+          arrow=FALSE,
+          frame=T,
+         credits = "Source : Gravity database, CEPII, 2022")
+```
+
+
+
+## Après la Guerre Froide (1991-2000)
+
+### 200 premiers flux
+
+```{r}
+
+### Mise à jour ###
+grav<-readRDS("data2/trade5years.RDS")
+grav<-as.data.frame(grav)
+grav$i[grav$i=="SUN"]<-"RUS"
+grav$j[grav$j=="SUN"]<-"RUS"
+
+### Matrice de flux
+tab<-grav %>% filter(t5 %in% c("1991-95","1996-00"), is.na(Fijt)==F, is.na(Fjit)==F, i!=j) %>%
+          group_by(i,j) %>%
+         summarise(Fij=sum(Fijt)+sum(Fjit))
+tab<-as.data.frame(tab)
+
+mat<-Col_Mat(tab)
+mat<-Mat_Clean(mat)
+mat<-Mat_Norm(mat,norm=1000000,dig=0)
+
+
+## Fonds de carte associé
+world_map<-readRDS("data2/gravitymap_V5.rds") %>%
+      filter(country_id %in% colnames(mat)) %>% st_make_valid() %>% unique() %>% mutate(ISO3 = country_id) %>% select(ISO3)
+world_ctr<-st_centroid(world_map,of_largest_polygon = T)
+world_ctr<-unique(world_ctr)
+world_ctr$geometry[world_ctr$ISO3=="SUN"]<-st_point(c(38,56))
+
+
+
+
+# Project : Lambert Azimuthal - center = Paris
+world_ctr = st_transform(world_ctr, 
+                           crs = "+proj=laea +x_0=0 +y_0=0 +lon_0=2 +lat_0=49")
+
+world_ctr$geometry[world_ctr$ISO3=="RUS"]
+world_map= st_transform(world_map, 
+                           crs = "+proj=laea +x_0=0 +y_0=0 +lon_0=2 +lat_0=49")
+
+
+
+```
+
+
+
+
+
+
+```{r}
+net<- Mat_Col(mat)
+ 
+# Prepare links
+links <- net %>% mutate(pct=Fij/10000) %>% arrange(-pct) %>% slice(1:400)
+world_links2 <- mf_get_links(x = world_ctr, df = links)
+
+
+# prepare nodes 
+nodes <- net %>% mutate(pct=Fij/10000) %>%
+                group_by(i) %>% 
+                summarise(pct=sum(pct)) %>% 
+                select(ISO3=i, pct = pct)
+world_nodes2 <- left_join(world_ctr,nodes)
+
+
+
+# Initiate a base map
+mf_map(x = world_map, theme ="dark")
+
+# Plot a shadow
+mf_shadow(world_map, add = TRUE,cex = 0.3, col = "gray80")
+
+# Plot empty map
+mf_map(world_map, type = "base", add = TRUE, border= "white", lwd=0.3)
+
+mycol1<-alpha("red",0.5)
+
+
+# Plot links
+mf_map(world_links2, 
+       type = "prop",
+       var = "pct",
+       leg_pos = "topleft",
+       leg_title = "Flux (%)",
+       leg_val_rnd = 1,
+       col=mycol1,
+       alpha=0.5,
+       add=T)
+
+# Plot nodes
+mf_map(world_nodes2, 
+       type = "prop",
+       var = "pct",
+       inches = 0.1,
+       col = "yellow",
+       border= "red",
+       leg_pos = "topright",
+       leg_title = "Volume (%)",
+       leg_val_rnd = 1,
+       add=T)
+
+
+
+# layout
+mf_layout(title = "200 premiers flux",
+          scale = FALSE,
+          arrow=FALSE,
+          frame=T,
+         credits = "Source : Gravity database - CEPII")
+
+
+
+
+
+```
+
+
+## Après la Guerre Froide (1991-2000)
+
+
+```{r}
+
+
+#mat<-t(mat)+mat
+col<-Mat_Col(mat)
+col2<-Col_Sel(col,0.01,0.01) %>% filter(i !="_rest_", j != "_rest_")
+dom2<-Col_Dom(col2)
+net<-Viz_Dom(dom2, mytitle = "Graphe des flux dominants", mysub="Source : Gravity database - CEPII")
+net
+```
+
+## Après la Guerre Froide (1991-2000)
+
+
+
+```{r}
+
+
+net<- Mat_Col(mat)
+ 
+# Prepare links
+links <- net %>% mutate(Fij=Fij/10000) %>% arrange(-Fij) 
+world_links2 <- mf_get_links(x = world_ctr, df = links)
+
+
+# prepare nodes 
+nodes <- net %>% mutate(Fij=Fij/10000) %>%
+                group_by(i) %>% 
+                summarise(pct=sum(Fij)) %>% 
+                select(ISO3=i, pct = pct)
+world_nodes2 <- left_join(world_ctr,nodes)
+
+
+###### FLUX DOMINANTS ###
+
+
+
+flows_to_dom<-function (flows=flows) 
+  {
+flowi<-flows%>%group_by(i)%>%summarise(Fi=sum(Fij))%>%ungroup()
+flowj<-flows%>%group_by(j)%>%summarise(Fj=sum(Fij))%>%ungroup()
+flows<- flows%>%left_join(flowi)%>%left_join(flowj)   
+dom <- flows%>%arrange(desc(Fi))%>%
+            arrange(desc(Fij))%>%
+            arrange(desc(Fj))%>%
+            group_by(j)%>%
+            mutate(dom=row_number())%>%
+            ungroup()%>%
+           filter(dom==1)%>%
+            filter(Fi>Fj )
+ return(dom) 
+}
+dom<-flows_to_dom(net)
+
+
+dom1<-dom %>% select(i,Fi) %>% unique()
+dom2<-dom %>% select(j,Fj) %>% unique()
+domA <- dom1 %>% filter(!i %in% dom2$j) %>% rename (ISO3=i, link=Fi) %>% mutate(type = "1.Dominant") 
+domB <- dom1 %>% filter(i %in% dom2$j)  %>% rename (ISO3=i, link=Fi) %>% mutate(type = "2.Relais")
+domC <- dom2 %>% filter(!j %in% dom1$i) %>% rename (ISO3=j, link=Fj) %>% mutate(type = "3.Dominé")
+dom_type<-rbind(domA,domB,domC)
+
+
+
+
+
+world_nodes2<-merge(world_ctr,dom_type,by="ISO3")
+
+
+world_links <- mf_get_links(x = world_ctr, df = dom[,1:3])
+
+world_links2 <- world_links %>% filter(Fij >10) 
+
+## Define worldregions
+
+regio<-dom_type
+  listdom<-domA$ISO3
+  netlink1<-dom[,c("i","j")]
+  netlink2<-data.frame(i=listdom, j=listdom)
+  netlink<-rbind(netlink1,netlink2)
+  # step1
+  names(netlink)<-c("reg1","ISO3")
+regio<-left_join(regio, netlink)  
+
+  # step2
+  names(netlink)<-c("reg2","reg1")
+  regio<-left_join(regio, netlink)  
+
+  # step3
+  names(netlink)<-c("reg3","reg2")
+  regio<-left_join(regio, netlink)  
+
+   # step4
+  names(netlink)<-c("reg4","reg3")
+  regio<-left_join(regio, netlink)  
+
+  # step5
+  names(netlink)<-c("reg5","reg4")
+  regio<-left_join(regio, netlink)  
+ 
+  # Final region
+  
+  regio$reg<-as.factor(regio$reg5)
+
+  
+table(regio$reg)
+
+  levels(regio$reg)<-c("Chine","Allemagne","Etats-Unis")
+
+# Link with worldmap
+  world_map2<-merge(world_map, regio, by="ISO3", all.x=T, all.y=F)
+
+
+# import the sample data set
+# Initiate a base map
+
+mf_map(x = world_map)
+
+# Plot a shadow
+mf_shadow(world_map, add = TRUE,cex = 0.3, col = "white")
+
+# Plot regions
+mf_map(world_map2,
+       var = "reg",
+       type = "typo",
+       add = TRUE,
+       border= "white",
+       pal=c("yellow","blue","green"),
+       alpha=0.5,
+       lwd=0.6,
+       col_na = "gray80",leg_no_data = "Autres regions (< 4)",
+       leg_title = "Régions nodales",
+       leg_pos = "bottomleft")
+
+
+# Plot links
+mf_map(world_links, 
+       col = "black", 
+       type = "grad", 
+       var = "Fij",
+       leg_pos = "topleft",
+       leg_val_rnd = 0,
+       border=NA,
+       leg_title = "Force du lien",
+       breaks = c(1,10,100,1000, 10000,max(world_links$Fij)),
+#       lwd=c(0.25,0.5,1,1.5,2,2.5,3,3.5),
+      lwd=c(0.1,0.2,0.4,0.8,1),
+       add = TRUE)
+
+
+
+# plot nodes by type and size
+mf_prop_typo(
+  x = world_nodes2, 
+  var = c("link", "type"), 
+#  inches = .07, 
+  inches = .05, 
+  border = "gray20",
+  symbol = "square", 
+  col_na = "grey", 
+  pal = c("black","gray","white"),
+#  lwd = 0.3,
+  lwd = 0.6,
+  leg_pos = c("topright","bottomright"),
+  leg_title = c("Somme des liens", "Types de noeuds"),
+  leg_title_cex = c(0.7, 0.7),
+  leg_val_rnd = 0,
+  leg_val_cex = c(.5, .7),
+  val_order = c("1.Dominant","2.Relais","3.Dominé"),
+  leg_no_data = "No data",
+  leg_frame = c(FALSE, FALSE),
+  add = TRUE
+)
+
+
+# layout
+mf_layout(title = "Régions nodales polarisées par les flux dominants",
+          scale = FALSE,
+          arrow=FALSE,
+          frame=T,
+         credits = "Source : Gravity database, CEPII, 2022")
+```
+
+
+
+## Après la crise des subprimes (2011-2020)
+
+### 200 premiers flux
+
+```{r}
+
+### Mise à jour ###
+grav<-readRDS("data2/trade5years.RDS")
+grav<-as.data.frame(grav)
+
+
+### Matrice de flux
+tab<-grav %>% filter(t5 %in% c("2010-15","2016-20"), is.na(Fijt)==F, is.na(Fjit)==F, i!=j) %>%
+          group_by(i,j) %>%
+         summarise(Fij=sum(Fijt)+sum(Fjit))
+tab<-as.data.frame(tab)
+
+mat<-Col_Mat(tab)
+mat<-Mat_Clean(mat)
+mat<-Mat_Norm(mat,norm=1000000,dig=0)
+
+
+## Fonds de carte associé
+world_map<-readRDS("data2/gravitymap_V5.rds") %>%
+      filter(country_id %in% colnames(mat)) %>% st_make_valid() %>% unique() %>% mutate(ISO3 = country_id) %>% select(ISO3)
+world_ctr<-st_centroid(world_map,of_largest_polygon = T)
+world_ctr<-unique(world_ctr)
+world_ctr$geometry[world_ctr$ISO3=="RUS"]<-st_point(c(38,56))
+
+
+
+
+# Project : Lambert Azimuthal - center = Paris
+world_ctr = st_transform(world_ctr, 
+                           crs = "+proj=laea +x_0=0 +y_0=0 +lon_0=2 +lat_0=49")
+
+world_ctr$geometry[world_ctr$ISO3=="RUS"]
+world_map= st_transform(world_map, 
+                           crs = "+proj=laea +x_0=0 +y_0=0 +lon_0=2 +lat_0=49")
+
+
+
+```
+
+
+
+
+
+
+```{r}
+net<- Mat_Col(mat)
+ 
+# Prepare links
+links <- net %>% mutate(pct=Fij/10000) %>% arrange(-pct) %>% slice(1:400)
+world_links2 <- mf_get_links(x = world_ctr, df = links)
+
+
+# prepare nodes 
+nodes <- net %>% mutate(pct=Fij/10000) %>%
+                group_by(i) %>% 
+                summarise(pct=sum(pct)) %>% 
+                select(ISO3=i, pct = pct)
+world_nodes2 <- left_join(world_ctr,nodes)
+
+
+
+# Initiate a base map
+mf_map(x = world_map, theme ="dark")
+
+# Plot a shadow
+mf_shadow(world_map, add = TRUE,cex = 0.3, col = "gray80")
+
+# Plot empty map
+mf_map(world_map, type = "base", add = TRUE, border= "white", lwd=0.3)
+
+mycol1<-alpha("red",0.5)
+
+
+# Plot links
+mf_map(world_links2, 
+       type = "prop",
+       var = "pct",
+       leg_pos = "topleft",
+       leg_title = "Flux (%)",
+       leg_val_rnd = 1,
+       col=mycol1,
+       alpha=0.5,
+       add=T)
+
+# Plot nodes
+mf_map(world_nodes2, 
+       type = "prop",
+       var = "pct",
+       inches = 0.1,
+       col = "yellow",
+       border= "red",
+       leg_pos = "topright",
+       leg_title = "Volume (%)",
+       leg_val_rnd = 1,
+       add=T)
+
+
+
+# layout
+mf_layout(title = "200 premiers flux",
+          scale = FALSE,
+          arrow=FALSE,
+          frame=T,
+         credits = "Source : Gravity database - CEPII")
+
+
+
+
+
+```
+
+
+## Après la crise des subprimes (2011-2020)
+
+
+```{r}
+
+
+#mat<-t(mat)+mat
+col<-Mat_Col(mat)
+col2<-Col_Sel(col,0.01,0.01) %>% filter(i !="_rest_", j != "_rest_")
+dom2<-Col_Dom(col2)
+net<-Viz_Dom(dom2, mytitle = "Graphe des flux dominants", mysub="Source : Gravity database - CEPII")
+net
+```
+
+## Après la crise des subprimes (2011-2020)
+
+
+
+```{r}
+
+
+net<- Mat_Col(mat)
+ 
+# Prepare links
+links <- net %>% mutate(Fij=Fij/10000) %>% arrange(-Fij) 
+world_links2 <- mf_get_links(x = world_ctr, df = links)
+
+
+# prepare nodes 
+nodes <- net %>% mutate(Fij=Fij/10000) %>%
+                group_by(i) %>% 
+                summarise(pct=sum(Fij)) %>% 
+                select(ISO3=i, pct = pct)
+world_nodes2 <- left_join(world_ctr,nodes)
+
+
+###### FLUX DOMINANTS ###
+
+
+
+flows_to_dom<-function (flows=flows) 
+  {
+flowi<-flows%>%group_by(i)%>%summarise(Fi=sum(Fij))%>%ungroup()
+flowj<-flows%>%group_by(j)%>%summarise(Fj=sum(Fij))%>%ungroup()
+flows<- flows%>%left_join(flowi)%>%left_join(flowj)   
+dom <- flows%>%arrange(desc(Fi))%>%
+            arrange(desc(Fij))%>%
+            arrange(desc(Fj))%>%
+            group_by(j)%>%
+            mutate(dom=row_number())%>%
+            ungroup()%>%
+           filter(dom==1)%>%
+            filter(Fi>Fj )
+ return(dom) 
+}
+dom<-flows_to_dom(net)
+
+
+dom1<-dom %>% select(i,Fi) %>% unique()
+dom2<-dom %>% select(j,Fj) %>% unique()
+domA <- dom1 %>% filter(!i %in% dom2$j) %>% rename (ISO3=i, link=Fi) %>% mutate(type = "1.Dominant") 
+domB <- dom1 %>% filter(i %in% dom2$j)  %>% rename (ISO3=i, link=Fi) %>% mutate(type = "2.Relais")
+domC <- dom2 %>% filter(!j %in% dom1$i) %>% rename (ISO3=j, link=Fj) %>% mutate(type = "3.Dominé")
+dom_type<-rbind(domA,domB,domC)
+
+
+
+
+
+world_nodes2<-merge(world_ctr,dom_type,by="ISO3")
+
+
+world_links <- mf_get_links(x = world_ctr, df = dom[,1:3])
+
+world_links2 <- world_links %>% filter(Fij >10) 
+
+## Define worldregions
+
+regio<-dom_type
+  listdom<-domA$ISO3
+  netlink1<-dom[,c("i","j")]
+  netlink2<-data.frame(i=listdom, j=listdom)
+  netlink<-rbind(netlink1,netlink2)
+  # step1
+  names(netlink)<-c("reg1","ISO3")
+regio<-left_join(regio, netlink)  
+
+  # step2
+  names(netlink)<-c("reg2","reg1")
+  regio<-left_join(regio, netlink)  
+
+  # step3
+  names(netlink)<-c("reg3","reg2")
+  regio<-left_join(regio, netlink)  
+
+   # step4
+  names(netlink)<-c("reg4","reg3")
+  regio<-left_join(regio, netlink)  
+
+  # step5
+  names(netlink)<-c("reg5","reg4")
+  regio<-left_join(regio, netlink)  
+ 
+  # Final region
+  
+  regio$reg<-as.factor(regio$reg5)
+
+  
+table(regio$reg)
+
+  levels(regio$reg)<-c("Chine","Allemagne","Etats-Unis")
+
+# Link with worldmap
+  world_map2<-merge(world_map, regio, by="ISO3", all.x=T, all.y=F)
+
+
+# import the sample data set
+# Initiate a base map
+
+mf_map(x = world_map)
+
+# Plot a shadow
+mf_shadow(world_map, add = TRUE,cex = 0.3, col = "white")
+
+# Plot regions
+mf_map(world_map2,
+       var = "reg",
+       type = "typo",
+       add = TRUE,
+       border= "white",
+       pal=c("yellow","blue","green"),
+       alpha=0.5,
+       lwd=0.6,
+       col_na = "gray80",leg_no_data = "Autres regions (< 4)",
+       leg_title = "Régions nodales",
+       leg_pos = "bottomleft")
+
+# Plot links
+mf_map(world_links, 
+       col = "black", 
+       type = "grad", 
+       var = "Fij",
+       leg_pos = "topleft",
+       leg_val_rnd = 0,
+       border=NA,
+       leg_title = "Force du lien",
+       breaks = c(1,10,100,1000, 10000,max(world_links$Fij)),
+#       lwd=c(0.25,0.5,1,1.5,2,2.5,3,3.5),
+      lwd=c(0.1,0.2,0.4,0.8,1),
+       add = TRUE)
+
+
+
+# plot nodes by type and size
+mf_prop_typo(
+  x = world_nodes2, 
+  var = c("link", "type"), 
+#  inches = .07, 
+  inches = .05, 
+  border = "gray20",
+  symbol = "square", 
+  col_na = "grey", 
+  pal = c("black","gray","white"),
+#  lwd = 0.3,
+  lwd = 0.6,
+  leg_pos = c("topright","bottomright"),
+  leg_title = c("Somme des liens", "Types de noeuds"),
+  leg_title_cex = c(0.7, 0.7),
+  leg_val_rnd = 0,
+  leg_val_cex = c(.5, .7),
+  val_order = c("1.Dominant","2.Relais","3.Dominé"),
+  leg_no_data = "No data",
+  leg_frame = c(FALSE, FALSE),
+  add = TRUE
+)
+
+
+# layout
+mf_layout(title = "Régions nodales polarisées par les flux dominants",
+          scale = FALSE,
+          arrow=FALSE,
+          frame=T,
+         credits = "Source : Gravity database, CEPII, 2022")
+```
+
+
+
+
+## Volume bilateral d'échange 2016-20
+
+
+
+```{r}
+### Mise à jour ###
+grav<-readRDS("data2/trade5years.RDS")
+grav<-as.data.frame(grav)
 
 ### Flux totaux 2020
-tab<-x %>% filter(k=="TOT", t>1995,t<2001) %>%
+tab<-grav %>% filter(t5=="2016-20", is.na(Fijt)==F) %>%
+           mutate(i=substr(i,1,3),j=substr(j,1,3))%>%
           group_by(i,j) %>%
-         summarise(Fij=sum(Fijkt))
+         summarise(Fij=sum(Fijt)+sum(Fjit))
 tab<-as.data.frame(tab)
 mat<-Col_Mat(tab)
 mat<-t(mat)+mat
 col<-Mat_Col(mat)
 col2<-Col_Sel(col,0.01,0.01) %>% filter(i !="_rest_", j != "_rest_")
 dom2<-Col_Dom(col2)
-net<-Viz_Dom(dom2, mytitle = "Flux dominants bilatéraux", mysub="Source : CHELEM-CEPII")
+net<-Viz_Dom(dom2, mytitle = "Flux dominants bilatéraux 2016-20", mysub="Source : Gravity database - CEPII")
 net
-
-
 ```
 
 
@@ -760,81 +1664,14 @@ net
 
 
 
-## Volume bilateral d'échange 2006-2010
-
-
-```{r}
-
-
-### Flux totaux 2020
-tab<-x %>% filter(k=="TOT", t>2005,t<2011) %>%
-          group_by(i,j) %>%
-         summarise(Fij=sum(Fijkt))
-tab<-as.data.frame(tab)
-mat<-Col_Mat(tab)
-mat<-t(mat)+mat
-col<-Mat_Col(mat)
-col2<-Col_Sel(col,0.01,0.01) %>% filter(i !="_rest_", j != "_rest_")
-dom2<-Col_Dom(col2)
-net<-Viz_Dom(dom2, mytitle = "Flux dominants bilatéraux", mysub="Source : CHELEM-CEPII")
-net
-
-
-```
-
-## Volume bilateral d'échange 2016-2020 
-
-A vous de jouer !
-
-```{mermaid}
-
-flowchart TD
-    A["Allemagne
-    Volume = 12692"]
-    B["Chine
-    Volume = 19843"]
-    C["USA
-    Volume = 17746"]
-    D["France
-    Volume=5644"]
-    E["Russie,
-    Volume = 3086"]
-    
-    A-- 1045 ---B
-    A-- 897 ---C
-    A-- 926 ---D
-    A-- 258 ---E
-    B-- 2791 ---C
-    B-- 339 ---D
-    B-- 576 ---E
-    C-- 367 ---D
-    C-- 116 ---E
-    D-- 71 ---E
-
-```
 
 
 
-## Volume bilateral d'échange 2016-2020 
-
-```{r}
 
 
-### Flux totaux 2020
-tab<-x %>% filter(k=="TOT", t>2015,t<2021) %>%
-          group_by(i,j) %>%
-         summarise(Fij=sum(Fijkt))
-tab<-as.data.frame(tab)
-mat<-Col_Mat(tab)
-mat<-t(mat)+mat
-col<-Mat_Col(mat)
-col2<-Col_Sel(col,0.01,0.01) %>% filter(i !="_rest_", j != "_rest_")
-dom2<-Col_Dom(col2)
-net<-Viz_Dom(dom2, mytitle = "Flux dominants bilatéraux", mysub="Source : CHELEM-CEPII")
-net
 
 
-```
+
 
 
 
@@ -872,20 +1709,23 @@ Les USA qui sont le principal importateur en 2006 domine la plus grande partie d
 
 ## Domination des exportations en 2016-2020 
 
-```{r}
+```{r, eval=F}
+
+### Mise à jour ###
 
 
 ### Flux totaux 2020
-tab<-x %>% filter(k=="TOT", t>2015,t<2021) %>%
+tab<-grav %>% filter(t5=="2016-20", is.na(Fijt)==F) %>%
+           mutate(i=substr(i,1,3),j=substr(j,1,3))%>%
           group_by(i,j) %>%
-         summarise(Fij=sum(Fijkt))
+         summarise(Fij=sum(Fijt))
 tab<-as.data.frame(tab)
 mat<-Col_Mat(tab)
-mat<-mat
+mat<-t(mat)
 col<-Mat_Col(mat)
 col2<-Col_Sel(col,0.01,0.01) %>% filter(i !="_rest_", j != "_rest_")
 dom2<-Col_Dom(col2)
-net<-Viz_Dom(dom2, mytitle = "Flux dominants d'exportation", mysub="Source : CHELEM-CEPII")
+net<-Viz_Dom(dom2, mytitle = "Pouvoir des exportateurs 2016-20", mysub="Source : Gravity database - CEPII")
 net
 
 
@@ -911,20 +1751,23 @@ En 2006, trois grands pays exportateurs dominent les importations des autres pay
 
 ## Domination des importations en 2016-2020 
 
-```{r}
+```{r, eval+F}
+
+### Mise à jour ###
 
 
 ### Flux totaux 2020
-tab<-x %>% filter(k=="TOT", t>2015,t<2021) %>%
+tab<-grav %>% filter(t5=="2016-20", is.na(Fijt)==F) %>%
+           mutate(i=substr(i,1,3),j=substr(j,1,3))%>%
           group_by(i,j) %>%
-         summarise(Fij=sum(Fijkt))
+         summarise(Fij=sum(Fijt))
 tab<-as.data.frame(tab)
 mat<-Col_Mat(tab)
-mat<-t(mat)
+mat<-mat
 col<-Mat_Col(mat)
 col2<-Col_Sel(col,0.01,0.01) %>% filter(i !="_rest_", j != "_rest_")
 dom2<-Col_Dom(col2)
-net<-Viz_Dom(dom2, mytitle = "Flux dominants d'importation", mysub="Source : CHELEM-CEPII")
+net<-Viz_Dom(dom2, mytitle = "Pouvoir des importateurs 2016-20", mysub="Source : Gravity database - CEPII")
 net
 
 
@@ -943,7 +1786,7 @@ La domination commerciale d'un pays porte rarement sur l'ensemble des produits. 
 
 ```{r}
 
-
+x<-readRDS("data2/MYCHELEM.RDS")
 ### Flux totaux 2020
 tab<-x %>% filter(k=="(1) ENE", t>2015,t<2021) %>%
           group_by(i,j) %>%

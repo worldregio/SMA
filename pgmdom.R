@@ -4,6 +4,23 @@ library(reshape2)
 library(visNetwork)
 
 
+#test <- matrix(1:12,nrow=3)
+#colnames(test)<-c("C","B","A","D")
+#rownames(test)<-c("A","B","C")
+#test
+
+
+Mat_Clean<-function(mat=mat){
+  mat<-mat[order(rownames(mat)),]
+  mat<-mat[,order(colnames(mat))]
+  nami<-colnames(mat)
+  namj<-rownames(mat)
+  tab<-table(c(nami,namj))
+  tab<-tab[tab==2]
+  nam<-names(tab)
+  mat<-mat[rownames(mat) %in% nam,colnames(mat) %in% nam]
+  return(mat)
+}
 
 
 Col_Mat<-function(col=col){

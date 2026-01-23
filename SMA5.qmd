@@ -1188,16 +1188,15 @@ Source : **Saint-Exupery A., 1943**,  *Le Petit Prince*, Chapitre 15 :  "Le Géo
 
 ::: {.columns}
 
-::: {.column width="30%" .r-fit-text .smaller}
-- **Walter Isard (1919-2010)
+::: {.column width="40%" .r-fit-text .smaller}
+- **Walter Isard (1919-2010)**
 
-![](img5/isard_photo.jpg){width=200}
-
-![](img5/isard_peace.jpg){width=200}
+![](img5/isard_photo.jpg){width=150}
+![](img5/isard_peace.jpg){width=150}
 :::
 
 
-::: {.column width="70%" .r-fit-text .smaller}
+::: {.column width="60%" .r-fit-text .smaller}
 
 En 1963, Walter Isard, le principal fondateur de la science régionale, a réuni un groupe d'universitaires à Malmö, en Suède, dans le but de créer la Société de recherche sur la paix. Le groupe de membres initiaux comprenait Kenneth Boulding et Anatol Rapoport. En 1973, ce groupe est devenu la **Peace Science Society**. La science de la paix était considérée comme un effort interdisciplinaire et international visant à développer un ensemble particulier de concepts, de techniques et de données pour mieux comprendre et atténuer les conflits. 
 :::
