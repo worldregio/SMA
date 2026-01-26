@@ -2405,7 +2405,7 @@
     "href": "SMA2.html#variante-i-exportations-ou-les-importations",
     "title": "Le Commerce Mondial",
     "section": "Variante I : exportations ou les importations ?",
-    "text": "Variante I : exportations ou les importations ?\nLe commerce bilatéral mélange deux formes de domination commerciale de nature différente :\n\nla domination des exportations par les pays importateurs qui peuvent refuser d’acheter.\nla domination des importations par les pays exportateurs qui peuvent refuser de vendre .\n\nLa carte des flux dominants est-elle la même dans les deux cas ?"
+    "text": "Variante I : exportations ou les importations ?\nLe commerce bilatéral mélange deux formes de domination commerciale de nature différente :\n\nla domination des pays importateurs qui peuvent refuser d’acheter les produits des autres\nla domination des pays exportateurs qui peuvent refuser de vendre certains produits aux autres .\n\nLa carte des flux dominants est-elle la même dans les deux cas ?"
   },
   {
     "objectID": "SMA2.html#domination-des-exportations-en-2006",
@@ -3322,14 +3322,14 @@
     "href": "SMA2.html#le-modèle-des-flux-dominants-1",
     "title": "Le Commerce Mondial",
     "section": "Le modèle des flux dominants",
-    "text": "Le modèle des flux dominants\n\n\nEchanges bilatéraux\n\n\n\n\n\nflowchart TD\n    A[\"pays A\n    Volume = 200\"]\n    B[\"pays B\n    Volume=100\"]\n    C[\"pays C\n    Volume = 80\"]\n    D[\"Pays D\n    Volume=50\"]\n    E[\"Pays E,\n    Volume = 60\"]\n    \n    A-- 20 ---B\n    A-- 10 ---C\n    A-- 15 ---D\n    A-- 5 ---E\n    B-- 15 ---C\n    B-- 5 ---D\n    B-- 5 ---E\n    C-- 5 ---D\n    C-- 5 ---E\n    D-- 10 ---E\n\n\n\n\n\n\n\n\nQui domine qui ?\n\nA :\nB :\nC :\nD :\nE :"
+    "text": "Le modèle des flux dominants\n\n\n\n\n\nflowchart TD\n    A[\"pays A\n    Volume = 200\"]\n    B[\"pays B\n    Volume=100\"]\n    C[\"pays C\n    Volume = 80\"]\n    D[\"Pays D\n    Volume=50\"]\n    E[\"Pays E,\n    Volume = 60\"]\n    \n    A-- 20 ---B\n    A-- 10 ---C\n    A-- 15 ---D\n    A-- 5 ---E\n    B-- 15 ---C\n    B-- 5 ---D\n    B-- 5 ---E\n    C-- 5 ---D\n    C-- 5 ---E\n    D-- 10 ---E\n\n\n\n\n\n\n\nQui domine qui ?"
   },
   {
     "objectID": "SMA2.html#le-modèle-des-flux-dominants-2",
     "href": "SMA2.html#le-modèle-des-flux-dominants-2",
     "title": "Le Commerce Mondial",
     "section": "Le modèle des flux dominants",
-    "text": "Le modèle des flux dominants\n\n\nEchanges bilatéraux\n\n\n\n\n\nflowchart TD\n    A[\"pays A\n    Volume = 200\"]\n    B[\"pays B\n    Volume=100\"]\n    C[\"pays C\n    Volume = 80\"]\n    D[\"Pays D\n    Volume=50\"]\n    E[\"Pays E,\n    Volume = 60\"]\n    \n\n    A--&gt; A\n    B--&gt; A\n    C--&gt; B\n    D--&gt; A\n    E--&gt; E\n\n\n\n\n\n\n\n\nQui domine qui ?\n\nA n’est pas dominé et domine A et B (Dominant)\nB est dominé par A et domine C (Relais)\nC est dominé par B (Dominé)\nD est dominé par A (Dominé)\nE n’est pas dominé mais ne domine personne (Isolé)"
+    "text": "Le modèle des flux dominants\n\n\n\n\n\nflowchart TD\n    A[\"pays A\n    Volume = 200\"]\n    B[\"pays B\n    Volume=100\"]\n    C[\"pays C\n    Volume = 80\"]\n    D[\"Pays D\n    Volume=50\"]\n    E[\"Pays E,\n    Volume = 60\"]\n    \n\n    A--&gt; A\n    B--&gt; A\n    C--&gt; B\n    D--&gt; A\n    E--&gt; E\n\n\n\n\n\n\n\nQui domine qui ?\n\nA n’est pas dominé et domine A et B (Dominant)\nB est dominé par A et domine C (Relais)\nC est dominé par B (Dominé)\nD est dominé par A (Dominé)\nE n’est pas dominé mais ne domine personne (Isolé)"
   },
   {
     "objectID": "SMA2.html#après-la-colonisation-1966-75",
@@ -3393,5 +3393,54 @@
     "title": "Le Commerce Mondial",
     "section": "Après la crise des subprimes (2011-2020)",
     "text": "Après la crise des subprimes (2011-2020)\n\n\n\n  CHN DEU.2   USA \n  118    57    31"
+  },
+  {
+    "objectID": "SMA2.html#la-chine-domine-les-exportations-en-2016-2020",
+    "href": "SMA2.html#la-chine-domine-les-exportations-en-2016-2020",
+    "title": "Le Commerce Mondial",
+    "section": "La Chine domine les exportations en 2016-2020",
+    "text": "La Chine domine les exportations en 2016-2020"
+  },
+  {
+    "objectID": "SMA2.html#les-usa-dominent-les-importations-en-2016-2020",
+    "href": "SMA2.html#les-usa-dominent-les-importations-en-2016-2020",
+    "title": "Le Commerce Mondial",
+    "section": "Les USA dominent les importations en 2016-2020",
+    "text": "Les USA dominent les importations en 2016-2020"
+  },
+  {
+    "objectID": "SMA2.html#variante-ii-alliances-commerciales",
+    "href": "SMA2.html#variante-ii-alliances-commerciales",
+    "title": "Le Commerce Mondial",
+    "section": "Variante II : Alliances commerciales",
+    "text": "Variante II : Alliances commerciales\nNous avons supposé jusqu’ici que chaque pays était un acteur isolé développant une stratégie autonome. Mais il existe plusieurs cas de coordination des stratégies commerciales :\n\nCartels destinés à coordonner les prix de certains produits. Un bon exemple est l’OPEP pour le pétrole.\nUnions douanières destinées à réduire le coût des échanges internes à une zone tout en se protégeant des concurrents externes. L’exemple typique est l’Union Européenne."
+  },
+  {
+    "objectID": "SMA2.html#lunion-fait-la-force-2016-2020",
+    "href": "SMA2.html#lunion-fait-la-force-2016-2020",
+    "title": "Le Commerce Mondial",
+    "section": "L’Union fait la force : 2016-2020",
+    "text": "L’Union fait la force : 2016-2020\n\n\n\n\n\n\n\n\n\nCHN  UE USA \n 89  64  30"
+  },
+  {
+    "objectID": "SMA2.html#variante-ii1-domination-sectorielle",
+    "href": "SMA2.html#variante-ii1-domination-sectorielle",
+    "title": "Le Commerce Mondial",
+    "section": "Variante II1 : Domination sectorielle",
+    "text": "Variante II1 : Domination sectorielle\nLa domination commerciale d’un pays porte rarement sur l’ensemble des produits. Il peut donc se créer un équilibre limitant les possibilités d’embargo ou de boycott. Deux exemples :\n\nla domination des importations d’énergie par les pays exportateurs qui peuvent refuser de vendre leur production de pétrole, gaz ou charbon.\nla domination des importations agricoles par les pays exportateurs qui peuvent refuser de vendre du blé, du maïs, du riz …\n\n-N.B.:On utilise ici une autre base de données du CEPII, la base CHELEM qui est moins précise spatialement"
+  },
+  {
+    "objectID": "SMA1.html#comparaison-1995---2025",
+    "href": "SMA1.html#comparaison-1995---2025",
+    "title": "La Puissance des Etats",
+    "section": "Comparaison 1995 - 2025",
+    "text": "Comparaison 1995 - 2025\n\n\n\n\nrangcodepaysG7CSNUscore1USAUSAxx1002GBRRoyaume-Unixx394ALLAllemagnex-384FRAFrancexx385JAPJaponx-366RUSRussie-x357CHNChine-x258CANCanadax-159INDInde--610ITAItaliex-511ESPEspagne--412BRABrésil--2\n\n\n\n\n\nrangcodepaysG7CSNUscore1CHNChina-x1002USAUnited Statesxx803INDIndia--624RUSRussian Federation-x355BRABrazil--256CANCanadax-177IDNIndonesia--168JPNJapanx-1410AUSAustralia--1310DEUGermanyx-1311MEXMexico--1212NGANigeria--1114PAKPakistan--1014FRAFrancexx1015GBRUnited Kingdomxx9"
+  },
+  {
+    "objectID": "SMA1.html#comparaison-1995---2025-1",
+    "href": "SMA1.html#comparaison-1995---2025-1",
+    "title": "La Puissance des Etats",
+    "section": "Comparaison 1995 - 2025",
+    "text": "Comparaison 1995 - 2025"
   }
 ]

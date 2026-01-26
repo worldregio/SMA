@@ -5,7 +5,7 @@ date: "2026-01-28"
 date-format: iso
 author: "Claude Grasland"
 title-slide-attributes:
-  data-background-color: "#75AADB85"
+  data-background-color: "#BA4A00"
   data-background-size: 200px
   data-background-opacity: "0.9"
   data-background-position: top center
@@ -18,7 +18,7 @@ format:
     embed-resources: true
     smaller: true
     scrollable: true
-    theme: [simple, style.scss]
+    theme: [simple, diapos.scss]
 execute:
   echo: false
 editor_options: 
@@ -1665,6 +1665,88 @@ barplot(as.vector(mat3[-7]),names.arg = c("SUP","ARB","POP","URB","GDP","GPP"),c
 
 # CONCLUSION
 
+## Comparaison 1995 - 2025
+
+
+::: columns
+::: {.column width="50%"}
+```{r}
+pays<-c("USA","Allemagne","Japon","France","Royaume-Uni","Russie","Chine","Canada","Inde","Brésil","Italie","Espagne")
+code<-c("USA","ALL","JAP","FRA","GBR","RUS","CHN","CAN","IND","BRA","ITA","ESP")
+G7<-c("x","x","x","x","x","-","-","x","-","-","x","-")
+CSNU<-c("x","-","-","x","x","x","x","-","-","-","-","-")
+score<-c(95,36,34,36,37,33,24,14,6,2,5,4)
+score <-round(100*score/score[1])
+rang<-round(rank(-score))
+tab<-data.frame(rang,code,pays,G7,CSNU,score) %>% arrange(rang)
+top<-flextable(tab)
+top<-theme_vanilla(top)
+top <- fontsize(top, size = 14) 
+top<-line_spacing(top, space = 0.5)
+autofit(top)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+pays2 <- synt$nom[1:15]
+code2 <- synt$code[1:15]
+score2 <- synt$TOT[1:15]
+score2 <-round(100*score2/score2[1])
+rang2 <- round(rank(-score2))
+G7<-c("-","x","-","-","-","x","-","x","-","x","-","-","-","x","x")
+CSNU<-c("x","x","-","x","-","-","-","-","-","-","-","-","-","x","x")
+tab2<-data.frame(rang=rang2,code=code2,pays=pays2,G7,CSNU, score=score2) %>% arrange(rang2)
+top2<-flextable(tab2)
+top2<-theme_vanilla(top2)
+top2 <- fontsize(top2, size = 14) 
+top2<-line_spacing(top2, space = 0.5)
+autofit(top2)
+
+
+```
+
+:::
+
+:::
+
+
+## Comparaison 1995 - 2025
+
+::: columns
+::: {.column width="50%"}
+```{r, fig.width=5}
+g<-ggplot(tab, aes(x=rang, y=score)) +
+  geom_point(col="red") +
+  geom_line() +
+  geom_text_repel(label=pays)+
+  scale_x_continuous("RANG EN 1995",breaks=1:12) +
+  scale_y_continuous("Indice 100 = USA")+
+  theme_light()+
+  ggtitle("PUISSANCE DES ETATS DU MONDE VERS 1995",subtitle = "Source : Dorel G., 1998") 
+g
+ggsave(filename = "img1/top12_1995.png",plot = g)
+```
+:::
+
+::: {.column width="50%"}
+```{r, fig.width=5}
+g<-ggplot(tab2[1:12,], aes(x=rang, y=score)) +
+  geom_point(col="red") +
+  geom_line() +
+  geom_text_repel(label=pays2[1:12])+
+  scale_x_continuous("RANG EN 2023",breaks=1:12) +
+  scale_y_continuous("Indice 100 = Chine")+
+  theme_light()+
+  ggtitle("PUISSANCE DES ETATS DU MONDE VERS 2023",subtitle = "Source : Grasland C., 2026") 
+g
+```
+:::
+
+:::
+
+
+
 ## 2025 : Un Monde unipolaire ou multipolaire ?
 
 <div class="centered">
@@ -1705,6 +1787,13 @@ tab<-don %>% filter(date > 1959, date < 2024) %>%
 
 tab<-as.data.frame(tab)
 
+m <- list(
+  l = 0,
+  r = 0,
+  b = 100,
+  t = 100,
+  pad = 4
+)
 
 p <- plot_ly(tab,
              x = ~date,
@@ -1713,7 +1802,8 @@ p <- plot_ly(tab,
              add_lines()%>%
          layout(title = "World Power Index (1960-2023)",
          yaxis = list(title = "% de la richesse mondiale", type="log"), 
-         xaxis = list(title = "Année"))
+         xaxis = list(title = "Année")) %>% 
+  layout(autosize = F, width = 900, height = 550, margin = m)
 p
 ```
 
@@ -1729,6 +1819,14 @@ don2<-don2 %>% group_by(date, typo) %>% summarise(TOT_wgt=sum(TOT_wgt, na.rm=T))
 tab<-as.data.frame(don2)
 
 
+m <- list(
+  l = 0,
+  r = 0,
+  b = 100,
+  t = 100,
+  pad = 4
+)
+
 p <- plot_ly(tab,
              x = ~date,
              y = ~TOT_wgt,
@@ -1736,36 +1834,10 @@ p <- plot_ly(tab,
              add_lines()%>%
          layout(title = "World Power Index (1960-2023)",
          yaxis = list(title = "% de la richesse mondiale", type="log"), 
-         xaxis = list(title = "Année"))
+         xaxis = list(title = "Année")) %>% 
+  layout(autosize = F, width = 900, height = 550, margin = m)
 p
 ```
 
 
-
-
-
-## Débat sur la réforme du CSNU
-
-<div class="centered">
-<img src="img1/power294.png" width=700px />
-</div>
-
-## Débat sur la réforme du CSNU
-
-<div class="centered">
-<img src="img1/power2101.png" width=700px />
-</div>
-
-## Débat sur la réforme du CSNU
-
-<div class="centered">
-<img src="img1/power2102.png" width=700px />
-</div>
-
-
-## A vous de jouer ...
-
-<div class="centered">
-<img src="img1/CSNU.jpg" width=700px />
-</div>
 

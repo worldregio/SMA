@@ -199,8 +199,8 @@ Viz_Dom<-function(tabdom=tabdom,
                    main = mytitle,
                    submain = mysub,
                    #  main = title,
-                   height = "700px", 
-                   width = "100%")   %>%   
+                   height = "500px", 
+                   width = "150%")   %>%   
     visNodes(scaling =list(border="black",
                            min =10, max=80, 
                            label=list(min=10,max=80)))%>%

@@ -630,10 +630,7 @@ Un pays i est dominé par un pays j si :
 
 
 ## Le modèle des flux dominants
-:::: {.columns}
 
-::: {.column width="50%" }
-### Echanges bilatéraux
 
 ```{mermaid}
 
@@ -661,26 +658,15 @@ flowchart TD
     D-- 10 ---E
 
 ```
-:::
 
 
-::: {.column width="50%"}
 ### Qui domine qui ?
-- A : 
-- B : 
-- C : 
-- D : 
-- E : 
-:::
 
-::::
+
 
 
 ## Le modèle des flux dominants
-:::: {.columns}
 
-::: {.column width="50%" }
-### Echanges bilatéraux
 
 ```{mermaid}
 
@@ -704,10 +690,7 @@ flowchart TD
     E--> E
 
 ```
-:::
 
-
-::: {.column width="50%"}
 ### Qui domine qui ?
 
 - A n'est pas dominé et domine  A et B (**Dominant**)
@@ -716,9 +699,6 @@ flowchart TD
 - D est dominé par A (**Dominé**)
 - E n'est pas dominé mais ne domine personne (**Isolé**)
 
-:::
-
-::::
 
 ## Après la colonisation (1966-75)
 
@@ -1634,80 +1614,19 @@ mf_layout(title = "Régions nodales polarisées par les flux dominants",
 
 
 
-
-## Volume bilateral d'échange 2016-20
-
-
-
-```{r}
-### Mise à jour ###
-grav<-readRDS("data2/trade5years.RDS")
-grav<-as.data.frame(grav)
-
-### Flux totaux 2020
-tab<-grav %>% filter(t5=="2016-20", is.na(Fijt)==F) %>%
-           mutate(i=substr(i,1,3),j=substr(j,1,3))%>%
-          group_by(i,j) %>%
-         summarise(Fij=sum(Fijt)+sum(Fjit))
-tab<-as.data.frame(tab)
-mat<-Col_Mat(tab)
-mat<-t(mat)+mat
-col<-Mat_Col(mat)
-col2<-Col_Sel(col,0.01,0.01) %>% filter(i !="_rest_", j != "_rest_")
-dom2<-Col_Dom(col2)
-net<-Viz_Dom(dom2, mytitle = "Flux dominants bilatéraux 2016-20", mysub="Source : Gravity database - CEPII")
-net
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Montée en puissance de la Chine
-
-- **en 1996-2000**, la Chine est un acteur mineur du commerce mondial à l'intérieur de la zone Asie Pacifique qui est dominée par les USA et le Japon.
-- **en 2006-2010**, la Chine a déjà supplanté le Japon mais demeure dominée par les USA dans la zone Asie-Pacifique.
-- **en 2016-2020**, la Chine domine désormais l'ensemble du commerce mondial, y compris la zone Europe-Russie-Méditerranée centrée sur l'Allemagne. 
-
-
 ## Variante I : exportations ou les importations ?
 
 Le commerce bilatéral mélange deux formes de domination commerciale de nature différente : 
 
-- **la domination des exportations** par les **pays importateurs** qui peuvent refuser d'acheter. 
-- **la domination des importations** par les **pays exportateurs** qui peuvent refuser de vendre .
+- **la domination des pays importateurs** qui peuvent refuser d'acheter les produits des autres
+- **la domination des pays exportateurs** qui peuvent refuser de vendre certains produits aux autres .
 
 La carte des flux dominants est-elle la même dans les deux cas ?
 
-## Domination des exportations en 2006
-
-:::: {.columns}
-
-::: {.column width="70%" .r-fit-text}
-![](img2/map_exp_dom-2006.png) {widh=700}
-:::
 
 
-::: {.column width="30%" .r-fit-text}
-Les USA qui sont le principal importateur en 2006 domine la plus grande partie du Monde, à l'exception de la zone Europe Méditerranée qui est dominée par l'Allemagne.
+## La Chine domine les exportations en 2016-2020 
 
-:::
-
-::::
-
-## Domination des exportations en 2016-2020 
 
 ```{r, eval=F}
 
@@ -1732,24 +1651,9 @@ net
 ```
 
 
-## Domination des importations en 2006
 
 
-:::: {.columns}
-
-::: {.column width="70%" .r-fit-text}
-![](img2/map_imp_dom-2006.png) {widh=700}
-:::
-
-
-::: {.column width="30%" .r-fit-text}
-En 2006, trois grands pays exportateurs dominent les importations des autres pays du Monde : USA, Chine et Allemagne.
-
-:::
-
-::::
-
-## Domination des importations en 2016-2020 
+## Les USA dominent les importations en 2016-2020 
 
 ```{r, eval+F}
 
@@ -1773,13 +1677,253 @@ net
 
 ```
 
-## Variante II : Domination sectorielle
+## Variante II : Alliances commerciales
+
+Nous avons supposé jusqu'ici que chaque pays était un acteur isolé développant une stratégie autonome. Mais il existe plusieurs cas de coordination des stratégies commerciales :
+
+- **Cartels** destinés à coordonner les prix de certains produits. Un bon exemple est l'OPEP pour le pétrole.
+- **Unions douanières** destinées à réduire le coût des échanges internes à une zone tout en se protégeant des concurrents externes. L'exemple typique est l'Union Européenne. 
+
+## L'Union fait la force  : 2016-2020
+
+```{r}
+sel<-c("FRA","DEU","ITA","NLD","BLX","IRL", "DNK",
+       "AUT","NOR","SWE","ESP","PRT","GRC","POL","HUN","CZE","SVK",
+       "BGR","ROU","LTU","EST","CYP","MLT","LVA","HRV")
+
+
+
+
+### Flux totaux 2020
+tab<-grav %>% filter(t5=="2016-20", is.na(Fijt)==F) %>%
+           mutate(i=substr(i,1,3),j=substr(j,1,3))
+
+
+
+tab$i[tab$i %in% sel]<-"UE"
+tab$j[tab$j %in% sel]<-"UE"
+
+tab<-tab %>%
+          group_by(i,j) %>%
+         summarise(Fij=sum(Fijt)+sum(Fjit))
+tab<-as.data.frame(tab)
+mat<-Col_Mat(tab)
+mat<-mat
+
+## Fonds de carte associé
+world_map<-readRDS("data2/gravitymap_V5.rds") %>%
+      filter(country_id %in% colnames(mat)) %>% st_make_valid() %>% unique() %>% mutate(ISO3 = country_id) %>% select(ISO3)
+world_map$ISO3[world_map$ISO3 %in% sel]<-"UE"
+world_map <- world_map %>% group_by(ISO3) %>% summarise()
+
+world_ctr<-st_centroid(world_map,of_largest_polygon = T)
+world_ctr<-unique(world_ctr)
+world_ctr$geometry[world_ctr$ISO3=="RUS"]<-st_point(c(38,56))
+
+# Project : Lambert Azimuthal - center = Paris
+world_ctr = st_transform(world_ctr, 
+                           crs = "+proj=laea +x_0=0 +y_0=0 +lon_0=2 +lat_0=49",quietly=T)
+
+
+world_map= st_transform(world_map, 
+                           crs = "+proj=laea +x_0=0 +y_0=0 +lon_0=2 +lat_0=49", quietly=T)
+
+
+
+
+
+col<-Mat_Col(mat)
+col2<-Col_Sel(col,0.01,0.01) %>% filter(i !="_rest_", j != "_rest_")
+dom2<-Col_Dom(col2)
+net<-Viz_Dom(dom2, mytitle = "l'Union fait la force :  2016-20", mysub="Source : Gravity database - CEPII")
+net
+
+
+```
+
+
+
+```{r}
+
+
+net<- Mat_Col(mat)
+ 
+# Prepare links
+links <- net %>% mutate(Fij=Fij/10000) %>% arrange(-Fij) 
+world_links2 <- mf_get_links(x = world_ctr, df = links)
+
+
+# prepare nodes 
+nodes <- net %>% mutate(Fij=Fij/10000) %>%
+                group_by(i) %>% 
+                summarise(pct=sum(Fij)) %>% 
+                select(ISO3=i, pct = pct)
+world_nodes2 <- left_join(world_ctr,nodes)
+
+
+###### FLUX DOMINANTS ###
+
+
+
+flows_to_dom<-function (flows=flows) 
+  {
+flowi<-flows%>%group_by(i)%>%summarise(Fi=sum(Fij))%>%ungroup()
+flowj<-flows%>%group_by(j)%>%summarise(Fj=sum(Fij))%>%ungroup()
+flows<- flows%>%left_join(flowi)%>%left_join(flowj)   
+dom <- flows%>%arrange(desc(Fi))%>%
+            arrange(desc(Fij))%>%
+            arrange(desc(Fj))%>%
+            group_by(j)%>%
+            mutate(dom=row_number())%>%
+            ungroup()%>%
+           filter(dom==1)%>%
+            filter(Fi>Fj )
+ return(dom) 
+}
+dom<-flows_to_dom(net)
+
+
+dom1<-dom %>% select(i,Fi) %>% unique()
+dom2<-dom %>% select(j,Fj) %>% unique()
+domA <- dom1 %>% filter(!i %in% dom2$j) %>% rename (ISO3=i, link=Fi) %>% mutate(type = "1.Dominant") 
+domB <- dom1 %>% filter(i %in% dom2$j)  %>% rename (ISO3=i, link=Fi) %>% mutate(type = "2.Relais")
+domC <- dom2 %>% filter(!j %in% dom1$i) %>% rename (ISO3=j, link=Fj) %>% mutate(type = "3.Dominé")
+dom_type<-rbind(domA,domB,domC)
+
+
+
+
+
+world_nodes2<-merge(world_ctr,dom_type,by="ISO3")
+
+
+world_links <- mf_get_links(x = world_ctr, df = dom[,1:3])
+
+world_links2 <- world_links %>% filter(Fij >10) 
+
+## Define worldregions
+
+regio<-dom_type
+  listdom<-domA$ISO3
+  netlink1<-dom[,c("i","j")]
+  netlink2<-data.frame(i=listdom, j=listdom)
+  netlink<-rbind(netlink1,netlink2)
+  # step1
+  names(netlink)<-c("reg1","ISO3")
+regio<-left_join(regio, netlink)  
+
+  # step2
+  names(netlink)<-c("reg2","reg1")
+  regio<-left_join(regio, netlink)  
+
+  # step3
+  names(netlink)<-c("reg3","reg2")
+  regio<-left_join(regio, netlink)  
+
+   # step4
+  names(netlink)<-c("reg4","reg3")
+  regio<-left_join(regio, netlink)  
+
+  # step5
+  names(netlink)<-c("reg5","reg4")
+  regio<-left_join(regio, netlink)  
+ 
+  # Final region
+  
+  regio$reg<-as.factor(regio$reg5)
+
+  
+table(regio$reg)
+
+  levels(regio$reg)<-c("Chine","Union Européenne","Etats-Unis")
+
+# Link with worldmap
+  world_map2<-merge(world_map, regio, by="ISO3", all.x=T, all.y=F)
+
+
+# import the sample data set
+# Initiate a base map
+
+mf_map(x = world_map)
+
+# Plot a shadow
+mf_shadow(world_map, add = TRUE,cex = 0.3, col = "white")
+
+# Plot regions
+mf_map(world_map2,
+       var = "reg",
+       type = "typo",
+       add = TRUE,
+       border= "white",
+       pal=c("yellow","blue","green"),
+       alpha=0.5,
+       lwd=0.6,
+       col_na = "gray80",leg_no_data = "Autres regions (< 4)",
+       leg_title = "Régions nodales",
+       leg_pos = "bottomleft")
+
+# Plot links
+mf_map(world_links, 
+       col = "black", 
+       type = "grad", 
+       var = "Fij",
+       leg_pos = "topleft",
+       leg_val_rnd = 0,
+       border=NA,
+       leg_title = "Force du lien",
+       breaks = c(1,10,100,1000, 10000,max(world_links$Fij)),
+#       lwd=c(0.25,0.5,1,1.5,2,2.5,3,3.5),
+      lwd=c(0.1,0.2,0.4,0.8,1),
+       add = TRUE)
+
+
+
+# plot nodes by type and size
+mf_prop_typo(
+  x = world_nodes2, 
+  var = c("link", "type"), 
+#  inches = .07, 
+  inches = .05, 
+  border = "gray20",
+  symbol = "square", 
+  col_na = "grey", 
+  pal = c("black","gray","white"),
+#  lwd = 0.3,
+  lwd = 0.6,
+  leg_pos = c("topright","bottomright"),
+  leg_title = c("Somme des liens", "Types de noeuds"),
+  leg_title_cex = c(0.7, 0.7),
+  leg_val_rnd = 0,
+  leg_val_cex = c(.5, .7),
+  val_order = c("1.Dominant","2.Relais","3.Dominé"),
+  leg_no_data = "No data",
+  leg_frame = c(FALSE, FALSE),
+  add = TRUE
+)
+
+
+# layout
+mf_layout(title = "Régions nodales polarisées par les flux dominants",
+          scale = FALSE,
+          arrow=FALSE,
+          frame=T,
+         credits = "Source : Gravity database, CEPII, 2022")
+```
+
+
+
+
+
+
+## Variante II1 : Domination sectorielle
 
 La domination commerciale d'un pays porte rarement sur l'ensemble des produits.  Il peut donc se créer un équilibre limitant les possibilités d'embargo ou de boycott. Deux exemples : 
 
 - **la domination des importations d'énergie** par les **pays exportateurs** qui peuvent refuser de vendre leur production de pétrole, gaz ou  charbon.
 
 - **la domination des importations agricoles** par les **pays exportateurs** qui peuvent refuser de vendre du blé, du maïs, du riz ...
+
+-N.B.:On utilise ici une autre base de données du CEPII, la base CHELEM qui est moins précise spatialement
 
 
 ## Domination des ventes de produits énergétiques (2016-2020) 
@@ -1826,36 +1970,6 @@ net
 
 ```
 
-## Variante III : Alliances commerciales
-
-Nous avons supposé jusqu'ici que chaque pays était un acteur isolé développant une stratégie autonome. Mais il existe plusieurs cas de coordination des stratégies commerciales :
-
-- **Cartels** destinés à coordonner les prix de certains produits. Un bon exemple est l'OPEP pour le pétrole.
-- **Unions douanières** destinées à réduire le coût des échanges internes à une zone tout en se protégeant des concurrents externes. L'exemple typique est l'Union Européenne. 
-
-## Flux dominants bilatéraux 2016-2020 (UE27)
-
-```{r}
-tab<-x %>% filter(k=="TOT", t>2015,t<2021) %>%
-          group_by(i,j) %>%
-         summarise(Fij=sum(Fijkt))
-sel<-c("FRA","DEU","ITA","NLD","BLX","IRL", "DNK",
-       "AUT","NOR","SWE","ESP","PRT","GRC","POL","HUN","CZE","SVK",
-       "BGR","ROU","LTU","EST","CYP","MLT","LVA","HRV")
-
-tab$i[tab$i %in% sel]<-"UE"
-tab$j[tab$j %in% sel]<-"UE"
-tab<-tab %>% group_by(i,j) %>% summarise(Fij=sum(Fij)) 
-tab$Fij[tab$i==tab$j]<-0
-tab<-as.data.frame(tab)
-mat<-Col_Mat(tab)
-mat<-t(mat)+mat
-col<-Mat_Col(mat)
-col2<-Col_Sel(col,0.01,0.01) %>% filter(i !="_rest_", j != "_rest_")
-dom2<-Col_Dom(col2)
-net<-Viz_Dom(dom2, mytitle = "Flux bilatéraux (UE27 sans le Royaume-Uni)", mysub="Source : CHELEM-CEPII")
-net
-```
 
 ## Do it yourself : export de mon pays
 
