@@ -2019,9 +2019,13 @@ net
 
 ![](img2/modele_CP_03.jpg){width=800}
 
+## La Division Internationale du Travail (D.I.T.)
 
+![](img2/ACP_trade1.jpg){width=800}
 
+## La Division Internationale du Travail (D.I.T.)
 
+![](img2/CAH_trade.jpg){width=800}
 
 ```{r}
 sel <- c("DZA",
@@ -2063,7 +2067,7 @@ chelem <-readRDS("data2/CHELEM_typo.RDS")
 
 
 
-## Situation après la décolonisation (1966-70)
+## D.I.T. après la décolonisation (1966-70)
 
 ```{r}
 
@@ -2092,7 +2096,7 @@ autofit(top)
 
 
 
-## Situation après la décolonisation (1966-70)
+## D.I.T. après la décolonisation (1966-70)
 
 ```{r}
 map<-readRDS("data2/World_Chelem.RDS") %>% rename(i=code)%>% left_join(q)
@@ -2108,7 +2112,7 @@ mf_layout("Typologie des exportations en 1966-70", frame=T,credits = "Base Chele
 
 
 
-## Situation apès la Guerre Froide (1991-1995)
+## D.I.T. apès la Guerre Froide (1991-1995)
 
 ```{r}
  
@@ -2137,7 +2141,7 @@ autofit(top)
 
 
 
-## Situation apès la Guerre Froide (1991-1995)
+## D.I.T. apès la Guerre Froide (1991-1995)
 
 ```{r}
 map<-readRDS("data2/World_Chelem.RDS") %>% rename(i=code)%>% left_join(q)
@@ -2151,7 +2155,7 @@ mf_layout("Typologie des exportations en 1991-95", frame=T,credits = "Base Chele
 
 
 
-## Situation contemporaine (2016-20)
+## D.I.T. contemporaine (2016-20)
 
 ```{r}
  
@@ -2180,7 +2184,7 @@ autofit(top)
 
 
 
-## Situation contemporaine (2016-20)
+## D.I.T. contemporaine (2016-20)
 
 ```{r}
 map<-readRDS("data2/World_Chelem.RDS") %>% rename(i=code)%>% left_join(q)
@@ -2207,7 +2211,7 @@ mf_layout("Typologie des exportations en 1991-95", frame=T,credits = "Base Chele
 
 ```{r}
 library(tidyr)
-mypal<-rev(brewer.pal(n = 9,"Spectral"))
+mypal<-c(rev(brewer.pal(n = 8,"Spectral")),"gray")
 q <- chelem %>% filter(i=="CHN") %>% select(2,5:13) %>%
             pivot_longer(cols = 2:10)
 ggplot(q) + aes(x=t,y=value,fill=name) + 
@@ -2367,9 +2371,9 @@ ggplot(q) + aes(x=t,y=value,fill=name) +
 
 
 
-# Conclusion : fragilité des chaînes de valuer
+# Conclusion : fragilité des chaînes de valeur
 
-## Exemple de la crise du Covid
+## La crise du Covid (2020)
 
 
 ::: {.column width="100%" .r-fit-text}
@@ -2387,7 +2391,7 @@ C’est un nouveau coup dur pour le Vieux Continent, déjà pénalisé par l’a
 :::
 
 
-## Exemple de la guerre russo-urkrainienne
+## La guerre russo-urkrainienne (2022)
 
 ::: {.column width="100%" .r-fit-text}
 ### L’accord céréalier au cœur d’une nouvelle épreuve de force entre Poutine et Zelensky
@@ -2400,3 +2404,18 @@ Sans l’application de l’accord sur les exportations de céréales ukrainienn
 
 :::
 
+## Les "tarifs réciproques" de Trump (2025)
+
+![](img2/Trump_tarif2.jpg){width=400}
+![](img2/Trump_tarif1.jpg){width=600}
+
+
+
+## La fin de la "mondialisation heureuse"
+
+
+- **Reshoring** : rappatriement de certaines productions à l'intérieur du pays qui avait précédemment délocalisé pour des raisons de sécurité géostratégique.
+
+- **Nearshoring** : Relocalisation des importations dans des pays voisins pour limiter les risques liés au transport à longue distance et les coûts associés. 
+
+- **Friendshoring** : Relocalisation des importations vers des pays "amis" pour éviter les risques de boycott ou d'embargo. 
