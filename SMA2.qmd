@@ -1,7 +1,7 @@
 ---
 title: "Le Commerce Mondial"
-subtitle: "Cours L3 Géographie 2025"
-date: "2025-02-03"
+subtitle: "Cours L3 Géographie 2026"
+date: "2026-02-02"
 date-format: iso
 author: "Claude Grasland"
 title-slide-attributes:
@@ -21,6 +21,9 @@ format:
     theme: [simple, diapos.scss]
 execute:
   echo: false
+  comment: false
+  warning: false
+  message: false
 editor_options: 
   chunk_output_type: console
 ---
@@ -610,7 +613,7 @@ autofit(top)
 :::
 
 
-# GEOPOLIIQUE DES ECHANGES COMMERCIAUX D
+# GEOPOLIIQUE DES ECHANGES COMMERCIAUX : LES "FLUX DOMINANTS"
 
 ## Hard ou Soft power ?
 
@@ -1011,7 +1014,7 @@ mf_layout(title = "Régions nodales polarisées par les flux dominants",
 ```{r}
 
 ### Mise à jour ###
-grav<-readRDS("data2/trade5years.RDS")
+grav<-readRDS("data2/trade5years.RDS", )
 grav<-as.data.frame(grav)
 grav$i[grav$i=="SUN"]<-"RUS"
 grav$j[grav$j=="SUN"]<-"RUS"
@@ -1335,7 +1338,7 @@ mat<-Mat_Norm(mat,norm=1000000,dig=0)
 ## Fonds de carte associé
 world_map<-readRDS("data2/gravitymap_V5.rds") %>%
       filter(country_id %in% colnames(mat)) %>% st_make_valid() %>% unique() %>% mutate(ISO3 = country_id) %>% select(ISO3)
-world_ctr<-st_centroid(world_map,of_largest_polygon = T)
+world_ctr<-st_centroid(world_map,of_largest_polygon = T,quietly=T)
 world_ctr<-unique(world_ctr)
 world_ctr$geometry[world_ctr$ISO3=="RUS"]<-st_point(c(38,56))
 
@@ -1628,7 +1631,7 @@ La carte des flux dominants est-elle la même dans les deux cas ?
 ## La Chine domine les exportations en 2016-2020 
 
 
-```{r, eval=F}
+```{r}
 
 ### Mise à jour ###
 
@@ -1655,7 +1658,7 @@ net
 
 ## Les USA dominent les importations en 2016-2020 
 
-```{r, eval+F}
+```{r}
 
 ### Mise à jour ###
 
@@ -2017,114 +2020,351 @@ net
 ![](img2/modele_CP_03.jpg){width=800}
 
 
-## Situation en 2006
-
-- **Les produits énergétiques **: constituent un secteur stratégique inégalement réparti entre pays.
-
-- **Les matières premières et produits agricoles** : constituent en général une première étape de développement. Mais ils ont aussi un rôle stratégique pour l'alimentation (e.g. blé, riz) ou l'industrie (e.g. terres rares)
-
-- **Les produits manufacturiers de basse, moyenne ou haute technologie** :  ont des localisations très différentes selon le rapport capital/ travail/ technologie qui intervient dans leurs chaînes de production.
 
 
 
-## Exportations par produits en 2006
-
-:::: {.columns}
-
-::: {.column width="40%" .r-fit-text}
-![](img2/trade_prod_2006_01.png){width=420}
-:::
-
-
-::: {.column width="60%"}
-Quelle est la nature des exportations de chaque pays ?
-
-Comment les pays se positionnent-ils dans la division internationale du travail ?
-
-=> Synthèse des pays par Analyse en Composantes Principales (ACP)
-
-:::
-
-::::
-
-
-## Exportations par produits en 2006
-
-:::: {.columns}
-
-::: {.column width="40%" .r-fit-text}
-![](img2/trade_prod_2006_01.png){width=420}
-:::
-
-
-::: {.column width="60%"}
-![](img2/trade_prod_2006_02.jpg){width=550}
-:::
-
-::::
-
-
-## Exportations par produits en 2006
-
-:::: {.columns}
-
-::: {.column width="40%" .r-fit-text}
-![](img2/trade_prod_2006_01.png){width=420}
-:::
+```{r}
+sel <- c("DZA",
+"NGA",
+"GOA",
+"AUS",
+"RUS",
+"SAU",
+"UKR",
+"ARG",
+"BRA",
+"PAK",
+"BGD",
+"EGY",
+"IDN",
+"SAF",
+"CAN",
+"IND",
+"VNM",
+"MYS",
+"PHL",
+"TUR",
+"NLD",
+"ESP",
+"POL",
+"CHN",
+"THA",
+"USA",
+"GBR",
+"ITA",
+"MEX",
+"FRA",
+"KOR",
+"DEU",
+"JPN"
+)
+chelem <-readRDS("data2/CHELEM_typo.RDS")  
+```
 
 
-::: {.column width="60%"}
-![](img2/trade_prod_2006_03.jpg){width=550}
-:::
 
-::::
+## Situation après la décolonisation (1966-70)
 
-## Typologie des pays 1967-2006
+```{r}
 
-
-![](img2/Arenes001.jpg){width=900}
-
-Source : Grasland, 2014
-
-## Le temps des décolonisations
+q<-chelem %>% filter(t%in% c("1966-70")) %>%
+              arrange(typ)
+don<- q %>% select(-F2,-pct,-t,-F1) %>% filter(i %in% sel)
 
 
-![](img2/Arenes002.png){width=1100}
-
-Source : Grasland, 2014
-
-## La fin de la Guerre Froide
+mypal<-c("blue","lightgreen","lightblue","lightyellow","red1")
 
 
-![](img2/Arenes003.png){width=1100}
+top<-flextable(don) %>% 
+     colformat_double(digits=0) %>%
+      colformat_double(digits=1) %>%
+    bg(bg = mypal[1], ~typ == "A.1-Energie" ) %>%
+    bg(bg = mypal[2], ~typ == "A.2-Agriculture" ) %>%
+      bg(bg = mypal[3], ~typ == "A.3-Mines" ) %>%
+      bg(bg = mypal[4], ~typ == "B.1-Textile" ) %>%
+ #     bg(bg = mypal[5], ~typ == "B.2-Electronique" ) %>%
+      bg(bg = mypal[5], ~typ == "B.3-High Tech" ) %>%
+     theme_vanilla() %>%
+     fontsize(size = 16) 
+autofit(top)
 
-Source : Grasland, 2014
-
-## Avant la crise des subprimes
-
-
-![](img2/Arenes004.png){width=1100}
-
-Source : Grasland, 2014
-
-## Synthèse de l'évolution 1967-2006
-
-:::: {.columns}
-
-::: {.column width="70%" .r-fit-text}
-![](img2/Arenes005.png){width=600}
-:::
+```
 
 
-::: {.column width="30%" .r-fit-text}
+
+## Situation après la décolonisation (1966-70)
+
+```{r}
+map<-readRDS("data2/World_Chelem.RDS") %>% rename(i=code)%>% left_join(q)
+#map= st_transform(map, 
+#                           crs = "ESRI:53030", quietly=T)
+mf_map(map, col="lightyellow", bg="gray")
+#mf_graticule(map, add=T,lty=2)
+mf_map(map, type="typo",var="typ",pal=mypal, add=T, leg_pos = "bottomleft")
+mf_layout("Typologie des exportations en 1966-70", frame=T,credits = "Base Chelem-CEPII")
+```
+
+
+
+
+
+## Situation apès la Guerre Froide (1991-1995)
+
+```{r}
+ 
+q<-chelem %>% filter(t %in% c("1991-95")) %>%
+              arrange(typ)
+don<- q %>% select(-F2,-pct,-t,-F1) %>% filter(i %in% sel)
+
+
+mypal<-c("blue","lightgreen","lightblue","lightyellow","orange","red1")
+
+
+top<-flextable(don) %>% 
+     colformat_double(digits=0) %>%
+      colformat_double(digits=1) %>%
+    bg(bg = mypal[1], ~typ == "A.1-Energie" ) %>%
+    bg(bg = mypal[2], ~typ == "A.2-Agriculture" ) %>%
+      bg(bg = mypal[3], ~typ == "A.3-Mines" ) %>%
+      bg(bg = mypal[4], ~typ == "B.1-Textile" ) %>%
+      bg(bg = mypal[5], ~typ == "B.2-Electronique" ) %>%
+      bg(bg = mypal[6], ~typ == "B.3-High Tech" ) %>%
+     theme_vanilla() %>%
+     fontsize(size = 16) 
+autofit(top)
+
+```
+
+
+
+## Situation apès la Guerre Froide (1991-1995)
+
+```{r}
+map<-readRDS("data2/World_Chelem.RDS") %>% rename(i=code)%>% left_join(q)
+#map= st_transform(map, 
+#                           crs = "ESRI:53030", quietly=T)
+mf_map(map, col="lightyellow", bg="gray")
+#mf_graticule(map, add=T,lty=2)
+mf_map(map, type="typo",var="typ",pal=mypal, add=T, leg_pos = "bottomleft")
+mf_layout("Typologie des exportations en 1991-95", frame=T,credits = "Base Chelem-CEPII")
+```
+
+
+
+## Situation contemporaine (2016-20)
+
+```{r}
+ 
+q<-chelem %>% filter(t %in% c("2016-20")) %>%
+              arrange(typ)
+don<- q %>% select(-F2,-pct,-t,-F1) %>% filter(i %in% sel)
+
+
+mypal<-c("blue","lightgreen","lightblue","lightyellow","orange","red1")
+
+
+top<-flextable(don) %>% 
+     colformat_double(digits=0) %>%
+      colformat_double(digits=1) %>%
+    bg(bg = mypal[1], ~typ == "A.1-Energie" ) %>%
+    bg(bg = mypal[2], ~typ == "A.2-Agriculture" ) %>%
+      bg(bg = mypal[3], ~typ == "A.3-Mines" ) %>%
+      bg(bg = mypal[4], ~typ == "B.1-Textile" ) %>%
+      bg(bg = mypal[5], ~typ == "B.2-Electronique" ) %>%
+      bg(bg = mypal[6], ~typ == "B.3-High Tech" ) %>%
+     theme_vanilla() %>%
+     fontsize(size = 16) 
+autofit(top)
+
+```
+
+
+
+## Situation contemporaine (2016-20)
+
+```{r}
+map<-readRDS("data2/World_Chelem.RDS") %>% rename(i=code)%>% left_join(q)
+#map= st_transform(map, 
+#                           crs = "ESRI:53030", quietly=T)
+mf_map(map, col="lightyellow", bg="gray")
+#mf_graticule(map, add=T,lty=2)
+mf_map(map, type="typo",var="typ",pal=mypal, add=T, leg_pos = "bottomleft")
+mf_layout("Typologie des exportations en 1991-95", frame=T,credits = "Base Chelem-CEPII")
+```
+
+
+## Synthèse des évolution
+
 - **Montée en puissance des pays émergents** en particulier la Chine, l'Inde, le Mexique.
 - **Diffusion des productions manufacturières** autour des anciens centres
 - **Malédiction de la rente énergétique** dans des pays situés pour la plupart autour de l'Union Européenne (Russie, Algérie  ...)
 - **Dépréciation des produits agricoles** et marginalisation des pays africains dans le commerce mondial
+- **Rôle-clé de la filière électronique** dans la montée en puissance de l'Asie-Pacifique
 
-:::
 
-::::
+
+## Zoom sur la Chine
+
+```{r}
+library(tidyr)
+mypal<-rev(brewer.pal(n = 9,"Spectral"))
+q <- chelem %>% filter(i=="CHN") %>% select(2,5:13) %>%
+            pivot_longer(cols = 2:10)
+ggplot(q) + aes(x=t,y=value,fill=name) + 
+  geom_bar(stat = "identity") +
+  theme_light() + scale_fill_manual(values = mypal) +
+  ggtitle("Evolution de la structure d'exportation de la Chine",subtitle = "Source : Chelem-CEPII")
+
+
+```
+
+
+
+## Zoom sur l'Inde
+
+```{r}
+library(tidyr)
+mypal<-c(rev(brewer.pal(n = 8,"Spectral")),"gray")
+
+q <- chelem %>% filter(i=="IND") %>% select(2,5:13) %>%
+            pivot_longer(cols = 2:10)
+ggplot(q) + aes(x=t,y=value,fill=name) + 
+  geom_bar(stat = "identity") +
+  theme_light() + scale_fill_manual(values = mypal) +
+  ggtitle("Evolution de la structure d'exportation de l'Inde",subtitle = "Source : Chelem-CEPII")
+
+
+```
+
+
+## Zoom sur le Brésil
+
+```{r}
+library(tidyr)
+mypal<-c(rev(brewer.pal(n = 8,"Spectral")),"gray")
+q <- chelem %>% filter(i=="BRA") %>% select(2,5:13) %>%
+            pivot_longer(cols = 2:10)
+ggplot(q) + aes(x=t,y=value,fill=name) + 
+  geom_bar(stat = "identity") +
+  theme_light() + scale_fill_manual(values = mypal) +
+  ggtitle("Evolution de la structure d'exportation du Brésil",subtitle = "Source : Chelem-CEPII")
+
+
+```
+
+
+## Zoom sur la Turquie
+
+```{r}
+library(tidyr)
+mypal<-c(rev(brewer.pal(n = 8,"Spectral")),"gray")
+
+q <- chelem %>% filter(i=="TUR") %>% select(2,5:13) %>%
+            pivot_longer(cols = 2:10)
+ggplot(q) + aes(x=t,y=value,fill=name) + 
+  geom_bar(stat = "identity") +
+  theme_light() + scale_fill_manual(values = mypal) +
+  ggtitle("Evolution de la structure d'exportation de la Turquie",subtitle = "Source : Chelem-CEPII")
+
+```
+
+
+## Zoom sur l'Afrique du Sud
+
+```{r}
+library(tidyr)
+mypal<-c(rev(brewer.pal(n = 8,"Spectral")),"gray")
+
+q <- chelem %>% filter(i=="SAF") %>% select(2,5:13) %>%
+            pivot_longer(cols = 2:10)
+ggplot(q) + aes(x=t,y=value,fill=name) + 
+  geom_bar(stat = "identity") +
+  theme_light() + scale_fill_manual(values = mypal) +
+  ggtitle("Evolution de la structure d'exportation de l'Afrique du Sud",subtitle = "Source : Chelem-CEPII")
+
+```
+
+
+
+## Zoom sur la Russie
+
+```{r}
+library(tidyr)
+mypal<-c(rev(brewer.pal(n = 8,"Spectral")),"gray")
+
+q <- chelem %>% filter(i=="RUS") %>% select(2,5:13) %>%
+            pivot_longer(cols = 2:10)
+ggplot(q) + aes(x=t,y=value,fill=name) + 
+  geom_bar(stat = "identity") +
+  theme_light() + scale_fill_manual(values = mypal) +
+  ggtitle("Evolution de la structure d'exportation de la Russie",subtitle = "Source : Chelem-CEPII")
+
+
+```
+
+## Zoom sur l'Australie
+
+```{r}
+library(tidyr)
+mypal<-c(rev(brewer.pal(n = 8,"Spectral")),"gray")
+
+q <- chelem %>% filter(i=="AUS") %>% select(2,5:13) %>%
+            pivot_longer(cols = 2:10)
+ggplot(q) + aes(x=t,y=value,fill=name) + 
+  geom_bar(stat = "identity") +
+  theme_light() + scale_fill_manual(values = mypal) +
+  ggtitle("Evolution de la structure d'exportation de l'Australie",subtitle = "Source : Chelem-CEPII")
+
+
+```
+
+## Zoom sur les USA
+
+```{r}
+library(tidyr)
+mypal<-c(rev(brewer.pal(n = 8,"Spectral")),"gray")
+
+q <- chelem %>% filter(i=="USA") %>% select(2,5:13) %>%
+            pivot_longer(cols = 2:10)
+ggplot(q) + aes(x=t,y=value,fill=name) + 
+  geom_bar(stat = "identity") +
+  theme_light() + scale_fill_manual(values = mypal) +
+  ggtitle("Evolution de la structure d'exportation des USA",subtitle = "Source : Chelem-CEPII")
+
+```
+
+## Zoom sur le Japon
+
+```{r}
+library(tidyr)
+mypal<-c(rev(brewer.pal(n = 8,"Spectral")),"gray")
+
+q <- chelem %>% filter(i=="JPN") %>% select(2,5:13) %>%
+            pivot_longer(cols = 2:10)
+ggplot(q) + aes(x=t,y=value,fill=name) + 
+  geom_bar(stat = "identity") +
+  theme_light() + scale_fill_manual(values = mypal) +
+  ggtitle("Evolution de la structure d'exportation du Japon",subtitle = "Source : Chelem-CEPII")
+
+```
+
+## Zoom sur l'Allemagne
+
+```{r}
+library(tidyr)
+mypal<-c(rev(brewer.pal(n = 8,"Spectral")),"gray")
+
+q <- chelem %>% filter(i=="DEU") %>% select(2,5:13) %>%
+            pivot_longer(cols = 2:10)
+ggplot(q) + aes(x=t,y=value,fill=name) + 
+  geom_bar(stat = "identity") +
+  theme_light() + scale_fill_manual(values = mypal) +
+  ggtitle("Evolution de la structure d'exportation de l'Allemagne",subtitle = "Source : Chelem-CEPII")
+
+```
+
+
+
 
 
 # Conclusion : fragilité des chaînes de valuer

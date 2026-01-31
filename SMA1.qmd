@@ -61,6 +61,7 @@ library(kableExtra)
 # INTRODUCTION
 
 
+
 ## Définition de la puissance
 
 ::: {.r-fit-text}
@@ -135,7 +136,7 @@ Inspirée de la philosophie libérale, le courant libéral prend en compte, outr
 Source : [Vie Publique, 2024](https://www.vie-publique.fr/fiches/269789-que-recouvre-la-notion-de-puissance-en-relations-internationales)
 ::: 
 
-## Théories 2 : Autres approches 
+## Théories 3 : Autres approches 
 
 ::: {.r-fit-text}
 - **le transnationalisme** part, comme le courant libéral, de l'individu, mais considère que les individus n'agissent sur la scène internationale qu'à travers l’État et que l'ensemble des acteurs de la scène internationale (étatiques et non étatiques) sont interdépendants ;
@@ -191,7 +192,7 @@ Source : [Vie Publique, 2024](https://www.vie-publique.fr/fiches/269789-que-reco
 <img src="img1/power22.jpg" width=350px />
 </div>
 :::
-::: {.column width="50%"}
+::: {.column width="50%" .r-fit.text}
 « La question des prochaines décennies est de savoir comment la Chine et les États-Unis pourront échapper __au “piège de Thucydide”,__ autrement dit au __conflit résultant de la rivalité entre une puissance émergente et une puissance régnante__ , comme entre Athènes et Sparte au Ve siècle av. J.-C., ou entre l’Allemagne et ses voisins, à la fin du XIXe siècle. L’émergence rapide de toute nouvelle puissance perturbe le statu quo. __Historiquement, dans 11 cas sur 15, depuis 1500, cela s’est terminé par une guerre.__ »
 :::
 :::
@@ -229,7 +230,8 @@ Que pensez-vous de la démonstration ?
 
 ## L'avis des étudiants en janvier 2022 ...
 
-Un mois avant la deuxième invasion de l'Ukraine par la Russie on avait demandé aux étudiants du cours de SMA d'indiquer la liste des 5 pays les plus puissants du Monde.
+
+On avait demandé d'indiquer la liste des 5 pays les plus puissants du Monde.Seuls 16 étudiants avaient répondu ce qui est peu représentatif. Mais vous remarquerez l'**absence totale de la Russie dans les réponses !**
 
 ```{r}
 pays<-c("Chine","USA","France","Roy.Uni","Allemagne","Japon","Brésil","Arabie S.", "Inde","Corée du S.")
@@ -246,7 +248,7 @@ autofit(top)
 
 ```
 
-Seuls 16 étudiants avaient répondu ce qui est peu représentatif. Mais vous remarquerez l'**absence totale de la Russie dans les réponses !**
+
 
 
 ## ... en janvier 2024 ...
@@ -346,11 +348,13 @@ Source : https://www.cia.gov/the-world-factbook/countries/china/
 
 <img src="img1/CIA_ukraine_map.jpg" width=500px />
 
+::: {style="font-size: 60%;"}
 > Area : total: 603,550 sq km 
 
 > **note:** approximately 43,133 sq km, or about 7.1% of Ukraine's area, is Russian occupied; the seized area includes all of Crimea and about one-third of both Luhans'k and Donets'k oblasts
 
 Source : https://www.cia.gov/the-world-factbook/countries/ukraine/#geography
+:::
 
 
 ## Le CIA World Factbook
@@ -423,7 +427,7 @@ Des résultats intéressants ... mais l'INED a reçu beaucoup de plainte des pay
 ::: {.column width="50%"}
 <img src="img1/state_change_1.png" width=500px />
 :::
-::: {.column width="50%"}
+::: {.column width="50%" style="font-size: 70%;"}
 **Instabilité géopolitique :  1989-1995**
 - réunification allemande (1990)
 - réunification du Yemen (1990)
@@ -642,8 +646,12 @@ Source : HUFTY, 1998
 <img src="img1/power216.png" width=600px />
 
 
+## Superficie du Groënland ?
 
+Le Groënland fait 2.2 millions de km2. Mais 80% est couvert de glace et il n'y a donc que 0.5 millions de km2 de terres émergées soit à peine la superficie de la France. Au coeur de l'inlandsis, la croûte terrestre est situé sous le niveau de la mer.
 
+<img src="img1/Greenland.jpg" width=500px />
+<img src="img1/Greenland2.jpg" width=500px />
 
 ## L’exemple des terres rares
 
@@ -670,10 +678,10 @@ http://www.franceculture.fr/blog-globe-2012-02-01-les-terres-rares-en-cartes-et-
 ## L’exemple des terres rares
 
 <img src="img1/terres_rares_2021.jpg" width=400px />
-
+::: {style="font-size: 50%;"}
 "*L’analyse du marché des terres rares (TR) en 2022 fait apparaître deux tendances majeures : d’une part le renforcement de la stratégie chinoise d’omniprésence sur les chaînes de production, et l’émergence de certaines alternatives, notamment occidentales, pour se réapproprier une part de l’approvisionnement mondial de ces métaux, indispensables aux transitions énergétique et numérique.*"
 Source : [Mineral Info, BRGM, 2022](https://www.mineralinfo.fr/fr/ecomine/marche-des-terres-rares-2022-filieres-dapprovisionnement-aimants-permanents)
-
+:::
 
 
 
@@ -1777,6 +1785,28 @@ g
 
 - On peut donc conclure (provisoirement) à l'existence d'un **système international multipolaire** donc **instable**. 
 
+## Puissance moyenne de tous les pays ... unissez-vous !
+
+
+
+
+
+::: columns
+::: {.column width="60%" style="font-size: 40%;"}
+<div class="centered">
+<img src="img1/Mark_Carney.jpg" width=600px />
+</div>
+Source : [Discours de Mark Carney au Forum de Davos, 21 Janvier 2026](https://www.youtube.com/watch?v=PD4-vm1jjGY)
+:::
+
+::: {.column width="40%"}
+<div class="centered">
+<img src="img1/La_Fontaine.jpg" width=400px />
+</div>
+:::
+
+:::
+
 ## 1960-2023 : Des recompositions majeures
 
 ```{r}
@@ -1840,4 +1870,24 @@ p
 ```
 
 
+## Remise en cause de l'approche réaliste
 
+
+
+::: columns
+::: {.column width="50%" style="font-size: 60%;"}
+Les relations internationales sont devenues une incoyable bataille de ce que le Monde européen, élargi à la notion d’Occident, a le plus grand mal à livrer tant il était habitué à être seul au monde, à bâtir ses relations et ses conflits sur la ressemblance entre rivaux plus que sur l’altérité vraie. (p.17)
+
+On aura vite compris que le conflit russo-ukrainien n’est plus seulement le choc de deux armées comme il l’aurait été essentiellement autrefois du temps de la guerre de Livonie, mais un méli-mélo de sens différents, combinant ceux portés par les Etats voisins ou rivaux, par les sociétés concernés, par les Etats et peuples alentour, puis par ceux de l’ensemble du monde, réellement impliqués et inquiets, mais pour de tout autres raisons qui les conduisent chacun à percevoir le conflit d’un œil différent : cet événement majeur n’a pas le même sens en France, au Sénégal, en Chine ou en Turquie, ni bien sûr à Kiev, Moscou ou Bakhmout ! 
+
+Source : **Badie B., 2022,** *Pour une approche subjective des relations internationales*
+:::
+
+::: {.column width="50%" style="font-size: 40%;"}
+<div class="centered">
+<img src="img1/vote_ukraine.jpg" width=350px />
+</div>
+Source : **Abpictoris, 2025,** [Comparaison des votes de résolution sur l'Ukraine à l'Assemblée générale des Nations Uniues](https://abpictoris.com/author/tpost/l1jubl64x1-carte-interactive-comparaison-des-votes)
+:::
+
+:::
