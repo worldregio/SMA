@@ -3329,14 +3329,14 @@
     "href": "SMA2.html#le-modèle-des-flux-dominants-2",
     "title": "Le Commerce Mondial",
     "section": "Le modèle des flux dominants",
-    "text": "Le modèle des flux dominants\n\n\n\n\n\nflowchart TD\n    A[\"pays A\n    Volume = 200\"]\n    B[\"pays B\n    Volume=100\"]\n    C[\"pays C\n    Volume = 80\"]\n    D[\"Pays D\n    Volume=50\"]\n    E[\"Pays E,\n    Volume = 60\"]\n    \n\n    A--&gt; A\n    B--&gt; A\n    C--&gt; B\n    D--&gt; A\n    E--&gt; E\n\n\n\n\n\n\n\nQui domine qui ?\n\nA n’est pas dominé et domine A et B (Dominant)\nB est dominé par A et domine C (Relais)\nC est dominé par B (Dominé)\nD est dominé par A (Dominé)\nE n’est pas dominé mais ne domine personne (Isolé)"
+    "text": "Le modèle des flux dominants\n\n\n\n\n\nflowchart TD\n    A[\"pays A\n    Volume = 200\"]\n    B[\"pays B\n    Volume=100\"]\n    C[\"pays C\n    Volume = 80\"]\n    D[\"Pays D\n    Volume=50\"]\n    E[\"Pays E,\n    Volume = 60\"]\n    \n\n    A--&gt; A\n    B--&gt; A\n    C--&gt; B\n    D--&gt; A\n    E--&gt; E\n\n\n\n\n\n\n\nQui domine qui ?\n\nA n’est pas dominé et domine B et D (Dominant)\nB est dominé par A et domine C (Relais)\nC est dominé par B (Dominé)\nD est dominé par A (Dominé)\nE n’est pas dominé mais ne domine personne (Isolé)"
   },
   {
     "objectID": "SMA2.html#après-la-colonisation-1966-75",
     "href": "SMA2.html#après-la-colonisation-1966-75",
     "title": "Le Commerce Mondial",
     "section": "Après la colonisation (1966-75)",
-    "text": "Après la colonisation (1966-75)\n200 premiers flux\n\n\nGeometry set for 0 features \nBounding box:  xmin: NA ymin: NA xmax: NA ymax: NA\nProjected CRS: +proj=laea +x_0=0 +y_0=0 +lon_0=2 +lat_0=49"
+    "text": "Après la colonisation (1966-75)"
   },
   {
     "objectID": "SMA2.html#après-la-colonisation-1966-75-1",
@@ -3357,7 +3357,7 @@
     "href": "SMA2.html#après-la-guerre-froide-1991-2000",
     "title": "Le Commerce Mondial",
     "section": "Après la Guerre Froide (1991-2000)",
-    "text": "Après la Guerre Froide (1991-2000)\n200 premiers flux\n\n\nGeometry set for 1 feature \nGeometry type: POINT\nDimension:     XY\nBounding box:  xmin: 2855568 ymin: 4312101 xmax: 2855568 ymax: 4312101\nProjected CRS: +proj=laea +x_0=0 +y_0=0 +lon_0=2 +lat_0=49"
+    "text": "Après la Guerre Froide (1991-2000)"
   },
   {
     "objectID": "SMA2.html#après-la-guerre-froide-1991-2000-1",
@@ -3378,7 +3378,7 @@
     "href": "SMA2.html#après-la-crise-des-subprimes-2011-2020",
     "title": "Le Commerce Mondial",
     "section": "Après la crise des subprimes (2011-2020)",
-    "text": "Après la crise des subprimes (2011-2020)\n200 premiers flux\n\n\nGeometry set for 1 feature \nGeometry type: POINT\nDimension:     XY\nBounding box:  xmin: 2143697 ymin: 1316693 xmax: 2143697 ymax: 1316693\nProjected CRS: +proj=laea +x_0=0 +y_0=0 +lon_0=2 +lat_0=49"
+    "text": "Après la crise des subprimes (2011-2020)"
   },
   {
     "objectID": "SMA2.html#après-la-crise-des-subprimes-2011-2020-1",

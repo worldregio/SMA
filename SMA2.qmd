@@ -696,7 +696,7 @@ flowchart TD
 
 ### Qui domine qui ?
 
-- A n'est pas dominé et domine  A et B (**Dominant**)
+- A n'est pas dominé et domine  B et D (**Dominant**)
 - B est dominé par A et domine C (**Relais**)
 - C est dominé par B (**Dominé**)
 - D est dominé par A (**Dominé**)
@@ -705,7 +705,6 @@ flowchart TD
 
 ## Après la colonisation (1966-75)
 
-### 200 premiers flux
 
 ```{r}
 
@@ -738,7 +737,6 @@ world_ctr$geometry[world_ctr$ISO3=="SUN"]<-st_point(c(38,56))
 world_ctr = st_transform(world_ctr, 
                            crs = "+proj=laea +x_0=0 +y_0=0 +lon_0=2 +lat_0=49")
 
-world_ctr$geometry[world_ctr$ISO3=="RUS"]
 world_map= st_transform(world_map, 
                            crs = "+proj=laea +x_0=0 +y_0=0 +lon_0=2 +lat_0=49")
 
@@ -806,7 +804,7 @@ mf_map(world_nodes2,
 
 
 # layout
-mf_layout(title = "300 premiers flux",
+mf_layout(title = "200 premiers flux",
           scale = FALSE,
           arrow=FALSE,
           frame=T,
@@ -1009,7 +1007,6 @@ mf_layout(title = "Régions nodales polarisées par les flux dominants",
 
 ## Après la Guerre Froide (1991-2000)
 
-### 200 premiers flux
 
 ```{r}
 
@@ -1044,7 +1041,6 @@ world_ctr$geometry[world_ctr$ISO3=="SUN"]<-st_point(c(38,56))
 world_ctr = st_transform(world_ctr, 
                            crs = "+proj=laea +x_0=0 +y_0=0 +lon_0=2 +lat_0=49")
 
-world_ctr$geometry[world_ctr$ISO3=="RUS"]
 world_map= st_transform(world_map, 
                            crs = "+proj=laea +x_0=0 +y_0=0 +lon_0=2 +lat_0=49")
 
@@ -1315,7 +1311,6 @@ mf_layout(title = "Régions nodales polarisées par les flux dominants",
 
 ## Après la crise des subprimes (2011-2020)
 
-### 200 premiers flux
 
 ```{r}
 
@@ -1349,7 +1344,6 @@ world_ctr$geometry[world_ctr$ISO3=="RUS"]<-st_point(c(38,56))
 world_ctr = st_transform(world_ctr, 
                            crs = "+proj=laea +x_0=0 +y_0=0 +lon_0=2 +lat_0=49")
 
-world_ctr$geometry[world_ctr$ISO3=="RUS"]
 world_map= st_transform(world_map, 
                            crs = "+proj=laea +x_0=0 +y_0=0 +lon_0=2 +lat_0=49")
 
