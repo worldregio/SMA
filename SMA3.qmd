@@ -1,10 +1,11 @@
 ---
 title: "DES VILLES MONDIALES AUX MEGA-REGIONS"
-subtitle: "Structures du Monde Actuel, 2024"
+subtitle: "Structures du Monde Actuel, 2026"
 author: "Claude Grasland"
 format: 
   revealjs:
     theme: dark
+    scrollable: true
 
 embed-resources: true
 title-slide-attributes:
@@ -105,6 +106,8 @@ Source : Khamo, N. (2018). The City that is not a City. Paroles gelées, 31(1).
 
 
 
+
+
 ## Définition provisoire
 
 ### *"La ville est le lieu qui maximise l'interaction sociale"*
@@ -202,15 +205,23 @@ Qu'est-ce qui maximise l'interaction ?
 ### L'accessiblité ?
 - **Oui, mais** mais à condition qu'elle se combine avec un effectif de population et une densité importantes. Une autoroute dans le désert n'offre pas d'interactions.
 
-## La ville comme pic de potentiel ?
+## Attention spoiler
 
-La formule originale du potentiel de population de Stewart met en relation la population $P_i$ et la distance à vol d'oiseau $D_{ij}$ selon une fonction puissance inverse :
 
-$POT_j = \sum_{i=1}^n{\frac{P_i}{D_{ij}^2}}$
+:::: {.columns}
 
-On peut la transformer en potentiel de relation qui dépendent des opportunités $O_i$ et du coût d'accès à ces opportunités $C_{ij}$  selon une fonction de décroissance de type probabiliste : 
+::: {.column width="50%" .r-fit-text}
+### Ce cours est basé sur les données UN 2018 ...
+![](img3/WUP2018.jpg){width=500}
+:::
 
-$POT_j = \sum_{i=1}^n{O_i\times p({C_{ij})}}$
+
+::: {.column width="50%" .r-fit-text}
+### ... mais un nouveau rapport est paru en 2025
+![](img3/WUP2025.png){width=500}
+:::
+
+::::
 
 
 # L'URBANISATION DU MONDE : VISION STATE-ISTIQUE
@@ -1061,10 +1072,6 @@ Source : Florida & al., 2006
 
 [Creative Class Group](https://creativeclass.com/who-we-are/)
 
-
-# CONCLUSION
-
-
 ## La ville est un enjeu politique et symbolique {.smaller}
 
 ### Rattrapage du Sud sur le Nord ...
@@ -1074,6 +1081,98 @@ Les indicateurs state-istique traditionnels des Nations Unies mettent en éviden
 ### ... ou maintien de la domination du Nord ?
 
 Les nouveaux indicateurs fondés sur les mégapoles ou les mégarégions mettent en évidence de nouvelles délimitation spatiales dans lesquelles les villes du Nord gardent leur avantage, surtout si l'on remplace le critère de population par le poids économique ou scientifique. 
+
+
+# CONCLUSION 1 : LIMITES DE LA TYPOLOGIE URBAIN / RURAL
+
+
+## Conférence de presse du 20 novembre 2025
+
+![](img3/WUP2025_004.jpg){width=800}
+Source : [World Urbanization Prospects 2025 - Press Conference | World Population Prospects 2025](https://www.youtube.com/watch?v=Dme14SnW2RA)
+
+## Un rapport révolutionnaire  ?
+
+:::: {.columns}
+
+::: {.column width="30%" .r-fit-text}
+![](img3/WUP2025.png){width=400}
+:::
+
+
+::: {.column width="70%" .r-fit-text}
+![](img3/WUP2025_001.png){width=400}
+
+D’après le rapport de l’ONU sur l’urbanisation dans le monde *World Urbanization Prospects*, paru le 18 novembre, **81 % de la population mondiale est urbaine en 2025**. C’est beaucoup plus que les **55 % du dernier rapport datant de 2018**. Cette différence s’explique par la méthodologie employée : pour la première fois, les auteurs ont utilisé la même définition d’une “zone urbaine” pour 237 pays.
+
+- Source : *Courrier International*, 19 Nov. 2025
+:::
+
+::::
+
+
+
+## Un rapport révolutionnaire  ?
+
+:::: {.columns}
+
+::: {.column width="30%" .r-fit-text}
+![](img3/topcities2025.jpg){width=400}
+
+- Source : ["Ranked: The World’s 30 Largest Cities by Population", *visualcapitalist*, 18 Dec. 2025](https://www.visualcapitalist.com/ranked-the-worlds-30-largest-cities-by-population/)
+:::
+
+
+::: {.column width="70%" .r-fit-text}
+![](img3/jakarta.jpg){width=400}
+
+Jakarta has overtaken Tokyo as the world’s most populous city, according to a UN study that uses new criteria to give a more accurate picture of the rapid urbanisation driving the growth of megacities. The Indonesian capital is home to 42 million people, according to an estimate by the population division of the UN Department of Economic and Social Affairs in its World Urbanisation Prospects 2025 report published this month.
+
+- Source : *The Guardian*, 27 Nov. 2025
+:::
+
+::::
+
+
+
+
+
+## Une mesure du degré d'urbanisation
+
+Une méthode mise au point en Europe par le JRC...
+
+![](img3/degurb2.jpg){width=800}
+
+
+
+## Une mesure du degré d'urbanisation
+
+... qui aboutit à une typologie en 3 ou 7 types 
+
+![](img3/degurb.jpg){width=500}
+
+
+## Quand la population urbaine est-elle devenue majoritaire ?
+
+![](img3/WUP2025_003.jpg){width=800}
+
+## La France est un pays rural ?
+
+![](img3/WUP2025_002jpg.jpg){width=800}
+
+## Pour en savoir plus ...
+
+![](img3/WUP2025_005.jpg){width=600}
+
+- Source : [United Nations Population Division](https://www.un.org/development/desa/pd/world-urbanization-prospects-2025)
+
+
+
+
+
+# CONCLUSION 2 : DES VILLES AU METROPOLES
+
+
 
 
 
@@ -1393,3 +1492,5 @@ Dans le prochain épisode ...
 ![](img3/Scott2012.jpg){width=600}
 
 Source : **Allen J. Scott, 2012**, *A World in Emergence : Cities and Regions in the 21st Century*
+
+

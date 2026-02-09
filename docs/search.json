@@ -998,7 +998,7 @@
     "href": "SMA3.html#enjeux-du-chapitre-1",
     "title": "DES VILLES MONDIALES AUX MEGA-REGIONS",
     "section": "Enjeux du chapitre",
-    "text": "Enjeux du chapitre\n\n\nUne perspective critique\n\n\n\nSource : New Scientist\n\n\n\n… mais scientifique !\n\n\n\nSource : New York Times\n\n\n\n\n\nExercice : Expliquer à un extra-terrestre ce qu’est une ville ."
+    "text": "Enjeux du chapitre\n\n\nUne perspective critique\n\n\n\nSource : New Scientist\n\n\n\n… mais scientifique !\n\n\n\nSource : New York Times\n\n\n\n\nExercice : Expliquer à un extra-terrestre ce qu’est une ville ."
   },
   {
     "objectID": "SMA3.html#définition-provisoire",
@@ -1032,8 +1032,8 @@
     "objectID": "SMA3.html#la-ville-comme-pic-de-potentiel",
     "href": "SMA3.html#la-ville-comme-pic-de-potentiel",
     "title": "DES VILLES MONDIALES AUX MEGA-REGIONS",
-    "section": "La ville comme pic de potentiel ?",
-    "text": "La ville comme pic de potentiel ?\nLa formule originale du potentiel de population de Stewart met en relation la population \\(P_i\\) et la distance à vol d’oiseau \\(D_{ij}\\) selon une fonction puissance inverse :\n\\(POT_j = \\sum_{i=1}^n{\\frac{P_i}{D_{ij}^2}}\\)\nOn peut la transformer en potentiel de relation qui dépendent des opportunités \\(O_i\\) et du coût d’accès à ces opportunités \\(C_{ij}\\) selon une fonction de décroissance de type probabiliste :\n\\(POT_j = \\sum_{i=1}^n{O_i\\times p({C_{ij})}}\\)"
+    "section": "La ville comme pic de potentiel",
+    "text": "La ville comme pic de potentiel\nPics de pollution lumineuse en Californie et Arizona en 2020"
   },
   {
     "objectID": "SMA3.html#population-rurale-et-urbaine",
@@ -1089,28 +1089,28 @@
     "href": "SMA3.html#situation-en-1950",
     "title": "DES VILLES MONDIALES AUX MEGA-REGIONS",
     "section": "Situation en 1950",
-    "text": "Situation en 1950\n\n\n\n\n\n\n\n\n\n\n\n\nrnknamepop1New York12,3382Tokyo11,2753London8,3614Osaka7,0055Paris6,2836Moscow5,3567Buenos Aires5,1668Chicago4,9999Kolkata4,60410Shanghai4,288\n\n\n\n\nSource : World Urbanization Prospect, 2018"
+    "text": "Situation en 1950\n\n\n\n\n\n\n\n\n\n\n\nrnknamepop1New York12,3382Tokyo11,2753London8,3614Osaka7,0055Paris6,2836Moscow5,3567Buenos Aires5,1668Chicago4,9999Kolkata4,60410Shanghai4,288\n\n\n\nSource : World Urbanization Prospect, 2018"
   },
   {
     "objectID": "SMA3.html#situation-en-1975",
     "href": "SMA3.html#situation-en-1975",
     "title": "DES VILLES MONDIALES AUX MEGA-REGIONS",
     "section": "Situation en 1975",
-    "text": "Situation en 1975\n\n\n\n\n\n\n\n\n\n\n\n\nrnknamepop1Tokyo26,6152Osaka16,2983New York15,8804Mexico10,7345São Paulo9,6146Buenos Aires9,1437Los Angeles8,9268Paris8,5589Kolkata8,16610Rio de Janeiro7,733\n\n\n\n\nSource : World Urbanization Prospect, 2018"
+    "text": "Situation en 1975\n\n\n\n\n\n\n\n\n\n\n\nrnknamepop1Tokyo26,6152Osaka16,2983New York15,8804Mexico10,7345São Paulo9,6146Buenos Aires9,1437Los Angeles8,9268Paris8,5589Kolkata8,16610Rio de Janeiro7,733\n\n\n\nSource : World Urbanization Prospect, 2018"
   },
   {
     "objectID": "SMA3.html#situation-en-2000",
     "href": "SMA3.html#situation-en-2000",
     "title": "DES VILLES MONDIALES AUX MEGA-REGIONS",
     "section": "Situation en 2000",
-    "text": "Situation en 2000\n\n\n\n\n\n\n\n\n\n\n\n\nrnknamepop1Tokyo34,4502Osaka18,6603Mexico18,4574New York17,8135São Paulo17,0146Mumbai16,1477Delhi15,6928Shanghai14,2479Cairo13,62610Kolkata13,097\n\n\n\n\nSource : World Urbanization Prospect, 2018"
+    "text": "Situation en 2000\n\n\n\n\n\n\n\n\n\n\n\nrnknamepop1Tokyo34,4502Osaka18,6603Mexico18,4574New York17,8135São Paulo17,0146Mumbai16,1477Delhi15,6928Shanghai14,2479Cairo13,62610Kolkata13,097\n\n\n\nSource : World Urbanization Prospect, 2018"
   },
   {
     "objectID": "SMA3.html#situation-en-2025",
     "href": "SMA3.html#situation-en-2025",
     "title": "DES VILLES MONDIALES AUX MEGA-REGIONS",
     "section": "Situation en 2025",
-    "text": "Situation en 2025\n\n\n\n\n\n\n\n\n\n\n\n\nrnknamepop1Tokyo37,0362Delhi34,6663Shanghai30,4824Dhaka24,6535Cairo23,0746São Paulo22,9907Mexico22,7528Beijing22,5969Mumbai22,08910New York19,154\n\n\n\n\nSource : World Urbanization Prospect, 2018"
+    "text": "Situation en 2025\n\n\n\n\n\n\n\n\n\n\n\nrnknamepop1Tokyo37,0362Delhi34,6663Shanghai30,4824Dhaka24,6535Cairo23,0746São Paulo22,9907Mexico22,7528Beijing22,5969Mumbai22,08910New York19,154\n\n\n\nSource : World Urbanization Prospect, 2018"
   },
   {
     "objectID": "SMA3.html#diffusion-de-lurbanisation",
@@ -1432,35 +1432,35 @@
     "href": "SMA3.html#ville-et-division-du-travail-social-1",
     "title": "DES VILLES MONDIALES AUX MEGA-REGIONS",
     "section": "Ville et division du travail social",
-    "text": "Ville et division du travail social\n\n\n\n\n\n\nflowchart LR\nA[solidarité mécanique]\nA --&gt; A1[\"Homogénéité\nSociale\"] & A2[\"Faible \ndensité\"] & A3[\"Tradition\"] & A4[\"Religion\"] & A5[\"Famille\"]\n\n\n\n\n\n\n\n\n\n\n\nflowchart LR\nB[Solidarité organique]\nB --&gt; B1[\"Hétérogénéité\n sociale\"] & B2[\"Division\n du travail\"] & B3[\"Urbanisation\"] & B4[\"Innovation\"] & B5[\"Sécularisation\"]"
+    "text": "Ville et division du travail social\n\n\n\n\n\n\n\nflowchart LR\nA[solidarité mécanique]\nA --&gt; A1[\"Homogénéité\nSociale\"] & A2[\"Faible \ndensité\"] & A3[\"Tradition\"] & A4[\"Religion\"] & A5[\"Famille\"]\n\n\n\n\n\n\n\n\n\n\n\n\n\nflowchart LR\nB[Solidarité organique]\nB --&gt; B1[\"Hétérogénéité\n sociale\"] & B2[\"Division\n du travail\"] & B3[\"Urbanisation\"] & B4[\"Innovation\"] & B5[\"Sécularisation\"]"
   },
   {
     "objectID": "SMA3.html#urbanisation-et-division-du-travail",
     "href": "SMA3.html#urbanisation-et-division-du-travail",
     "title": "DES VILLES MONDIALES AUX MEGA-REGIONS",
     "section": "Urbanisation et division du travail",
-    "text": "Urbanisation et division du travail\n\n\nDensité matérielle (géographique)\n“L’accroissement de la densité moyenne peut être uniquement dû à l’augmentation matérielle de la natalité et, par conséquent peut se concilier avec une concentration très faible [des interactions sociales], un maintien très marqué du type segmentaire.” (ibid, p. 239)\nDensité morale (sociale)\n“La division du travail progresse donc d’autant plus qu’il y a de plus d’individus qui sont suffisamment en contact pour pouvoir agir et réagir les uns sur les autres [ce que nous appelons] densité dynamique ou morale.” (ibid., p. 238)\nRétroaction\n“La densité morale ne peut donc s’accroîte sans que la densité morale s’accroisse en même temps. Il est d’ailleurs inutile de rechercher laquelle des deux a déterminé l’autre.” (ibid., p. 238)\n\n\n\n\n\nflowchart TD\nA[\"Solidarité mécanique\"]\nB[\"Solidarité organique\"]\nC[\"Division du travail social\"]\nD[\"Urbanisation\"] \nE[\"Densité matérielle\"]\nF[\"Densité morale\"]\n\nA --&gt; B\nB --&gt; C\nC --&gt; E\nC --&gt; F\nE --&gt; F\nF --&gt; E\nE --&gt; D\nF --&gt; D"
+    "text": "Urbanisation et division du travail\n\n\nDensité matérielle (géographique)\n“L’accroissement de la densité moyenne peut être uniquement dû à l’augmentation matérielle de la natalité et, par conséquent peut se concilier avec une concentration très faible [des interactions sociales], un maintien très marqué du type segmentaire.” (ibid, p. 239)\nDensité morale (sociale)\n“La division du travail progresse donc d’autant plus qu’il y a de plus d’individus qui sont suffisamment en contact pour pouvoir agir et réagir les uns sur les autres [ce que nous appelons] densité dynamique ou morale.” (ibid., p. 238)\nRétroaction\n“La densité morale ne peut donc s’accroîte sans que la densité morale s’accroisse en même temps. Il est d’ailleurs inutile de rechercher laquelle des deux a déterminé l’autre.” (ibid., p. 238)\n\n\n\n\n\n\nflowchart TD\nA[\"Solidarité mécanique\"]\nB[\"Solidarité organique\"]\nC[\"Division du travail social\"]\nD[\"Urbanisation\"] \nE[\"Densité matérielle\"]\nF[\"Densité morale\"]\n\nA --&gt; B\nB --&gt; C\nC --&gt; E\nC --&gt; F\nE --&gt; F\nF --&gt; E\nE --&gt; D\nF --&gt; D"
   },
   {
     "objectID": "SMA3.html#urbanisation-et-division-du-travail-1",
     "href": "SMA3.html#urbanisation-et-division-du-travail-1",
     "title": "DES VILLES MONDIALES AUX MEGA-REGIONS",
     "section": "Urbanisation et division du travail",
-    "text": "Urbanisation et division du travail\n\n\nCompétition\n“Si le travail se divise davantage à mesure que les sociétés deviennent plus volumineuses et plus denses […] c’est que la lutte pour la vie y est plus ardente. Darwin a très justement observé que la concurrence entre deux organismes est d’autant plus vive qu’ils sont analogues.” (ibid, p. 248)\nSpécialisation\n“Les hommes subissent la même loi. Dans une même villes les professions différentes peuvent coexister sans être obligées de se nuire récproquement, car elles poursuivent des objets différents.” (ibid., p. 249)\n\n\n\n\n\nflowchart TD\nA[\"Solidarité mécanique\"]\nB[\"Solidarité organique\"]\nC[\"Division du travail social\"]\nD[\"Urbanisation\"] \nE[\"Densité matérielle\"]\nF[\"Densité morale\"]\nG[\"Accumulation monétaire\"]\nH[\"Force de travail\"]\nK[\"Compétition\"]\nL[\"Spécialisation\"]\n\n\n\n\nA --&gt; B\nB --&gt; C\nC --&gt; E\nC --&gt; F\nE --&gt; D\nF --&gt; D\nD --&gt; G\nD --&gt; H\nD --&gt; K\nD --&gt; L"
+    "text": "Urbanisation et division du travail\n\n\nCompétition\n“Si le travail se divise davantage à mesure que les sociétés deviennent plus volumineuses et plus denses […] c’est que la lutte pour la vie y est plus ardente. Darwin a très justement observé que la concurrence entre deux organismes est d’autant plus vive qu’ils sont analogues.” (ibid, p. 248)\nSpécialisation\n“Les hommes subissent la même loi. Dans une même villes les professions différentes peuvent coexister sans être obligées de se nuire récproquement, car elles poursuivent des objets différents.” (ibid., p. 249)\n\n\n\n\n\n\nflowchart TD\nA[\"Solidarité mécanique\"]\nB[\"Solidarité organique\"]\nC[\"Division du travail social\"]\nD[\"Urbanisation\"] \nE[\"Densité matérielle\"]\nF[\"Densité morale\"]\nG[\"Accumulation monétaire\"]\nH[\"Force de travail\"]\nK[\"Compétition\"]\nL[\"Spécialisation\"]\n\n\n\n\nA --&gt; B\nB --&gt; C\nC --&gt; E\nC --&gt; F\nE --&gt; D\nF --&gt; D\nD --&gt; G\nD --&gt; H\nD --&gt; K\nD --&gt; L"
   },
   {
     "objectID": "SMA3.html#urbanisation-et-division-du-travail-2",
     "href": "SMA3.html#urbanisation-et-division-du-travail-2",
     "title": "DES VILLES MONDIALES AUX MEGA-REGIONS",
     "section": "Urbanisation et division du travail",
-    "text": "Urbanisation et division du travail\n\n\nIndividualisme\n“On peut donc prévoir que la progrès de la division du travail sera d’autant plus difficile que la conscience commune aura plus de vitalité” (ibid. p. 268)\nPropriété privée\n“Tant que la loi et les moeurs font de l’inaliénabilité et de l’indivision de la propriété immobilière une stricte obligation, les conditions nécessaires à l’apparition de la division du travail ne sont pas réunies” (ibid. p. 269)\nManufacture\n“A mesure que le marché s’étend, la grande industrie apparaît. Elle a pour effet de transformer les relations entre patrons et ouvriers[…] le travail à la machine remplace l’homme.” (ibid. p. 362)\n\n\n\n\n\nflowchart TD\nA[\"Solidarité mécanique\"]\nB[\"Solidarité organique\"]\nC[\"Division du travail social\"]\nD[\"Urbanisation\"] \nE[\"Densité matérielle\"]\nF[\"Densité morale\"]\nG[\"Accumulation monétaire\"]\nH[\"Force de travail\"]\nK[\"Compétition\"]\nL[\"Spécialisation\"]\nI[\"Capitalisme industriel\"]\nJ[\"Division nationale du travail\"]\n\n\n\nA --&gt; B\nB --&gt; C\nC --&gt; E\nC --&gt; F\nE --&gt; D\nF --&gt; D\nD --&gt; G\nD --&gt; H\nD --&gt; K\nD --&gt; L\nH --&gt; I\nG --&gt; I\nK --&gt; I\nL --&gt; I\nI --&gt; J"
+    "text": "Urbanisation et division du travail\n\n\nIndividualisme\n“On peut donc prévoir que la progrès de la division du travail sera d’autant plus difficile que la conscience commune aura plus de vitalité” (ibid. p. 268)\nPropriété privée\n“Tant que la loi et les moeurs font de l’inaliénabilité et de l’indivision de la propriété immobilière une stricte obligation, les conditions nécessaires à l’apparition de la division du travail ne sont pas réunies” (ibid. p. 269)\nManufacture\n“A mesure que le marché s’étend, la grande industrie apparaît. Elle a pour effet de transformer les relations entre patrons et ouvriers[…] le travail à la machine remplace l’homme.” (ibid. p. 362)\n\n\n\n\n\n\nflowchart TD\nA[\"Solidarité mécanique\"]\nB[\"Solidarité organique\"]\nC[\"Division du travail social\"]\nD[\"Urbanisation\"] \nE[\"Densité matérielle\"]\nF[\"Densité morale\"]\nG[\"Accumulation monétaire\"]\nH[\"Force de travail\"]\nK[\"Compétition\"]\nL[\"Spécialisation\"]\nI[\"Capitalisme industriel\"]\nJ[\"Division nationale du travail\"]\n\n\n\nA --&gt; B\nB --&gt; C\nC --&gt; E\nC --&gt; F\nE --&gt; D\nF --&gt; D\nD --&gt; G\nD --&gt; H\nD --&gt; K\nD --&gt; L\nH --&gt; I\nG --&gt; I\nK --&gt; I\nL --&gt; I\nI --&gt; J"
   },
   {
     "objectID": "SMA3.html#urbanisation-et-division-du-travail-3",
     "href": "SMA3.html#urbanisation-et-division-du-travail-3",
     "title": "DES VILLES MONDIALES AUX MEGA-REGIONS",
     "section": "Urbanisation et division du travail",
-    "text": "Urbanisation et division du travail\n\n\nDivision internationale du travail\n“On objectera [à ma théorie] la division internationale du travail ; il semble évident que, dans ce cas au moins, les individus entre lesquels le travail se partage n’appartiennent pas à la même société. Mais il faut se rappeler qu’un groupe peut, tout en gardant son individualité, être enveloppé par un autre plus vaste et qui en contient plusieurs du même genre.” (ibid. p. 265)\nEurope\n“On peut dire en effet [que la division du travail] ne s’est jamais vraiment produite qu’en Europe et de notre temps. Or c’est à la fin du siècle dernier [le 18e] qu’a commencé à se former une conscience commune des sociétés européennes.” (ibid., p. 265)\n\n\n\n\n\nflowchart TD\nA[\"Solidarité mécanique\"]\nB[\"Solidarité organique\"]\nC[\"Division du travail social\"]\nD[\"Urbanisation\"] \nE[\"Densité matérielle\"]\nF[\"Densité morale\"]\nG[\"Accumulation monétaire\"]\nH[\"Force de travail\"]\nK[\"Compétition\"]\nL[\"Spécialisation\"]\nI[\"Capitalisme industriel\"]\nJ[\"Division nationale du travail\"]\nV[\"Colonisation\"]\nW[\"Division internationale du travail\"]\n\n\nA --&gt; B\nB --&gt; C\nC --&gt; E\nC --&gt; F\nE --&gt; D\nF --&gt; D\nD --&gt; G\nD --&gt; H\nD --&gt; K\nD --&gt; L\nH --&gt; I\nG --&gt; I\nK --&gt; I\nL --&gt; I\nI --&gt; J\nI --&gt; V\nJ --&gt; W\nV --&gt; W"
+    "text": "Urbanisation et division du travail\n\n\nDivision internationale du travail\n“On objectera [à ma théorie] la division internationale du travail ; il semble évident que, dans ce cas au moins, les individus entre lesquels le travail se partage n’appartiennent pas à la même société. Mais il faut se rappeler qu’un groupe peut, tout en gardant son individualité, être enveloppé par un autre plus vaste et qui en contient plusieurs du même genre.” (ibid. p. 265)\nEurope\n“On peut dire en effet [que la division du travail] ne s’est jamais vraiment produite qu’en Europe et de notre temps. Or c’est à la fin du siècle dernier [le 18e] qu’a commencé à se former une conscience commune des sociétés européennes.” (ibid., p. 265)\n\n\n\n\n\n\nflowchart TD\nA[\"Solidarité mécanique\"]\nB[\"Solidarité organique\"]\nC[\"Division du travail social\"]\nD[\"Urbanisation\"] \nE[\"Densité matérielle\"]\nF[\"Densité morale\"]\nG[\"Accumulation monétaire\"]\nH[\"Force de travail\"]\nK[\"Compétition\"]\nL[\"Spécialisation\"]\nI[\"Capitalisme industriel\"]\nJ[\"Division nationale du travail\"]\nV[\"Colonisation\"]\nW[\"Division internationale du travail\"]\n\n\nA --&gt; B\nB --&gt; C\nC --&gt; E\nC --&gt; F\nE --&gt; D\nF --&gt; D\nD --&gt; G\nD --&gt; H\nD --&gt; K\nD --&gt; L\nH --&gt; I\nG --&gt; I\nK --&gt; I\nL --&gt; I\nI --&gt; J\nI --&gt; V\nJ --&gt; W\nV --&gt; W"
   },
   {
     "objectID": "SMA3.html#a-suivre",
@@ -3687,5 +3687,68 @@
     "title": "Le Commerce Mondial",
     "section": "La fin de la “mondialisation heureuse”",
     "text": "La fin de la “mondialisation heureuse”\n\nReshoring : rappatriement de certaines productions à l’intérieur du pays qui avait précédemment délocalisé pour des raisons de sécurité géostratégique.\nNearshoring : Relocalisation des importations dans des pays voisins pour limiter les risques liés au transport à longue distance et les coûts associés.\nFriendshoring : Relocalisation des importations vers des pays “amis” pour éviter les risques de boycott ou d’embargo."
+  },
+  {
+    "objectID": "SMA3.html#attention-spoiler",
+    "href": "SMA3.html#attention-spoiler",
+    "title": "DES VILLES MONDIALES AUX MEGA-REGIONS",
+    "section": "Attention spoiler",
+    "text": "Attention spoiler\n\n\nCe cours est basé sur les données UN 2018 …\n\n\n… mais un nouveau rapport est paru en 2025"
+  },
+  {
+    "objectID": "SMA3.html#un-rapport-révolutionnaire",
+    "href": "SMA3.html#un-rapport-révolutionnaire",
+    "title": "DES VILLES MONDIALES AUX MEGA-REGIONS",
+    "section": "Un rapport révolutionnaire ?",
+    "text": "Un rapport révolutionnaire ?\n\n\n\n\n\nD’après le rapport de l’ONU sur l’urbanisation dans le monde World Urbanization Prospects, paru le 18 novembre, 81 % de la population mondiale est urbaine en 2025. C’est beaucoup plus que les 55 % du dernier rapport datant de 2018. Cette différence s’explique par la méthodologie employée : pour la première fois, les auteurs ont utilisé la même définition d’une “zone urbaine” pour 237 pays.\n\nSource : Courrier International, 19 Nov. 2025"
+  },
+  {
+    "objectID": "SMA3.html#un-rapport-révolutionnaire-1",
+    "href": "SMA3.html#un-rapport-révolutionnaire-1",
+    "title": "DES VILLES MONDIALES AUX MEGA-REGIONS",
+    "section": "Un rapport révolutionnaire ?",
+    "text": "Un rapport révolutionnaire ?\n\n\n\n\nSource : “Ranked: The World’s 30 Largest Cities by Population”, visualcapitalist, 18 Dec. 2025\n\n\n\nJakarta has overtaken Tokyo as the world’s most populous city, according to a UN study that uses new criteria to give a more accurate picture of the rapid urbanisation driving the growth of megacities. The Indonesian capital is home to 42 million people, according to an estimate by the population division of the UN Department of Economic and Social Affairs in its World Urbanisation Prospects 2025 report published this month.\n\nSource : The Guardian, 27 Nov. 2025"
+  },
+  {
+    "objectID": "SMA3.html#une-mesure-du-degré-durbanisation",
+    "href": "SMA3.html#une-mesure-du-degré-durbanisation",
+    "title": "DES VILLES MONDIALES AUX MEGA-REGIONS",
+    "section": "Une mesure du degré d’urbanisation",
+    "text": "Une mesure du degré d’urbanisation\nUne méthode mise au point en Europe par le JRC…"
+  },
+  {
+    "objectID": "SMA3.html#une-mesure-du-degré-durbanisation-1",
+    "href": "SMA3.html#une-mesure-du-degré-durbanisation-1",
+    "title": "DES VILLES MONDIALES AUX MEGA-REGIONS",
+    "section": "Une mesure du degré d’urbanisation",
+    "text": "Une mesure du degré d’urbanisation\n… qui aboutit à une typologie en 3 ou 7 types"
+  },
+  {
+    "objectID": "SMA3.html#conférence-de-presse-du-20-novembre-2025",
+    "href": "SMA3.html#conférence-de-presse-du-20-novembre-2025",
+    "title": "DES VILLES MONDIALES AUX MEGA-REGIONS",
+    "section": "Conférence de presse du 20 novembre 2025",
+    "text": "Conférence de presse du 20 novembre 2025\n Source : World Urbanization Prospects 2025 - Press Conference | World Population Prospects 2025"
+  },
+  {
+    "objectID": "SMA3.html#quand-la-population-urbaine-est-elle-devenue-majoritaire",
+    "href": "SMA3.html#quand-la-population-urbaine-est-elle-devenue-majoritaire",
+    "title": "DES VILLES MONDIALES AUX MEGA-REGIONS",
+    "section": "Quand la population urbaine est-elle devenue majoritaire ?",
+    "text": "Quand la population urbaine est-elle devenue majoritaire ?"
+  },
+  {
+    "objectID": "SMA3.html#la-france-est-un-pays-rural",
+    "href": "SMA3.html#la-france-est-un-pays-rural",
+    "title": "DES VILLES MONDIALES AUX MEGA-REGIONS",
+    "section": "La France est un pays rural ?",
+    "text": "La France est un pays rural ?"
+  },
+  {
+    "objectID": "SMA3.html#pour-en-savoir-plus",
+    "href": "SMA3.html#pour-en-savoir-plus",
+    "title": "DES VILLES MONDIALES AUX MEGA-REGIONS",
+    "section": "Pour en savoir plus …",
+    "text": "Pour en savoir plus …\n\n\nSource : United Nations Population Division"
   }
 ]
