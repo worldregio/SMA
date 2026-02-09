@@ -522,6 +522,8 @@ g<-ggplot(sel) +aes(x=Année,y=Population,color=Agglo)+ geom_line()+
 ggplotly(g,width = 1000,height = 600)
 ```
 
+# ENJEUX ET CONSEQUENCES
+
 ## Discussion  (1)
 
 ### Un processus irréversible ...
@@ -585,6 +587,23 @@ Source : [Creutzig, F.& al. (2015)](https://www.pnas.org/doi/full/10.1073/pnas.1
 
 ## Discussion (4)
 
+### Enjeux économiques
+:::: {.columns}
+::: {.column width=65%}
+![](img3/Jinan.jpg){width=600}
+:::
+
+::: {.column width=35% .r-fit-text}
+### La crise immobilière en Chine ébranle la foi en l’avenir
+
+A Jinan, comme dans de nombreuses villes chinoises, les prix de l’immobilier sont en chute libre depuis cinq ans. La crise du secteur fragilise les finances locales et l’ensemble de l’économie chinoise, tout en plongeant les ménages dans le pessimisme.
+
+Source : [Le Monde, 4 fevrier 2026](ww.lemonde.fr/economie/article/2026/02/04/la-crise-immobiliere-en-chine-ebranle-la-foi-en-l-avenir_6665403_3234.html)
+:::
+::::
+
+## Discussion (5)
+
 ### Enjeux sécuritaires
 :::: {.columns}
 ::: {.column width=55%}
@@ -596,9 +615,7 @@ Ainsi la smart city chinoise se signale-t-elle par trois caractéristiques princ
 Source : [Henriot C., (2018)](https://www.cairn.info/revue-flux-2018-4-page-71.htm)
 :::
 ::::
-
-
-## Discussion (5)
+## Discussion (6)
 
 ### Enjeux sociaux
 :::: {.columns}
