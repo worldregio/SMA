@@ -218,7 +218,7 @@ Qu'est-ce qui maximise l'interaction ?
 
 ::: {.column width="50%" .r-fit-text}
 ### ... mais un nouveau rapport est paru en 2025
-![](img3/WUP2025.png){width=500}
+![](img3/WUP2025.jpg){width=500}
 :::
 
 ::::
