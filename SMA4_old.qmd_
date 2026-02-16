@@ -1,0 +1,868 @@
+---
+title: "TROIS LECTURES DE LA METROPOLISATION"
+subtitle: "Structures du Monde Actuel, 2024"
+author: "Claude Grasland"
+format: 
+  revealjs:
+    theme: dark
+
+embed-resources: true
+title-slide-attributes:
+  data-background-image: img4/facebook_links.jpg
+  data-background-size: cover
+  data-background-opacity: "1"
+---
+
+
+```{r}
+library(dplyr)
+library(knitr)
+library(flextable)
+library(reshape2)
+library(ggplot2)
+library(plotly)
+```
+
+# Introduction : des métropoles aux villes globales
+
+
+## Les villes les plus influentes du Monde 
+:::: {.columns}
+::: {.column width=40% .r-fit-text}
+### ... en 1991
+![](img4/Sassen.jpg){width=300}
+Source : **Sassen S., 1991, ** *The global city*, New York.
+:::
+
+::: {.column width=60% .r-fit-text}
+### ... en 2024
+![](img4/SMA2024_rnk.jpg){width=600}
+Source : **Etudiants UPC, 2024**, Cours de L3 Geo *Structures du Monde Actuel*
+:::
+::::
+
+## Les villes les plus influentes du Monde 
+:::: {.columns}
+::: {.column width=40% .r-fit-text}
+### ... en 1991
+![](img4/Sassen.jpg){width=300}
+Source : **Sassen S., 1991, ** *The global city*, New York.
+:::
+
+::: {.column width=60% .r-fit-text}
+### ... en 2025
+![](img4/SMA2025_rnk.jpg){width=600}
+Source : **Etudiants UPC, 2025**, Cours de L3 Geo *Structures du Monde Actuel*
+:::
+::::
+
+## De quoi parle-t-on ?
+
+![](img4/Geoconfluences.jpg){width=800}
+
+[Source : Géoconfluences, Glossaire](https://geoconfluences.ens-lyon.fr/glossaire)
+
+
+## Définitions de la ville
+:::: {.columns}
+::: {.column width=30% .r-fit-text}
+### 306 entrées
+- ville
+- ville néolibérale
+- ville entrepreneuriale
+- ville usine
+- ville durable
+- ville touristique
+- ville ordinaire
+- ville nouvelle
+- ville durable (smart city)
+- ville décroissante (shrinking city)
+- droit à la ville
+...
+:::
+
+::: {.column width=70% .r-fit-text}
+### Ville 
+La ville est un terme du langage courant désignant **un espace à fort degré d'anthropisation, le lieu privilégié de la concentration des humains et de l'accumulation historique.** (...) C’est l’accumulation des vivres (ou des richesses) qui permet de dégager des surplus pour des classes sociales non productives, et donc de stimuler les échanges, 
+
+
+(...)
+
+
+Ces écueils de définitions font que **le mot ville relève davantage du langage courant que du vocabulaire géographique, aussi est-il surtout employé en géographie pour faire référence à l’idée courante qu’on se fait, dans les représentations collectives, du fait urbain**.
+
+[Source : Géoconfluences, Glossaire, Fev. 2024](https://geoconfluences.ens-lyon.fr/glossaire/ville)
+:::
+::::
+
+
+## Définitions de la métropole
+
+:::: {.columns}
+::: {.column width=30% .r-fit-text}
+### 144 résultats
+- métropole (échelle mondiale)
+- métropolisation
+- mégalopole
+- mégapole
+- métropole d'équilibre
+- métropole du Grand Paris
+- ville mondiale
+...
+:::
+
+::: {.column width=70% .r-fit-text}
+### Métropole (échelle mondiale)
+
+La métropole est avant tout **un ensemble urbain de grande importance qui exerce des fonctions de commandement, d’organisation et d’impulsion sur une région et qui permet son intégration avec le reste du monde**. Elle anime un système urbain plus ou moins complexe à la hiérarchisation emboîtée. Elle peut être dotée de fonctions spécialisées dans les domaines politique, économique, de l'innovation, aussi regroupées sous l’expression fonctions métropolitaines supérieures.(...)
+
+**Une métropole de rang global, international, ne pourra être analysée comme une simple métropole régionale.** L'accentuation du rôle des métropoles dans la mondialisation définit la **métropolisation**. (...)
+
+Avec la mondialisation, les métropoles possédant une influence internationale ont pris une importance croissante. Les plus grandes métropoles sont aussi des **villes mondiales**.
+
+[Source : Géoconfluences, Glossaire, Fév. 2024](https://geoconfluences.ens-lyon.fr/glossaire/metropole)
+:::
+::::
+
+
+## Trois problèmes {.smaller}
+
+### Variations historiques (> 18e siècle)
+Les termes de ville ou métropole sont ancrés dans l'histoire. La *polis* grecque, l'*urbs* romaine ou la *cité* médiévale sont-elles des "villes" au sens que nous lui donnons aujourdhui ? 
+
+### Variations économiques (19e-20e siècles)
+Le capitalisme ou le socialisme ont-il donné naissance à un seul type de ville ? La ville es-elle le reflet de transformations dans la division nationale et internationale du travail.
+
+### Variations linguistiques (21e siècles)
+La présence d'un mot *ville* ou *métropole* n'est pas avéré dans toutes les civilisations. La traduction de ces mots d'une langue à une autre est rarement aisée. Un concept unique est-il une violence faite aux civilisations 
+
+
+## Décolonisation (1950-75)
+
+:::: {.columns}
+::: {.column width=50% .r-fit-text}
+### Vue du Nord
+![](img4/Marseille002.jpg){width=350}
+:::
+
+::: {.column width=50% .r-fit-text}
+### Vue du Sud
+![](img4/yaounde002.png){width=500}
+:::
+::::
+
+
+
+
+## Décolonisation (1950-75)
+
+### Marseille : reconversion d'un port colonial
+![](img4/Marseille.jpg){width=700}
+
+[Source : Port Autonome de Marseille](https://www.youtube.com/watch?v=wGfzBGP9sug)
+
+## Décolonisation (1950-75)
+
+### Yaoundé : Naissance d'une capitale
+:::: {.columns}
+::: {.column width=30% .r-fit-text}
+![](img4/yaoundé.jpg){width=350}
+:::
+
+::: {.column width=70% .r-fit-text}
+
+### La ville sans nom (*dzom*)
+"La transformation en ville du petit village indigène avait ouvert une nouvelle ère de dysfonctionnement des individus et des groupes par rapport à leur dispositif géographique antérieur. Inconnu de façon générale des population indigènes, un *dzom* (quelque chose) s'imposait insidieusement apportant un nouveau désordre. On l'indentifia plus tard comme étant *les villes*.
+
+### La ville moteur d'intégration
+" La naissance d'une conscience yaoundéenne se fait en même temps et avec le même matériau humain que la construction de l'identité complexe des camerounais. (...) Dans cette métropole où les proportions humaines s'aggrandissent, les habitants s'orientent vers la quête de la réussite sociale et de la survie économique. (...) Derrière le pas lourd du temps de l'enracinement immbilier la centrifugeuse impose aussi les temps légers mais intenses des cotoiement quotidients [pour produire une intégration dépassant les clivages éthniques antérieurs]. 
+
+Source : **Bopda A., 2003**, *Yaoundé et le défi camerounais de l'intégration - A quoi sert une capitale d'Afrique tropicale*, Editions du CNRS, Paris, 421 p. 
+:::
+::::
+
+
+
+
+
+## Crise du fordisme (1975-90)
+
+
+:::: {.columns}
+::: {.column width=50% .r-fit-text}
+### Vue de l'ancienne économie
+![](img4/Detroit001.jpg){width=400}
+
+[Source : DataDrivenDetroit](https://vimeo.com/38244678)
+![](img4/Detroit002.jpg){width=400}
+
+:::
+
+::: {.column width=50% .r-fit-text}
+### Vue de la nouvelle économie
+![](img4/Bay-Area.png){width=500}
+![](img4/silicon-valley.jpg){width=400}
+:::
+::::
+
+
+
+
+
+
+
+
+## Triomphe du néolibéralisme (1990-2008)
+
+:::: {.columns}
+::: {.column width=30% .r-fit-text}
+![](img4/Fukuyama001.png){width=200}
+:::
+
+::: {.column width=70% .r-fit-text}
+![](img4/Fukuyama002.png){width=800}
+:::
+::::
+
+
+## Triomphe du néolibéralisme (1990-2008)
+:::: {.columns}
+::: {.column width=30% .r-fit-text}
+![](img4/Sassen.jpg){width=300}
+:::
+
+::: {.column width=70% .r-fit-text}
+
+![](img4/globalcities001.jpg){width=700}
+[Systems innovation, 2020](https://www.youtube.com/watch?v=bfUH2DKUoeI)
+:::
+::::
+
+
+## Trois lectures de la métropolisation
+
+### 1. La métropole entrepreneuriale
+Les métropoles sont le reflet des mutations du capitalisme (*D. Harvey, N. Brenner, A. Scott, ...*)
+
+### 2. Villes globales et mise en réseau du monde
+Les villes mondiales forment un réseau global qui organise la mondialisation (*O. Dollfus, S. Sassen, P. Taylor, ...*)
+
+### 3. Marketing urbain et compétition globale
+Les métropoles sont des marques concurrentes qui se livrent une bataille d'image pour attirer le capitaux et l'innovation (*R. Florida, S. Anholt, ...*)
+
+
+# Lecture 1 : La métropole entrepreneuriale
+
+## Villes et système de production
+:::: {.columns}
+::: {.column width=20% .r-fit-text}
+![](img4/Scott_AJ.jpg){width=150}
+
+**Scott A.J., 2012**, *A World in Emergence : Cities and regions in the 21st Century*, Chap.2  "On urbanization adn urban theory", Edward Elgar, Los Angeles
+:::
+
+::: {.column width=80% .r-fit-text}
+
+### La ville au coeur du système de production capitaliste
+Pour A.J. Scott, la ville doit d'abord être comprise par sa fonction de **production** et d'accumulation dans les sociétés d'économie capitaliste. La ville ne répond pas seulement à un objectif de consommation à travers la fourniture de marchés ou de service (Christaller, Lösch).
+
+### Agglomération et économies d'échelle ou d'agglomération 
+Ce sont les économies d'échelles (réduction des coûts) et d'agglomération (partage d'infrastructures) qui sont au fondement du phénomène urbain. Les villes fonctionnent comme les districts industriels d'A. Marshall. 
+
+:::
+::::
+
+## Dynamique du capitalisme et urbanisation
+:::: {.columns}
+::: {.column width=50% .r-fit-text}
+*"En effet, nous pouvons affirmer en premier lieu que la compétitivité, la rentabilité et l'accumulation dépendent si étroitement de l'agglomération - entre autres - qu'il n'existe aucune forme de capitalisme réalisée jusqu'à présent qui ne soit pas également associée à l'urbanisation ; tout comme nous pouvons également affirmer que jusqu'à présent, dans l'histoire de l'humanité, la marche en avant du développement économique capitaliste a toujours engendré, avec seulement quelques interruptions mineures, des niveaux d'urbanisation de plus en plus élevés".* (Scott, 2012, p. 17)
+
+:::
+
+::: {.column width=50% .r-fit-text}
+
+![](img4/Scott001.png){width=700}
+
+:::
+::::
+
+## La crise de la ville fordiste
+:::: {.columns}
+::: {.column width=30% .r-fit-text}
+![](img4/rustbelt001.jpg){width=300}
+
+![](img4/rustbelt002.jpg){width=300}
+:::
+
+::: {.column width=70% .r-fit-text}
+*"Il est évident que si les marchés extérieurs pour les produits d'une agglomération se contractent, la stagnation ou le déclin urbain s'ensuivra probablement. En outre, les avantages de l'agglomération ne l'emportent pas toujours sur les attraits de sites plus décentralisés.* 
+
+*A l'époque du fordisme, par exemple, les succursales standardisées et déqualifiées ayant des liens externes routiniers étaient souvent en mesure d'atteindre des niveaux d'efficacité plus élevés lorsqu'elles renonçaient aux économies d'agglomération des grands centres de fabrication et se délocalisaient dans des zones périphériques où la terre et la main d'oeuvre étaient bon marché. Au cours des années de crise des années 1970, ce processus de décentralisation industrielle s'est généralisé, entraînant de graves dislocations économiques et sociales dans de nombreuses villes de la ceinture manufacturière des États-Unis."* (Scott, 2012, p. 17)
+:::
+::::
+
+
+## La ville néolibérale : production, innovation et gouvernance
+:::: {.columns}
+::: {.column width=30% .r-fit-text}
+![](img4/silicon-valley.jpg){width=300}
+
+![](img4/Bay-Area.png){width=300}
+:::
+
+::: {.column width=70% .r-fit-text}
+### Production
+Les métropoles mondiales demeurent fondamentalement des lieux de production matérielle ou immatérielle (e.g. Silicon Valley, Hollywood)
+
+### Innovation
+La capacité à attirer les personnes les plus qualifiées est fondamentale pour capturer les cycles successifs d'innovation.
+
+### Gouvernance
+Des régulations publiques sont nécessaires pour assurer la durabilité de l'entreprise urbaine.
+
+:::
+::::
+
+
+## Villes et rééchelonnement (*rescaling*)
+:::: {.columns}
+::: {.column width=20% .r-fit-text}
+![](img4/Brenner000.jpg){width=150}
+
+**Brenner N., 1998**, « Global cities, glocal states: global city formation and state territorial restructuring in contemporary Europe », *Review of International Political Economy, 5:1*, 1-37
+:::
+
+::: {.column width=80% .r-fit-text}
+
+### L'Etat pris en étau entre local et global
+Pour N. Brenner, la métropolisation se caractérise fondamentalement par une redistribution des échelles de pouvoir et de gouvernance (**rescaling**) qui renforce à la fois le niveau global et le niveau local (**glocalisation**)
+
+### Partenariat public privé
+Les métropoles sont un lieu de convergence entre des intérêts publics et privés qui visent à faciliter l'attraction des investisseurs dans le cadre d'une économie de marché capitaliste. 
+
+### Variété des formes de rescaling
+La façon dont s'opère le rescaling peut fortement différer d'un pays à l'autre. L'Etat peut dans certains cas maintenir un rôle important et être à l'initiative de la redistribution du pouvoir au profit d'une métropole qui joue le rôle de "champion national".
+
+:::
+::::
+
+## Villes et rééchelonnement (*rescaling*)
+:::: {.columns}
+::: {.column width=20% .r-fit-text}
+![](img4/Brenner000.jpg){width=150}
+
+:::
+
+::: {.column width=80% .r-fit-text}
+
+![](img4/Brenner003.jpg){width=800}
+
+:::
+::::
+
+
+
+## Tansformations simultanée des états et des villes
+:::: {.columns}
+::: {.column width=50% .r-fit-text}
+J'interprète la formation des villes mondiales et le redimensionnement de l'État comme des processus de reterritorialisation dialectiquement entrelacés qui ont radicalement reconfiguré l'organisation scalaire du capitalisme depuis les crises économiques mondiales du début des années 1970. La formation de villes globales est liée à la fois à la mondialisation du capital et à la régionalisation/localisation de l'organisation territoriale de l'État.
+Ce redimensionnement de l'État est une "stratégie d'accumulation" essentielle (Jessop, 1990) par laquelle les villes de l'économie mondiale sont promues par leurs États hôtes en tant que nœuds de localisation pour les investissements de capitaux transnationaux. (*Brenner 1998, op. cit.*)
+:::
+
+::: {.column width=50% .r-fit-text}
+![](img4/Brenner001.jpg){width=500}
+:::
+::::
+
+
+
+## Exemple des villes européennes
+:::: {.columns}
+::: {.column width=50% .r-fit-text}
+En tant que nœuds d'accumulation, les villes mondiales s'inscrivent dans des flux de capitaux qui ne se superposent plus à l'espace économique national. En tant que coordonnées du pouvoir territorial de l'État, les villes mondiales occupent un terrain géographique très contradictoire et à plusieurs échelles. D'une part, elles se situent dans le cadre de la territorialité de l'État, délimitée par un espace géopolitique dans le système interétatique. D'autre part, à mesure que l'État territorial glocal transfère et déconcentre nombre de ses tâches réglementaires vers des échelles supranationales, régionales et locales, une "non-coïncidence territoriale" croissante (Murray, 1971) émerge entre les échelles de l'organisation territoriale de l'État et celles de l'accumulation du capital.(*ibid*)
+:::
+
+::: {.column width=50% .r-fit-text}
+
+![](img4/Brenner002.png){width=500}
+:::
+::::
+
+## Le cas exemplaire de Londres
+:::: {.columns}
+::: {.column width=50% .r-fit-text}
+Le cas de Londres et du sud-est de l'Angleterre est l'exemple européen le plus spectaculaire de cette disjonction et de la politique territoriale très polarisée qui lui est associée. Le dynamisme du sud-est de l'Angleterre en tant que ville-région mondiale repose essentiellement sur une économie offshore dérivée du rôle de la City en tant que centre financier mondial, déconnectée presque entièrement des villes et régions en déclin situées ailleurs sur le territoire national du Royaume-Uni (King, 1990b) : La City est désormais une scène mondiale située en Grande-Bretagne plutôt qu'une scène britannique dans l'arène mondiale.(*ibid*)
+:::
+
+::: {.column width=50% .r-fit-text}
+![](img4/UK_wages.jpg){width=400}
+
+Source : The Guardian
+:::
+::::
+
+## Le cas exemplaire de Londres
+:::: {.columns}
+::: {.column width=40% .r-fit-text}
+La formation d'une ville mondiale dans la capitale nationale est aujourd'hui devenue l'une des principales priorités politico-économiques de l'État central, au détriment de l'investissement dans les villes et régions en déclin situées ailleurs sur son territoire . Par conséquent, la montée du thatchérisme peut être interprétée comme une "déclaration d'indépendance du sud de l'Angleterre, la communauté dépendante de Londres en tant que ville mondiale". (*ibid*)
+:::
+
+::: {.column width=60% .r-fit-text}
+![](img4/UK_vote.jpg){width=600}
+Source : The New York Times
+:::
+::::
+
+
+## Le cas des Pays Bas
+:::: {.columns}
+::: {.column width=50% .r-fit-text}
+Le cas de la Randstad-Pays-Bas présente une situation intermédiaire entre les constellations londonienne et francfortoise de la politique territoriale, car ici les échelles urbaine-régionale et nationale sont presque entièrement coextensibles dans l'espace.
+
+Dans le cas de la Randstad-Pays-Bas, cependant, les frontières entre les conflits politiques interurbains, interrégionaux et nationaux se sont avérées relativement floues.
+
+L'État néerlandais est moins un État hôte de la Randstad que son incarnation géopolitique dans le système interétatique. (*ibid*)
+:::
+
+::: {.column width=50% .r-fit-text}
+![](img4/Netherlands.jpg){width=600}
+
+[The Netherlands is a giant city](https://www.youtube.com/watch?v=cShCsp0mdPM)
+:::
+::::
+
+
+## Métropolisation et polarisation politique
+:::: {.columns}
+::: {.column width=50% .r-fit-text}
+![](img4/vote_FR.jpg){width=500}
+:::
+
+::: {.column width=50% .r-fit-text}
+![](img4/vote_US.jpg){width=500}
+Source : J. Levy, Le Monde
+:::
+::::
+
+
+## Discussion {.smaller}
+
+### Une théorie incontournable ...
+Issue des réflexions de H. Lefebvre et D. Harvey, elle sert aujourd'hui de références dans les grandes revues anglo-saxonnes pour lesquelles A.J. Scott, N. Brenner ou M. Storper font figures de référence.
+
+### ... mais finalement très enracinée ...
+Les exemples des USA et du Royaume-Uni ont servi de matrice à la réflexion sur la transtion du fordisme au post-fordisme. Ils s'agit de deux pays où la libéralisation de l'économie a été paritculièrement brutale (R. Reagan, M. Thatcher)
+
+### ... et pas forcément universelle !
+Il n'est pas certain que cette théorie fonctionne aussi bien dans des pays tels que l'Inde, la Chine, la Russie ou le Brésil. Elle montre déjà des variations importantes en Europe.
+
+
+
+
+
+# Lecture 2 : Villes globales et mise en réseau du Monde
+
+
+
+
+## La société en réseau de M. Castells (1989)
+:::: {.columns}
+::: {.column width=50% .r-fit-text}
+En opposant l'espace des lieux (*space of places*) et l'espace des flux (*space of flows*), Manuel Castells remet en cause les fondements classiques de la géographie en soutenance que la distance n'a plus d'importance.
+
+**Castells, M. (1989).** *The informational city: Information technology, economic restructuring, and the urban-regional process*  Oxford: Blackwell.
+
+:::
+
+::: {.column width=50% .r-fit-text}
+![](img4/Castells.jpg){width=500}
+[M. Hilbert: Space of flows](https://www.youtube.com/watch?v=LsunE2RTv3Q)
+:::
+::::
+
+## La ville globale de S. Sassen (1991)
+:::: {.columns}
+::: {.column width=20% .r-fit-text}
+![](img4/Sassen000.jpg){width=150}
+
+**Sassen, S. (1991).** *The global city*. New York.
+:::
+
+::: {.column width=80% .r-fit-text}
+
+1.  La dispersion géographique des activités économiques qui marque la mondialisation, 
+est un facteur clé qui alimente la croissance et l'importance des fonctions centrales des entreprises.
+
+2. Ces fonctions centrales deviennent si complexes que, de plus en plus, les sièges des grandes entreprises mondiales les externalisent auprès de sociétés de service.
+
+3. Ces sociétés de services spécialisées, actives sur les marchés les plus complexes et les plus mondialisés, sont soumises à des économies d'agglomération.
+
+4. Plus les sièges sociaux externalisent leurs fonctions les plus complexes et non standardisées  plus ils sont libres d'opter pour n'importe quelle localisation.
+
+5. Ces entreprises de services spécialisés doivent fournir un service mondial, ce qui a entraîné la création d'un réseau mondial de filiales ... 
+
+6. La fortune économique de ces villes est de plus en plus déconnectée de leur arrière-pays, voire de leur économie nationale.
+
+7.  On assiste à l'informalisation croissante d'une série d'activités économiques qui trouvent leur demande effective dans ces villes, mais dont les taux de profit ne leur permettent pas de rivaliser avec les entreprises à haut niveau de profit au sommet du système. 
+:::
+::::
+
+
+## Fondation du GaWC (1998)
+:::: {.columns}
+::: {.column width=50% .r-fit-text}
+![](img4/Taylor000.jpg){width=150}
+
+**Beaverstock, J. V., Smith, R. G., & Taylor, P. J. (1999)**. "A roster of world cities." *cities, 16(6)*, 445-458.
+:::
+
+::: {.column width=50% .r-fit-text}
+Nous allons être très spécifiques dans notre désignation des villes mondiales. **En nous inspirant de Sassen (1991, 126)**, nous considérons les villes mondiales comme des "sites de production postindustriels" particuliers où les innovations en matière de services aux entreprises et de finance ont fait partie intégrante de la récente restructuration de l'économie mondiale, aujourd'hui largement connue sous le nom de mondialisation. 
+
+Les services, à la fois directement destinés aux consommateurs et aux entreprises produisant d'autres biens pour les consommateurs, sont communs à toutes les villes, bien sûr, mais ce dont nous traitons ici est généralement appelé **services avancés aux producteurs ou services aux entreprises**.
+
+:::
+::::
+
+## La recette du GaWC (Taylor, 2001)
+:::: {.columns}
+::: {.column width=40% .r-fit-text}
+![](img4/Gawc005.jpg){width=400}
+
+Source : **Taylor, P. J. (2001)**. Specification of the world city network. *Geographical analysis, 33(2)*, 181-194.
+:::
+
+::: {.column width=60% .r-fit-text}
+![](img4/Gawc004.jpg){width=600}
+
+:::
+::::
+
+
+## La recette du GaWC (Taylor, 2001)
+
+![](img4/Gawc001.png){width=800}
+
+## La recette du GaWC (Taylor, 2001)
+
+![](img4/Gawc002bis.jpg){width=800}
+
+Complétez les colonnes manquantes !
+
+
+
+## La recette du GaWC (Taylor, 2001)
+
+![](img4/Gawc002.png){width=800}
+
+
+## La recette du GaWC (Taylor, 2001)
+
+![](img4/Gawc003bis.jpg){width=800}
+
+Complétez les lignes et colonnes manquantes !
+
+## La recette du GaWC (Taylor, 2001)
+
+![](img4/Gawc003.png){width=800}
+
+And the winner is ...
+
+## Une méthode intéressante ... 
+
+![](img4/Nordlund001.jpg){width=800}
+
+Source : **Nordlund, C. (2004).** A critical comment on the Taylor approach for measuring world city interlock linkages. *Geographical Analysis, 36(3)*, 290-296.
+
+
+## ... mais très discutable ...
+
+![](img4/Nordlund003.jpg){width=1200}
+![](img4/Nordlund002.jpg){width=1200}
+
+## ... que l'auteur défend sans complexes.
+
+![](img4/Nordlund004.jpg){width=1200}
+![](img4/Nordlund005.jpg){width=1200}
+Source : Taylor (2004) - Answer to Nordlund
+
+
+
+## Le premier classement du GaWC 
+
+![](img4/taylor001.jpg){width=600}
+
+
+
+## Le premier classement du GaWC 
+
+![](img4/taylor002.jpg){width=800}
+
+
+
+## Le premier classement du GaWC 
+
+![](img4/taylor003.jpg){width=700}
+
+
+
+## Le premier classement du GaWC 
+
+![](img4/taylor004.jpg){width=800}
+
+## Le classement du GaWC en 2020
+
+![](img4/GaWC2020.jpg){width=1000}
+Source : [Cartolycee](http://www.cartolycee.net/spip.php?article243)
+
+
+## Villes "Alpha" en 2000, 2010 et 2020
+
+:::: {.columns}
+::: {.column width=50% .r-fit-text}
+
+![](img4/GawC2000_2020.jpg){width=700}
+
+Source : [Langlois, Histoire & c.](https://langloishg.fr/2020/08/21/ledition-2020-du-classement-des-villes-mondiales-selon-le-gawc/)
+:::
+
+::: {.column width=50% .r-fit-text}
+![](img4/GawC2000_2020b.jpg){width=700}
+
+:::
+::::
+
+## Villes globales et réseaux aériens
+:::: {.columns}
+::: {.column width=30% .r-fit-text}
+Une analyse des flux aériens menées à partir des données disponibles en 2000 aboutissait à des conclusions assez voisines de celles du GaWC. Ce qui n'est finalement pas étonnant puisque la majorité des flux aériens correspondent aux voyages d'affaireet donc aux relations entre firmes globales.
+
+**Didelon, C., Grasland, C., & Richard, Y. (2008).** *Atlas de l'Europe dans le monde*  La Documentation française.
+:::
+
+::: {.column width=70% .r-fit-text}
+
+![](img4/EIW001.png){width=600}
+:::
+::::
+
+
+## Villes gloables et réseaux aériens
+:::: {.columns}
+::: {.column width=30% .r-fit-text}
+Une analyse des flux aériens menées à partir des données disponibles en 2000 aboutissait à des conclusions assez voisines de celles du GaWC. Ce qui n'est finalement pas étonnant puisque la majorité des flux aériens correspondent aux voyages d'affaire et donc aux relations entre firmes globales.
+
+**Didelon, C., Grasland, C., & Richard, Y. (2008).** *Atlas de l'Europe dans le monde*  La Documentation française.
+:::
+
+::: {.column width=70% .r-fit-text}
+
+![](img4/EIW002.png){width=600}
+:::
+::::
+
+## Villes globales et réseaux maritimes {.smaller}
+
+![](img4/maritim_networks.jpg){width=1000}
+
+Source :**Ducruet, C., Cuyala, S. and Hosni, A.E. 2017**. Maritime networks as systems of cities: The long-term interdependencies between global shipping flows and urban development (1890–2010). *Journal of Transport Geography*, 10, 340-355.
+
+## Réseaux de firmes (1) :  Automobile {.smaller}
+:::: {.columns}
+::: {.column width=50% .r-fit-text}
+![](img4/Fiat.jpg){width=600}
+:::
+
+::: {.column width=50% .r-fit-text}
+![](img4/toyota.jpg){width=600}
+:::
+::::
+
+Source :**Rozenblat, C. (2010).** Opening the black box of agglomeration economies for measuring cities’ competitiveness through international firm networks. *Urban studies, 47(13)*, 2841-2865.
+
+
+## Réseaux de firmes (2) : Agro-alimentaire {.smaller}
+:::: {.columns}
+::: {.column width=50% .r-fit-text}
+![](img4/Nestlé.jpg){width=600}
+:::
+
+::: {.column width=50% .r-fit-text}
+![](img4/Kraftfood.jpg){width=500}
+:::
+::::
+
+Source :**Rozenblat, C. (2010).** Opening the black box of agglomeration economies for measuring cities’ competitiveness through international firm networks. *Urban studies, 47(13)*, 2841-2865.
+
+## Discussion {.smaller}
+
+### La distance compte toujours
+Même si Manuel Castells a eu raison de souligner le crôle croissant des réseaux, la proximité spatiale demeure un facteur déterminant dans la mise en réseau des métropoles.
+
+### Le classement du GaWC demeure une référence
+Alors même que ses bases scientifiques sont fragiles, ce classement s'est imposé au niveau mondial. Le choix des firmes demeure arbitraire mais prend en compte la montée en puissance des villes chinoises.
+
+### De nombreux réseaux structurent les échanges
+Les flux aériens et les flux maritimes sont sans nul doute des marqueurs objectifs de la dynamique de la mondialisation contemporaine 
+
+# Lecture 3 : Marketing urbain et compétition globale
+
+## Les villes où vous aimeriez vivre
+:::: {.columns}
+::: {.column width=30% .r-fit-text}
+![](img4/SMA_like_2025.jpeg){width=300}
+
+Source : étudiants L3 SMA, 2025
+:::
+
+::: {.column width=70% .r-fit-text}
+![](img4/Paris.jpg){width=400}
+![](img4/london.jpg){width=300}
+
+![](img4/Roma.jpg){width=200}
+![](img4/Montreal.jpg){width=200}
+![](img4/NewYork.jpg){width=150}
+![](img4/lalaland.jpg){width=150}
+
+:::
+::::
+
+## Les villes où vous n'aimeriez pas vivre
+:::: {.columns}
+::: {.column width=30% .r-fit-text}
+![](img4/SMA_unlike_2025.jpg){width=300}
+
+Source : étudiants L3 SMA, 2025
+:::
+
+::: {.column width=70% .r-fit-text}
+![](img4/new_dehli.jpg){width=350}
+![](img4/Moscow.jpg){width=300}
+![](img4/Dubai.jpg){width=350}
+![](img4/Kabul.jpg){width=350}
+
+:::
+::::
+
+
+## Les villes que vous citez le plus 
+
+![](img4/SMA_tot_2025.jpg){width=800}
+
+Source : étudiants L3 SMA, 2025
+
+
+## L'enquête GlocalMap (2017)
+
+![](img4/glocalmap.jpg){width=1000}
+
+[Didelon & Grasland, 2019](https://theconversation.com/et-vous-ou-aimeriez-vous-vivre-decouvrez-quelques-unes-des-villes-preferees-des-francais-127402)
+
+## L'enquête GlocalMap (2017)
+
+![](img4/glocalmap2.jpg){width=800}
+[Didelon & Grasland, 2019](https://theconversation.com/et-vous-ou-aimeriez-vous-vivre-decouvrez-quelques-unes-des-villes-preferees-des-francais-127402)
+
+## Marketing urbain {.smaller}
+
+### Les villes sont des marques ...
+Les villes développent désormais des stratégies de communications pour renforcer ou améliorer leurs images.
+
+### ... dans une compétition mondiale...
+La rivalité pour attirer de grands événements sportifs comme les Jeux Olympiques ou la coupe du monde de Football sont le symbole le plus évident de la rivalité entre ville. 
+
+### ... pour attirer les investisseurs.
+L'objectif principal est d'attirer les touristes, les étudiants diplômés, les investisseurs. 
+
+## "Junk Science" {.smaller}
+
+### Des classements multiples ...
+Les villes font l'objet de dizaines de classements mis au points par des sociétés de conseil qui analysent les évolutions sur plusieurs années.
+
+### ... à la scientificité douteuse...
+On aditionne la plupart du temps des critères hétérogènes sans grande rigueur scientifique et en ne retenant que certaines villes...
+
+### ... mais qui ont des effets performatifs.
+A l'instar du classement de Shangai des universités, ces publications influencent les stratégies urbaines et enrichissent les sociétés de conseil en communication
+
+## L'exemple du GPCI {.smaller}
+
+### Un indicateur mis en place depuis 2008
+L'Institut des stratégies urbaines (IUS) de la Mori Memorial Foundation entreprend des "recherches sur les stratégies urbaines" dans un large éventail de domaines, y compris la société et l'économie, etc., qui dépassent le cadre de l'ingénierie urbaine, non seulement d'un point de vue national, mais aussi d'un point de vue mondial.
+
+Depuis sa création en 2008, le Global Power City Index (GPCI) constitue la base de nos activités de recherche et nous permet d'identifier les questions de politique urbaine. En plus de l'analyse de l'indice GPCI, nos recherches se sont étendues pour inclure des analyses au niveau des centres-villes et des régions métropolitaines.
+
+Nous menons également des recherches sur la stratégie et la politique urbaines, ainsi que sur la vision future des villes mondiales, en commençant par Tokyo. Récemment, nous avons étendu nos activités à la recherche commandée par les secteurs public et privé en tant que groupe de réflexion politique pour les questions de stratégie urbaine globale.
+
+[GPCI](https://mori-m-foundation.or.jp/english/aboutus2/index.shtml#about_strategies)
+
+
+## L'exemple du GPCI {.smaller}
+
+### Un rapport anglo-japonais
+![](img4/GPCI002.jpg){width=800}
+
+## L'exemple du GPCI {.smaller}
+
+### Un comité prestigieux ...
+![](img4/GPCI001.jpg){width=800}
+
+
+## L'exemple du GPCI
+
+### 6 critères et 70 indicateurs ...
+:::: {.columns}
+::: {.column width=50% .r-fit-text}
+![](img4/GPCI004.jpg){width=350}
+:::
+
+::: {.column width=50% .r-fit-text}
+![](img4/GPCI005.jpg){width=350}
+:::
+::::
+
+## L'exemple du GPCI
+
+### And the winner is ...
+![](img4/GPCI008.jpg){width=900}
+
+## L'exemple du GPCI
+
+### Etonnant, non ? 
+![](img4/GPCI007.jpg){width=900}
+
+
+
+
+# Conclusion 
+
+## Grille de lecture dominante : la ville comme moteur du capitalisme
+
+![](img4/glocal.jpg){width=900}
+
+## Grille de lecture alternative : la ville comme forme d'association sociale
+
+:::: {.columns}
+::: {.column width=20% .r-fit-text}
+![](img4/Simmel.jpg){width=200}
+:::
+
+::: {.column width=80% .r-fit-text}
+"Les rapports qui s’établissent entre les hommes sont si complexes qu’il est chimérique de vouloir les ramener à leurs éléments ultimes. Nous devons plutôt les traiter comme des réalités qui se suffisent à elles-mêmes. C’est donc seulement par méthode que nous parlons de l’Etat, du droit, de la mode, etc., comme si c’étaient des êtres indivis."
+
+"Il y a société, au sens large du mot, partout où il y a action réciproque des individus. [...] Les causes particulières et les fins sans lesquelles naturellement il n’y aurait pas d’association, sont comme le corps, la matière du processus social ; que le résultat de ces causes, que la recherche de ces fins entraîne nécessairement une action réciproque, une association entre les individus, voilà la forme que revêtent les contenus. Séparer cette forme de ces contenus, au moyen de l’abstraction scientifique, telle est la condition sur laquelle repose l’existence d’une science spéciale de la société. »
+:::
+::::
+
+## A suivre ...
+:::: {.columns}
+::: {.column width=30% .r-fit-text}
+![](img4/lecture1.jpg){width=300}
+![](img4/lecture2.jpg){width=300}
+:::
+
+::: {.column width=70% .r-fit-text}
+
+![](img4/lecture3.jpg){width=800}
+:::
+::::

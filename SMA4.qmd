@@ -1,10 +1,11 @@
 ---
 title: "TROIS LECTURES DE LA METROPOLISATION"
-subtitle: "Structures du Monde Actuel, 2024"
+subtitle: "Structures du Monde Actuel, 2026"
 author: "Claude Grasland"
 format: 
   revealjs:
     theme: dark
+    scrollable: true
 
 embed-resources: true
 title-slide-attributes:
@@ -55,6 +56,25 @@ Source : **Sassen S., 1991, ** *The global city*, New York.
 Source : **Etudiants UPC, 2025**, Cours de L3 Geo *Structures du Monde Actuel*
 :::
 ::::
+
+
+
+## Les villes les plus influentes du Monde 
+:::: {.columns}
+::: {.column width=40% .r-fit-text}
+### ... en 1991
+![](img4/Sassen.jpg){width=300}
+Source : **Sassen S., 1991, ** *The global city*, New York.
+:::
+
+::: {.column width=60% .r-fit-text}
+### ... en 2026
+![](img4/SMA2026_rnk.jpg){width=600}
+Source : **Etudiants UPC, 2026**, Cours de L3 Geo *Structures du Monde Actuel*
+:::
+::::
+
+
 
 ## De quoi parle-t-on ?
 
@@ -707,39 +727,50 @@ Les flux aériens et les flux maritimes sont sans nul doute des marqueurs object
 
 # Lecture 3 : Marketing urbain et compétition globale
 
+
+
+
 ## Les villes où vous aimeriez vivre
 :::: {.columns}
 ::: {.column width=30% .r-fit-text}
-![](img4/SMA_like_2025.jpeg){width=300}
+![](img4/SMA_like_2026.jpeg){width=300}
 
-Source : étudiants L3 SMA, 2025
+Source : étudiants L3 SMA, 2026
 :::
 
 ::: {.column width=70% .r-fit-text}
-![](img4/Paris.jpg){width=400}
-![](img4/london.jpg){width=300}
+![](img4/Paris.jpg){width=300}
+![](img4/london.jpg){width=200}
 
-![](img4/Roma.jpg){width=200}
-![](img4/Montreal.jpg){width=200}
+![](img4/madrid.jpg){width=150}
 ![](img4/NewYork.jpg){width=150}
+![](img4/rio.jpg){width=150}
 ![](img4/lalaland.jpg){width=150}
+![](img4/oslo.jpg){width=100}
 
 :::
 ::::
 
+
 ## Les villes où vous n'aimeriez pas vivre
 :::: {.columns}
 ::: {.column width=30% .r-fit-text}
-![](img4/SMA_unlike_2025.jpg){width=300}
+![](img4/SMA_unlike_2026.jpg){width=300}
 
-Source : étudiants L3 SMA, 2025
+Source : étudiants L3 SMA, 2026
 :::
 
 ::: {.column width=70% .r-fit-text}
-![](img4/new_dehli.jpg){width=350}
-![](img4/Moscow.jpg){width=300}
-![](img4/Dubai.jpg){width=350}
-![](img4/Kabul.jpg){width=350}
+![](img4/Dubai.jpg){width=300}
+![](img4/Moscow.jpg){width=250}
+
+![](img4/Kabul.jpg){width=250}
+![](img4/marseille_quartier.jpg){width=250}
+
+![](img4/mumbai.jpg){width=100}
+![](img4/telaviv.jpg){width=150}
+
+
 
 :::
 ::::
@@ -747,9 +778,9 @@ Source : étudiants L3 SMA, 2025
 
 ## Les villes que vous citez le plus 
 
-![](img4/SMA_tot_2025.jpg){width=800}
+![](img4/SMA_tot_2026.jpg){width=800}
 
-Source : étudiants L3 SMA, 2025
+Source : étudiants L3 SMA, 2026
 
 
 ## L'enquête GlocalMap (2017)
@@ -836,23 +867,62 @@ Nous menons également des recherches sur la stratégie et la politique urbaines
 
 # Conclusion 
 
-## Grille de lecture dominante : la ville comme moteur du capitalisme
 
-![](img4/glocal.jpg){width=900}
 
-## Grille de lecture alternative : la ville comme forme d'association sociale
-
+## Existe-t-il une théorie universelle de la ville...
 :::: {.columns}
 ::: {.column width=20% .r-fit-text}
-![](img4/Simmel.jpg){width=200}
+![](img4/Scott_AJ.jpg){width=150}
+
+**Scott A.J., 2012**, *A World in Emergence : Cities and regions in the 21st Century*, Chap.2  "On urbanization and urban theory", Edward Elgar, Los Angeles
 :::
 
 ::: {.column width=80% .r-fit-text}
-"Les rapports qui s’établissent entre les hommes sont si complexes qu’il est chimérique de vouloir les ramener à leurs éléments ultimes. Nous devons plutôt les traiter comme des réalités qui se suffisent à elles-mêmes. C’est donc seulement par méthode que nous parlons de l’Etat, du droit, de la mode, etc., comme si c’étaient des êtres indivis."
 
-"Il y a société, au sens large du mot, partout où il y a action réciproque des individus. [...] Les causes particulières et les fins sans lesquelles naturellement il n’y aurait pas d’association, sont comme le corps, la matière du processus social ; que le résultat de ces causes, que la recherche de ces fins entraîne nécessairement une action réciproque, une association entre les individus, voilà la forme que revêtent les contenus. Séparer cette forme de ces contenus, au moyen de l’abstraction scientifique, telle est la condition sur laquelle repose l’existence d’une science spéciale de la société. »
+### Universalité de l'urbanisation et variétés du capitalisme
+Je soutiens que toute théorie cohérente de l'urbanisation pertinente dans le contexte actuel doit être dérivée de la logique et de la dynamique du capitalisme dans son ensemble. De même, les ajustements détaillés à toute théorie de ce type doivent également être effectués en fonction des versions du capitalisme qui prévalent à des moments précis et dans des lieux précis.
+
+### Une théorie "occidentale" ?
+Je soulève ce point en partie parce qu'il existe aujourd'hui un sentiment croissant de malaise dans une grande partie de la littérature concernant l'application des théories « occidentales » de l'urbanisation aux situations dans les pays du Sud, et un certain scepticisme quant à la capacité d'une théorie générale à rendre justice à l'ensemble des résultats sociaux et urbains à travers le monde (Escobar 2005 ; McGee 1967 ; Robinson 2006 ; Roy 2011).
+
+
+
 :::
 ::::
+
+## ... ou faut-il adopter une approche critique et postcoloniale ?
+:::: {.columns}
+::: {.column width=20% .r-fit-text}
+![](img3/ordinary_cities.jpg){width=200}
+**Jenny Robinson (2013)**. *Ordinary cities: between modernity and development*. Routledge.
+
+:::
+
+::: {.column width=80% .r-fit-text}
+
+![](img4/robinson_video.jpg){width=700}
+
+Source : [Jennifer Robinson y las Ciudades Ordinarias: Desafiando las Teorías Urbanas ](https://www.youtube.com/watch?v=8OVaMJxMDCY)
+:::
+::::
+
+## Débat sur la relocalisation des institutions des Nations Unies
+
+:::: {.columns}
+::: {.column width=50% .r-fit-text}
+![](img4/geneva.jpg){width=400}
+:::
+
+::: {.column width=50% .r-fit-text}
+
+![](img4/UNheadquarters.jpg){width=500}
+:::
+::::
+
+
+
+
+
 
 ## A suivre ...
 :::: {.columns}
